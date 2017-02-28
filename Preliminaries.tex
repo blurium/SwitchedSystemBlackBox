@@ -1,0 +1,24 @@
+% !TEX root = writeUpMainTheorems.tex
+We consider the usual Hilbert finite normed vector space $(\mathbb{R}^n,\ell_2)$, $n \in \mathbb{N}_{> 0}$, $\ell_2$ the classical euclidean norm. We denote a unit ball in $\R^n$ with $\ball$ and unit sphere in $\R^n$ of radius $r$ as $\sphere$. We only denote the radius $r$ explicitly as in $\ball_r$ and $\sphere_r$, when $r$ is different than $1$. We denote the set of real symmetric matrices of size $n$ by $\mathbb{S}^n$, and the set of linear functions in $\R^n$ by $\mathcal{L}(\mathbb{R}^n)$. We denote the ellipsoid described by the matrix $P \in \mathbb{S}^n$ as $E_P$. We denote the homothety of ratio $\lambda$ by $\calH_{\lambda}$.
+
+For the rest of the write-up, we denote the set of indices of the modes as $M = \{1,2,\dots,m\}$, where $m \in \N_{> 0}$ is the number of the modes. We denote the joint spectral radius of the set of matrices $\{A_1, A_2, \ldots A_m\}$ by $\rho$. Let us consider $X = \sphere \times M$ the Cartesian product of the unit sphere $\sphere$ with $M$. Every element of $X$ can be written as $x = (s_x, k_x)$ with $s_x \in \sphere$ and $k_x \in M$. For notational simplicity, we drop the subscript $x$ whenever it is clear from the context.
+
+We define the projections:
+$$\pi_{\sphere}: \sphere \times M \rightarrow \sphere, (s,k) \mapsto s$$
+$$\pi_M: \sphere \times M \rightarrow M, (s,k) \mapsto k.$$
+
+It is well-known that $\sphere$ is a $n-1$ embedded submanifold of $\mathbb{R}^n$, and can thus be seen as an image of an atlas (collection) of smooth maps $\phi_i: U \to \sphere$, $U \in \mathbb{R}^n$ called charts. It has the topology inherited from its ambient space $\mathbb{R}^n$. If $\mathbb{R}^n$ is provided with a $\sigma$-algebra $\Sigma$, this parametrization also induces a $\sigma$-algebra on $\sphere$, $\Sigma_{\sphere}$. Hence, a measure $\mu$ on the measurable space $(\mathbb{R}^n, \Sigma)$ defines a measure $\mu_{\sphere}$ on the measurable space $(\sphere, \Sigma_{\sphere})$. This measure can be seen as push-forward $\phi_{i*}(\mu)$ of $\mu$ by the charts, i.e., $\phi_{i*}(\mu)(A) = \mu(\phi_i^{-1}(A))$ for any $A \in \Sigma_{\sphere}$. In particular, with the classical Borel $\sigma$-algebra and Lebesgue measure in $\mathbb{R}^n$, we obtain a $\sigma$-algebra $\mathcal{B}_{\sphere}$ with $A \in \mathcal{B}_{\sphere}$ if and only if the sector $t A$, $t \in [0,1]$ is in $\mathcal{B}_{\mathbb{R}^n}$; and the classical spherical measure commonly denoted by $\sigma^{n-1}$ and defined by
+$$\forall A \in \mathcal{B}_{\sphere}, \sigma(A) = \frac{\lambda(tA)}{\lambda(B)}. $$
+We can notice that $\sigma^{n-1}(\sphere) = 1$.
+
+We assume now that $\sphere$ is provided with a $\sigma$-algebra $\Sigma_{\sphere}$ and $M$ with the classical $\sigma$-algebra associated to finite sets: $\Sigma_M = \wp(M)$, where $\wp(M)$ is the power set of $M$.
+
+We consider an unsigned finite spherical measure $\mu_{\sphere}$ on $(\sphere, \Sigma_{\sphere})$ and an unsigned finite measure\footnote{Recall that the support of a measure $\mu$ defined on a measurable space $(X, \Sigma)$ is $\text{supp}(\mu) = \overline{\{A \in \Sigma | \mu(A) > 0 \}}$} $\mu_M$ on $(M, \Sigma_M)$ with $\text{supp} (\mu_M) = M$. In other words, $\forall\,k \in M$, $\mu_M(\{k\})  > 0$.
+
+%[Comment: basically we force here the measure we take on the set of mode indices to be nonzero for every mode].
+
+We denote the product $\sigma$-algebra $\Sigma_{\sphere} \bigotimes \Sigma_M$ engendered by $\Sigma_{\sphere}$ and $\Sigma_M$: $\Sigma = \sigma( \pi_{\sphere}^{-1}(\Sigma_{\sphere}),  \pi_{M}^{-1}(\Sigma_M))$. On this set, we define the product measure $\mu = \mu_{\sphere} \otimes \mu_M$ which is an unsigned finite measure on $X$.
+
+
+%For simplicity we denote the set of  \emph{bad points} on $\sphere_1 \times M$ as $X_{\text{bad}}$, and the corresponding set of  \emph{bad points}  on $\sphere$ as $\sphere_{\text{bad}}$.
+

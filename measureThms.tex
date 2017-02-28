@@ -1,0 +1,111 @@
+
+% !TEX root = writeUpMainTheorems.tex
+For a given sampling $\omega \in X^{N*}$, let $V:=\{x \in X: f(p^*(\omega),x) > 0\}$, i.e., the set of points for which at least one constraint is violated, and $V_\sphere, V_M$ be its projections on $\sphere$ and $M$, respectively. 
+
+\begin{lemma}$\mu_{\sphere}(V_\sphere) \leq \frac{\mu(V)}{m_1}$, where $m_1 = \min \{\mu_M(\{k\}), k \in M\}$.\end{lemma}
+\begin{proof}
+
+Let $A \subset X$, $A_{\sphere} = \pi_{\sphere} (A)$ and $A_M = \pi_M (A)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{B_i, i \in \{1,2, \ldots 2^m\} \}$. Then $A$ is the disjoint union $A = \sqcup_{1 \leq i \leq 2^m} (A_i, B_i)$ where $A_i = \pi_M^{-1} (B_i) \in \sphere$. We notice that 
+$A_{\sphere} = \sqcup_{1 \leq i \leq 2^m} A_i$, 
+and
+\begin{equation*}
+\mu_{\sphere} (A_{\sphere}) = \sum_{1 \leq i \leq 2^m} \mu_{\sphere} (A_i).
+\end{equation*}
+We have 
+\begin{eqnarray*}
+\mu(A) = \mu(\sqcup_{1 \leq i \leq 2^m} (A_i, B_i)) &=& \sum_{1 \leq i \leq 2^m} \mu( (A_i, B_i)) \\
+ &=& \sum_{1 \leq i \leq 2^m} \mu_{\sphere} \otimes \mu_M ((A_i, B_i)) \\
+ & = &\sum_{1 \leq i \leq 2^m} \mu_{\sphere}(A_i) \mu_M (B_i).
+\end{eqnarray*}
+Let $m_1$ be the minimum value  of $\mu_M$ on its atoms: $m_1 = \min \{\mu_M(\{k\}), k \in M\}$ (recall that $m_1 > 0$). Then since $ \forall \ i$, $\mu_M(B_i) \geq m_1$, we have
+\begin{equation}
+\mu_{\sphere}(A_{\sphere}) \leq \frac{\mu(A)}{m_1}.
+\end{equation}
+This proves our statement by taking $A = V_{\sphere}$.
+%Remark: In our case, we consider the special case where measures $\mu_1$ and $\mu_2$ are uniform and of total measure $1$ on $\sphere$ and $M$. $\mu_1$ is the classical spherical measure $\sigma^n$ and $\mu_2$ the classical uniform probability measure on $M$. We have then $m_2 = \frac{1}{m}$ and the inequality becomes:
+\end{proof}
+
+\begin{corollary} \label{cor:measure}When the modes are sampled from the set $M$ uniformly random, 
+\begin{equation*}\mu_{\sphere}(V_\sphere) \leq m \mu(V). \end{equation*}
+\end{corollary}
+
+We consider the linear transformation mapping $\sphere$ to $E_P$ that denoted by $L \in \mathcal{L}(\mathbb{R}^n)$. Note that since $P \in \mathbb{S}^n$, it can be written in its Choleski form $P = U D U^{-1}$, where 
+$D$ diagonal matrix of its eigenvalues, and $U \in O_n(\mathbb{R})$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $V D^{1/2} V$. This means that, $L = P^{1/2}$. For the rest of the write-up, we denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to upper bound $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+
+\begin{lemma} 
+Let $\psi$ a smooth change of coordinates in $\mathbb{R}^n$ and $\mathcal{D} \subset \sphere$, whose image under $\psi$ is $\mathcal{D}' \subset \psi(\sphere)$. Let $\mu_{\sphere}$ be a positive spherical measure induced by a measure $\mu$ on $\R^n$. Let $\Sigma_{E}$ and $\mu_{E}$ be the $\sigma$-algebra and the measure induced from $\Sigma_{\sphere}$ and $\mu_S$ on the ellipsoid $E = \psi(\sphere)$. Then
+\begin{equation}
+\mu_{E}(\psi(V_\sphere)) = |\det(\psi)| \mu_{\sphere}(V_\sphere),
+\end{equation}
+where $\psi \in \mathcal{L}(\R^n)$.
+\end{lemma}
+
+\begin{proof}
+We have $\mu_{\sphere} (\mathcal{D}) = \int_{x \in \mathcal{D}} \mathbbm{1}_{D}(x) \ d \mu_{\sphere}(x)$,  $\mu_{\sphere} = \{ \phi_{i*}(\mu) \}_{i}$ and
+$$\mu (\mathcal{D}') = \int_{y \in \mathcal{D}'} \mathbbm{1}_{D'}(y) \  d \mu(y) = \int_{x \in \mathcal{D}} \mathbbm{1}_{x \in \mathcal{D}}   |\det J(\phi(x))| \  d \mu(x).$$
+
+This gives
+$$\mu_{E} (\mathcal{D}') = \int_{y \in \mathcal{D}'} \mathbbm{1}_{D'}(y) \  d \mu_{E}(y) = \int_{x \in \mathcal{D}} \mathbbm{1}_{x \in \mathcal{D}} |\det J(\psi(x))| \  d \mu_{\sphere}(x).$$
+
+In particular, if $\psi \in \mathcal{L}(\R^n)$, then $\forall x \in \mathbb{R}^n$, $\det(J(\psi(x)) = \det(\psi)$ and
+$$\mu_{E}(\mathcal{D}') = \int_{y \in \mathcal{D}'} \mathbbm{1}_{D'}(y) \  d \mu_{E}(y) = |\det(\psi)| \int_{x \in \mathcal{D}} \mathbbm{1}_{x \in \mathcal{D}} \ d \mu_{\sphere}(x).$$
+
+This proves the statement of the lemma when $\mathcal{D} = V_\sphere$.
+\end{proof}
+%Remark: have to give precisions on the spherical measure/ellipsoidal measures. By definition of $\sigma^n$ (taken from lebesgue measure), we have the $\sigma$-algebras well defined etc...
+%We want now to give an upper-bound of the measure of the projection of this set on the unit sphere. Let define $\psi$ the spherical projection by $\forall x \in \mathbb{R}^n, \psi(x) = \frac{x}{\lVert x \rVert}$ (we consider the classical euclidean norm here).
+%\begin{proposition}Given a mapping $f$
+%\end{proposition}
+
+
+\begin{definition}
+Let $X$ be a Hilbert space, $A$ a nonempty subset of $X$ and $\psi: A \to X$. Then $\psi$ is called firmly nonexpansive if
+$$\forall x, y \in A, \lVert \psi(x) - \psi(y) \rVert^2 + \lVert (\text{Id} - \psi)(x)- (\text{Id} - \psi)(y) \rVert^2 \leq \lVert x - y \rVert^2,$$
+where Id denotes the identity function from $X$ to $X$.
+\end{definition}
+
+\begin{theorem}[from \cite{combettes}]
+%[reference: Convex Analysis and Monotone Operator Theory in Hilbert Spaces, H. Bauschke, P. Combettes]
+Let $C$ be a nonempty closed convex subset of $X$, then the convex projector on $C$, $\proj_C$, is firmly nonexpansive.
+\end{theorem}
+
+\begin{corollary}\label{cor:proj}
+\begin{equation} \lVert \proj_C(x) - \proj_C(y) \rVert \leq \lVert x - y \rVert \qquad \forall\, x,y \in C.
+\end{equation}
+\end{corollary}
+
+\begin{lemma} \label{lemma:lip}
+\begin{equation}
+\mu_{\sphere}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \det(L^{-1}) \left(\frac{1}{\lambda_{\min}(L^{-1})}\right)^n \mu_{\sphere}(V_\sphere).
+\end{equation}   
+\end{lemma}
+
+\begin{proof}
+Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
+\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.
+\end{equation*}
+This shows that the restriction of $\proj_{\sphere_{\lambda_{\min}}}$ to $E'$ is a convex projector.
+
+%We consider then $B_{\lambda_{\min}}$, and $P_{B_{\lambda_{\min}}}$ projector on $B_{\lambda_{\min}}$ defined in $\mathbb{R}^n$.
+
+Then by Corollary \ref{cor:proj} 
+\begin{equation}
+\lVert \proj_{\sphere_{\lambda_{\min}}}(x) - \proj_{\sphere_{\lambda_{\min}}}(y) \rVert \leq \lVert x - y \rVert, \qquad \forall \ x,y \in E'.
+\end{equation} 
+This shows that $1$ is a Lipschitz constant of the function $\proj_{\sphere_{\lambda_{\min}}}$ on $E'$. 
+
+By composing $\proj_{\sphere_{\lambda_{\min}}}$ with $\calH_{\frac{1}{\lambda_{\min}}}$, we obtain $\proj_\sphere$. Since the Lipschitz constant of composition of two functions can be bounded by the multiplication of Lipschitz constants of each function, the Lipschitz constant of $\Pi_S$ on $E'$ is $\frac{1}{\lambda_{\min}}$, which means that:
+\begin{equation}\label{eqn:lip}
+\lVert \proj_\sphere(x) - \proj_\sphere(y) \rVert \leq \frac{1}{\lambda_{\min}} \lVert x-y \rVert, \qquad \forall\,x,y \in E'.
+\end{equation}
+Note that, the inequality in \eqref{eqn:lip} is an equality when $x$ is in the eigenspace of $\lambda_{\min}$ and $y=-x$.
+
+Recall that for any smooth Lipschitz function $\phi$ with Lipschitz constant, Lip$(\phi)$, we have for all $x$, $|\det(J(\phi(x))| \leq \text{Lip}(\phi)^n$. Combining this with  \eqref{eqn:lip} and Lemma \ref{lemma:lip}, we get the statement of the lemma.
+\end{proof}
+
+\begin{theorem}$\sigma^{n-1}(V') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$,
+where $\mu(V) = \epsilon$.
+\end{theorem}
+
+\begin{proof}By taking $\mu_{\sphere}$ as the uniform spherical measure $\sigma^{n-1}$, and combining Corollary \ref{cor:measure} with Lemma \ref{lemma:lip} we get the statement of the theorem.
+\end{proof}
