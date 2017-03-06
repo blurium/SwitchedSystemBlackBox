@@ -1,9 +1,17 @@
 % !TEX root = writeUpMainTheorems.tex
 We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics. In this section, we show how to relate $\epsilon'$ to $\delta$ in the statement of the Theorem \ref{thm:mainTheorem}. We start by a few definitions that will help us along the way.
 
+\begin{definition}[Supporting Hyperplane] The hyperplane $H=\{x | c^Tx = k\}$ is a supporting hyperplane of the set $X \subseteq \R^n$ if $X$ is contained either in the set $\{x | c^Tx \leq k\}$ or $\{x | c^Tx \geq k\}$ and $X$ contains one point $z \in X$. Then $H$ is the supporting hyperplane of $X$ at $z$. We denote the set of all supporting hyperplanes of a set $X$ at point $z$ by $H_z(X)$.
+\end{definition}
+
 \begin{definition}[Spherical Cap]We define the \emph{spherical cap} on $S$ for a given hyperplane $c^Tx = k$ as:
 \begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
 \end{definition}
+
+%\begin{proposition}Let $X \subset \R^n$ be a closed convex set. The set $X$ can be written as the intersection of all its support vectors:
+%\begin{equation*} X = \cap_{i \in \partial X} c_i^Tx \leq k_i\end{equation*}
+%\end{proposition}
+
 
 \begin{proposition}\label{distanceSet} Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Then if $X$ is compact, we have:
 \begin{equation*}\dist(X,p)= \min_{x \in X}\dist(x,p). \end{equation*} 
@@ -15,41 +23,50 @@ We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P
 \begin{proposition}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
 \end{proposition}
 
-\begin{lemma}\label{prop:distanceSet}Consider the boundary of the compact convex set
-\begin{equation*}X := \bigcap\limits_{i\in I}\{x: c_i^Tx \leq k_i\},\end{equation*} denoted by $\partial X$, then:
-\begin{equation*} \dist(\partial X,0) = \min_{i \in I} \frac{|k_i|}{\|c_i\|}.\end{equation*}
-\end{lemma}
+%\begin{lemma}\label{prop:distanceSet}Consider the boundary of the compact convex set
+%\begin{equation*}X := \bigcap\limits_{i\in I}\{x: c_i^Tx \leq k_i\},\end{equation*} denoted by $\partial X$, then:
+%\begin{equation*} \dist(\partial X,0) = \min_{i \in I} \frac{|k_i|}{\|c_i\|}.\end{equation*}
+%\end{lemma}
 
-\begin{proof}Due to Proposition \ref{prop:distance} we have:
-\begin{equation}\dist(\partial X,0)= \inf_{i \in I} \dist\left(\{x: c_i^Tx = k_i\},0\right) = \inf_{i \in I}\koverc.
-\end{equation}
-Note that due to Proposition \ref{distanceSet}, the $\inf_{x \in \partial X}\dist(x,0)$ is attained by a point $x^* \in\partial X$ due to compactness of $\partial X$. Hence, there exists an $i \in I$ such that $c_i^Tx^*=k_i$ and this leads to: $\inf_{i \in I}\koverc = \min_{i \in I}\koverc$.
-\end{proof}
+%\begin{proof}Due to Proposition \ref{prop:distance} we have:
+%\begin{equation}\dist(\partial X,0)= \inf_{i \in I} \dist\left(\{x: c_i^Tx = k_i\},0\right) = \inf_{i \in I}\koverc.
+%\end{equation}
+%Note that due to Proposition \ref{distanceSet}, the $\inf_{x \in \partial X}\dist(x,0)$ is attained by a point $x^* \in\partial X$ due to compactness of $\partial X$. Hence, there exists an $i \in I$ such that $c_i^Tx^*=k_i$ and this leads to: $\inf_{i \in I}\koverc = \min_{i \in I}\koverc$.
+%\end{proof}
 
 We define the function $\Delta : 2^\sphere \to [0,1]$ as:
 \begin{equation}\label{shrinkage}
 \Delta(X) = \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\}.
 \end{equation}
 
-\begin{lemma}\label{lemma:delta2}Given a set $X \subseteq \sphere$, let $\conv(\sphere \setminus X) := \ball \cap \calP,$ where $\calP:=\bigcap\limits_{i \in I}\{x: c_i^Tx \leq k_i\}$. Then we have: $$\Delta(X) = \min_{i \in I} \frac{|k_i|}{\|c_i\|}.$$
+\begin{lemma}\label{lemma:delta2}$\Delta(\calC_{c,k}) = \min\left(1, \frac{|k|}{\|c\|}\right)$.
 \end{lemma}
 
 \begin{proof}
+Note that $\conv(\sphere \setminus \calC_{c, k}) = \left\{x \in \ball : c^Tx \leq k \right\}$. Let \mbox{$X_{\calC_{c,k}} := \conv(\sphere \setminus \calC_{c, k})$.}
 \begin{eqnarray}
-\nonumber \Delta(X) &=& \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\} \\
-\nonumber&=&\min \left(\dist(\partial \calP, 0), \dist(\sphere, 0) \right) \\
-\label{shrinkage1}&=&\min\left(\min_{i \in I} \frac{|k_i|}{\|c_i\|},1\right) \qquad \qquad\text{due to Lemma\,} 
-{\ref{prop:distanceSet}}.
+\nonumber \Delta(X) &=& \dist(\partial X_{\calC_{c,k}}, 0) \\
+\nonumber &=& \min(\dist(\sphere, 0), \dist(\{x : c^Tx = k\}, 0)) \\
+\nonumber &=& \min\left(1, \frac{|k|}{\|c\|}\right).
 \end{eqnarray}
 \end{proof}
+%\begin{lemma}\label{lemma:delta2}Given a set $X \subseteq \sphere$, let $\conv(\sphere \setminus X) := \ball \cap \calP$. Then we have:
+%$$\Delta(X) = \min\left(\min_{i \in \partial X} \frac{|k_i|}{\|c_i\|}, 1\right),$$
+%where $\left\{x \middle | c_i^Tx = k_i\right\} \in H_x(\calP)$ and $H \subseteq \{x : c_i^Tx \leq k_i\}$.
+%\end{lemma}
+%
+%\begin{proof}
+%Note that, $\calP = \cap_{i \in \partial X}\left\{x \middle | c_i^Tx \leq k_i\right\}$.
+%\begin{eqnarray}
+%\nonumber \Delta(X) &=& \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\} \\
+%\nonumber&=&\min \left(\dist(\partial \calP, 0), \dist(\sphere, 0) \right) \\
+%\label{shrinkage1}&=&\min\left(\min_{i \in \partial X} \frac{|k_i|}{\|c_i\|},1\right) \qquad \qquad\text{due to Lemma\,} 
+%{\ref{prop:distanceSet}}.
+%\end{eqnarray}
+%\end{proof}
 
-\begin{lemma}\label{lemma:deltaMonotone}$\Delta(\calC_{c,k_1}) < \Delta(\calC_{c,k_2})$ when $k_1 < k_2$.
-\end{lemma}
-
-\begin{proof}
-\begin{equation*}\Delta(\calC_{c,k}) = \conv(\sphere \setminus \calC_{c,k}) = \conv(\sphere \setminus \{x\in \sphere: c^Tx >k\}) = \{x \in \ball : c^Tx \leq k\}.\end{equation*} Due to Lemma \ref{lemma:delta2}, we have $\Delta(X) = \frac{|k|}{\|c\|}$.
-Then since $\frac{|k_1|}{\|c\|} < \frac{|k_2|}{\|c\|}$ when $k_1 < k_2$, the result of the lemma follows.
-\end{proof}
+\begin{corollary}\label{lemma:deltaMonotone}$\Delta(\calC_{c,k_1}) < \Delta(\calC_{c,k_2})$ when $k_1 < k_2$.
+\end{corollary}
 
 \begin{lemma}\label{lemma:muMonotone}$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2})$, for $k_1 > k_2$.
 \end{lemma}
@@ -66,10 +83,13 @@ Now we are ready to present the following lemma which is the key to proving our 
 \end{equation}
 \end{lemma}
 
-\begin{proof} As discussed previously, we can represent $\conv(\sphere \setminus  X)$ as
-\begin{equation*}\conv(\sphere \setminus X) = \bigcap\limits_{i \in I} \{x \in \ball:c_i^Tx \leq k_i\}.
+\begin{proof} Let $X_S := \conv(S \setminus X)$. Note that when $X_S= \emptyset$, the statement of the theorem holds trivially. So for the rest of the proof we assume that $X_S \not = \emptyset$. 
+Since the distance function $\dist$ continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
+\begin{equation}\label{deltaSupporting}\Delta(X) = \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) = \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{equation} Then, by the supporting hyperplane theorem \cite{boyd}, there exists a supporting hyperplane $\left\{x : c^Tx = k\right\}$ of $\partial X_S$ such that $x^* \in \left\{x : c^Tx = k\right\}$. Note that:
+\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}) = \frac{|k|}{\|c\|}.
 \end{equation*}
-Note that when $X = \emptyset$, the statement of the lemma trivially holds since we can always find a $c$ and $k$ such that $\calC_{c, k} = \emptyset$, hence we assume $X \not= \emptyset$ for the rest of the proof. This implies $I \neq \emptyset$. Then due to Lemma \ref{lemma:delta2}, there exists $\ell \in I$ such that $\Delta(X)=\frac{|k_{\ell}|}{\|c_{\ell}\|}$. Now, consider the spherical cap $\calC_{c_\ell,k_\ell}$. Note that again due to Lemma \ref{lemma:delta2}, we have $\Delta(\calC_{c_\ell,k_\ell}) = \frac{|k_\ell|}{\|c_\ell\|} = \Delta(X)$.
+Now, consider the spherical cap $\calC_{c,k}$. Then, by Lemma \label{lemma:delta2} we have
+$\Delta(\calC_{c,k}) = \frac{|k|}{\|c\|}$. Therefore, $\Delta(X) = \Delta(\calC_{c,k})$.
 
 We next show $\calC_{c_\ell,k_\ell} \subseteq X$. We prove this by contradiction. Assume $x \in \calC_{c_\ell,k_\ell}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subseteq \conv(\sphere \setminus X).$ Since $x \in \calC_{c_\ell,k_\ell}$ we have $c_\ell^Tx>k_\ell$, but due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c_\ell^Tx \leq k_\ell$, which leads to a contradiction. Therefore, $\calC_{c_\ell,k_\ell} \subseteq X$. 
 \end{proof}
@@ -100,10 +120,10 @@ We next show $\calC_{c_\ell,k_\ell} \subseteq X$. We prove this by contradiction
 %\end{lemma}
 %\substack{\text{Some long text that} \\ \text{should be multiline}}
 We now prove our main result.
-\begin{theorem}Let $X_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ when $X$ is a spherical cap.
+\begin{theorem}Let $X_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
 \end{theorem}
 
-\begin{proof}We prove this via contradiction. Assume that $X^* \in X_{\epsilon'}$, $X^*$ is not a spherical cap and $\argmin_{X \in X_{\epsilon'}}(\Delta(X))=X^*$. Due to Lemma \ref{lemma:constructSC} we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subseteq X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subset X^*$, since $X^*$ is assumed not to be a spherical cap. This means that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
+\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $X_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in X_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in X_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC} we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subseteq X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subset X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
 
 Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$, due to Lemma \ref{lemma:muMonotone}. This implies $\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ at $X^*$.
 \end{proof}
@@ -126,14 +146,19 @@ From this, we get the following set of equations:
 From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon$ for fixed $n$.
 \end{proof}
 
-\begin{corollary}
-When $N \to \infty$, $\Delta(X) \to 1$.
+\begin{corollary}For a given $\beta =  1 - \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}$, we have \begin{equation*}\lim_{N \to \infty} \delta (\beta, N) = 1.\end{equation*}
 \end{corollary}
 
-\begin{proof}
-To be proved: $\epsilon \to 0$.
+\begin{proof} We first show that $\lim_{N \to \infty} \epsilon'_\beta(N) = 0.$
+\begin{eqnarray} \nonumber 1- \beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} &\leq& (d+1) N^d (1 -\epsilon)^{N} \\
+\nonumber \log{\left(\frac{1-\beta}{d+1}\right)} &\leq&  d \log N + N \log(1-\epsilon(N)) \\
+\nonumber \frac{\log{\left(\frac{1-\beta}{d+1}\right)}}{d \log N} &\leq& 1 + \frac{N \log(1-\epsilon(N))}{d \log N} \\
+\nonumber \lim_{N \to +\infty} \frac{\log{\left(\frac{1-\beta}{d+1}\right)}}{d \log N} &<& \lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N} \\
+\label{limEpsilon} 0 &<& \lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N} 
+\end{eqnarray}
+We now prove by contradiction that \eqref{limEpsilon} implies that $\epsilon(N) \to 0$. Assume that $\lim_{N \to +\infty} \epsilon(N) \not= 0$. Let $g_1(N) := \frac{N}{d \log N}$ and $g_2(N):=\log (1-\epsilon(N))$. Note that $\lim_{N \to +\infty}g_1(N) = \infty$ and since $\epsilon(N) \in (0,1)$, we have $g_2(N) < 0$ for all $N$. Since  $\lim_{N \to +\infty} \epsilon(N) \not= 0,$ for there exists a subsequence $n_k$ of $\N$ such that $\lim_{k \to \infty} g_2(n_k) = -\epsilon$ for some $\epsilon > 0$. This means that there exists a subsequence $n_k$ of $\N$ such that $\lim_{k \to \infty}g_1(n_k)g_2(n_k) =  -\infty$, which implies that either the limit $\lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N}$ does not exist or it is $- \infty$, which is a contradiction since we have \eqref{limEpsilon}.
 
-Then by our assumption $\frac{\lambda_{\max}}{\lambda_{\min}}$ is bounded so $\epsilon'$ tends to $0$. By continuity and monotonicity of $I^{-1}$ in its first parameter, $\Delta$ tends to $1$.
+By continuity and monotonicity of $I^{-1}$ in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.
 
 \end{proof}
 %\end{section}
