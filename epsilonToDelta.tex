@@ -1,8 +1,5 @@
 % !TEX root = writeUpMainTheorems.tex
-We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics. In this section, we show how to relate $\epsilon'$ to $\delta$ in the statement of the Theorem \ref{thm:mainTheorem}. We start by a few definitions that will help us along the way.
-
-\begin{definition}[Supporting Hyperplane] The hyperplane $H=\{x | c^Tx = k\}$ is a supporting hyperplane of the set $X \subseteq \R^n$ if $X$ is contained either in the set $\{x | c^Tx \leq k\}$ or $\{x | c^Tx \geq k\}$ and $X$ contains one point $z \in X$. Then $H$ is the supporting hyperplane of $X$ at $z$. We denote the set of all supporting hyperplanes of a set $X$ at point $z$ by $H_z(X)$.
-\end{definition}
+We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics. In this section, we show how to relate $\epsilon'$ to $\delta$ in the statement of the Theorem \ref{thm:mainTheorem}. We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. We define the distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$.
 
 \begin{definition}[Spherical Cap]We define the \emph{spherical cap} on $S$ for a given hyperplane $c^Tx = k$ as:
 \begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
@@ -13,12 +10,12 @@ We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P
 %\end{proposition}
 
 
-\begin{proposition}\label{distanceSet} Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Then if $X$ is compact, we have:
-\begin{equation*}\dist(X,p)= \min_{x \in X}\dist(x,p). \end{equation*} 
-\end{proposition}
+%\begin{proposition}\label{distanceSet} Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Then if $X$ is compact, we have:
+%\begin{equation*}\dist(X,p)= \min_{x \in X}\dist(x,p). \end{equation*} 
+%\end{proposition}
 
-\begin{proof}This is due to the fact that the function $\dist$ is continuous and therefore attains its minimum on the compact set $X$.
-\end{proof}
+%\begin{proof}This is due to the fact that the function $\dist$ is continuous and hence attains its minimum on the compact set $X$.
+%\end{proof}
 
 \begin{proposition}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
 \end{proposition}
@@ -36,16 +33,21 @@ We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P
 
 We define the function $\Delta : 2^\sphere \to [0,1]$ as:
 \begin{equation}\label{shrinkage}
-\Delta(X) = \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\}.
+\Delta(X) := \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\}.\end{equation}
+Note that, $\Delta(X)$ can be rewritten as in:
+\begin{equation}\label{shrinkage2}
+\Delta(X) =  \dist(\partial  \conv(\sphere \setminus X), 0).
 \end{equation}
+
 
 \begin{lemma}\label{lemma:delta2}$\Delta(\calC_{c,k}) = \min\left(1, \frac{|k|}{\|c\|}\right)$.
 \end{lemma}
 
 \begin{proof}
-Note that $\conv(\sphere \setminus \calC_{c, k}) = \left\{x \in \ball : c^Tx \leq k \right\}$. Let \mbox{$X_{\calC_{c,k}} := \conv(\sphere \setminus \calC_{c, k})$.}
+Note that $\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}$.
 \begin{eqnarray}
-\nonumber \Delta(X) &=& \dist(\partial X_{\calC_{c,k}}, 0) \\
+\nonumber \Delta(X) &=& \dist(\partial \conv(\sphere \setminus X), 0) \\
+\nonumber &=& \min(\dist(\partial \ball, 0), \dist(\partial\{x : c^Tx \leq k\}, 0)) \\
 \nonumber &=& \min(\dist(\sphere, 0), \dist(\{x : c^Tx = k\}, 0)) \\
 \nonumber &=& \min\left(1, \frac{|k|}{\|c\|}\right).
 \end{eqnarray}
@@ -83,15 +85,19 @@ Now we are ready to present the following lemma which is the key to proving our 
 \end{equation}
 \end{lemma}
 
-\begin{proof} Let $X_S := \conv(S \setminus X)$. Note that when $X_S= \emptyset$, the statement of the theorem holds trivially. So for the rest of the proof we assume that $X_S \not = \emptyset$. 
-Since the distance function $\dist$ continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
-\begin{equation}\label{deltaSupporting}\Delta(X) = \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) = \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{equation} Then, by the supporting hyperplane theorem \cite{boyd}, there exists a supporting hyperplane $\left\{x : c^Tx = k\right\}$ of $\partial X_S$ such that $x^* \in \left\{x : c^Tx = k\right\}$. Note that:
-\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}) = \frac{|k|}{\|c\|}.
+\begin{proof} Let $X_S := \conv(S \setminus X)$.
+Since the distance function $\dist$ is continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
+\begin{equation}\label{deltaSupporting}\Delta(X) = \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) = \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{equation} 
+Next, consider the supporting hyperplane of $X_S$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that, this supporting hyperplane is unique because it is also a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ as well, which is unique. This can be seen from the fact that:
+\begin{equation*} \partial \ball_{\Delta(X)} \subseteq \partial X_S \subseteq \left\{x : c^Tx = k\right\}.\end{equation*}
+Then we have:
+\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \frac{|k|}{\|c\|}.
 \end{equation*}
 Now, consider the spherical cap $\calC_{c,k}$. Then, by Lemma \label{lemma:delta2} we have
 $\Delta(\calC_{c,k}) = \frac{|k|}{\|c\|}$. Therefore, $\Delta(X) = \Delta(\calC_{c,k})$.
 
-We next show $\calC_{c_\ell,k_\ell} \subseteq X$. We prove this by contradiction. Assume $x \in \calC_{c_\ell,k_\ell}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subseteq \conv(\sphere \setminus X).$ Since $x \in \calC_{c_\ell,k_\ell}$ we have $c_\ell^Tx>k_\ell$, but due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c_\ell^Tx \leq k_\ell$, which leads to a contradiction. Therefore, $\calC_{c_\ell,k_\ell} \subseteq X$. 
+
+We next show $\calC_{c, k} \subseteq X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subseteq \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$ we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subseteq X$. 
 \end{proof}
 %\begin{lemma} The function $\tilde{\lambda}_{max} : \R^{n(n-1)/2} \to \R$ is convex in $z$.
 %\end{lemma}
@@ -146,19 +152,19 @@ From this, we get the following set of equations:
 From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon$ for fixed $n$.
 \end{proof}
 
-\begin{corollary}For a given $\beta =  1 - \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}$, we have \begin{equation*}\lim_{N \to \infty} \delta (\beta, N) = 1.\end{equation*}
+\begin{corollary}For a fixed $\beta \in (0,1)$, $\lim_{N \to \infty} \delta_\beta(N) = 1$.
 \end{corollary}
 
-\begin{proof} We first show that $\lim_{N \to \infty} \epsilon'_\beta(N) = 0.$
-\begin{eqnarray} \nonumber 1- \beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} &\leq& (d+1) N^d (1 -\epsilon)^{N} \\
-\nonumber \log{\left(\frac{1-\beta}{d+1}\right)} &\leq&  d \log N + N \log(1-\epsilon(N)) \\
-\nonumber \frac{\log{\left(\frac{1-\beta}{d+1}\right)}}{d \log N} &\leq& 1 + \frac{N \log(1-\epsilon(N))}{d \log N} \\
-\nonumber \lim_{N \to +\infty} \frac{\log{\left(\frac{1-\beta}{d+1}\right)}}{d \log N} &<& \lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N} \\
-\label{limEpsilon} 0 &<& \lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N} 
-\end{eqnarray}
-We now prove by contradiction that \eqref{limEpsilon} implies that $\epsilon(N) \to 0$. Assume that $\lim_{N \to +\infty} \epsilon(N) \not= 0$. Let $g_1(N) := \frac{N}{d \log N}$ and $g_2(N):=\log (1-\epsilon(N))$. Note that $\lim_{N \to +\infty}g_1(N) = \infty$ and since $\epsilon(N) \in (0,1)$, we have $g_2(N) < 0$ for all $N$. Since  $\lim_{N \to +\infty} \epsilon(N) \not= 0,$ for there exists a subsequence $n_k$ of $\N$ such that $\lim_{k \to \infty} g_2(n_k) = -\epsilon$ for some $\epsilon > 0$. This means that there exists a subsequence $n_k$ of $\N$ such that $\lim_{k \to \infty}g_1(n_k)g_2(n_k) =  -\infty$, which implies that either the limit $\lim_{N \to +\infty}  \frac{N \log(1-\epsilon(N))}{d \log N}$ does not exist or it is $- \infty$, which is a contradiction since we have \eqref{limEpsilon}.
+\begin{proof} 
+We first prove that $\lim_{N \to \infty} \epsilon_\beta(N) = 0$. Note that, we can upper bound $1-\beta$ as follows:
+\begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {N}\choose{j} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
+\end{equation}
+We prove $\lim_{N \to \infty} \epsilon_\beta(N) = 0$ by contradiction and assume that $\lim_{N \to \infty} \epsilon_\beta(N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon_\beta(N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon_\beta(N_k) > \delta$, $\forall\, k.$ By \eqref{eqn:beta} we have:
+\begin{equation*}1-\beta \leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
+\end{equation*}
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $ (d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 -\beta$, which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon_\beta(N) = 0$.
 
-By continuity and monotonicity of $I^{-1}$ in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.
+Showing $I^{-1}$ in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.
 
 \end{proof}
 %\end{section}

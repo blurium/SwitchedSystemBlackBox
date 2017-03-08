@@ -1,0 +1,34 @@
+% !TEX root = writeUpMainTheorems.tex
+Stability analysis of dynamical systems is a challenging task. When an analytical model of the dynamical system of interest is present, typically the first attempt is to construct a Lyapunov function, which are certificates of stability. However, in industrial applications typically there is no explicit model of the system in the form of difference or differential equations. On the other hand, simulating the system with different model parameters and initial conditions is usually possible, and cheap. Therefore, it is valuable to be able to analyze the stability of a given dynamical system with an unknown model, directly from data. That is, given a dynamical system as in:
+\begin{equation}\label{eq:dynamicalsystemGeneral}x_{k+1} = f(k, x_k),
+\end{equation}
+where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence. Let $y_k := x_{k+1}$
+We ask the following question: given N input-output-matrix pairs, $(x_1, y_1)$, $(x_2, y_2)$, $\ldots$, $(x_N, y_N)$ such that $y_{k} = f(k, x_k)$, what can we say about the stability of the system \eqref{eq:dynamicalsystemGeneral}?
+
+
+
+%
+%In this paper, we consider discrete-time switched linear systems of the form:
+%\begin{equation}\label{eq:dynamicalsystem}x_{k+1} = A_{\sigma(k)}x_k,
+%\end{equation}
+%where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence. Let $y_k := x_{k+1}$. 
+%We ask the following question:
+%\begin{centering}
+%\emph{Given N input-output-matrix pairs, $(x_1, y_1)$, $(x_2, y_2)$, $\ldots$, $(x_N, y_N)$ such that
+%\begin{equation}\label{eq:triples}y_{k} = A_{\sigma(k)}x_k,
+%\end{equation} for some $\sigma(k),$ what can we say about the stability of the system \eqref{eq:dynamicalsystem}?
+%\end{centering}
+%The only instance where answer to this question has been clearly shown is for linear time-invariant systems.
+%
+%Note that if \eqref{eq:dynamicalsystem} is a linear time-invariant system with only one mode, this question is easily answered by observing $n$ linearly independent data points. Switched systems can be used to model the behavior of a system of interest for different values of a parameter that varies. This parameter can represent internal parameters such as model uncertainties, as well as exogenous parameters such as inputs provided by a controller in a closed-loop control system. 
+
+
+%- Stability analysis of dynamical systems is a challenging task. \\
+%- Most methods in literature rely on knowing the model. Cite \\
+%- How to make the case about the assumption of switched linear yet, we don't construct a model? Here cite
+%something that says that this is a hard problem in general. (What is the relationship between switching linear regression)
+%- Here we present stability analysis from data, this is easy for linear systems. We present something for switch linear.
+
+
+
+%I can refer to the condition number paper?
