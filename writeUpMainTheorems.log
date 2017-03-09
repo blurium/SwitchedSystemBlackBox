@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 MAR 2017 23:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAR 2017 15:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,10 +28,22 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip44
 \bibindent=\dimen102
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks14
+\thm@bodyfont=\toks15
+\thm@headfont=\toks16
+\thm@notefont=\toks17
+\thm@headpunct=\toks18
+\thm@preskip=\skip45
+\thm@postskip=\skip46
+\thm@headsep=\skip47
+\dth@everypar=\toks19
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/applemac.def
 File: applemac.def 2015/03/17 v1.2c Input encoding file
@@ -55,9 +67,9 @@ Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks22
 )
-\MT@toks=\toks17
+\MT@toks=\toks23
 \MT@count=\count89
 LaTeX Info: Redefining \textls on input line 766.
 \MT@outer@kern=\dimen103
@@ -69,7 +81,7 @@ File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip45
+\MT@outer@space=\skip48
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -81,7 +93,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks18
+\@emptytoks=\toks24
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -89,7 +101,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip46
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -97,7 +109,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks19
+\@emptytoks=\toks25
 \ex@=\dimen104
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -127,35 +139,23 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip10
 \c@parentequation=\count98
 \dspbrk@lvl=\count99
-\tag@help=\toks20
+\tag@help=\toks26
 \row@=\count100
 \column@=\count101
 \maxfields@=\count102
-\andhelp@=\toks21
+\andhelp@=\toks27
 \eqnshift@=\dimen107
 \alignsep@=\dimen108
 \tagshift@=\dimen109
 \tagwidth@=\dimen110
 \totwidth@=\dimen111
 \lineht@=\dimen112
-\@envbody=\toks22
-\multlinegap=\skip47
-\multlinetaggap=\skip48
-\mathdisplay@stack=\toks23
+\@envbody=\toks28
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks29
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2015/03/04 v2.20.2
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
-\thm@preskip=\skip49
-\thm@postskip=\skip50
-\thm@headsep=\skip51
-\dth@everypar=\toks29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
@@ -342,25 +342,25 @@ LaTeX Warning: Label `lemma:delta2' multiply defined.
 )
 \openout1 = `writeUpMainTheorems.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Info: Redefining \microtypecontext on input line 88.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Info: Redefining \microtypecontext on input line 89.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -438,16 +438,16 @@ e
 ))
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 88.
-Package gensymb Info: Math companion symbols declared on input line 88.
-LaTeX Info: Redefining \degree on input line 88.
-LaTeX Info: Redefining \celsius on input line 88.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 89.
+Package gensymb Info: Math companion symbols declared on input line 89.
+LaTeX Info: Redefining \degree on input line 89.
+LaTeX Info: Redefining \celsius on input line 89.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 88.
-LaTeX Info: Redefining \ohm on input line 88.
-Package gensymb Info: Using \textohm for \ohm on input line 88.
-Package gensymb Info: Using \textmu for \micro on input line 88.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 89.
+erthousand on input line 89.
+LaTeX Info: Redefining \ohm on input line 89.
+Package gensymb Info: Using \textohm for \ohm on input line 89.
+Package gensymb Info: Using \textmu for \micro on input line 89.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 90.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -456,7 +456,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+LaTeX Font Info:    Try loading font information for U+msa on input line 90.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -464,7 +464,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
+LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -472,53 +472,72 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 89.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 90.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Warning: No \author given.
 
-(./introduction.tex) (./Preliminaries.tex [1
+(./introduction.tex
+
+LaTeX Warning: Citation `lyapunov' on page 1 undefined on input line 2.
+
+
+LaTeX Warning: Citation `topcu' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Citation `lazar' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Citation `lazar2' on page 1 undefined on input line 15.
+
+[1
 
 
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./cam
-pi.tex [2]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `jungers' on page 2 undefined on input line 17.
+
+) (./Preliminaries.tex [2]) (./campi.tex [3]
 Overfull \hbox (11.0181pt too wide) in paragraph at lines 24--25
 []\T1/cmr/m/n/10.95 (-20) We de-fine the lin-ear iso-mor-phism $\OT1/cmr/m/n/10
 .95 (-20) ^^H$ \T1/cmr/m/n/10.95 (-20) as the nat-u-ral map-ping []
  []
 
 
-LaTeX Warning: Citation `boyd' on page 3 undefined on input line 47.
+LaTeX Warning: Citation `boyd' on page 4 undefined on input line 47.
 
-[3]
+[4]
 
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 63.
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 89.
+LaTeX Warning: Citation `campi' on page 5 undefined on input line 63.
 
 
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 90.
+LaTeX Warning: Citation `campi' on page 5 undefined on input line 89.
 
-[4]) (./measureThms.tex [5]
+
+LaTeX Warning: Citation `campi' on page 5 undefined on input line 90.
+
+[5]) (./measureThms.tex [6]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 44.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
-LaTeX Warning: Citation `combettes' on page 6 undefined on input line 67.
+LaTeX Warning: Citation `combettes' on page 7 undefined on input line 67.
 
-[6]) (./epsilonToDelta.tex [7]
+[7]) (./epsilonToDelta.tex [8]
 
-LaTeX Warning: Citation `boyd' on page 8 undefined on input line 20.
+LaTeX Warning: Citation `boyd' on page 9 undefined on input line 20.
 
-[8] [9]
+[9] [10]
 
-LaTeX Warning: Citation `sphericalCapRef' on page 10 undefined on input line 14
+LaTeX Warning: Citation `sphericalCapRef' on page 11 undefined on input line 14
 2.
 
 
@@ -535,9 +554,9 @@ T1/cmr/m/n/10.95 (-20) (\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (-20) ) \OMS/cm
 sy/m/n/10.95 6\OT1/cmr/m/n/10.95 (-20) =
  []
 
-[10])
+[11])
 No file writeUpMainTheorems.bbl.
-[11] (./writeUpMainTheorems.aux)
+[12] (./writeUpMainTheorems.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -546,13 +565,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6057 strings out of 493089
- 90830 string characters out of 6134842
- 181747 words of memory out of 5000000
- 9216 multiletter control sequences out of 15000+600000
- 40132 words of font info for 176 fonts, out of 8000000 for 9000
+ 6058 strings out of 493089
+ 90845 string characters out of 6134842
+ 180654 words of memory out of 5000000
+ 9221 multiletter control sequences out of 15000+600000
+ 40018 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,35p,1189b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,35p,1191b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/ayca/Library/texlive/2015/texmf-var/fonts/pk/ljfour/public/bbm/bbm10
 .657pk>{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1
 .enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
@@ -581,10 +600,10 @@ ist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/cm-super/sfti1095.pfb>
-Output written on writeUpMainTheorems.pdf (11 pages, 369770 bytes).
+Output written on writeUpMainTheorems.pdf (12 pages, 374716 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 154 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36353 words of extra memory for PDF output out of 42996 (max. 10000000)
 
