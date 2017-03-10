@@ -1,14 +1,15 @@
 % !TEX root = writeUpMainTheorems.tex
-\textcolor{red}{There is no model.
-System are getting more complex, multimodal, lookup tables, thermodynamics, there is a need to ?prove properties about these systems, despite the fact that the modesl are mo complex are partially knowni Subcomponetns come from  different companies and black box.
-We still need to prove properties.
-The most important property in terms of control: stability.
-Even in the case when we have a model the stability is hard, for example Raphael, therefore we shouldn't expect we are gonna do better. The first step towards just based on switched systems. Because these are the very simple class of systems, resoanable it captures many applications.
-Even in the case of linear systems we cannot say anything. Here, we put the example where even the system is linear, we cannot say anything by just looking at the lyapunov functions decrease.}
+As the computational power of the computers has increased, so is the complexity of dynamical systems we can model with them. Today, the industrial dynamical systems does not only consist of simple differential or difference equations; they are multimodal, hybrid, and often contain variety of subcomponents such as lookup tables, delay differential equations, actuation delays and thermodynamic models. The current modeling paradigm is also highly distributed, in the sense that, some of the model subcomponents are developed by different parties and therefore their internal structure is partially, if not completely unknown to the end user.
+Hence, it is often virtually impossible to obtain simple analytical formulas for today's industrial scale dynamical system models. However, thanks to the advances in our computational power again, in spite of this increased complexity, for a notable subset of these models we can still efficiently perform simulations. Therefore, it is a natural question to ask whether we can provide formal analyses about certain properties of these systems based solely on the collected simulation data. In this paper, we focus on the analysis of one of the most important properties of dynamical systems in the context of control theory: stability.
 
-
-Stability analysis of dynamical systems is a challenging task. The existing methods to construct stability certificates such as Lyapunov functions require the knowledge of a model of the dynamical system of interest. \cite{lyapunov} However, in industrial applications, typically there is no explicit model of the system in the form of simple difference or differential equations. On the other hand, for a wide variety of scenarios, simulating dynamical systems with different model parameters and initial conditions is usually possible, and computationally efficient. Therefore, it is tempting to ask whether we can analyze the stability of a given dynamical system with an unknown model directly from its simulations. More formally, given a dynamical system as in:
-\begin{equation}\label{eq:dynamicalsystemGeneral}x_{k+1} = f(k, x_k),
+%\textcolor{red}{There is no model.
+%System are getting more complex, multimodal, lookup tables, thermodynamics, there is a need to ?prove properties about these systems, despite the fact that the modesl are mo complex are partially knowni Subcomponetns come from  different companies and black box.
+%We still need to prove properties.
+%The most important property in terms of control: stability.
+%Even in the case when we have a model the stability is hard, for example Raphael, therefore we shouldn't expect we are gonna do better. The first step towards just based on switched systems. Because these are the very simple class of systems, resoanable it captures many applications.
+%Even in the case of linear systems we cannot say anything. Here, we put the example where even the system is linear, we cannot say anything by just looking at the lyapunov functions decrease.}
+More formally, given a dynamical system as in:
+\begin{equation}\label{eq:dydnamicalsystemGeneral}x_{k+1} = f(k, x_k),
 \end{equation}
 where, $x_k \in \R^n$, k is index of time. Let $y_k := x_{k+1}$
 We ask the following question: \emph{
