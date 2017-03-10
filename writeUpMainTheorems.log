@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAR 2017 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAR 2017 17:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -480,19 +480,7 @@ LaTeX Warning: No \author given.
 
 (./introduction.tex
 
-LaTeX Warning: Citation `lyapunov' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation `lazar2' on page 1 undefined on input line 15.
+LaTeX Warning: Citation `lyapunov' on page 1 undefined on input line 13.
 
 [1
 
@@ -501,43 +489,56 @@ LaTeX Warning: Citation `lazar2' on page 1 undefined on input line 15.
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation `jungers' on page 2 undefined on input line 17.
+LaTeX Warning: Citation `topcu' on page 2 undefined on input line 27.
 
-) (./Preliminaries.tex [2]) (./campi.tex [3]
+
+LaTeX Warning: Citation `kapinski' on page 2 undefined on input line 27.
+
+
+LaTeX Warning: Citation `lazar' on page 2 undefined on input line 27.
+
+
+LaTeX Warning: Citation `lazar2' on page 2 undefined on input line 27.
+
+
+LaTeX Warning: Citation `jungers' on page 2 undefined on input line 29.
+
+[2]) (./Preliminaries.tex [3]) (./campi.tex
 Overfull \hbox (11.0181pt too wide) in paragraph at lines 24--25
 []\T1/cmr/m/n/10.95 (-20) We de-fine the lin-ear iso-mor-phism $\OT1/cmr/m/n/10
 .95 (-20) ^^H$ \T1/cmr/m/n/10.95 (-20) as the nat-u-ral map-ping []
  []
 
-
-LaTeX Warning: Citation `boyd' on page 4 undefined on input line 47.
-
 [4]
+
+LaTeX Warning: Citation `boyd' on page 5 undefined on input line 47.
+
 
 LaTeX Warning: Citation `campi' on page 5 undefined on input line 63.
 
+[5]
 
-LaTeX Warning: Citation `campi' on page 5 undefined on input line 89.
+LaTeX Warning: Citation `campi' on page 6 undefined on input line 89.
 
 
-LaTeX Warning: Citation `campi' on page 5 undefined on input line 90.
+LaTeX Warning: Citation `campi' on page 6 undefined on input line 90.
 
-[5]) (./measureThms.tex [6]
+) (./measureThms.tex [6]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 44.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
+) [7]
 
-LaTeX Warning: Citation `combettes' on page 7 undefined on input line 67.
+LaTeX Warning: Citation `combettes' on page 8 undefined on input line 67.
 
-[7]) (./epsilonToDelta.tex [8]
+[8]) (./epsilonToDelta.tex
 
 LaTeX Warning: Citation `boyd' on page 9 undefined on input line 20.
 
-[9] [10]
+[9] [10] [11]
 
-LaTeX Warning: Citation `sphericalCapRef' on page 11 undefined on input line 14
+LaTeX Warning: Citation `sphericalCapRef' on page 12 undefined on input line 14
 2.
 
 
@@ -554,9 +555,9 @@ T1/cmr/m/n/10.95 (-20) (\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (-20) ) \OMS/cm
 sy/m/n/10.95 6\OT1/cmr/m/n/10.95 (-20) =
  []
 
-[11])
+[12])
 No file writeUpMainTheorems.bbl.
-[12] (./writeUpMainTheorems.aux)
+[13] (./writeUpMainTheorems.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -565,13 +566,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6058 strings out of 493089
- 90845 string characters out of 6134842
- 180654 words of memory out of 5000000
- 9221 multiletter control sequences out of 15000+600000
- 40018 words of font info for 174 fonts, out of 8000000 for 9000
+ 6063 strings out of 493089
+ 90913 string characters out of 6134842
+ 180683 words of memory out of 5000000
+ 9224 multiletter control sequences out of 15000+600000
+ 40081 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,35p,1191b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,35p,1189b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/ayca/Library/texlive/2015/texmf-var/fonts/pk/ljfour/public/bbm/bbm10
 .657pk>{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1
 .enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
@@ -600,10 +601,10 @@ ist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/cm-super/sfti1095.pfb>
-Output written on writeUpMainTheorems.pdf (12 pages, 374716 bytes).
+Output written on writeUpMainTheorems.pdf (13 pages, 377438 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 158 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36353 words of extra memory for PDF output out of 42996 (max. 10000000)
 
