@@ -1,6 +1,6 @@
-%\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  
-\documentclass[letterpaper,11pt]{paper}
-\usepackage{amsthm}
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  
+%\documentclass[letterpaper,11pt]{paper}
+%\usepackage{amsthm}
 \usepackage[applemac]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[T1]{fontenc}
@@ -70,6 +70,7 @@
 \newcommand{\calX}{\mathcal{X}}
 \newcommand{\calZ}{\mathcal{Z}}
 \newcommand{\calL}{\mathcal{L}}
+\newcommand{\calS}{\mathcal{S}}
 %\newcommand{\calV}{\mathcal{V}}
 \newcommand{\supp}{\text{supp}}
 \newcommand{\Opt}{\text{Opt} }
@@ -85,28 +86,28 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newenvironment{definition}[1][Definition]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\title{Sampling Based Stability Analysis of Switched Linear Systems}
+\title{Sampling Based Stability Analysis of Black-box Switched Linear Systems with Probabilistic Guarantees}
 \begin{document}
 \maketitle
 
 \begin{section}{Introduction}
 \input{introduction}
 \end{section}
-\begin{section}{Preliminaries}
-\input{Preliminaries}
-\end{section}
-\begin{section}{Optimization Problem}
-\input{campi}
-\end{section}
-\begin{section}{Relating the measure of bad sets}
-\input{measureThms}
-\end{section}
-\begin{section}{Relating $\epsilon$ to $\delta$}
-\input{epsilonToDelta}
-\end{section}
-\begin{section}{Conclusions}
-\input{conclusions}
-\end{section}
+%\begin{section}{Preliminaries}
+%\input{Preliminaries}
+%\end{section}
+%\begin{section}{Optimization Problem}
+%\input{campi}
+%\end{section}
+%\begin{section}{Relating the measure of bad sets}
+%\input{measureThms}
+%\end{section}
+%\begin{section}{Relating $\epsilon$ to $\delta$}
+%\input{epsilonToDelta}
+%\end{section}
+%\begin{section}{Conclusions}
+%\input{conclusions}
+%\end{section}
 \bibliographystyle{plain}
 \bibliography{bibliography}
 

@@ -3,50 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "topcu"
-Warning--I didn't find a database entry for "kapinski"
-Warning--I didn't find a database entry for "lazar"
-Warning--I didn't find a database entry for "lazar2"
+Warning--I didn't find a database entry for "stabilityHard1"
+Warning--I didn't find a database entry for "stabilityHard2"
 Warning--I didn't find a database entry for "boyd"
-You've used 2 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            517 strings with 4266 characters,
-and the built_in function-call counts, 589 in all, are:
-= -- 58
-> -- 14
-< -- 0
-+ -- 6
-- -- 4
-* -- 41
-:= -- 105
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 8
+            551 strings with 5151 characters,
+and the built_in function-call counts, 2225 in all, are:
+= -- 231
+> -- 75
+< -- 3
++ -- 31
+- -- 24
+* -- 154
+:= -- 355
+add.period$ -- 21
+call.type$ -- 6
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 22
-empty$ -- 54
-format.name$ -- 4
-if$ -- 122
+cite$ -- 6
+duplicate$ -- 92
+empty$ -- 186
+format.name$ -- 24
+if$ -- 487
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 4
+int.to.str$ -- 6
+missing$ -- 7
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 24
 quote$ -- 0
-skip$ -- 14
+skip$ -- 66
 stack$ -- 0
-substring$ -- 52
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 170
+swap$ -- 26
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 22
 warning$ -- 0
-while$ -- 6
-width$ -- 3
-write$ -- 24
-(There were 5 warnings)
+while$ -- 21
+width$ -- 7
+write$ -- 77
+(There were 3 warnings)

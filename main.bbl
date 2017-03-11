@@ -1,13 +1,42 @@
 \begin{thebibliography}{1}
 
+\bibitem{lazar}
+Ruxandra Bobiti and Mircea Lazar.
+\newblock A delta-sampling verification theorem for discrete-time, possibly
+  discontinuous systems.
+\newblock In {\em Proceedings of the 18th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '15, pages 140--148, New York, NY,
+  USA, 2015. ACM.
+
 \bibitem{campi}
 Giuseppe~Carlo Calafiore.
 \newblock Random convex programs.
 \newblock {\em SIAM Journal on Optimization}, 20(6):3427--3464, 2010.
 
+\bibitem{jungersBook}
+Rapha\"{e}l Jungers.
+\newblock {\em {The joint spectral radius}}, volume 385 of {\em Lecture Notes
+  in Control and Information Sciences}.
+\newblock Springer-Verlag, Berlin, 2009.
+\newblock Theory and applications.
+
+\bibitem{kapinski}
+James Kapinski, Jyotirmoy~V. Deshmukh, Sriram Sankaranarayanan, and Nikos
+  Arechiga.
+\newblock Simulation-guided lyapunov analysis for hybrid dynamical systems.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 133--142, New York, NY,
+  USA, 2014. ACM.
+
 \bibitem{sphericalCapRef}
 S.~Li.
 \newblock Concise formulas for the area and volume of a hyperspherical cap.
 \newblock {\em Asian Journal of Mathematics \& Statistics}, 4:66--70, 2011.
+
+\bibitem{topcu}
+Ufuk Topcu, Andrew Packard, and Peter Seiler.
+\newblock Local stability analysis using simulations and sum-of-squares
+  programming.
+\newblock {\em Automatica}, 44(10):2669 -- 2675, 2008.
 
 \end{thebibliography}
