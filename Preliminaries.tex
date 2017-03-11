@@ -6,15 +6,3 @@ We denote by $M$ the set $\{1,2,\dots,m\}$, ($m \in \N_{>0}$) and consider a swi
 \end{equation}
 where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to M$ is the switching sequence. Let $y_k := x_{k+1}$. 
 We assume that we only know the number of modes $m$, the input $x_k$ and the output $y_k$ at each time $k$. We ignore what are the matrices and the index of the matrix which is applied at every time. We consider the following problem.
-
-In this case the Lyapunov exponent is known as the Joint Spectral Radius of the set of matrices, which can be alternatively defined as follows:
-\begin{definition}  \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
-$$\rho(\cM) =\lim_{t\rightarrow \infty} \max_{i_1,\dots, i_t}\{||A_{i_1} \dots A_{i_t}||^{1/t}: A_i\in\cM\}. $$
-\end{definition}
-
-\begin{remark}
- Note that one can scale the problem because the JSR is homogeneous:
-$$\rho(\cM/\lambda)=\rho(\cM)/\lambda\, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\lambda,\sigma(t)).$$
-\end{remark}
-
-Under certain conditions \textcolor{red}{Where is this?} deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 

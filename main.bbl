@@ -34,6 +34,11 @@ James Kapinski, Jyotirmoy~V. Deshmukh, Sriram Sankaranarayanan, and Nikos
   Systems: Computation and Control}, HSCC '14, pages 133--142, New York, NY,
   USA, 2014. ACM.
 
+\bibitem{sphericalCapRef}
+S.~Li.
+\newblock Concise formulas for the area and volume of a hyperspherical cap.
+\newblock {\em Asian Journal of Mathematics \& Statistics}, 4:66--70, 2011.
+
 \bibitem{topcu}
 Ufuk Topcu, Andrew Packard, and Peter Seiler.
 \newblock Local stability analysis using simulations and sum-of-squares

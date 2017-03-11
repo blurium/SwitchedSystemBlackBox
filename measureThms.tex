@@ -13,7 +13,8 @@ and
 \end{equation*}
 We have 
 \begin{eqnarray*}
-\mu(\calA) = \mu(\sqcup_{1 \leq i \leq 2^m} (\calA_i, B_i)) &=& \sum_{1 \leq i \leq 2^m} \mu( (\calA_i, B_i)) \\
+\mu(\calA) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calA_i, B_i)) \\
+&=& \sum_{1 \leq i \leq 2^m} \mu( (\calA_i, B_i)) \\
  &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M ((\calA_i, B_i)) \\
  & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calA_i) \mu_M (B_i).
 \end{eqnarray*}
@@ -34,7 +35,7 @@ We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L 
 
 Let us denote by $B_{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We recall the following result:
 
-\begin{lemma} 
+\begin{lemma} \label{lemma:mappingMeasures}
 Let $\psi$ a smooth change of coordinates in $\mathbb{R}^n$ and $\cal{D} \subset \mathbb{R}^n$, whose image under $\psi$ is $\cal{D}' \subset \mathbb{R}^n$. We provide $\R^n$ with the classical Borel $\sigma$-algebra and the Lebesgue measure $\lambda$. Then
 \begin{equation}
 \lambda(\calD') = \int_{x \in \calD} 1_{x \in \calD} |\det J(\psi(x))| d\lambda(x),
@@ -53,13 +54,8 @@ which becomes when $\psi \in \mathcal{L}(\R^n)$ (and thus $\forall\ x \in \R^n, 
 \end{theorem}
 
 \begin{proof}
-Let denote $C= L^{-1}(B_{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $B_{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$. 
-
-We have then $\sigma^{n-1}(V') = \lambda(B_{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C))$.
-
-Hence $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$.
-
-By the former lemma, we have that $ \sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) = \leq \det(L^{-1}) \left(\frac{1}{\lambda_{\min}(L^{-1})}\right)^n \sigma^{n-1}(V_\sphere)$.
+We denote $C:= L^{-1}(B_{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $B_{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then $\sigma^{n-1}(V') = \lambda(B_{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C))$, which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. By Lemma \ref{lemma:mappingMeasures}, we have
+\begin{equation*} \sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \det(L^{-1}) \left(\frac{1}{\lambda_{\min}(L^{-1})}\right)^n \sigma^{n-1}(V_\sphere). \end{equation*}
 
 %Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
 %\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.

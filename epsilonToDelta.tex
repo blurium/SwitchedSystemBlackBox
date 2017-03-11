@@ -1,4 +1,4 @@
-% !TEX root = writeUpMainTheorems.tex
+% !TEX root = main.tex
 We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics. In this section, we show how to relate $\epsilon'$ to $\delta$ in the statement of the Theorem \ref{thm:mainTheorem}. We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. We define the distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$.
 
 \begin{definition}[Spherical Cap]We define the \emph{spherical cap} on $S$ for a given hyperplane $c^Tx = k$ as:
@@ -87,7 +87,8 @@ Now we are ready to present the following lemma which is the key to proving our 
 
 \begin{proof} Let $X_S := \conv(S \setminus X)$.
 Since the distance function $\dist$ is continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
-\begin{equation}\label{deltaSupporting}\Delta(X) = \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) = \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{equation} 
+\begin{eqnarray}\nonumber \Delta(X) &=& \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) \\
+\label{deltaSupporting}&=& \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
 Next, consider the supporting hyperplane of $X_S$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that, this supporting hyperplane is unique because it is also a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ as well, which is unique. This can be seen from the fact that:
 \begin{equation*} \partial \ball_{\Delta(X)} \subseteq \partial X_S \subseteq \left\{x : c^Tx = k\right\}.\end{equation*}
 Then we have:

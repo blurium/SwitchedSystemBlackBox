@@ -1,0 +1,18 @@
+% !TEX root = main.tex
+To make our reasoning clearer, we introduce the \emph{Lyapunov exponent} of the system, which is a numerical quantity describing its stability.
+\begin{definition}   Given a dynamical system as in \eqref{eq:dynamicalsystem} its \emph{Lyapunov exponent} is given by
+$$\rho =\inf{\{r:\,\forall x_0, \exists C\in \re^+: \quad x(0)=x_0 \Rightarrow x(t)\leq Cr^t\}}. $$
+\end{definition}
+Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
+
+In the case of switched linear systems, the Lyapunov exponent is known as the Joint Spectral Radius of the set of matrices, which can be alternatively defined as follows:
+\begin{definition}  \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
+$$\rho(\cM) =\lim_{t\rightarrow \infty} \max_{i_1,\dots, i_t}\{||A_{i_1} \dots A_{i_t}||^{1/t}: A_i\in\cM\}. $$
+\end{definition}
+
+\begin{remark}
+ Note that one can scale the problem because the JSR is homogeneous:
+$$\rho(\cM/\lambda)=\rho(\cM)/\lambda\, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\lambda,\sigma(t)).$$
+\end{remark}
+
+Under certain conditions \textcolor{red}{Where is this?} deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
