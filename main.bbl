@@ -13,6 +13,12 @@ Giuseppe~Carlo Calafiore.
 \newblock Random convex programs.
 \newblock {\em SIAM Journal on Optimization}, 20(6):3427--3464, 2010.
 
+\bibitem{jungers_lncis}
+R.~M. Jungers.
+\newblock The joint spectral radius, theory and applications.
+\newblock In {\em Lecture Notes in Control and Information Sciences}, volume
+  385. Springer-Verlag, Berlin, 2009.
+
 \bibitem{jungersBook}
 Rapha\"{e}l Jungers.
 \newblock {\em {The joint spectral radius}}, volume 385 of {\em Lecture Notes
@@ -27,11 +33,6 @@ James Kapinski, Jyotirmoy~V. Deshmukh, Sriram Sankaranarayanan, and Nikos
 \newblock In {\em Proceedings of the 17th International Conference on Hybrid
   Systems: Computation and Control}, HSCC '14, pages 133--142, New York, NY,
   USA, 2014. ACM.
-
-\bibitem{sphericalCapRef}
-S.~Li.
-\newblock Concise formulas for the area and volume of a hyperspherical cap.
-\newblock {\em Asian Journal of Mathematics \& Statistics}, 4:66--70, 2011.
 
 \bibitem{topcu}
 Ufuk Topcu, Andrew Packard, and Peter Seiler.

@@ -1,0 +1,20 @@
+% !TEX root = main.tex
+\begin{theorem}
+Consider a black-box switching system and $N$ samples of its dynamics as in \eqref{eq:switchedSystem}. Consider the optimal solution $(\lambda^*,P)$ which minimizes $\lambda$ in \eqref{eq:lowerbound}. For any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta\cdot\lambda^*.$ 
+% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
+\end{theorem}
+
+\begin{proof}
+Let us fix $\delta>1$ and denote $E_P$ the ellipsoid described by $P$ (i.e., $\{x:x^TPx= 1\}$), and denote $\epsilon$ such that for any subset $S_\epsilon$ of measure $\epsilon,$ 
+$$ E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon) .$$ 
+  	
+Now, denoting $N$ the number of observations available, compute $0< \beta< 1$ such that $$N=N(\epsilon,\beta)$$ in Theorem \ref{thm:campi} above. 
+
+Summarizing, the equation above means that with high probability, one has that \eqref{eq:lowerbound} is satisfied for all $x\in \re^n,$ except for a set of measure $\epsilon.$  Let us denote $S_\epsilon$ this set of violated constraints.  Thus, $$(\cM/\lambda^*) \convhull (E_P\setminus S_\epsilon) \subset \convhull (E_P\setminus S_\epsilon).$$  Now, by definition of $\epsilon,$ one has
+
+$$ E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon) ,$$ and so
+$$
+(\cM/\delta \lambda^*) \convhull (E_P \setminus S_\epsilon) \subset \convhull (E_P\setminus S_\epsilon).$$
+
+Then, $\delta\lambda$ is un upper bound on $\rho,$ with a confidence $\beta.$ 
+\end{proof}
