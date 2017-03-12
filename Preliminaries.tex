@@ -1,8 +1,14 @@
 % !TEX root = main.tex
-We consider the usual Hilbert finite normed vector space $(\R^n,\ell_2)$, $n \in \mathbb{N}_{> 0}$, $\ell_2$ the classical euclidean norm. We denote a unit ball in $\R^n$ with $\ball$ and unit sphere in $\R^n$ of radius $r$ as $\sphere$. We only denote the radius $r$ explicitly as in $\ball_r$ and $\sphere_r$, when $r$ is different than $1$. We denote by $\proj_{\sphere}$ the (convex) projector on $\sphere$. We denote the set of real symmetric matrices of size $n$ by $\calS^n(\R)$, and the set of linear functions in $\R^n$ by $\mathcal{L}(\mathbb{R}^n)$. We denote the ellipsoid described by the matrix $P \in \mathbb{S}^n$ as $E_P$. We denote the homothety of ratio $\lambda$ by $\calH_{\lambda}$.
+We consider the usual Hilbert finite normed vector space $(\R^n,\ell_2)$, $n \in \mathbb{N}_{> 0}$, $\ell_2$ the classical euclidean norm. We denote a unit ball in $\R^n$ with $\ball$ and unit sphere in $\R^n$ of radius $r$ as $\sphere$. We only denote the radius $r$ explicitly as in $\ball_r$ and $\sphere_r$, when $r$ is different than $1$. We denote by $\proj_{\sphere}$ the (convex) projector on $\sphere$. We denote the set of real symmetric matrices of size $n$ by $\calS^n(\R)$, and the set of linear functions in $\R^n$ by $\mathcal{L}(\mathbb{R}^n)$. We denote the ellipsoid described by the matrix $P \in \mathbb{S}^n$ as $E_P$. We denote the homothety of ratio $r$ by $\calH_{r}$. 
+%We denote by $\wp(M)$ the power set of $M$.
 
-We denote by $M$ the set $\{1,2,\dots,m\}$, ($m \in \N_{>0}$) and consider a switched linear system of modes $\calM = \{A_1, A_2,\dots, A_m\} \subset \R^{n \times n}$ indexed by $M$. We observe the system: 
-\begin{equation}\label{eq:dynamicalsystem}x_{k+1} = A_{\sigma(k)}x_k,
-\end{equation}
-where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to M$ is the switching sequence. Let $y_k := x_{k+1}$. 
-We assume that we only know the number of modes $m$, the input $x_k$ and the output $y_k$ at each time $k$. We ignore what are the matrices and the index of the matrix which is applied at every time. We consider the following problem.
+%We denote by $M$ the set $\{1,2,\dots,m\}$, ($m \in \N_{>0}$) and consider a switched linear system of modes $\calM = \{A_1, A_2,\dots, A_m\} \subset \R^{n \times n}$ indexed by $M$. We observe the system: 
+%\begin{equation}\label{eq:dynamicalsystem}x_{k+1} = A_{\sigma(k)}x_k,
+%\end{equation}
+%where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to M$ is the switching sequence. Let $y_k := x_{k+1}$. 
+%We assume that we only know the number of modes $m$, the input $x_k$ and the output $y_k$ at each time $k$. We ignore what are the matrices and the index of the matrix which is applied at every time. We consider the following problem.
+
+We consider the classical unsigned and finite uniform spherical measure on $\sphere$, commonly denoted by $\sigma^{n-1}$. It is associated to the spherical Borelian $\sigma$-algebra and is derived from the Lebesgue measure $\lambda$. We have $\mathcal{B}_{\sphere}$ with $\calA \in \mathcal{B}_{\sphere}$ if and only if the sector $t \calA$, $t \in [0,1]$ is in $\mathcal{B}_{\mathbb{R}^n}$. The spherical measure $\sigma^{n-1}$ is defined by
+$$\forall\ \calA \in \mathcal{B}_{\sphere}, \sigma(A) = \frac{\lambda(tA)}{\lambda(B)}. $$
+In other words, the spherical measure of a subset of the sphere is related to the Lebesgue measure of the sector of the unit ball it induces. Notice that $\sigma^{n-1}(\sphere) = 1$.
+

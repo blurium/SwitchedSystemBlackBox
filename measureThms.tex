@@ -1,7 +1,4 @@
 % !TEX root =main.tex
-
-For a given sampling $\omega \in X^{N*}$, let $V:=\{x \in X: f(p^*(\omega),x) > 0\}$, i.e., the set of points for which at least one constraint is violated, and $V_\sphere, V_M$ be its projections on $\sphere$ and $M$, respectively. 
-
 \begin{lemma}$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1}$, where $m_1 = \min \{\mu_M(\{k\}), k \in M\}$.\end{lemma}
 \begin{proof}
 
@@ -22,7 +19,7 @@ Let $m_1$ be the minimum value  of $\mu_M$ on its atoms: $m_1 = \min \{\mu_M(\{k
 \begin{equation}
 \sigma^{n-1}(\calA_{\sphere}) \leq \frac{\mu(\calA)}{m_1}.
 \end{equation}
-This proves our statement by taking $\calA = V_{\sphere}$.
+This proves our statement by taking $\calA = V$.
 %Remark: In our case, we consider the special case where measures $\mu_1$ and $\mu_2$ are uniform and of total measure $1$ on $\sphere$ and $M$. $\mu_1$ is the classical spherical measure $\sigma^n$ and $\mu_2$ the classical uniform probability measure on $M$. We have then $m_2 = \frac{1}{m}$ and the inequality becomes:
 \end{proof}
 
@@ -30,13 +27,10 @@ This proves our statement by taking $\calA = V_{\sphere}$.
 \begin{equation*}\sigma^{n-1}(V_\sphere) \leq m \mu(V). \end{equation*}
 \end{corollary}
 
-We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\mathbb{R}^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\mathbb{R})$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that, $L = P^{1/2}$. For the rest of the write-up, we denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to upper bound $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\R)$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that, $L = P^{1/2}$. For the rest of the write-up, we denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to upper bound $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
 
-
-Let us denote by $B_{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We recall the following result:
-
-\begin{lemma} \label{lemma:mappingMeasures}
-Let $\psi$ a smooth change of coordinates in $\mathbb{R}^n$ and $\cal{D} \subset \mathbb{R}^n$, whose image under $\psi$ is $\cal{D}' \subset \mathbb{R}^n$. We provide $\R^n$ with the classical Borel $\sigma$-algebra and the Lebesgue measure $\lambda$. Then
+\begin{remark} \label{rem:mappingMeasures}
+If $\psi$ is a smooth change of coordinates in $\mathbb{R}^n$ and $\cal{D}$ $\subset \R^n$, whose image under $\psi$ is $\cal{D}'$ $\subset \R^n$, then
 \begin{equation}
 \lambda(\calD') = \int_{x \in \calD} 1_{x \in \calD} |\det J(\psi(x))| d\lambda(x),
 \end{equation}
@@ -44,18 +38,17 @@ which becomes when $\psi \in \mathcal{L}(\R^n)$ (and thus $\forall\ x \in \R^n, 
 \begin{equation}
 \lambda(\calD') = |\det(\psi)| \lambda(\calD).
 \end{equation}
-\end{lemma}
-
+\end{remark}
 
 \begin{theorem} \label{lemma:lip}
 \begin{equation}
-\sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \det(L^{-1}) \left(\frac{1}{\lambda_{\min}(L^{-1})}\right)^n \sigma^{n-1}(V_\sphere).
+\sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \frac{\det(L^{-1})}{\left(\lambda_{\min}(L^{-1})\right)^n} \sigma^{n-1}(V_\sphere).
 \end{equation}   
 \end{theorem}
 
 \begin{proof}
-We denote $C:= L^{-1}(B_{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $B_{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then $\sigma^{n-1}(V') = \lambda(B_{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C))$, which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. By Lemma \ref{lemma:mappingMeasures}, we have
-\begin{equation*} \sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \det(L^{-1}) \left(\frac{1}{\lambda_{\min}(L^{-1})}\right)^n \sigma^{n-1}(V_\sphere). \end{equation*}
+Let us denote by $B_{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(B_{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $B_{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then 
+$$\sigma^{n-1}(V') = \lambda(B_{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C)),$$ which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
 
 %Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
 %\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.
