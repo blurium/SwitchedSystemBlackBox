@@ -1,23 +1,29 @@
 % !TEX root = main.tex
-For the lower bound, we will leverage the following theorem from the switching system literature.
+We start by proving the lower bound, which is based on the following theorem from the switched linear system literature.
 
 \begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
-For any bounded set of matrices such that $\rho(\cM)<1/\sqrt(n),$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succeq 0$ such that $$\forall A\in \cM,\, A^TPA\preceq P. $$
+For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$
 \end{theorem}
 
-The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
+The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by collecting $N$ observation pairs.
+%
+%The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
+%
 
-\begin{eqnarray}
-\nonumber \mbox{min}&&\lambda\\
- s.t.& & \label{eq:lowerbound} \forall 1\leq i \leq N,\ (y_i^T P y_i)/\lambda^2 \leq x_i^TPx_i\\
-\nonumber && P \succeq 0.
-\end{eqnarray}
-Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
+%Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
 
 \begin{theorem}
-Let $\lambda^*$ be the minimum $\lambda$ such that \eqref{eq:lowerbound} above has a solution.  If $\lambda^*<\infty,$ one has $$\rho(\cM) \geq \lambda^*/\sqrt(n) .$$
+For a given sampling: $$\omega = \{x_1, x_2, \ldots, x_N\},$$ let $\gamma^*(\omega, N)$ be the optimal solution of the following optimization problem:
+\begin{eqnarray}
+\nonumber \mbox{min}&&\gamma\\
+ s.t.& & \label{eq:lowerbound}\frac{(y_i^T P y_i)}{\gamma^2} \leq x_i^TPx_i,\,  \forall \,i : \,1\leq i \leq N\\
+\nonumber && P \succ 0.
+\end{eqnarray}
+If $\gamma^*(\omega, N)<\infty,$ we have:
+$$\rho(\cM) \geq \frac{\gamma^*}{\sqrt{n}}.$$
+
 \end{theorem}
 \begin{proof}
-Just apply Theorem \ref{thm:john} to $\cM /(\lambda^*-\epsilon),$ for any $\epsilon>0.$ Since this latter set has no CQLF, we obtain that $\rho(\cM)/\lambda^*\geq 1/\sqrt{n}.$
+Using Remark \ref{rem:scaling}, for any $\epsilon > 0$, $\frac{\cM}{(\gamma^*-\epsilon),}$ has no CQLF. Then, applying Theorem \ref{thm:john} we get
+\begin{equation*}\frac{\rho(\cM)}{\gamma^*} \geq \frac{1}{\sqrt{n}}.\end{equation*}
 \end{proof}
-This result could be improved in several ways: first, it is classical in the JSR literature to replace the CQLF with a SOS polynomial of degree $2d,$ $d>1.$ this narrows the $1/\sqrt(n)$ accuracy factor, up to one when $d\rightarrow \infty.$  

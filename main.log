@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 MAR 2017 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,13 +602,9 @@ LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 9.
 (./Preliminaries.tex) (./stability.tex
 
 LaTeX Warning: Reference `eq:dynamicalsystem' on page 2 undefined on input line
- 3.
+ 15.
 
-) (./lowerBound.tex) (./mainTheoremProof.tex
-
-LaTeX Warning: Reference `blah' on page 2 undefined on input line 2.
-
-[2]) (./mainResult.tex
+) (./lowerBound.tex) (./mainTheoremProof.tex [2]) (./mainResult.tex
 Overfull \hbox (1.78114pt too wide) detected at line 29
 [] []
  []
@@ -632,16 +628,16 @@ Underfull \hbox (badness 5862) in paragraph at lines 75--77
 
 ) (./epsilonToDelta.tex
 
-LaTeX Warning: Citation `boyd' on page 4 undefined on input line 20.
+LaTeX Warning: Citation `boyd' on page 4 undefined on input line 21.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
  \T1/ptm/m/it/10 (+20) Proof:  \T1/ptm/m/n/10 (+20) Note that $[]\OT1/cmr/m/n/1
 0 ([] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 [4]
-Underfull \hbox (badness 8189) in paragraph at lines 139--141
+Underfull \hbox (badness 8189) in paragraph at lines 140--142
 \T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 := \OML/cmm/m/it
 /10 I[] []$ \T1/ptm/m/n/10 (+20) and $\OT1/cmr/m/n/10 ^^@(\OML/cmm/m/it/10 x\OT
 1/cmr/m/n/10 ) =
@@ -650,10 +646,10 @@ Underfull \hbox (badness 8189) in paragraph at lines 139--141
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 161.
+(amsmath)                 on input line 162.
 
 
-Overfull \hbox (8.86882pt too wide) detected at line 165
+Overfull \hbox (8.86882pt too wide) detected at line 166
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
@@ -684,10 +680,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6468 strings out of 493089
- 98931 string characters out of 6134842
- 196309 words of memory out of 5000000
- 9613 multiletter control sequences out of 15000+600000
+ 6470 strings out of 493089
+ 98982 string characters out of 6134842
+ 194339 words of memory out of 5000000
+ 9615 multiletter control sequences out of 15000+600000
  122803 words of font info for 241 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1259b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -710,7 +706,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 229999 bytes).
+Output written on main.pdf (5 pages, 228795 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
