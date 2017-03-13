@@ -1,36 +1,43 @@
 % !TEX root =main.tex
+Given a set $V$ of points violating the optimization constraints, we look first for an upper-bound of the measure of points on $\sphere$ that violate at least one constraint.
+
 \begin{lemma}$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1}$, where $m_1 = \min \{\mu_M(\{k\}), k \in M\}$.\end{lemma}
 \begin{proof}
 
-Let $\calA \subset \Sigma$, $\calA_{\sphere} = \pi_{\sphere} (\calA)$ and $\calA_M = \pi_M (\calA)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{B_i, i \in \{1,2, \ldots 2^m\} \}$. Then $\calA$ is the disjoint union $\calA = \sqcup_{1 \leq i \leq 2^m} (\calA_i, B_i)$ where $\calA_i = \pi_M^{-1} (B_i) \in \sphere$. We notice that 
-$\calA_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calA_i$, 
+Let $\calX \subset \Sigma$, $\calX_{\sphere} = \pi_{\sphere} (\calX)$ and $\calX_M = \pi_M (\calX)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $\calX$ is the disjoint union $\calX = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i = \pi_M^{-1} (\calM_i) \in \sphere$. We notice that 
+$\calX_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
 and
 \begin{equation*}
-\sigma^{n-1} (\calA_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calA_i).
+\sigma^{n-1} (\calX_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
 \end{equation*}
 We have 
 \begin{eqnarray*}
-\mu(\calA) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calA_i, B_i)) \\
-&=& \sum_{1 \leq i \leq 2^m} \mu( (\calA_i, B_i)) \\
- &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M ((\calA_i, B_i)) \\
- & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calA_i) \mu_M (B_i).
+\mu(\calX) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
+&=& \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
+ &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M ((\calS_i, \calM_i)) \\
+ & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
 \end{eqnarray*}
-Let $m_1$ be the minimum value  of $\mu_M$ on its atoms: $m_1 = \min \{\mu_M(\{k\}), k \in M\}$ (recall that $m_1 > 0$). Then since $ \forall \ i$, $\mu_M(B_i) \geq m_1$, we have
+Let $m_1$ be the minimum value  of $\mu_M$ on its atoms: $m_1 = \min \{\mu_M(\{k\}), k \in M\}$ (recall that $m_1 > 0$). Then since $ \forall \ i$, $\mu_M(\calM_i) \geq m_1$, we have
 \begin{equation}
-\sigma^{n-1}(\calA_{\sphere}) \leq \frac{\mu(\calA)}{m_1}.
+\sigma^{n-1}(\calX_{\sphere}) \leq \frac{\mu(\calX)}{m_1}.
 \end{equation}
-This proves our statement by taking $\calA = V$.
+This proves our statement by taking $\calX = V$.
 %Remark: In our case, we consider the special case where measures $\mu_1$ and $\mu_2$ are uniform and of total measure $1$ on $\sphere$ and $M$. $\mu_1$ is the classical spherical measure $\sigma^n$ and $\mu_2$ the classical uniform probability measure on $M$. We have then $m_2 = \frac{1}{m}$ and the inequality becomes:
 \end{proof}
+
+We recall that we consider the specific case of a uniform sampling both on $\sphere$ and on $M$. 
 
 \begin{corollary} \label{cor:measure}When the modes are sampled from the set $M$ uniformly random, 
 \begin{equation*}\sigma^{n-1}(V_\sphere) \leq m \mu(V). \end{equation*}
 \end{corollary}
 
-We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\R)$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that, $L = P^{1/2}$. For the rest of the write-up, we denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to upper bound $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+We have now a measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting.
+
+We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\R)$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
+From now, we look at $L^{-1}$, which maps points from $\sphere$ to an ellipsoid, that we will project on the sphere. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to overapproximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
 
 \begin{remark} \label{rem:mappingMeasures}
-If $\psi$ is a smooth change of coordinates in $\mathbb{R}^n$ and $\cal{D}$ $\subset \R^n$, whose image under $\psi$ is $\cal{D}'$ $\subset \R^n$, then
+If $\psi$ is a smooth change of coordinates in $\R^n$ and $\cal{D}$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $\cal{D}' \subset \R^n$, then
 \begin{equation}
 \lambda(\calD') = \int_{x \in \calD} 1_{x \in \calD} |\det J(\psi(x))| d\lambda(x),
 \end{equation}
@@ -47,8 +54,8 @@ which becomes when $\psi \in \mathcal{L}(\R^n)$ (and thus $\forall\ x \in \R^n, 
 \end{theorem}
 
 \begin{proof}
-Let us denote by $B_{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(B_{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $B_{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then 
-$$\sigma^{n-1}(V') = \lambda(B_{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C)),$$ which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
+Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then 
+$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C)),$$ which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
 
 %Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
 %\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.
