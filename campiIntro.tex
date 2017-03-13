@@ -4,7 +4,7 @@
 
 %In this section we suppose that we do not observe the modes, but only the pairs $(x_k,y_k).$
 %The idea is that if we have an ellipsoid that is contracted for all our observed pairs $(x,y),$  it is not enough to imply stability, because we observed only some possible behaviours of the dynamics.  However, suppose that we observed that the $\lambda-$contraction of the polytope $\cP$ is satisfied for many values of $x,$ then, it is tempting to extrapolate our observation, and claim that (noting $y=f(x) $ as always),
-Before proceeding to prove Theorem \ref{thm:mainTheorem0} we introduce some further notation that will help us along the way. Let us consider $X = \sphere \times M$ the Cartesian product of the unit sphere $\sphere$ with $M$ and. Every element of $X$ can be written as $z = (s_z, k_z)$ with $s_z \in \sphere$ and $k_z \in M$. For notational simplicity, we drop the subscript $z$ whenever it is clear from the context. We define the classical projections of $X$ on the sphere and $M$ by $\pi_{\sphere}: X \to \sphere$ and $\pi_M: X \to M$.
+Before proceeding to prove Theorem \ref{thm:mainTheorem0} we introduce some further notation that will help us along the way. Let us consider $Z = \sphere \times M$ the Cartesian product of the unit sphere $\sphere$ with $M$ and. Every element of $Z$ can be written as $z = (x_z, k_z)$ with $x_z \in \sphere$ and $k_z \in M$. For notational simplicity, we drop the subscript $z$ whenever it is clear from the context. We define the classical projections of $Z$ on the sphere and $M$ by $\pi_{\sphere}: Z \to \sphere$ and $\pi_M: Z \to M$.
 
 %The first statement in the Theorem \ref{thm:mainTheorem0} is equation \eqref{eqn:exceptEps}, which states that $\gamma^*$ and $P$ satisfying:
 %\begin{equation*} (A_ix_i)^TP(A_ix_i)\leq \gamma^*x_i^TPx_i, \forall (x_i, A_i) \in \omega_N\end{equation*}
@@ -14,7 +14,7 @@ To obtain, an upper bound on $\rho$ the optimization problem we would like to so
 \begin{aligned}
 & \text{min} & & \gamma \\
 & \text{s.t.} 
-&  & (As)^TP(As) \leq \gamma s^TPs,\,\forall A \in \calM, \,\forall\, s \in \sphere,\\
+&  & (Ax)^TP(Ax) \leq \gamma x^TPx,\,\forall A \in \calM, \,\forall\, x \in \sphere,\\
 & && P \succ 0. \\
 \end{aligned}
 \end{equation}
@@ -25,7 +25,7 @@ Let $\gamma^*(\omega_N)$ be the optimal solution of \eqref{eqn:campiOpt01}. We n
 \begin{aligned}
 & \text{find} & & P \\
 & \text{s.t.} 
-&  & (A_is_i)^TP(A_is_i) \leq \gamma^* s_i^TPs_i,\,\forall (s_i,A_i) \in \omega_N \\
+&  & (A_k x)^TP(A_k x) \leq \gamma^* x^TPx,\,\forall (x,k) \in \omega_N \\
 & && P \succ 0. \\
 \end{aligned}
 \end{equation}
@@ -35,14 +35,14 @@ We can rewrite \eqref{eqn:campiOpt02} in the following form:
 \begin{aligned}
 & \text{find} & & P \\
 & \text{s.t.} 
-& & f_{\gamma^*}(P, x) \leq 0,\,\forall A_i \in \calM, \,\forall\, s \in \sphere, \end{aligned}
+& & f_{\gamma^*}(P, z) \leq 0,\,\forall\ z \in \sphere \times M\end{aligned}
 \end{equation}
-where $f_{\gamma^*}(P,x) = \max(f_1(P, x), f_2(P))$, and 
+where $f_{\gamma^*}(P,z) = \max(f_1(P, z), f_2(P))$, and 
 \begin{eqnarray*}
-f_1(P, x) &:=& (A_is_i)^TP(A_is_i) - {\gamma^*}^2 s_i^TPs_i \\
+f_1(P, z) &:=& (A_k x)^TP(A_k x) - {\gamma^*}^2 x^TPx \\
 f_2(P) &:=& \lambda_{\max}(-P) +1,
 \end{eqnarray*}
-We denote by the optimization problem \eqref{eqn:campiOpt01} $\Opt(\omega_N)$ for the rest of the paper. Let $P(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define constraint violation property next.
+We denote by  $\Opt(\omega_N)$ the optimization problem \eqref{eqn:campiOpt01} for the rest of the paper. Let $P(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define constraint violation property next.
 
 \begin{definition}(from \cite{campi}) The \emph{constraint violation probability} is defined as:
 \begin{equation}\label{eqn:violation}
