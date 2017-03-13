@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -613,7 +613,7 @@ Overfull \hbox (1.78114pt too wide) detected at line 29
 LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 96.
 
 
-) (./campiPreliminaries.tex) (./measureThms.tex [3]
+[3]) (./campiPreliminaries.tex) (./measureThms.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--2
 []$\OML/cmm/m/it/10 ^^[[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 ^^T []$\T1/ptm/m/n/10 (+20) , where $\OML/cmm/m/it/10 m[] \OT
@@ -659,7 +659,8 @@ OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
 msb/m/n/10 N\OML/cmm/m/it/10 :
  []
 
-) (./experiments.tex) (./futureWork.tex) (./conclusions.tex) (./main.bbl)
+) (./experiments.tex) (./futureWork.tex) (./conclusions.tex) (./main.bbl
+[5])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -671,7 +672,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[5] (./main.aux)
+[6
+
+] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -680,11 +683,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6470 strings out of 493089
- 98982 string characters out of 6134842
- 196339 words of memory out of 5000000
- 9615 multiletter control sequences out of 15000+600000
- 122803 words of font info for 241 fonts, out of 8000000 for 9000
+ 6474 strings out of 493089
+ 99024 string characters out of 6134842
+ 196349 words of memory out of 5000000
+ 9616 multiletter control sequences out of 15000+600000
+ 122933 words of font info for 243 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1259b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -706,10 +709,10 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 228659 bytes).
+Output written on main.pdf (6 pages, 230111 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26625 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -1,5 +1,11 @@
 % !TEX root = main.tex
-In this section, we show that using the Property \ref{property:convpres} and Property \ref{property:homogeneity}, 
+In this section, we show that using the Property \ref{property:convpres} and Property \ref{property:homogeneity}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. The main theorem in this section which formalizes this is based on the following theorem, for whose proof we devote most of this section:
+
+\begin{theorem} \label{thm:mainTheorem0} For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega$ and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that:
+\begin{equation}E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon),
+\end{equation}
+for some $P \prec 0$.
+\end{theorem}
 
 \begin{theorem}[Main Theorem] \label{thm:mainTheorem} For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega$, and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that with probability at least $\beta$, $\rho \leq \frac{\gamma^*(\omega, N)}{\delta}$. Moreover, $\lim_{N \to \infty} \delta(N) = 1$.
 \end{theorem}
@@ -8,7 +14,7 @@ In this section, we show that using the Property \ref{property:convpres} and Pro
 %% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
 %\end{theorem}
 \begin{proof}
-Let us fix $\delta>1$ and denote $E_P$ the ellipsoid described by $P$ (i.e., $\{x:x^TPx= 1\}$), and denote $\epsilon$ such that for any subset $S_\epsilon$ of measure $\epsilon,$ 
+Fix $\delta<1$ and denote $E_P$ the ellipsoid described by $P$ (i.e., $\{x:x^TPx= 1\}$), and denote $\epsilon$ such that for any subset $S_\epsilon$ of measure $\epsilon,$ 
 $$ E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon) .$$ 
   	
 Now, denoting $N$ the number of observations available, compute $0< \beta< 1$ such that $$N=N(\epsilon,\beta)$$ in Theorem \ref{thm:campi} above. 

@@ -3,8 +3,8 @@ A switched linear system is in the form:
 \begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\sigma(k)}x_k,\end{equation}
 where, $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k$. There are two important properties of switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
-The dynamical system \eqref{eq:switchedSystem} is a homogeneous function of the state space:
-$$x'_0=\lambda x_0 \Rightarrow x'(t)=\lambda x(t). $$
+Let $\xi(x, k)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$, starting from the initial condition $x$. The dynamical system \eqref{eq:switchedSystem} is a homogeneous:
+$$\xi(\gamma x, k)= \gamma \xi(x, k). $$
 \end{property}
 \begin{property}\label{property:convpres}
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X=\{x_i\},$ one has:
@@ -18,13 +18,13 @@ $$\rho =\inf{\{r:\,\forall x_0, \exists C\in \re^+: \quad x(0)=x_0 \Rightarrow x
 Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
 
 In the case of switched linear systems, the Lyapunov exponent is known as the Joint Spectral Radius of the set of matrices, which can be alternatively defined as follows:
-\begin{definition}  \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
+\begin{definition} \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
 $$\rho(\cM) =\lim_{t\rightarrow \infty} \max_{i_1,\dots, i_t}\{||A_{i_1} \dots A_{i_t}||^{1/t}: A_i\in\cM\}. $$
 \end{definition}
 
 \begin{remark}\label{rem:scaling}
  Note that one can scale the problem because the JSR is homogeneous:
-$$\rho(\cM/\lambda)=\rho(\cM)/\lambda\, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\lambda,\sigma(t)).$$
+$$\rho(\cM/\gamma)=\rho(\cM)/\gamma, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\gamma,\sigma(t)).$$
 \end{remark}
 
 Under certain conditions \textcolor{red}{Where is this?} deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
