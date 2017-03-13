@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 MAR 2017 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -399,9 +399,6 @@ No file references.bib.tex.
 \c@theorem=\count112
 (./main.aux
 
-LaTeX Warning: Label `thm:mainTheorem' multiply defined.
-
-
 LaTeX Warning: Label `lemma:delta2' multiply defined.
 
 )
@@ -563,7 +560,7 @@ LaTeX Warning: No \author given.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -571,7 +568,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -579,19 +576,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 6.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 5.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 6.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 5.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 9.
+LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 8.
 
 
-LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 9.
+LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 8.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -604,25 +601,8 @@ LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `eq:dynamicalsystem' on page 2 undefined on input line
  15.
 
-) (./lowerBound.tex) (./mainTheoremProof.tex [2]
-Overfull \hbox (4.31357pt too wide) detected at line 5
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\O
-T1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \O
-ML/cmm/m/it/10 ^^M[]x[]Px[];  \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 x[] \OMS/cmsy
-/m/n/10 2 \OML/cmm/m/it/10 E[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 Z[]; \OMS/cm
-sy/m/n/10 8\OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 2 M\OML/cmm/m/it/10 :
- []
-
-) (./campiIntro.tex
-Overfull \hbox (1.78114pt too wide) detected at line 31
-[] []
- []
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 98.
-
-
-[3]) (./campiPreliminaries.tex) (./measureThms.tex
+) (./lowerBound.tex [2]) (./mainTheoremProof.tex) (./campiIntro.tex [3])
+(./campiPreliminaries.tex) (./measureThms.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--2
 []$\OML/cmm/m/it/10 ^^[[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 ^^T []$\T1/ptm/m/n/10 (+20) , where $\OML/cmm/m/it/10 m[] \OT
@@ -639,13 +619,13 @@ Underfull \hbox (badness 5862) in paragraph at lines 75--77
 
 LaTeX Warning: Citation `boyd' on page 4 undefined on input line 21.
 
-
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 47--49
  \T1/ptm/m/it/10 (+20) Proof:  \T1/ptm/m/n/10 (+20) Note that $[]\OT1/cmr/m/n/1
 0 ([] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
-[4]
+
 Underfull \hbox (badness 8189) in paragraph at lines 140--142
 \T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 := \OML/cmm/m/it
 /10 I[] []$ \T1/ptm/m/n/10 (+20) and $\OT1/cmr/m/n/10 ^^@(\OML/cmm/m/it/10 x\OT
@@ -668,8 +648,7 @@ OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
 msb/m/n/10 N\OML/cmm/m/it/10 :
  []
 
-) (./experiments.tex) (./futureWork.tex) (./conclusions.tex) (./main.bbl
-[5])
+[5]) (./experiments.tex) (./futureWork.tex) (./conclusions.tex) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -692,13 +671,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6469 strings out of 493089
- 98993 string characters out of 6134842
- 197357 words of memory out of 5000000
- 9617 multiletter control sequences out of 15000+600000
- 122673 words of font info for 239 fonts, out of 8000000 for 9000
+ 6480 strings out of 493089
+ 99102 string characters out of 6134842
+ 197847 words of memory out of 5000000
+ 9619 multiletter control sequences out of 15000+600000
+ 123158 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,35p,1259b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,35p,1528b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -718,7 +697,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 231511 bytes).
+Output written on main.pdf (6 pages, 231403 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
