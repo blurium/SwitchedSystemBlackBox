@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 MAR 2017 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 MAR 2017 15:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -593,8 +593,8 @@ LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 8.
 
 ])
 (./Preliminaries.tex) (./stability.tex) (./lowerBound.tex [2])
-(./mainTheoremProof.tex) (./campiIntro.tex [3]) (./campiPreliminaries.tex)
-(./measureThms.tex [4]) (./epsilonToDelta.tex
+(./mainTheoremProof.tex) (./campiIntro.tex [3]) (./measureThms.tex [4])
+(./epsilonToDelta.tex
 
 LaTeX Warning: Citation `boyd' on page 5 undefined on input line 18.
 
@@ -646,8 +646,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6498 strings out of 493089
- 99288 string characters out of 6134842
+ 6495 strings out of 493089
+ 99224 string characters out of 6134842
  195746 words of memory out of 5000000
  9622 multiletter control sequences out of 15000+600000
  124093 words of font info for 255 fonts, out of 8000000 for 9000
@@ -672,7 +672,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 236030 bytes).
+Output written on main.pdf (6 pages, 236096 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
