@@ -13,13 +13,13 @@ The following theorem shows that the existence of a CQLF for \eqref{eq:switchedS
 %Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
 
 \begin{theorem}
-For a given sampling: $$\omega = \{x_1, x_2, \ldots, x_N\},$$ let $\gamma^*(\omega, N)$ be the optimal solution of the following optimization problem:
+For a given sampling: $$\omega_N = \{x_1, x_2, \ldots, x_N\},$$ let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
 \begin{eqnarray}
 \nonumber \mbox{min}&&\gamma\\
  s.t.& & \label{eq:lowerbound}\frac{(y_i^T P y_i)}{\gamma^2} \leq x_i^TPx_i,\,  \forall \,i : \,1\leq i \leq N\\
 \nonumber && P \succ 0.
 \end{eqnarray}
-If $\gamma^*(\omega, N)<\infty,$ we have:
+If $\gamma^*(\omega_N)<\infty,$ we have:
 $$\rho(\cM) \geq \frac{\gamma^*}{\sqrt{n}}.$$
 
 \end{theorem}
