@@ -1,7 +1,7 @@
 % !TEX root = main.tex
 A switched linear system is in the form:
 \begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\sigma(k)}x_k,\end{equation}
-where, $\sigma: \N \to M$ is the switching sequence where $M := \{1,2,\dots,m\}$, ($m \in \N_{>0}$) and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k \in M$.There are two important properties of switched systems that we exploit in this paper.
+where, $\sigma: \N \to M$ is the switching sequence where $M := \{1,2,\dots,m\}$ and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k \in M$. There are two important properties of switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
 Let $\xi(x, k)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$, starting from the initial condition $x$. The dynamical system \eqref{eq:switchedSystem} is a homogeneous:
 $$\xi(\gamma x, k)= \gamma \xi(x, k). $$
@@ -11,9 +11,9 @@ The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning
 $$ f(\conv{X})\subset \conv\{f(X)\}. $$
 \end{property}
 
-To make our reasoning clearer, we introduce the \emph{Lyapunov exponent} of the system, which is a numerical quantity describing its stability.
-\begin{definition}   Given a dynamical system as in \eqref{eq:dynamicalsystem} its \emph{Lyapunov exponent} is given by
-$$\rho =\inf{\{r:\,\forall x_0, \exists C\in \re^+: \quad x(0)=x_0 \Rightarrow x(t)\leq Cr^t\}}. $$
+We now introduce the \emph{Lyapunov exponent} of the system, which is a numerical quantity describing its stability.
+\begin{definition}   Given a dynamical system as in \eqref{eq:dynamicalsystemGeneral} its \emph{Lyapunov exponent} is given by
+$$\rho =\inf{\{r:\,\forall x_0, \exists C\in \re^+: \quad x(0)=x_0 \Rightarrow x(k)\leq Cr^k\}}. $$
 \end{definition}
 Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
 
