@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 21:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,7 +397,14 @@ No file references.bib.tex.
 \c@remark=\count110
 \c@property=\count111
 \c@theorem=\count112
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `thm:mainTheorem' multiply defined.
+
+
+LaTeX Warning: Label `lemma:delta2' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
@@ -581,49 +588,10 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 6.
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 9.
-
-
 LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 9.
 
 
 LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 9.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `jungersBook' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 1 undefined on input line 
-17.
-
-
-LaTeX Warning: Citation `jungersBook' on page 1 undefined on input line 17.
-
-
-LaTeX Warning: Citation `campi' on page 1 undefined on input line 17.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -633,116 +601,24 @@ LaTeX Warning: Citation `campi' on page 1 undefined on input line 17.
 ])
 (./Preliminaries.tex) (./stability.tex
 
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-10.
-
-
 LaTeX Warning: Reference `eq:dynamicalsystem' on page 2 undefined on input line
  15.
 
-
-LaTeX Warning: Citation `jungers_lncis' on page 2 undefined on input line 21.
-
-) (./lowerBound.tex
-
-LaTeX Warning: Citation `jungers_lncis' on page 2 undefined on input line 4.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-8.
-
-
-LaTeX Warning: Reference `rem:scaling' on page 2 undefined on input line 27.
-
-
-LaTeX Warning: Reference `thm:john' on page 2 undefined on input line 27.
-
-) (./mainTheoremProof.tex
-
-LaTeX Warning: Reference `property:convpres' on page 2 undefined on input line 
-2.
-
-
-LaTeX Warning: Reference `property:homogeneity' on page 2 undefined on input li
-ne 2.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-4.
-
-[2]
-
-LaTeX Warning: Reference `thm:mainTheorem0' on page 3 undefined on input line 9
-.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 3 undefined on input line 
-10.
-
-
-LaTeX Warning: Reference `property:convpres' on page 3 undefined on input line 
-18.
-
-) (./mainResult.tex
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 19.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 19.
-
-
-Overfull \hbox (1.78114pt too wide) detected at line 29
+) (./lowerBound.tex) (./mainTheoremProof.tex [2]) (./campiIntro.tex
+Overfull \hbox (1.78114pt too wide) detected at line 31
 [] []
  []
 
 
-LaTeX Warning: Reference `eqn:campiOpt1' on page 3 undefined on input line 57.
+LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 98.
 
 
-LaTeX Warning: Reference `eqn:campiOpt1' on page 3 undefined on input line 57.
-
-
-LaTeX Warning: Reference `eqn:campiOpt1' on page 3 undefined on input line 68.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 75.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 91.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 92.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 3 undefined on input line 92.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 96.
-
-
-)
-
-LaTeX Warning: Reference `thm:mainTheorem' on page 3 undefined on input line 11
-3.
-
-(./campiPreliminaries.tex) (./measureThms.tex [3]
+[3]) (./campiPreliminaries.tex) (./measureThms.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--2
 []$\OML/cmm/m/it/10 ^^[[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 ^^T []$\T1/ptm/m/n/10 (+20) , where $\OML/cmm/m/it/10 m[] \OT
 1/cmr/m/n/10 =
  []
-
-
-LaTeX Warning: Reference `rem:mappingMeasures' on page 4 undefined on input lin
-e 51.
 
 
 Underfull \hbox (badness 5862) in paragraph at lines 75--77
@@ -751,10 +627,6 @@ Underfull \hbox (badness 5862) in paragraph at lines 75--77
  []
 
 ) (./epsilonToDelta.tex
-
-LaTeX Warning: Reference `thm:mainTheorem' on page 4 undefined on input line 2.
-
-
 
 LaTeX Warning: Citation `boyd' on page 4 undefined on input line 21.
 
@@ -765,19 +637,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--49
  []
 
 [4]
-
-LaTeX Warning: Reference `lemma:constructSC' on page 5 undefined on input line 
-134.
-
-
-LaTeX Warning: Reference `lemma:muMonotone' on page 5 undefined on input line 1
-36.
-
-
-LaTeX Warning: Reference `lemma:deltaMonotone' on page 5 undefined on input lin
-e 136.
-
-
 Underfull \hbox (badness 8189) in paragraph at lines 140--142
 \T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 := \OML/cmm/m/it
 /10 I[] []$ \T1/ptm/m/n/10 (+20) and $\OT1/cmr/m/n/10 ^^@(\OML/cmm/m/it/10 x\OT
@@ -785,19 +644,9 @@ Underfull \hbox (badness 8189) in paragraph at lines 140--142
  []
 
 
-LaTeX Warning: Citation `sphericalCapRef' on page 5 undefined on input line 144
-.
-
-
-LaTeX Warning: Reference `lasteqn' on page 5 undefined on input line 154.
-
-
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 162.
-
-
-LaTeX Warning: Reference `eqn:beta' on page 5 undefined on input line 164.
 
 
 Overfull \hbox (8.86882pt too wide) detected at line 166
@@ -830,15 +679,15 @@ Before submitting the final camera ready copy, remember to:
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6471 strings out of 493089
- 99006 string characters out of 6134842
- 195549 words of memory out of 5000000
- 9616 multiletter control sequences out of 15000+600000
- 122803 words of font info for 241 fonts, out of 8000000 for 9000
+ 6469 strings out of 493089
+ 98993 string characters out of 6134842
+ 197357 words of memory out of 5000000
+ 9617 multiletter control sequences out of 15000+600000
+ 122673 words of font info for 239 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1259b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -860,7 +709,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 230583 bytes).
+Output written on main.pdf (6 pages, 231409 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
