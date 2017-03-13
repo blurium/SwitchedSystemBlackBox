@@ -1,27 +1,29 @@
 % !TEX root =main.tex
-Given a set $V$ of points violating the optimization constraints, we look first for an upper-bound of the measure of points on $\sphere$ that violate at least one constraint.
 
-\begin{lemma}$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1}$, where $m_1 = \min \{\mu_M(\{k\}), k \in M\}$.\end{lemma}
+Given a set $V$ of points violating the constraints of the optimization problem \eqref{eqn:campiOpt02}, we look first for an upper bound on the measure of points on $\sphere$ violating at least one constraint.
+
+\begin{lemma}$$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1},$$ where $m_1 = \min \{\mu_M(\{j\}), j \in M\}$.\end{lemma}
 \begin{proof}
 
-Let $\calX \subset \Sigma$, $\calX_{\sphere} = \pi_{\sphere} (\calX)$ and $\calX_M = \pi_M (\calX)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $\calX$ is the disjoint union $\calX = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i = \pi_M^{-1} (\calM_i) \in \sphere$. We notice that 
-$\calX_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
+Let $\calZ \subset \Sigma$, $\calZ_{\sphere} = \pi_{\sphere} (\calZ)$ and $\calZ_M = \pi_M (\calZ)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $\calZ$ can be written as the disjoint union $\calZ = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma(\sphere)$. We notice that 
+$\calZ_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
 and
 \begin{equation*}
-\sigma^{n-1} (\calX_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
+\sigma^{n-1} (\calZ_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
 \end{equation*}
 We have 
 \begin{eqnarray*}
-\mu(\calX) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
+\mu(\calZ) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
 &=& \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
- &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M ((\calS_i, \calM_i)) \\
+ &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
  & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
 \end{eqnarray*}
-Let $m_1$ be the minimum value  of $\mu_M$ on its atoms: $m_1 = \min \{\mu_M(\{k\}), k \in M\}$ (recall that $m_1 > 0$). Then since $ \forall \ i$, $\mu_M(\calM_i) \geq m_1$, we have
+Let $m_1$ be the minimum value  of $\mu_M$ on its atoms (recall that $m_1 > 0$):
+$$m_1 = \min \{\mu_M(\{j\}), j \in M\}.$$ Then since $ \forall \ i$, $\mu_M(\calM_i) \geq m_1$, we have
 \begin{equation}
-\sigma^{n-1}(\calX_{\sphere}) \leq \frac{\mu(\calX)}{m_1}.
+\sigma^{n-1}(\calZ_{\sphere}) \leq \frac{\mu(\calZ)}{m_1}.
 \end{equation}
-This proves our statement by taking $\calX = V$.
+This proves our statement by taking $\calZ = V$.
 %Remark: In our case, we consider the special case where measures $\mu_1$ and $\mu_2$ are uniform and of total measure $1$ on $\sphere$ and $M$. $\mu_1$ is the classical spherical measure $\sigma^n$ and $\mu_2$ the classical uniform probability measure on $M$. We have then $m_2 = \frac{1}{m}$ and the inequality becomes:
 \end{proof}
 
@@ -31,10 +33,10 @@ We recall that we consider the specific case of a uniform sampling both on $\sph
 \begin{equation*}\sigma^{n-1}(V_\sphere) \leq m \mu(V). \end{equation*}
 \end{corollary}
 
-We have now a measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting.
+We now have the measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting. However, the computation of $\delta(\beta, \omega_N)$ on $E_P$ is hard. To circumvent this, we perform a change of coordinates so that the ellipsoid $E_P$ becomes a sphere in this new coordinate system. We now formalize how the measure of violating points can be mapped to this new coordinate system.
 
 We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\R)$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
-From now, we look at $L^{-1}$, which maps points from $\sphere$ to an ellipsoid, that we will project on the sphere. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to overapproximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+From now, we look at $L^{-1}$, which maps points from $\sphere$ to an ellipsoid, that we will project on the sphere. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
 
 \begin{remark} \label{rem:mappingMeasures}
 If $\psi$ is a smooth change of coordinates in $\R^n$ and $\cal{D}$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $\cal{D}' \subset \R^n$, then

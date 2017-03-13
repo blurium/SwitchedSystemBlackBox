@@ -1,22 +1,20 @@
 % !TEX root = main.tex
-We start by proving the lower bound, which is based on the following theorem from the switched linear system literature.
+We start by computing a lower bound for $\rho$ which is based on the following theorem from the switched linear systems literature.
 
 \begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
 For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$
 \end{theorem}
 
-The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by collecting $N$ observation pairs.
-%
+The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by considering $N$ pairs $(x_i, j_i) \in \R^n \times M$, and $i \in \{1, \ldots N\}.$%
 %The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
 %
 
 %Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
-
 \begin{theorem}
-For a given sampling: $$\omega_N = \{x_1, x_2, \ldots, x_N\},$$ let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
+For a given sampling: $$\omega_N := \{(x_1, j_1), (x_2, j_2), \ldots, (x_N, j_N)\},$$ let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
 \begin{eqnarray}
 \nonumber \mbox{min}&&\gamma\\
- s.t.& & \label{eq:lowerbound}y_i^T P y_i \leq \gamma^2 x_i^TPx_i,\,  \forall \,i : \,1\leq i \leq N\\
+ s.t.& & \label{eq:lowerbound}(A_{j_i}x)^T P (A_{j_i}x) \leq \gamma^2 x_i^TPx_i,\,  \forall \,i :1\leq i \leq N\\
 \nonumber && P \succ 0.
 \end{eqnarray}
 If $\gamma^*(\omega_N)<\infty,$ we have:
