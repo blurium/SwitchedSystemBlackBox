@@ -1,9 +1,9 @@
 % !TEX root = main.tex
-We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics. In this section, we show how to relate $\epsilon'$ to $\delta$ in the statement of the Theorem \ref{thm:mainTheorem}. We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. We define the distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$.
+We now show how to relate the upper-bound on the measure of violating points with $\delta$. We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics (which implies a symmetry of $V$: $\forall\ s \in V_{\sphere}$, $-s \in V_{\sphere}$). We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
 
 \begin{definition}%[Spherical Cap]
-We define the \emph{spherical cap} on $S$ for a given hyperplane $c^Tx = k$ as:
-\begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
+We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
+\begin{equation*}\calC_{c,k} := \{s \in \sphere : c^Ts >k\}.\end{equation*}
 \end{definition}
 
 %\begin{proposition}Let $X \subset \R^n$ be a closed convex set. The set $X$ can be written as the intersection of all its support vectors:
@@ -32,7 +32,7 @@ We define the \emph{spherical cap} on $S$ for a given hyperplane $c^Tx = k$ as:
 %Note that due to Proposition \ref{distanceSet}, the $\inf_{x \in \partial X}\dist(x,0)$ is attained by a point $x^* \in\partial X$ due to compactness of $\partial X$. Hence, there exists an $i \in I$ such that $c_i^Tx^*=k_i$ and this leads to: $\inf_{i \in I}\koverc = \min_{i \in I}\koverc$.
 %\end{proof}
 
-We define the function $\Delta : 2^\sphere \to [0,1]$ as:
+We define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
 \begin{equation}\label{shrinkage}
 \Delta(X) := \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\}.\end{equation}
 Note that, $\Delta(X)$ can be rewritten as in:
@@ -78,7 +78,7 @@ Note that $\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}
 \end{proof}
 
 Now we are ready to present the following lemma which is the key to proving our main result.
-\begin{lemma}\label{lemma:constructSC}For any set $X \subseteq \sphere$, there exists $c$ and $k$ such that $\calC_{c,k}$ satisfies:
+\begin{lemma}\label{lemma:constructSC}For any set $X \subseteq \sphere$, there exist $c$ and $k$ such that $\calC_{c,k}$ satisfies:
 \begin{equation*}\calC_{c,k} \subseteq X,
 \end{equation*}
  and
