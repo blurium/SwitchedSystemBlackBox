@@ -1,23 +1,33 @@
 % !TEX root = main.tex
 In this section, we show that using the Property \ref{property:convpres} and Property \ref{property:homogeneity}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. This section formalizes this discussion. Before preceding to the main theorem, we motivate the upcoming technical discussion by stating the following theorem to which most of this section is devoted.
 
-\begin{theorem} \label{thm:mainTheorem0} Let $\epsilon \in (0,1]$, $\beta \in [0,1)$. Consider the uniform random sampling of $\sphere \times \calM$, denoted by $\omega_N$. Let $\gamma^*$ and $P$ be the optimal solution to \eqref{eq:lowerbound} for this $\omega_N$. Then for all $Z_P$ with $\sigma_P(Z_P)\leq \epsilon$ with probability at least $\beta$ we have:
-\begin{equation} \label{eqn:exceptEps}(A_ix_i)^TP(A_ix_i)\leq \gamma^*x_i^TPx_i,\,\forall\, x_i \in E_P \setminus Z_P, \forall A_i \in \cM.\end{equation}
-Moreover, we can compute $\delta(\beta, \omega_N) < \infty$ such that:
-\begin{equation}\label{eqn:contraction}E_{\delta^2P} \subset  \convhull (E_P \setminus Z_P).
+\begin{theorem} \label{thm:mainTheorem0} Let $\epsilon \in (0,1]$, $\beta \in [0,1)$. Consider a uniform random sampling of $\sphere \times \calM$, denoted by $\omega_N$. Let $\gamma^*$ and $P$ be the optimal solution to:
+\begin{equation}\label{eqn:campiOpt01}
+\begin{aligned}
+& \text{min} & & \gamma \\
+& \text{s.t.} 
+&  & (A_is_i)^TP(A_is_i) \leq \gamma s_i^TPs_i,\,\forall (s_i,A_i) \in \omega_N \\
+& && P \succ 0. \\
+\end{aligned}
 \end{equation}
+Then for all $Z_P$ with $\sigma_P(Z_P)\leq \epsilon$ with probability at least $\beta$ we have:
+\begin{equation} \label{eqn:exceptEps}(A_ix_i)^TP(A_ix_i)\leq \gamma^*x_i^TPx_i,\,\forall\, x_i \in E_P \setminus Z_P, \forall A_i \in \cM.\end{equation}
+Moreover, we can compute $\delta(\beta, \omega_N) < \infty$  such that:
+\begin{equation}\label{eqn:contraction}E_{\delta^2P} \subset  \convhull (E_{P} \setminus Z_{P}),
+\end{equation}
+and $\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$
 \end{theorem}
 
 Once Theorem \ref{thm:mainTheorem0} established the main result of this section follows.
 
-\begin{theorem}[Main Theorem] \label{thm:mainTheorem} Let $\omega_N$ be the uniform sampling of $\sphere \times \calM$, where $N \geq \frac{n(n+1)}{2}+1$ and $\beta \in [0,1)$, we can compute $\delta(\beta, \omega_N) < \infty$ such that with probability at least $\beta$ we have $$\rho \leq \frac{\gamma^*(\omega_N)}{\delta}.$$ Moreover, $\lim_{N \to \infty} \delta(N) = 1$.
+\begin{theorem}[Main Theorem] \label{thm:mainTheorem} Let $\omega_N$ be a uniform sampling of $\sphere \times \calM$, where $N \geq \frac{n(n+1)}{2}+1$ and $\beta \in [0,1)$, we can compute $\delta(\beta, \omega_N) < \infty$ such that with probability at least $\beta$ we have $$\rho \leq \frac{\gamma^*(\omega_N)}{\delta}.$$ Moreover, $\lim_{N \to \infty} \delta(\beta, \omega_N) = 1$.
 \end{theorem}
 
 %\begin{theorem}
 %Consider a black-box switching system and $N$ samples of its dynamics as in \eqref{eq:switchedSystem}. Consider the optimal solution $(\lambda^*,P)$ which minimizes $\lambda$ in \eqref{eq:lowerbound}. For any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta\cdot\lambda^*.$ 
 %% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
 %\end{theorem}
-\begin{proof}Let $\omega_N = \{x_1, x_2, \ldots, x_N\} \times \calM_N$. Note that, by definition of $\gamma^*$ we have:
+\begin{proof}Note that, by definition of $\gamma^*$ we have:
 \begin{equation*} (A_ix_i)^TP(A_ix_i) \leq \gamma^* x_i^TPx_i, \quad \forall\, (x_i, A_i)  \in \omega_N \end{equation*}
 for some $P \succ 0$. Then, by Theorem \ref{thm:mainTheorem0} we have:
 \begin{equation*} y_i^TPy_i \leq \gamma^*x_i^TPx_i, \quad \forall\, x_i \in E_P \setminus Z_P,\, \forall A_i, \end{equation*}
@@ -29,5 +39,5 @@ $$\frac{\calM}{\gamma^*} \conv(E_P \setminus Z_P) \subset \convhull(E_P \setminu
 Then, due to Lemma \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction} which means:
 $(\cM/\delta \lambda^*) \convhull (E_P \setminus Z_P) \subset \convhull (E_P\setminus Z_P).$
 
-Then, $\delta\lambda$ is un upper bound on $\rho,$ with a confidence $\beta.$ 
+Then, $\delta\lambda$ is un upper bound on $\rho,$ with probability at least $\beta.$ 
 \end{proof}

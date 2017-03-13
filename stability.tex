@@ -1,7 +1,7 @@
 % !TEX root = main.tex
 A switched linear system is in the form:
 \begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\sigma(k)}x_k,\end{equation}
-where, $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k$. There are two important properties of switched systems that we exploit in this paper.
+where, $\sigma: \N \to M$ is the switching sequence where $|M| = m$ and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k$.There are two important properties of switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
 Let $\xi(x, k)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$, starting from the initial condition $x$. The dynamical system \eqref{eq:switchedSystem} is a homogeneous:
 $$\xi(\gamma x, k)= \gamma \xi(x, k). $$
@@ -27,4 +27,4 @@ $$\rho(\cM) =\lim_{t\rightarrow \infty} \max_{i_1,\dots, i_t}\{||A_{i_1} \dots A
 $$\rho(\cM/\gamma)=\rho(\cM)/\gamma, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\gamma,\sigma(t)).$$
 \end{remark}
 
-Under certain conditions \textcolor{red}{Where is this?} deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
+Under certain conditions deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
