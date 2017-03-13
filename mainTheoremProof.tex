@@ -1,13 +1,15 @@
 % !TEX root = main.tex
 In this section, we show that using the Property \ref{property:convpres} and Property \ref{property:homogeneity}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. The main theorem in this section which formalizes this is based on the following theorem, for whose proof we devote most of this section:
 
-\begin{theorem} \label{thm:mainTheorem0} For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega$ and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that:
+\begin{theorem} \label{thm:mainTheorem0} Let $\epsilon \in (0,1)$. For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega_N$ and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that:
 \begin{equation}E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon),
 \end{equation}
 for some $P \succ 0$.
 \end{theorem}
 
-\begin{theorem}[Main Theorem] \label{thm:mainTheorem} For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega$, and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that with probability at least $\beta$, $\rho \leq \frac{\gamma^*(\omega, N)}{\delta}$. Moreover, $\lim_{N \to \infty} \delta(N) = 1$.
+Before proving Theorem \ref{thm:mainTheorem0}, we prove the main result of this theorem
+
+\begin{theorem}[Main Theorem] \label{thm:mainTheorem} For a given a sampling of the switched linear system \eqref{eq:switchedSystem}, $\omega_N$, where $N \geq d+1$ and $\beta \in [0,1)$, we can compute $\delta(\beta, N) < \infty$ such that with probability at least $\beta$, $\rho \leq \frac{\gamma^*(\omega_N)}{\delta}$. Moreover, $\lim_{N \to \infty} \delta(N) = 1$.
 \end{theorem}
 %\begin{theorem}
 %Consider a black-box switching system and $N$ samples of its dynamics as in \eqref{eq:switchedSystem}. Consider the optimal solution $(\lambda^*,P)$ which minimizes $\lambda$ in \eqref{eq:lowerbound}. For any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta\cdot\lambda^*.$ 
