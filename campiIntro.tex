@@ -35,11 +35,11 @@ We can rewrite \eqref{eqn:campiOpt02} in the following form:
 \begin{aligned}
 & \text{find} & & P \\
 & \text{s.t.} 
-& & f_{\gamma^*}(P, x) \leq 0,\,\forall A_i \in \calM, \,\forall\, s \in \sphere, \end{aligned}
+& & f_{\gamma^*}(P, s) \leq 0,\,\forall\, z \in X \end{aligned}
 \end{equation}
-where $f_{\gamma^*}(P,x) = \max(f_1(P, x), f_2(P))$, and 
+where $f_{\gamma^*}(P, z) = \max(f_1(P, s), f_2(P))$, and 
 \begin{eqnarray*}
-f_1(P, x) &:=& (A_is_i)^TP(A_is_i) - {\gamma^*}^2 s_i^TPs_i \\
+f_1(P, z) &:=& (Az)^TP(Az) - {\gamma^*}^2 z^TPz \\
 f_2(P) &:=& \lambda_{\max}(-P) +1,
 \end{eqnarray*}
 We denote by the optimization problem \eqref{eqn:campiOpt01} $\Opt(\omega_N)$ for the rest of the paper. Let $P(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define constraint violation property next.
@@ -47,7 +47,7 @@ We denote by the optimization problem \eqref{eqn:campiOpt01} $\Opt(\omega_N)$ fo
 \begin{definition}(from \cite{campi}) The \emph{constraint violation probability} is defined as:
 \begin{equation}\label{eqn:violation}
 \calV^*(\omega_N)=
-      \mathbb{P}\{x \in X: f(P(\omega_N), x) > 0\},\, \forall\, \omega_N \in X^{N*}\}.
+      \mathbb{P}\{z \in X: f(P(\omega_N), z) > 0\},\, \forall\, \omega_N \in X^{N*}\}.
 \end{equation}
 where $$X^{N*}:=\{\omega_N \in X^N: \text{the solution of $\Opt(\omega_N)$ exists}\}.$$ 
 Due to the definition of $\gamma^*$, we know that a solution to $\Opt(\omega_N)$ exists and therefore $X^{N*} = X^N$. Also note that, since we have $\mathbb{P}(A) = \frac{\mu(A)}{\mu(X)}$, we can rewrite \eqref{eqn:violation} as:
@@ -55,7 +55,7 @@ Due to the definition of $\gamma^*$, we know that a solution to $\Opt(\omega_N)$
 \calV^*(\omega_N)=
       \frac{\mu\{V\}}{\mu(X)},\, \forall\, \omega_N \in X^N,
 \end{equation*}
-where $V:=\{x \in X: f(P(\omega_N),x) > 0\}$, i.e., the set of points for which at least one constraint is violated.
+where $V:=\{z \in X: f(P(\omega_N), z) > 0\}$, i.e., the set of points for which at least one constraint is violated.
 \end{definition}
 
 The following theorem from \cite{campi} explicitly gives a relationship between $\calV^*(\omega_N)$, $N$, and $n$.

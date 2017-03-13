@@ -1,11 +1,21 @@
 % !TEX root = main.tex
-We now show how to relate the upper-bound on the measure of violating points with $\delta$. We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics (which implies a symmetry of $V$: $\forall\ s \in V_{\sphere}$, $-s \in V_{\sphere}$). We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
+We now show how to relate the upper bound on the measure of violating points with $\delta$. We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
+We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
 
 \begin{definition}%[Spherical Cap]
 We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
-\begin{equation*}\calC_{c,k} := \{s \in \sphere : c^Ts >k\}.\end{equation*}
+\begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
 \end{definition}
 
+\begin{definition}A \emph{supporting hyperplane} of a set $X \subset \R^n$ is a hyperplane that has the following two properties:
+\begin{itemize}
+\item $X$ is entirely contained in one of the two closed half-spaces bounded by the hyperplane.
+\item $X$ has at least one boundary-point on the hyperplane.
+\end{itemize}
+\end{definition}
+
+\begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is smooth, then this supporting hyperplane is unique.
+\end{remark}
 %\begin{proposition}Let $X \subset \R^n$ be a closed convex set. The set $X$ can be written as the intersection of all its support vectors:
 %\begin{equation*} X = \cap_{i \in \partial X} c_i^Tx \leq k_i\end{equation*}
 %\end{proposition}
@@ -90,8 +100,7 @@ Now we are ready to present the following lemma which is the key to proving our 
 Since the distance function $\dist$ is continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
 \begin{eqnarray}\nonumber \Delta(X) &=& \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) \\
 \label{deltaSupporting}&=& \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
-Next, consider the supporting hyperplane of $X_S$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that, this supporting hyperplane is unique because it is also a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ as well, which is unique. This can be seen from the fact that:
-\begin{equation*} \partial \ball_{\Delta(X)} \subseteq \partial X_S \subseteq \left\{x : c^Tx = k\right\}.\end{equation*}
+Next, consider the supporting hyperplane of $X_S$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ since we have: \begin{equation*} \partial \ball_{\Delta(X)} \subseteq \partial X_S \subseteq \left\{x : c^Tx = k\right\}.\end{equation*}  By Remark \ref{suppHyperplaneRemark}, this implies that in fact $\left\{x : c^Tx = k\right\}$ is the unique supporting hyperplane at $x^*$.
 Then we have:
 \begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \frac{|k|}{\|c\|}.
 \end{equation*}
