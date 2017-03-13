@@ -9,7 +9,7 @@ Before proceeding to the proof of Theorem \ref{thm:mainTheorem0}, we introduce s
 %The first statement in the Theorem \ref{thm:mainTheorem0} is equation \eqref{eqn:exceptEps}, which states that $\gamma^*$ and $P$ satisfying:
 %\begin{equation*} (A_ix_i)^TP(A_ix_i)\leq \gamma^*x_i^TPx_i, \forall (x_i, A_i) \in \omega_N\end{equation*}
 %also satisfies \eqref{eqn:exceptEps}. In other words, $\gamma^*$ and $P$ that are found from finitely many observations generalizes to the rest of the observations except a set of measure $\epsilon$. We now formalize.
-To obtain an upper bound on $\rho$, the optimization problem we consider the following optimization problem:
+To obtain an upper bound on $\rho$, we consider the following optimization problem:
 \begin{equation}\label{eqn:campiOpt0}
 \begin{aligned}
 & \text{min} & & \gamma \\
@@ -39,7 +39,7 @@ We can rewrite \eqref{eqn:campiOpt02} in the following form:
 \end{equation}
 where $f_{\gamma^*}(P,z) = \max(f_1(P, z), f_2(P))$, and 
 \begin{eqnarray*}
-f_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 x^TPx \\
+f_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 f_2(P) &:=& \lambda_{\max}(-P) +1.
 \end{eqnarray*}
 We denote by  $\Opt(\omega_N)$ the optimization problem \eqref{eqn:campiOpt02} for the rest of the paper. Let $P(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define the constraint violation property next.
@@ -55,7 +55,7 @@ Due to the definition of $\gamma^*$, we know that a solution to $\Opt(\omega_N)$
 \calV^*(\omega_N)=
       \frac{\mu(V)}{\mu(Z)},\, \forall\, \omega_N \in Z^N,
 \end{equation*}
-where $\mu$ is a measure on $Z$ and $V:=\{z \in Z: f(P(\omega_N), z) > 0\}$, i.e., the set of points for which at least one constraint is violated.
+where $\mu$ is a measure on $Z$ and $$V:=\{z \in Z: f(P(\omega_N), z) > 0\},$$ i.e., the set of points for which at least one constraint is violated.
 \end{definition}
 
 The following theorem from \cite{campi} gives an explicit relationship between $\calV^*(\omega_N)$, $N$, and $n$.
@@ -64,118 +64,4 @@ The following theorem from \cite{campi} gives an explicit relationship between $
 \end{theorem}
 Note that $\epsilon=1-I^{-1}(\beta, N-d, d+1)$, where $I$ is the regularized incomplete beta function. It can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt02} to the measure of all points in $Z$.
 
-%We now state our main theorem which gives a probabilistic upper bound on JSR, and devote the next section to proving it step by step.
-%
-%\begin{theorem}[Main Theorem] \label{thm:mainTheorem} For any $\eta > 0$, given $N \geq n+1$ and $\beta \in [0,1)$, we can compute $\delta(N) < \infty$ such that with probability at least $\beta$, $\rho \leq \frac{\gamma^*}{\delta}$. Moreover, $\lim_{N \to \infty} \delta(N) = 1$.
-%\end{theorem}
 
-
-
-
-
-
-%
-%Note that, if such $P$ exists the optimal solution$\gamma^*$ satisfies $\rho \leq \gamma^*$. Also note that if $P$ is a solution to \eqref{eqn:campiOpt0}, due to Property \ref{property:homogeneity}, then so is $\alpha P$ for any $\alpha \in \R_{> 0}.$ Therefore, we the constraint $P \succ 0$ can be replaced with the constraint $P \succeq I$ and we can rewrite \eqref{eqn:campiOpt0} as in:
-%\begin{equation}
-%\label{eqn:campiOpt2}
-%\begin{aligned}
-%& \text{find} & & P \\
-%& \text{s.t.} 
-%& & f_\gamma(P, x) \leq 0,\,\forall A_i \in \calM, \,\forall\, s \in \sphere, \end{aligned}
-%\end{equation}
-%where $f_\gamma(P,x) = \max(f_1(P, x), f_2(P))$, and 
-%\begin{eqnarray*}
-%f_1(P, x) &:=& (A_ks)^TP(A_ks) - {\gamma^*}^2 s^TPs \\
-%f_2(P) &:=& \lambda_{\max}(-P) +1.
-%\end{eqnarray*}
-%
-
-%Note that if $P$ is a solution to \eqref{eq:lowerbound}, due to Property \ref{property:homogeneity}, then so is $\alpha P$ for any $\alpha \in \R_{> 0}.$ Therefore, we can rewrite the constraint $P \prec 0$ in \eqref{eq:lowerbound} as the following optimization problem:
-%\begin{equation}
-%\label{eqn:campiOpt1}
-%\begin{aligned}
-%& \min & & \gamma  \\
-%& \text{s.t.} 
-%&  & (A_ks)^TP(A_ks) \leq \gamma^2 s^TPs,\, \forall A_i \in \calM, \,\forall\, s \in \sphere,\\
-%& & & P \succeq I.
-%\end{aligned}
-%\end{equation}
-
-
-%
-%
-%
-%We are interested in solving the following optimization problem for a given $\gamma \in (0,1)$:
-%\begin{equation}
-%\label{eqn:campiOpt0}
-%\begin{aligned}
-%& \text{find} & & P \\
-%& \text{subject to} 
-%&  & (A_is)^TP(A_is) \leq \gamma^2 s^TPs,\,\forall A_i \in \calM, \,\forall\, s \in \sphere,\\
-%& && P \succ 0. \\
-%\end{aligned}
-%\end{equation}
-%Note that, if such a $P$ exists, $\rho \leq \lambda$.
-
-
-%\begin{equation}
-%\label{eqn:campiOpt1}
-%\begin{aligned}
-%& \text{find} & & P \\
-%& \text{subject to} 
-%&  & (A_ks)^TP(A_ks) \leq \gamma^2 s^TPs,\, \forall A_i \in \calM, \,\forall\, s \in \sphere,\\
-%& & & P \succeq I.
-%\end{aligned}
-%\end{equation}
-
-%We define the linear isomorphism $\Phi$ as the natural mapping \mbox{$\Phi: \mathbb{R}^{\frac{n(n+1)}{2}} \to \mathbb{S}^n$.} Using this mapping, for a fixed $\gamma \in (0, 1]$ we can rewrite \eqref{eqn:campiOpt01} as the following convex optimization problem:
-%
-%\begin{equation}
-%\label{eqn:campiOpt1}
-%\begin{aligned}
-%& \text{find} & & p \\
-%& \text{subject to} 
-%& & f(p,x) \leq 0, \forall x \in X.
-%\end{aligned}
-%\end{equation}
-%where $f(p,x) = \max(f_1(p, x), f_2(p))$, and 
-%\begin{eqnarray*}
-%f_1(p,x) &:=& (A_ks)^T\Phi(p)(A_ks) - \gamma^2 s^T\Phi(p)s \\
-%f_2(p) &:=& \lambda_{\max}(\Phi(-p)) +1.
-%\end{eqnarray*}
-
-%\textcolor{red}{We have to change the objective function!}
-%$f(p, \xi)$ is defined as in:
-%\begin{equation}\label{eqn:objFunction}f_\gamma(p, x) = \max\left((A_is)^T\Phi(p)(A_is) - \gamma x^T\Phi(p)x,\lambda_{\max}(\Phi(p)) - t, \lambda_{\max}(\Phi(-p)) +1\right).\end{equation}
-
-%The optimization problem \eqref{eqn:campiOpt1} is convex in $p$.
-
-%\begin{proof}The function $f_1(p,x)$ is clearly convex in $p$ for a fixed $x \in X$. The function 
-%$\lambda_{max}: \mathbb{S}^n \to \R$ maps a symmetric positive matrix to its maximum eigenvalue. It is well-known that the function $\lambda_{\max}$ is a convex function of $P$. \cite{boyd}. This means that, $p \mapsto \Phi(\lambda_{\max}(p))$ is convex in $p$. Moreover, maximum of convex functions is also convex, which shows that $f(p, x)$ is convex in $p$.
-%\end{proof}
-%The optimization problem \eqref{eqn:campiOpt0} has infinitely many constraints. We next consider the following optimization problem where we sample $N$ constraints of \eqref{eqn:campiOpt0} independently and identically with the probability measure
-%$\mathbb{P}(A) = \frac{\mu(A)}{\mu(X)}, \forall\, A \in \Sigma$, where $N \geq \frac{n(n+1)}{2}$, and $d := \frac{n(n+1)}{2}$. We denote this sampling by $\omega_N=\{x_1, x_2, \ldots, x_N\} \subset X$, and obtain the following convex optimization problem for a given $\gamma \in R$ $\Opt(\omega_N)$: 
-%
-%\begin{equation}
-%\label{eqn:campiOpt2}
-%\begin{aligned}
-%& \text{find} & & P \\
-%& \text{s.t.} 
-%& & f_\gamma(P, x) \leq 0, \forall x \in \omega_N, \end{aligned}
-%\end{equation}
-%where $f_\gamma(P,x) = \max(f_1(P, x), f_2(P))$, and 
-%\begin{eqnarray*}
-%f_1(P, x) &:=& (A_ks)^TP(A_ks) - \gamma^2 s^TPs \\
-%f_2(P) &:=& \lambda_{\max}(-P) +1.
-%\end{eqnarray*}
-
-%Let $P^*(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P^*(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define constraint violation property next.
-
-
-
-%We make the following assumptions on the problem $\Opt(\omega)$:
-%\begin{enumerate}
-%\item \label{assumption1} Uniqueness of solution: Note that this can be enforced by adding a tie-break rule of at most $\frac{n(n-1)}{2}$ convex conditions discriminating our solutions. 
-%\item \label{assumption2} Nondegenaracy: with probability $1$, there is no redundancy in the constraint obtained from the sampling. 
-%We can notice that a constraint obtained for a point $(s, k)$ gives us a constraint also on the point $(-s, k)$, and that a set of constraints containing some redundancy in them will be a set of constraints obtained from samples for a same mode. Now, let assume we consider for a fixed mode of index $k$ a nondegenerate sample of points $\{x_1, \dots, x_i\}$. Then if $x_{i+1} \notin \{(\pm s_{x_j},k), \ j \in \{1, \dots, i\} \}$ (which is a set of measure zero), the constraint obtained from $x_{i+1}$ is not redundant. Indeed, the mode of index $k$ might have all its eigenvalues but one with norm lower than $1$, and $x_{i+1}$ might be in the eigenspace of the latter eigenvalue (thus the constraint given by $x_{i+1}$ will be violated). Then, by considering the shortest distance between $x_{i+1}$ and the other points of the sample, we can choose for this eigenvalue a value close enough to $1$ (while being strictly greater than $1$) such that the constraints relative to the other points will still be satisfied.
-%\end{enumerate}

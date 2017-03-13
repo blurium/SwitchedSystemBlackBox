@@ -1,6 +1,7 @@
 % !TEX root = main.tex
-We now show how to relate the upper bound on the measure of violating points with $\delta$. We denote $\epsilon':=\frac{\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
-We start by a few definitions that will help us along the way. Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
+We now show how to relate the upper bound on the measure of violating points $\sigma^{n-1}(V')$, with $\delta$. We do this by showing that the smallest $\delta$ is achieved when the violating points form a spherical cap of $\sphere$. We denote $\epsilon':=\frac{m\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V_\sphere$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
+
+Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
 
 \begin{definition}%[Spherical Cap]
 We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
@@ -27,9 +28,8 @@ We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k
 
 %\begin{proof}This is due to the fact that the function $\dist$ is continuous and hence attains its minimum on the compact set $X$.
 %\end{proof}
-
-\begin{proposition}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
-\end{proposition}
+\begin{remark}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
+\end{remark}
 
 %\begin{lemma}\label{prop:distanceSet}Consider the boundary of the compact convex set
 %\begin{equation*}X := \bigcap\limits_{i\in I}\{x: c_i^Tx \leq k_i\},\end{equation*} denoted by $\partial X$, then:
@@ -42,10 +42,10 @@ We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k
 %Note that due to Proposition \ref{distanceSet}, the $\inf_{x \in \partial X}\dist(x,0)$ is attained by a point $x^* \in\partial X$ due to compactness of $\partial X$. Hence, there exists an $i \in I$ such that $c_i^Tx^*=k_i$ and this leads to: $\inf_{i \in I}\koverc = \min_{i \in I}\koverc$.
 %\end{proof}
 
-We define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
+We now define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
 \begin{equation}\label{shrinkage}
-\Delta(X) := \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\}.\end{equation}
-Note that, $\Delta(X)$ can be rewritten as in:
+\Delta(X) := \sup \{r: \ball_r \subset \conv(\sphere \setminus X)\}.\end{equation}
+Note that, $\Delta(X)$ can be rewritten as:
 \begin{equation}\label{shrinkage2}
 \Delta(X) =  \dist(\partial  \conv(\sphere \setminus X), 0).
 \end{equation}
@@ -55,7 +55,7 @@ Note that, $\Delta(X)$ can be rewritten as in:
 \end{lemma}
 
 \begin{proof}
-Note that $\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}$.
+Note that $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}.$$
 \begin{eqnarray}
 \nonumber \Delta(X) &=& \dist(\partial \conv(\sphere \setminus X), 0) \\
 \nonumber &=& \min(\dist(\partial \ball, 0), \dist(\partial\{x : c^Tx \leq k\}, 0)) \\
@@ -84,31 +84,31 @@ Note that $\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}
 \begin{lemma}\label{lemma:muMonotone}$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2})$, for $k_1 > k_2$.
 \end{lemma}
 
-\begin{proof}$\conv(\sphere \setminus \{x\in \sphere: c^Tx >k_1\}) \subseteq \conv(\sphere \setminus \{x\in \sphere: c^Tx >k_2\})$, for $k_1 > k_2$.
+\begin{proof}$\conv(\sphere \setminus \{x\in \sphere: c^Tx >k_1\}) \subset \conv(\sphere \setminus \{x\in \sphere: c^Tx >k_2\})$, for $k_1 > k_2$.
 \end{proof}
-
-Now we are ready to present the following lemma which is the key to proving our main result.
-\begin{lemma}\label{lemma:constructSC}For any set $X \subseteq \sphere$, there exist $c$ and $k$ such that $\calC_{c,k}$ satisfies:
-\begin{equation*}\calC_{c,k} \subseteq X,
+Now we are ready to present the following lemma which is the key in proving that violating points forming a spherical cap leads to the worst case $\delta$.
+\begin{lemma}\label{lemma:constructSC}For any set $X \subset \sphere$, there exist $c$ and $k$ such that $\calC_{c,k}$ satisfies:
+\begin{equation*}\calC_{c,k} \subset X,
 \end{equation*}
  and
 \begin{equation}\Delta(\calC_{c,k}) = \Delta(X).
 \end{equation}
 \end{lemma}
 
-\begin{proof} Let $X_S := \conv(S \setminus X)$.
-Since the distance function $\dist$ is continuous and the set $\partial X_S$ is compact there exists a point $x^* \in \partial X_S$, such that:
-\begin{eqnarray}\nonumber \Delta(X) &=& \dist(\partial X_S, 0) = \inf_{x \in \partial X_S}\dist(x, 0) \\
-\label{deltaSupporting}&=& \min_{x \in \partial X_S}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
-Next, consider the supporting hyperplane of $X_S$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ since we have: \begin{equation*} \partial \ball_{\Delta(X)} \subseteq \partial X_S \subseteq \left\{x : c^Tx = k\right\}.\end{equation*}  By Remark \ref{suppHyperplaneRemark}, this implies that in fact $\left\{x : c^Tx = k\right\}$ is the unique supporting hyperplane at $x^*$.
+\begin{proof} Let $\tilde{X} := \conv(S \setminus X)$.
+Since $\dist$ is continuous and the set $\partial \tilde{X}$ is compact, there exists a point $x^* \in \partial \tilde{X}$, such that:
+\begin{eqnarray}\nonumber \Delta(X) = \dist(\partial X_S, 0) = 
+\label{deltaSupporting} \min_{x \in \partial \tilde{X}}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
+Next, consider the supporting hyperplane of $\tilde{X}$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ since we have:
+\begin{equation*} \partial \ball_{\Delta(X)} \subset \partial \tilde{X} \subset \left\{x : c^Tx = k\right\}.\end{equation*}  By Remark \ref{suppHyperplaneRemark}, this implies that $\left\{x : c^Tx = k\right\}$ is in fact the unique supporting hyperplane at $x^*$.
 Then we have:
-\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \frac{|k|}{\|c\|}.
+\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \min\left(1, \frac{|k|}{\|c\|}\right).
 \end{equation*}
-Now, consider the spherical cap $\calC_{c,k}$. Then, by Lemma \label{lemma:delta2} we have
-$\Delta(\calC_{c,k}) = \frac{|k|}{\|c\|}$. Therefore, $\Delta(X) = \Delta(\calC_{c,k})$.
+Now, consider the spherical cap $\calC_{c,k}$. Then, by Lemma \ref{lemma:delta2} we have
+$\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Delta(X) = \Delta(\calC_{c,k})$.
 
 
-We next show $\calC_{c, k} \subseteq X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subseteq \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$ we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subseteq X$. 
+We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
 \end{proof}
 %\begin{lemma} The function $\tilde{\lambda}_{max} : \R^{n(n-1)/2} \to \R$ is convex in $z$.
 %\end{lemma}
@@ -137,147 +137,50 @@ We next show $\calC_{c, k} \subseteq X$. We prove this by contradiction. Assume 
 %\end{lemma}
 %\substack{\text{Some long text that} \\ \text{should be multiline}}
 We now prove our main result.
-\begin{theorem}Let $X_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
+\begin{theorem}\label{thm:mainSphericalCap}Let $\calX_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
 \end{theorem}
 
-\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $X_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in X_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in X_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC} we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subseteq X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subset X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
+\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
 
-Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$, due to Lemma \ref{lemma:muMonotone}. This implies $\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ at $X^*$.
+Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ due to Lemma \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
 \end{proof}
 
-\begin{theorem}Given a spherical cap $\calC_{c,k} \subseteq \sphere$ such that $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$, 
-\begin{equation*}\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}, \end{equation*}
-where $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right)$ and $\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t$. Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y, a,b)= x$ where $I_x(a,b)=y$.
+\begin{corollary}\label{cor:main} Let $\beta \in (0,1)$. We have: $$\delta(\beta, \omega_N) =  \Delta(\calC_{c, k}),$$ where
+$\sigma^{n-1}(\calC_{c,k}) = \epsilon'$.
+\end{corollary}
+
+\begin{theorem}Let $\beta \in (0,1)$. We have:
+\begin{equation*}\delta(\beta, \omega_N) = \sqrt{(1-\alpha)}, \end{equation*}
+where $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right)$ and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y, a,b)= x$ where $I_x(a,b)=y$.
 \end{theorem}
 
-\begin{proof}Let $h:=1-\Delta(\calC_{c,k})$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subseteq \sphere$ is given by the equation:
-\begin{equation}\epsilon' = \sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
+\begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:
+\begin{equation}\sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
 \end{equation}
 where $I$ is the incomplete beta function. 
-From this, we get the following set of equations:
+Since, \mbox{$\sigma^{n-1}(\calC_{c,k})=\epsilon'$,} we get the following set of equations:
 \begin{eqnarray}\nonumber \frac{\epsilon' \Gamma[\frac{d}{2}]}{\pi^{d/2}} &=& I_{2h-h^2}\left(\frac{d-1}{2}, \frac{1}{2}\right) \\
 \nonumber 2h-h^2 &=&  I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right) \\
 \nonumber 2h-h^2 & = & \alpha \\
 \label{lasteqn}h^2 -2h +\alpha &=& 0.
 \end{eqnarray}
-From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon$ for fixed $n$.
+From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon'$ for fixed $n$.
 \end{proof}
 
-\begin{corollary}For a fixed $\beta \in (0,1)$, $\lim_{N \to \infty} \delta_\beta(N) = 1$.
+\begin{corollary}\label{cor:final}Let $\beta \in (0,1)$. $$\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$$
 \end{corollary}
 
 \begin{proof} 
-We first prove that $\lim_{N \to \infty} \epsilon_\beta(N) = 0$. Note that, we can upper bound $1-\beta$ as follows:
-\begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {N}\choose{j} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
+We first prove that $\lim_{N \to \infty} \epsilon(\beta, N)= 0$. Note that, we can upper bound $1-\beta$ as follows:
+\begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
 \end{equation}
-We prove $\lim_{N \to \infty} \epsilon_\beta(N) = 0$ by contradiction and assume that $\lim_{N \to \infty} \epsilon_\beta(N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon_\beta(N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon_\beta(N_k) > \delta$, $\forall\, k.$ By \eqref{eqn:beta} we have:
-\begin{equation*}1-\beta \leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
+We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon(\beta, N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > \delta$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+\begin{equation*}1-\beta\leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
 \end{equation*}
-Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $ (d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 -\beta$, which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon_\beta(N) = 0$.
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$.
 
-Showing $I^{-1}$ is monotonic its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.
-
+\textcolor{red}{Still to show: If $\frac{\lambda{\max}(P)}{\lambda{\min}(P)}$ is uniformly bounded in $N$, then
+since $I^{-1}$ is monotonic in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.}
 \end{proof}
-%\end{section}
-%spherical cap reference S. Li , 2011. Concise Formulas for the Area and Volume of a Hyperspherical Cap. Asian Journal of Mathematics & Statistics, 4: 66-70.
 
-%
-%\begin{section}{Campi Results} 
-%We are interested in solving the following optimization problem:
-%\begin{equation}
-%\label{eqn:campiOpt0}
-%\begin{aligned}
-%& \underset{P}{\text{minimize}} & & \frac{\lambda_{\max}(P)}{\lambda_{\min}(P)} \\
-%& \text{subject to} 
-%&  & (A_is)^TP(A_is) \leq \gamma x^TPx, \quad \forall i = \{1,2, \ldots, m\},  \forall\, s \in \sphere,\\
-%& && \lambda_{\max}(P) > 0 \\
-%\end{aligned}
-%\end{equation}
-%Note that if $P$ is a solution to \eqref{eqn:campiOpt0}, then so is $k P$ for any $k \in \R_{\geq 0}.$ We can also say if the optimal solution of \eqref{eqn:campiOpt0} is $P^*$, where $ \frac{\lambda_{\max}(P)}{\lambda_{\min}(P)} = c^*$, then there exists a $\tilde{P}^*$ such that 
-%$\lambda_{\min} \geq 1$. Therefore, we can rewrite \eqref{eqn:campiOpt0} as the following optimization problem:
-%
-%\begin{equation}
-%\label{eqn:campiOpt1}
-%\begin{aligned}
-%& \underset{t, P}{\text{minimize}} & & t \\
-%& \text{subject to} 
-%&  & (A_is)^TP(A_is) \leq \gamma^2 x^TPx, \quad \forall i = \{1,2, \ldots, m\},  \forall\, s \in \sphere,\\
-%& & &\lambda_{\max}(P) \leq t \\
-%& & &  \lambda_{\min}(P) \geq 1.
-%\end{aligned}
-%\end{equation}
-%
-%We define $X = \sphere \times M$, and the linear isomorphism $\Phi: \mathbb{R}^{\frac{n(n-1)}{2}} \to \mathbb{S}^n$, which maps a vector of size $\frac{n(n-1)}{2}$ to an $n \times n$ symmetric matrix. Then, we can rewrite \eqref{eqn:campiOpt1} as:
-%
-%\begin{equation}
-%\label{eqn:campiOpt1}
-%\begin{aligned}
-%& \underset{t, p}{\text{minimize}} & & t \\
-%& \text{subject to} 
-%& & f_\gamma(p, x) \leq 0, \forall x \in X,
-%\end{aligned}
-%\end{equation}
-%where $f_\gamma(p, \xi)$ is defined as in:
-%\begin{equation}\label{eqn:objFunction}f_\gamma(p, x) = \max\left((A_is)^T\Phi(p)(A_is) - \gamma x^T\Phi(p)x,\lambda_{\max}(\Phi(p)) - t, \lambda_{\max}(\Phi(-p)) +1\right).\end{equation}
-%
-%\begin{proposition}The function \eqref{eqn:objFunction} is convex in $p$.
-%\end{proposition}
-%
-%\begin{proof}The function $\lambda_{\max}$ is a convex function of $P$, while $\Phi$ is linear in $p$. Therefore, $p \mapsto \Phi(\lambda_{\max}(p))$ is convex in $p$. Moreover, maximum of convex functions is also convex.
-%\end{proof} 
-%
-%Note that the optimization problem \eqref{eqn:campiOpt1} has infinitely many constraints. We next consider the following optimization problem, $\Opt(\omega)$ where we sample $N$ constraints of \eqref{eqn:campiOpt1} independently and identically.
-%
-%\begin{equation}
-%\label{eqn:campiOpt2}
-%\begin{aligned}
-%& \underset{t, p}{\text{minimize}} & & t \\
-%& \text{subject to} 
-%& & f_\gamma(p, x) \leq 0, \forall x \in \omega = \{x_1, x_2, \ldots, x_N\} \subset X.
-%\end{aligned}
-%\end{equation}
-%
-%\begin{definition}[Constraint violation probability] The constraint violation probability is defined as:
-%\begin{equation*}
-%V^*(\omega)=
-%    \begin{cases}
-%      \mathbb{P}\{x \in X: f(p^*(\omega), x) > 0\} &\text{if}\,\, \omega \in X^{N*},\\
-%      1, & \text{otherwise}
-%    \end{cases}
-%\end{equation*}
-%where $X^{N*}:=\{\omega \in X^N: \text{the solution of $\Opt(\omega)$ exists}\}$. 
-%\end{definition}
-%
-%
-%%Consider the semi-infinite optimization problem of the form:
-%%\begin{equation*}
-%%\begin{aligned}
-%%& \underset{p}{\text{minimize}}
-%%& & c^Tp \\
-%%& \text{subject to}
-%%& & f(p, x) \leq 0,\, \forall\, x \in X,
-%%\end{aligned}
-%%\end{equation*}
-%%and the following optimization problem $\Opt(\omega)$ 
-%%\begin{equation}
-%%\label{eqn:sampledOptimization}
-%%\begin{aligned}
-%%& \underset{p}{\text{minimize}}
-%%& & c^Tp \\
-%%& \text{subject to}
-%%& & f(p, x) \leq 0,\, \forall\, x \in \omega=\{x_1, \ldots x_N\} \subset X,
-%%\end{aligned}
-%%\end{equation}
-%%where $X_N$ consists of $N$ independently and identically drawn samples from the set $X$. 
-%
-%
-%\begin{theorem}[Campi]Consider the optimization problem $\Opt(\omega)$ given in \eqref{eqn:campiOpt1}. Let Assumption 1 and Assumption 2 hold \textcolor{red}{to be written}. Then, if $N \geq \frac{2}{\epsilon} (\ln \beta^{-1} + \frac{n(n-1)}{2} + 1)$, then $\mathbb{P}^N\{\{V^*(\omega) > \epsilon\} \cap X^{N*}\} \leq \beta$.
-%\end{theorem}
-%
-%
-%\begin{theorem}[Main Theorem]  Given $\beta$ and $N$, we can compute a $\delta$ such that $\rho < \frac{\delta}{\gamma}$ with probability $\beta \in [0,1]$.
-%\end{theorem}
-
-
-
-%\end{section}
+Putting together Theorem \ref{thm:campi} with Corollary \ref{cor:main} and Corollary \ref{cor:final}, the result of Theorem \ref{thm:mainTheorem0} follows.

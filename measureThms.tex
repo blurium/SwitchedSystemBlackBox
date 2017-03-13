@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-Given a set $V$ of points violating the constraints of the optimization problem \eqref{eqn:campiOpt02}, we look first for an upper bound on the measure of points on $\sphere$ violating at least one constraint.
+Given $V$, the set of points violating the constraints of the optimization problem \eqref{eqn:campiOpt02}, we look first for an upper bound on the measure of points on $\sphere$ violating at least one constraint.
 
 \begin{lemma}$$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1},$$ where $m_1 = \min \{\mu_M(\{j\}), j \in M\}$.\end{lemma}
 \begin{proof}
@@ -36,15 +36,15 @@ We recall that we consider the specific case of a uniform sampling both on $\sph
 We now have the measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting. However, the computation of $\delta(\beta, \omega_N)$ on $E_P$ is hard. To circumvent this, we perform a change of coordinates so that the ellipsoid $E_P$ becomes a sphere in this new coordinate system. We now formalize how the measure of violating points in $E_P$ can be mapped to this new coordinate system.
 
 We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
-We now examine $L^{-1}$, which maps points from $\sphere$ to the ellipsoid that is the image of $\sphere$ after the linear transformation. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)).$$
-Note that, $V'$ is the projection of the violating points from the ellipsoid corresponding to the image of the unit sphere in the original coordinates to the unit sphere in the new coordinate system.  We now show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+We now examine $L^{-1}$, which maps points from $\sphere$ to the ellipsoid that is the image of $\sphere$ after the linear transformation $L^{-1}$. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)).$$
+We now show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
 
 \begin{remark} \label{rem:mappingMeasures}
-If $\psi$ is a smooth change of coordinates in $\R^n$ and $X$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $X \subset \R^n$, then
+If $\psi$ is a smooth change of coordinates in $\R^n$ and $X$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $X' \subset \R^n$, then
 \begin{equation}
 \lambda(X') = \int_{x \in X} 1_{x \in X} |\det J(\psi(x))| d\lambda(x),
 \end{equation}
-which becomes when $\psi \in \mathcal{L}(\R^n)$: (and thus $\forall\ x \in \R^n, \ \det J(\psi(x)) = \det(\psi)$)
+which becomes when $\psi \in \mathcal{L}(\R^n)$:
 \begin{equation}
 \lambda(X') = |\det(\psi)| \lambda(X).
 \end{equation}
@@ -82,8 +82,8 @@ $$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-
 %Recall that for any smooth Lipschitz function $\phi$ with Lipschitz constant, Lip$(\phi)$, we have for all $x$, $|\det(J(\phi(x))| \leq \text{Lip}(\phi)^n$. Combining this with  \eqref{eqn:lip} and Lemma \ref{lemma:lip}, we get the statement %of the lemma.
 \end{proof}
 
-\begin{corollary}$\sigma^{n-1}(V') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$,
-where $\mu(V) = \epsilon$.
+Using Corollary \ref{cor:measure} with the fact that $\mu(V) = \epsilon \mu(Z) = \epsilon$, the following corollary of this theorem follows by replacing $L$ with $P^{1/2}$.
+\begin{corollary}$\sigma^{n-1}(V') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$.
 \end{corollary}
 
 

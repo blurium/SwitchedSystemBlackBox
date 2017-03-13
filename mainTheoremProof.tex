@@ -1,5 +1,5 @@
 % !TEX root = main.tex
-In this section, we show that using the Property \ref{property:homogeneity} and Property \ref{property:convpres}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. This section formalizes this discussion. Before proceeding to the main theorem, we motivate the upcoming technical discussion by stating the following theorem to which most of this section is devoted.
+In this section, we show that using Property \ref{property:homogeneity} and Property \ref{property:convpres}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. This section formalizes this discussion. Before proceeding to the main theorem, we motivate the upcoming technical discussion by stating the following theorem to which most of this section is devoted.
 
 \begin{theorem} \label{thm:mainTheorem0} Let $\epsilon \in (0,1]$, $\beta \in [0,1)$. Consider a uniform random sampling of $\sphere \times M$, denoted by $\omega_N$. Let $\gamma^*$ and $P$ be the optimal solution to:
 \begin{equation}\label{eqn:campiOpt01}
@@ -38,6 +38,5 @@ By Property \ref{property:convpres}, this implies:
 $$\frac{\calM}{\gamma^*} \conv(E_P \setminus Z_P) \subset \convhull(E_P \setminus Z_P).$$
 Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
 $$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus Z_P) \subset \convhull (E_P\setminus Z_P).$$
-
-Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least $\beta$. 
+Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
 \end{proof}

@@ -5,23 +5,27 @@ We start by computing a lower bound for $\rho$ which is based on the following t
 For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$
 \end{theorem}
 
-The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by considering $N$ pairs $(x_i, j_i) \in \R^n \times M$, and $i \in \{1, \ldots N\}.$%
+The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by considering $N$ pairs $(x_i, j_i) \in \R^n \times M$, where $i \in \{1, \ldots N\}.$%
 %The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
 %
 
 %Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
 \begin{theorem}
 For a given sampling: $$\omega_N := \{(x_1, j_1), (x_2, j_2), \ldots, (x_N, j_N)\},$$ let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
-\begin{eqnarray}
-\nonumber \mbox{min}&&\gamma\\
- s.t.& & \label{eq:lowerbound}(A_{j_i}x)^T P (A_{j_i}x) \leq \gamma^2 x_i^TPx_i,\,  \forall \,i :1\leq i \leq N\\
-\nonumber && P \succ 0.
-\end{eqnarray}
+\begin{equation}\label{eq:lowerbound}
+\begin{aligned}
+& \text{min} & & \gamma \\
+& \text{s.t.} 
+&  & (A_{j_i}x_i)^T P (A_{j_i}x_i) \leq \gamma^2 x_i^TPx_i,\,  \forall \,i :1\leq i \leq N\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+
 If $\gamma^*(\omega_N)<\infty,$ we have:
-$$\rho(\cM) \geq \frac{\gamma^*}{\sqrt{n}}.$$ Note that, \eqref{eq:lowerbound} can be solved by bisection on $\gamma$.
+$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt{n}}.$$ Note that, \eqref{eq:lowerbound} can be solved by bisection on $\gamma$.
 
 \end{theorem}
 \begin{proof}
-Using Remark \ref{rem:scaling}, for any $\epsilon > 0$, $\frac{\cM}{(\gamma^*-\epsilon),}$ has no CQLF. Then, applying Theorem \ref{thm:john} we get
-\begin{equation*}\frac{\rho(\cM)}{\gamma^*} \geq \frac{1}{\sqrt{n}}.\end{equation*}
+Using Remark \ref{rem:scaling}, for any $\epsilon > 0$, $\frac{\cM}{(\gamma^*(\omega_N)-\epsilon)}$ has no CQLF. Then, applying Theorem \ref{thm:john} we get
+\begin{equation*}\frac{\rho(\cM)}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt{n}}.\end{equation*}
 \end{proof}
