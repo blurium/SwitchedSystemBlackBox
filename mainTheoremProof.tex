@@ -2,7 +2,7 @@
 In this section, we show that using the Property \ref{property:convpres} and Property \ref{property:homogeneity}, by sampling finitely many points on a level set of a candidate CQLF, we can compute an upper bound on $\rho$. This section formalizes this discussion. Before preceding to the main theorem, we motivate the upcoming technical discussion by stating the following theorem to which most of this section is devoted.
 
 \begin{theorem} \label{thm:mainTheorem0} Let $\epsilon \in (0,1]$, $\beta \in [0,1)$. Consider a sampling $\omega_N$. Let $\gamma^*$ and $P$ be the optimal solution to \eqref{eq:lowerbound}, then for all $Z_P$ with $\sigma_P(Z_P)\leq \epsilon$ with probability at least $\beta$ we have:
-\begin{equation*} y_i^TPy_i \leq \gamma^*x_i^TPx_i, \quad \forall\, x_i \in E_P \setminus Z_P.\end{equation*}
+\begin{equation*} (A_kx_i)^TP(A_kx_i)\leq \gamma^*x_i^TPx_i, \quad \forall\, x_i \in E_P \setminus Z_P, \forall A_k \in \cM.\end{equation*}
 we can compute $\delta(\beta, \omega_N) < \infty$ such that:
 \begin{equation}\label{eqn:contraction}E_{\delta^2P} \subset  \convhull (E_P \setminus Z_P).
 \end{equation}
@@ -17,10 +17,10 @@ Once Theorem \ref{thm:mainTheorem0} established the main result of this section 
 %Consider a black-box switching system and $N$ samples of its dynamics as in \eqref{eq:switchedSystem}. Consider the optimal solution $(\lambda^*,P)$ which minimizes $\lambda$ in \eqref{eq:lowerbound}. For any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta\cdot\lambda^*.$ 
 %% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
 %\end{theorem}
-\begin{proof}Let $\omega_N = \{x_1, x_2, \ldots, x_N\} \times M_N$. Note that, by definition of $\gamma^*$ we have:
-\begin{equation*} y_i^TPy_i \leq \gamma^* x_i^TPx_i, \quad \forall\, x_i \in \omega_N, \end{equation*}
+\begin{proof}Let $\omega_N = \{x_1, x_2, \ldots, x_N\} \times \calM_N$. Note that, by definition of $\gamma^*$ we have:
+\begin{equation*} (A_kx_i)^TP(A_kx_i) \leq \gamma^* x_i^TPx_i, \quad \forall\, (x_i, A_k)  \in \omega_N \end{equation*}
 for some $P \succ 0$. Then, by Theorem \ref{thm:mainTheorem0} we have:
-\begin{equation*} y_i^TPy_i \leq \gamma^*x_i^TPx_i, \quad \forall\, x_i \in E_P \setminus Z_P,\end{equation*}
+\begin{equation*} y_i^TPy_i \leq \gamma^*x_i^TPx_i, \quad \forall\, x_i \in E_P \setminus Z_P,\, \forall A_k, \end{equation*}
 which can be rewritten as:
 \begin{equation*}\frac{\calM}{\gamma^*}(E_P \setminus Z_P) \subseteq E_P \setminus Z_P.
 \end{equation*}

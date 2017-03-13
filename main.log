@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 21:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2017 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,7 +604,16 @@ LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `eq:dynamicalsystem' on page 2 undefined on input line
  15.
 
-) (./lowerBound.tex) (./mainTheoremProof.tex [2]) (./campiIntro.tex
+) (./lowerBound.tex) (./mainTheoremProof.tex [2]
+Overfull \hbox (4.31357pt too wide) detected at line 5
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\O
+T1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \O
+ML/cmm/m/it/10 ^^M[]x[]Px[];  \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 x[] \OMS/cmsy
+/m/n/10 2 \OML/cmm/m/it/10 E[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 Z[]; \OMS/cm
+sy/m/n/10 8\OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 2 M\OML/cmm/m/it/10 :
+ []
+
+) (./campiIntro.tex
 Overfull \hbox (1.78114pt too wide) detected at line 31
 [] []
  []
@@ -709,7 +718,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 231409 bytes).
+Output written on main.pdf (6 pages, 231511 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
