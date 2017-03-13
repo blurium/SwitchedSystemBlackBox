@@ -33,19 +33,20 @@ We recall that we consider the specific case of a uniform sampling both on $\sph
 \begin{equation*}\sigma^{n-1}(V_\sphere) \leq m \mu(V). \end{equation*}
 \end{corollary}
 
-We now have the measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting. However, the computation of $\delta(\beta, \omega_N)$ on $E_P$ is hard. To circumvent this, we perform a change of coordinates so that the ellipsoid $E_P$ becomes a sphere in this new coordinate system. We now formalize how the measure of violating points can be mapped to this new coordinate system.
+We now have the measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting. However, the computation of $\delta(\beta, \omega_N)$ on $E_P$ is hard. To circumvent this, we perform a change of coordinates so that the ellipsoid $E_P$ becomes a sphere in this new coordinate system. We now formalize how the measure of violating points in $E_P$ can be mapped to this new coordinate system.
 
-We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n(\R)$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n(\R)$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
-From now, we look at $L^{-1}$, which maps points from $\sphere$ to an ellipsoid, that we will project on the sphere. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)),$$ and show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
+We now examine $L^{-1}$, which maps points from $\sphere$ to the ellipsoid that is the image of $\sphere$ after the linear transformation. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)).$$
+Note that, $V'$ is the projection of the violating points from the ellipsoid corresponding to the image of the unit sphere in the original coordinates to the unit sphere in the new coordinate system.  We now show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
 
 \begin{remark} \label{rem:mappingMeasures}
-If $\psi$ is a smooth change of coordinates in $\R^n$ and $\cal{D}$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $\cal{D}' \subset \R^n$, then
+If $\psi$ is a smooth change of coordinates in $\R^n$ and $X$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $X \subset \R^n$, then
 \begin{equation}
-\lambda(\calD') = \int_{x \in \calD} 1_{x \in \calD} |\det J(\psi(x))| d\lambda(x),
+\lambda(X') = \int_{x \in X} 1_{x \in X} |\det J(\psi(x))| d\lambda(x),
 \end{equation}
-which becomes when $\psi \in \mathcal{L}(\R^n)$ (and thus $\forall\ x \in \R^n, \ \det J(\psi(x)) = \det(\psi)$ )
+which becomes when $\psi \in \mathcal{L}(\R^n)$: (and thus $\forall\ x \in \R^n, \ \det J(\psi(x)) = \det(\psi)$)
 \begin{equation}
-\lambda(\calD') = |\det(\psi)| \lambda(\calD).
+\lambda(X') = |\det(\psi)| \lambda(X).
 \end{equation}
 \end{remark}
 
@@ -56,8 +57,8 @@ which becomes when $\psi \in \mathcal{L}(\R^n)$ (and thus $\forall\ x \in \R^n, 
 \end{theorem}
 
 \begin{proof}
-Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{\lambda_{\min}(L^{-1})}(C)$.  We have then 
-$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{\lambda_{\min}(L^{-1})}(C)),$$ which means: $\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C)$. Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
+Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  We have then 
+$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means: $$\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C).$$ Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
 
 %Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
 %\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.
