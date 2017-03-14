@@ -12,7 +12,7 @@ n = 4;
 m = 5; 
 
 %number of points in the sampling
-N = 30;
+N = 400;
 
 %bounds to generate the sampled points x_i
 uBound = 4;
@@ -32,12 +32,14 @@ end
 for i=1:N
     X{i} = lBound + (uBound-lBound)*rand(1,n);
     X{i}=X{i}';
+    X{N+i}=-X{i};
 end
 
 %apply randomly one mode to every point, store the result in array Y
 for i=1:N
     k=unidrnd(m);
     Y{i}=A{k}*X{i};
+    Y{N+i}=-Y{i};
 end
 
 %computation of lower bound by bisection, we start with lambda = 1, and we stop after 50 iterations
@@ -56,7 +58,7 @@ while(counter<50 && lambdaUfound==false)
     Constraints = [];
     lambda = lambdaNext;
     Constraints = Constraints + (P_var > 0);
-    for i=1:N
+    for i=1:(2*N)
     Constraints = Constraints + (Y{i}'*P_var*Y{i} <= lambda^2*X{i}'*P_var*X{i});
     end
     sol = optimize(Constraints,Objective,ops);
@@ -82,7 +84,7 @@ if lambdaUfound==true
     Constraints = [];
     Constraints = Constraints + (P_var >= eye(n)*0.000005);
     lambda =  lambdaNext;
-    for i=1:N
+    for i=1:(2*N)
         Constraints = Constraints + (Y{i}'*P_var*Y{i} <= lambda^2*X{i}'*P_var*X{i});
     end
     sol = optimize(Constraints,Objective,ops);
@@ -99,6 +101,11 @@ if lambdaUfound==true
 if feasible==false
     lambda=lambdaU;
 end
-    
-fprintf('The lower bound is %4f',lambda)
+
+lowerBound=lambda/sqrt(n);
+fprintf('The lower bound is %4f',lowerBound)
+
+a=max(rho(A));
+b=jsr_lift_semidefinite(A);
+c=jsr_prod_bruteForce(A);
 end
