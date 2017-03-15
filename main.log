@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAR 2017 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAR 2017 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -413,9 +413,6 @@ LaTeX Warning: Label `eqn:eps' multiply defined.
 
 LaTeX Warning: Label `eqn:mainthm1' multiply defined.
 
-
-LaTeX Warning: Label `eqn:mainthm2' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -635,17 +632,12 @@ LaTeX Warning: Reference `eqn:contraction' on page 5 undefined on input line 16
 8.
 
 ) (./mainTheoremProof2.tex
-Overfull \hbox (5.55379pt too wide) in alignment at lines 24--25
- [][][] []
- []
+
+LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 1
+6.
 
 
-LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 2
-9.
-
-
-LaTeX Warning: Reference `eqn:contraction' on page 5 undefined on input line 29
-.
+LaTeX Warning: Reference `mainTheorem1' on page 5 undefined on input line 20.
 
 ) (./experiments.tex) (./conclusions.tex) (./main.bbl)
 
@@ -668,10 +660,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6479 strings out of 493089
- 99160 string characters out of 6134842
+ 6480 strings out of 493089
+ 99174 string characters out of 6134842
  195227 words of memory out of 5000000
- 9632 multiletter control sequences out of 15000+600000
+ 9633 multiletter control sequences out of 15000+600000
  126049 words of font info for 248 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1528b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -697,7 +689,7 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on main.pdf (5 pages, 241111 bytes).
+Output written on main.pdf (5 pages, 240625 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
