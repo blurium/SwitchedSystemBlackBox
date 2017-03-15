@@ -48,10 +48,10 @@ The following theorem from \cite{campi} gives an explicit relationship between $
 \begin{theorem}\label{thm:campi}Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
 \begin{enumerate}
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
-\item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{Explain this in a footnote maybe?} with probability one.
+\item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
 \end{enumerate}
 Then, for all $\epsilon \in (0,1)$ the following holds:
-\begin{equation*}\mathbb{P}^N\{\calV^*(\omega) \leq \epsilon \} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
+\begin{equation*}\mathbb{P}^N\{\calV^*(\omega_N) \leq \epsilon \} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
 \end{theorem}
 Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
@@ -72,11 +72,21 @@ g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
 \end{proof}
 We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold can circumvented by slightly modifying the optimization problem \ref{eqn:campiOpt2}. We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
-%Therefore, for a given sampling $\omega_N$, we instead consider the optimization problem \eqref{eqn:campiOpt01} with finitely many constraints sampled from $Z:=\sphere \times M$.
-\begin{theorem}\label{thm:mainTheorem1}
+
+Theorem \ref{thm:campi} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
+
+We next show that the measure of constraints that are violated in \eqref{eqn:campiOpt0} 
+
+\begin{theorem}\label{thm:mainTheorem1}Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$, where with probability at least $\beta \in (0,1]$, $P$ satisfies:
+\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^*x^TPx,\,\, \forall\, x \in E_P \setminus Z_P, \forall\, j \in M\, 
+\end{equation}
+where $ Z_P \subset E_P$ and $\sigma^{n-1}(Z_P) = \epsilon$, we can compute $\delta$ such that:
+\begin{equation}A_j E_P \subset \delta E_P.
+\end{equation}
 \end{theorem}
 
-\begin{theorem}\label{thm:mainTheorem}
+\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1)$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta$ such that with probability at least $\beta$, we have:
+$$\rho \leq \frac{\gamma^*(\omega_N)}{\delta}.$$
 \end{theorem}
 
 
