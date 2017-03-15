@@ -1,5 +1,5 @@
 % !TEX root = main.tex
-In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in (0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF on a implies $\rho < 1$ due to Theorem \ref{jungersRho} and due to Property \ref{property:homogeneity}, it is enough to show that the CQLF is decreasing on a set enclosing the origin, e.g. $\sphere$. Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
+In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in [0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF on a implies $\rho < 1$ due to Theorem \ref{jungersRho} and due to Property \ref{property:homogeneity}, it is enough to show that the CQLF is decreasing on a set enclosing the origin, e.g. $\sphere$. Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
 \begin{equation}\label{eqn:campiOpt0}
 \begin{aligned}
 & \text{min}_{\gamma, P} & & \gamma \\
@@ -8,7 +8,7 @@ In this section, we show how to compute an upper bound on $\rho$, with a user-de
 & && P \succ 0. \\
 \end{aligned}
 \end{equation}
-Note that, for all $A \in \calM$ the optimal $P$ and $\gamma$ for the problem \eqref{eqn:campiOpt0}satisfies $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, we instead sample $N$ initial states and modes uniformly random from the set $\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
+Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, we instead sample $N$ initial states and modes uniformly random from the set $\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
 \begin{equation}\label{eqn:campiOpt00}
 \begin{aligned}
 & \text{min}_{\gamma, P} & & \gamma \\
@@ -18,7 +18,7 @@ Note that, for all $A \in \calM$ the optimal $P$ and $\gamma$ for the problem \e
 \end{aligned}
 \end{equation}
 where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}.
-Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can perform bisection on $\gamma$ and solve a series of feasibility problems in $P$ instead. We now analyze the relationship between the solutions of the optimization problem \eqref{eqn:campiOpt0} and the following optimization problem:
+Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can perform bisection on $\gamma$ and solve a series of feasibility problems in $P$ instead. Therefore, we now analyze the relationship between the solutions of the optimization problem \eqref{eqn:campiOpt0} and the following optimization problem:
 \begin{equation}\label{eqn:campiOpt01}
 \begin{aligned}
 & \text{min}_{P \in \calP} & & \lambda_{\max}(P) \\
