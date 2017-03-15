@@ -8,7 +8,7 @@ In this section, we show how to compute an upper bound on $\rho$, with a user-de
 & && P \succ 0. \\
 \end{aligned}
 \end{equation}
-Note that, for all $A \in \calM$ the optimal $P$ and $\gamma^*$ satisfies $\frac{A}{\gamma^*}^TP\frac{A}{\gamma^*} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma^*}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma^*$. However, solving the optimization problem \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, we instead sample $N$ initial states and modes uniformly random from the set $\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
+Note that, for all $A \in \calM$ the optimal $P$ and $\gamma$ for the problem \eqref{eqn:campiOpt0}satisfies $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, we instead sample $N$ initial states and modes uniformly random from the set $\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
 \begin{equation}\label{eqn:campiOpt00}
 \begin{aligned}
 & \text{min}_{\gamma, P} & & \gamma \\
@@ -39,21 +39,31 @@ The curious question whether the optimal solution of the sampled problem $\Opt(\
 Note that, since we have $\mathbb{P}(\calA) = \frac{\mu(\calA)}{\mu(Z)}$, we can rewrite \eqref{eqn:violation} as:
 \begin{equation*}
 \calV^*(\omega_N)=
-      \frac{\mu(V)}{\mu(Z)},
+      \frac{\mu(V(\omega_N))}{\mu(Z)},
 \end{equation*}
-where $\mu$ is a measure on $Z$ and $$V(\omega_N):=\{z \in Z: f(P(\omega_N), z) > 0\},$$ i.e., the set of points for which at least one constraint is violated for the sampling $\omega_N$.
+where $V(\omega_N):=\{z \in Z: f(P(\omega_N), z) > 0\},$ i.e., the set of points for which at least one constraint is violated for the sampling $\omega_N$.
 \end{definition}
+%
+%The following theorem from \cite{campi} gives an explicit relationship between $\calV^*(\omega_N)$, $N$, and $n$.
+%\begin{theorem}\label{thm:campi}Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
+%\begin{enumerate}
+%\item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
+%\item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
+%\end{enumerate}
+%Then, for all $\epsilon \in (0,1)$ the following holds:
+%\begin{equation*}\mathbb{P}^N\{\calV^*(\omega_N) \leq \epsilon \} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
+%\end{theorem}
+%Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
-The following theorem from \cite{campi} gives an explicit relationship between $\calV^*(\omega_N)$, $N$, and $n$.
-\begin{theorem}\label{thm:campi}Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
+\begin{theorem}\label{mainTheorem0}
+Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
 \begin{enumerate}
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
 \item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
 \end{enumerate}
 Then, for all $\epsilon \in (0,1)$ the following holds:
-\begin{equation*}\mathbb{P}^N\{\calV^*(\omega_N) \leq \epsilon \} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
+\begin{equation}\label{eqn:violation}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation}
 \end{theorem}
-Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
 \begin{proof}The proof is an immediate application of Theorem ?? in \cite{campi}, since the $\Opt(\omega_N)$
 can be written as:
@@ -70,24 +80,89 @@ g_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 g_2(P) &:=& \lambda_{\max}(-P) +1. \\
 g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
-\end{proof}
 We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold can circumvented by slightly modifying the optimization problem \ref{eqn:campiOpt2}. We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
+\end{proof}
 
-Theorem \ref{thm:campi} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
+Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
 
-We next show that the measure of constraints that are violated in \eqref{eqn:campiOpt0} 
 
-\begin{theorem}\label{thm:mainTheorem1}Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$, where with probability at least $\beta \in (0,1]$, $P$ satisfies:
-\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^*x^TPx,\,\, \forall\, x \in E_P \setminus Z_P, \forall\, j \in M\, 
-\end{equation}
-where $ Z_P \subset E_P$ and $\sigma^{n-1}(Z_P) = \epsilon$, we can compute $\delta$ such that:
-\begin{equation}A_j E_P \subset \delta E_P.
-\end{equation}
+%\begin{theorem}\label{thm:mainTheorem10}Consider a set of matrices $A \in \calM$, and $P \succ 0$ such that with probability at least $\beta \in (0,1]$, $P$ satisfies:
+%\begin{equation*}
+%(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, z \in Z \setminus Z'
+%\end{equation*}
+%for some $Z'$ where $Z' \subset \sphere$, and $\mu(Z) \leq \epsilon$, then it is also true that:
+%\begin{equation*}
+%(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus X_P, \forall\, j \in M\, 
+%\end{equation*}
+%for some $ X_P \subset E_P$ and $\sigma^{n-1}_P(X_P) \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det{(P)}}}$.
+%\end{theorem}
+\begin{theorem}\label{thm:mainTheorem01}Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$, satisfying:
+\begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
+for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds: \begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation}
+for some $E' \subset E_P$ where $\sigma_P(X') \leq m \epsilon$.
 \end{theorem}
 
-\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1)$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta$ such that with probability at least $\beta$, we have:
-$$\rho \leq \frac{\gamma^*(\omega_N)}{\delta}.$$
+\begin{proof}
+Note that $V \subset \Sigma$. Let $V_{\sphere} = \pi_{\sphere}(V)$ and $V_M = \pi_M (V)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $V$ can be written as the disjoint union $V = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma(\sphere)$. We notice that 
+$V_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
+and
+\begin{equation*}
+\sigma^{n-1} (V_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
+\end{equation*}
+We have 
+\begin{eqnarray*}
+\mu(V) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
+&=& \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
+ &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
+ & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
+\end{eqnarray*}
+Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \forall \ i$, $\mu_M(\calM_i) \geq \frac{1}{m}$, we have
+\begin{equation}
+\sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{m_1}.
+\end{equation}
+\textcolor{blue}{Joris: Here, we need the discussion on $\sigma^{n-1}(V_{\sphere})$ being the same as $\sigma_P(E')$ for some $E':=???$ in $E_P$.}
+\end{proof}
+
+\begin{theorem}\label{thm:mainTheorem1}Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
+\begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
+for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\alpha(\epsilon) > 0$ such that we have:
+\begin{equation}\label{eqn:contractionEllipsoid}A_j E_P \subset \alpha(\epsilon)E_P, \forall\, j \in M.
+\end{equation}
+Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
 \end{theorem}
+
+\begin{proof}See Appendix.
+\end{proof}
+
+\textcolor{red}{Some text explaining the intuition of proof of theorem \ref{thm:mainTheorem1}.}
+
+\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1]$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+$$\rho \leq \frac{\gamma^*(\omega_N)}{\delta(\beta, \omega_N)},$$
+where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
+\end{theorem}
+
+\begin{proof}
+\textcolor{red}{Will look into this in the morning.}
+%Note that, by definition of $\gamma^*(\omega_N)$ we have:
+%\begin{equation*} (A_j x)^TP(A_j x) \leq {\gamma^*}^2 x^TPx, \quad \forall\, (x, j)  \in \omega_N \end{equation*}
+%for some $P \succ 0$. 
+%Note that the inequality \eqref{eqn:violation} in Theorem \ref{thm:campi} can be also written as:
+%\begin{equation}\label{eqn:violation2}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq I(\epsilon; d+1, N-d),\end{equation}
+%where $I(\ell;a,b)$ is the regularized in complete beta function. Then, for all $\epsilon \in (0,1)$ satisfying:
+%\begin{equation}\label{eqn:eps}\epsilon \leq I^{-1}(\beta, d+1, N-d),\end{equation} we have $\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq \beta$.
+%
+%Then, by Theorem \ref{thm:mainTheorem01} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
+%\begin{equation*} (Ax)^TP(A x) \leq  {\gamma^*}^2 x^TPx, \quad \forall\, x \in E_P \setminus E',\, \forall A \in \calM, \end{equation*}
+%for some $E'$ where $\sigma_P(E') \leq m \epsilon$ which can be rewritten as:
+%\begin{equation*}\frac{\calM}{\gamma^*}(E_P \setminus E') \subset E_P.
+%\end{equation*}
+%By Property \ref{property:convpres}, this implies:
+%$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
+%for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
+%Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
+%$$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus X_P) \subset \convhull (E_P\setminus X_P).$$
+%Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
+\end{proof}
 
 
 %Note that if $P$ is a solution of \eqref{eqn:campiOpt0}, due to Property \ref{property:homogeneity}, then so is $\alpha P$ for any $\alpha \in \R_{> 0}.$ Therefore, the constraint $P \succ 0$ can be replaced with the constraint $P \succeq I$. 
