@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAR 2017 02:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAR 2017 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -606,7 +606,20 @@ Overfull \hbox (3.35617pt too wide) detected at line 29
 [] []
  []
 
-[3]) (./experiments.tex) (./conclusions.tex) (./main.bbl [4])
+[3] [4]
+Overfull \hbox (5.55379pt too wide) in alignment at lines 161--162
+ [][][] []
+ []
+
+
+LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 1
+68.
+
+
+LaTeX Warning: Reference `eqn:contraction' on page 5 undefined on input line 16
+8.
+
+) (./experiments.tex) (./conclusions.tex) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -629,11 +642,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6477 strings out of 493089
- 99074 string characters out of 6134842
- 195199 words of memory out of 5000000
- 9627 multiletter control sequences out of 15000+600000
- 126309 words of font info for 252 fonts, out of 8000000 for 9000
+ 6479 strings out of 493089
+ 99123 string characters out of 6134842
+ 195227 words of memory out of 5000000
+ 9632 multiletter control sequences out of 15000+600000
+ 126179 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1528b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -658,7 +671,7 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on main.pdf (5 pages, 235661 bytes).
+Output written on main.pdf (5 pages, 238609 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream

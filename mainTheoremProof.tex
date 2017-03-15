@@ -27,7 +27,7 @@ Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can p
 & && P \succeq I. \\
 \end{aligned}
 \end{equation}
-where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}, $\calP$ is a closed convex set, $\eta(N):=\left(1+\frac{\eta}{N}\right)$ for some $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$, where we drop the explicit dependence on $\omega_N$, when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are able to replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional factor is needed to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the preceding discussion.s
+where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}, $\calP$ is a closed convex set, $\eta(N):=\left(1+\frac{\eta}{N}\right)$ for some $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$. We drop the explicit dependence of $P$ and $\gamma^*$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are able to replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta(N)$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the preceding discussion.
 
 The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the random convex optimization literature \cite{campi}. It turns out that under certain technical assumptions, the optimal solution of \eqref{eqn:campiOpt01} is feasible for the original problem \eqref{eqn:campiOpt0}, with some probability which is a function of the sample size $N$. To formalize this discussion, we define the constraint violation probability next.
 
@@ -80,7 +80,7 @@ g_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 g_2(P) &:=& \lambda_{\max}(-P) +1. \\
 g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
-We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold can circumvented by slightly modifying the optimization problem \ref{eqn:campiOpt2}. We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
+We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold for the optimization problem \ref{eqn:campiOpt2}, it is possible to obtain . We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
 \end{proof}
 
 Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
@@ -96,9 +96,10 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 %\end{equation*}
 %for some $ X_P \subset E_P$ and $\sigma^{n-1}_P(X_P) \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det{(P)}}}$.
 %\end{theorem}
-\begin{theorem}\label{thm:mainTheorem01}Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$, satisfying:
-\begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
-for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds: \begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation}
+\begin{theorem}\label{thm:mainTheorem01}Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
+\begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
+for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
+\begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
 for some $E' \subset E_P$ where $\sigma_P(X') \leq m \epsilon$.
 \end{theorem}
 
@@ -116,9 +117,9 @@ We have
  &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
  & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
 \end{eqnarray*}
-Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \forall \ i$, $\mu_M(\calM_i) \geq \frac{1}{m}$, we have
+Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \forall \ i$, $\mu_M(\calM_i) \geq \frac{1}{m}$, we get:
 \begin{equation}
-\sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{m_1}.
+\sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{\frac{1}{m}} \leq m \epsilon.
 \end{equation}
 \textcolor{blue}{Joris: Here, we need the discussion on $\sigma^{n-1}(V_{\sphere})$ being the same as $\sigma_P(E')$ for some $E':=???$ in $E_P$.}
 \end{proof}
@@ -142,26 +143,31 @@ where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
 \end{theorem}
 
 \begin{proof}
-\textcolor{red}{Will look into this in the morning.}
-%Note that, by definition of $\gamma^*(\omega_N)$ we have:
-%\begin{equation*} (A_j x)^TP(A_j x) \leq {\gamma^*}^2 x^TPx, \quad \forall\, (x, j)  \in \omega_N \end{equation*}
-%for some $P \succ 0$. 
-%Note that the inequality \eqref{eqn:violation} in Theorem \ref{thm:campi} can be also written as:
-%\begin{equation}\label{eqn:violation2}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq I(\epsilon; d+1, N-d),\end{equation}
-%where $I(\ell;a,b)$ is the regularized in complete beta function. Then, for all $\epsilon \in (0,1)$ satisfying:
-%\begin{equation}\label{eqn:eps}\epsilon \leq I^{-1}(\beta, d+1, N-d),\end{equation} we have $\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq \beta$.
-%
-%Then, by Theorem \ref{thm:mainTheorem01} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
-%\begin{equation*} (Ax)^TP(A x) \leq  {\gamma^*}^2 x^TPx, \quad \forall\, x \in E_P \setminus E',\, \forall A \in \calM, \end{equation*}
-%for some $E'$ where $\sigma_P(E') \leq m \epsilon$ which can be rewritten as:
-%\begin{equation*}\frac{\calM}{\gamma^*}(E_P \setminus E') \subset E_P.
-%\end{equation*}
-%By Property \ref{property:convpres}, this implies:
-%$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
-%for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
-%Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
-%$$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus X_P) \subset \convhull (E_P\setminus X_P).$$
-%Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
+Note that, by definition of $\gamma^*(\omega_N)$ we have:
+\begin{equation*} (A_j x)^TP(A_j x) \leq {\gamma^*}^2 x^TPx, \quad \forall\, (x, j)  \in \omega_N \end{equation*}
+for some $P \succ 0$. 
+Note that the inequality \eqref{eqn:violation} in Theorem \ref{mainTheorem0} can be also written as:
+\begin{equation}\label{eqn:violation2}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq I(\epsilon; d+1, N-d),\end{equation}
+where $I(\ell;a,b)$ is the regularized in complete beta function. Then, for all $\epsilon \in (0,1)$ satisfying:
+\begin{equation}\label{eqn:eps}\epsilon \leq I^{-1}(\beta, d+1, N-d),\end{equation} we have $\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq \beta$.
+Then, by Theorem \ref{thm:mainTheorem01} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
+\begin{equation*} (A_jx)^TP(A_jx) \leq  {\gamma^*}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V,\end{equation*}
+for some $V \subset Z$, where $\mu(Z) \leq \epsilon$. By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
+\begin{equation} \label{eqn:mainthm1}(A_jx)^TP(A_jx) \leq  {\gamma^*}^2 x^TPx, \quad \forall x \in E_P \setminus E', \forall\, j \in M,\end{equation}
+for some $E'$ where $\sigma_P(E') \leq m \epsilon$. The inequality in \eqref{eqn:mainthm1} can be rewritten as:
+\begin{equation}\label{eqn:mainthm2}\frac{A_j}{\gamma^*}(E_P \setminus E') \subset \tilde{E}_P,\quad \forall j \in M.
+\end{equation}
+Note that, $E_P \subset \tilde{E}_P$. Using this fact, along with \eqref{eqn:mainthm2} and Property \ref{property:convpres}, we get:
+\begin{eqnarray*}\frac{A_j}{\gamma^*}\convhull(E_P \setminus E') &\subset& \convhull \left(\frac{A_j}{\gamma^*} \left(E_P \setminus E'\right) \right)\\ &\subset& \convhull\left(\frac{A_j}{\gamma^*}\tilde{E}_P\right), \,\, \forall\, j \in M.
+\end{eqnarray*}
+
+
+
+$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
+for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
+Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
+$$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus X_P) \subset \convhull (E_P\setminus X_P).$$
+Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
 \end{proof}
 
 
