@@ -101,6 +101,7 @@ if lambdaUfound==true
 if feasible==false
     lambda=lambdaU;
 end
+<<<<<<< Updated upstream
 
 lowerBound=lambda/sqrt(n);
 fprintf('The lower bound is %4f',lowerBound)
@@ -108,4 +109,8 @@ fprintf('The lower bound is %4f',lowerBound)
 a=max(rho(A));
 b=jsr_lift_semidefinite(A);
 c=jsr_prod_bruteForce(A);
+=======
+    
+fprintf('The lower bound is %4f\n',lambda)
+>>>>>>> Stashed changes
 end
