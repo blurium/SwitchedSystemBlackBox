@@ -1,10 +1,10 @@
  % !TEX root = main.tex
-A switched linear system is of the form:
-\begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\sigma(k)}x_k,\end{equation}
-with switching sequence $\sigma: \N \to M$, where  $M := \{1,2, \dots,m\}$ and $A_{\sigma(k)} \in \calM$, for all $\sigma$ and $k \in M$. There are two important properties of linear switched systems that we exploit in this paper.
+A switched linear system related to a set of modes $\mathcal{M}= \{A_i, i \in M \}$ is of the form:
+\begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\tau(k)}x_k,\end{equation}
+with switching sequence $\tau: \N \to M$. There are two important properties of linear switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
-Let $\xi(x, k)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$. The dynamical system \eqref{eq:switchedSystem} is homogeneous:
-$$\xi(\gamma x, k)= \gamma \xi(x, k). $$
+Let $\xi(x, k, \tau)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$ and with switching sequence $\tau$. The dynamical system \eqref{eq:switchedSystem} is homogeneous:
+$$\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau). $$
 \end{property}
 \begin{property}\label{property:convpres}
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
@@ -16,7 +16,7 @@ We now introduce the \emph{Lyapunov exponent} of the system, which is a numerica
 $$\rho =\inf{\{r:\,\forall\, x_0, \exists\, C\in \re^+: \xi(x_0, k)\leq Cr^k\}}. $$
 \end{definition}
 %Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
-\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
+%\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
 %Under certain conditions deciding stability amounts to decide whether $\rho<1.$ 
 
 In the case of switched linear systems, the Lyapunov exponent is known as the joint spectral radius of the set of matrices, which can be alternatively defined as follows:
@@ -24,8 +24,15 @@ In the case of switched linear systems, the Lyapunov exponent is known as the jo
 $$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k}\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\}. $$
 \end{definition}
 
-\begin{remark}\label{rem:scaling}
-Note that, JSR is a homogeneous function:
-$$\rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}, \forall \gamma > 0.$$
-\end{remark}
+\begin{property}
+[to cite: the Bible, corollary 1.1]
+For any bounded set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
+\end{property}
 
+\begin{property}\label{rem:scaling}
+[to cite: the bible, proposition 1.3]
+For any bounded set of matrices $\mathcal{M}$, and any invertible matrix $T$, 
+$$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}).$$
+\end{property}
+
+Note that this last result implies that the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}, \forall \gamma > 0$).
