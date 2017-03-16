@@ -100,7 +100,7 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 \begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
 \begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
-for some $E' \subset E_P$ where $\sigma_P(X') \leq m \epsilon$.
+for some $E' \subset E_P$ where $\sigma_P(E') \leq \frac{m}{\sqrt{\det(P)}}\epsilon$.
 \end{theorem}
 
 \begin{proof}
@@ -121,7 +121,7 @@ Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \f
 \begin{equation}
 \sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{\frac{1}{m}} \leq m \epsilon.
 \end{equation}
-\textcolor{blue}{Joris: Here, we need the discussion on $\sigma^{n-1}(V_{\sphere})$ being the same as $\sigma_P(E')$ for some $E':=???$ in $E_P$.}
+\textcolor{blue}{Joris: Here, we need the discussion on relating $\sigma^{n-1}(V_{\sphere})$ with $\sigma_P(E')$.}
 \end{proof}
 
 \begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:

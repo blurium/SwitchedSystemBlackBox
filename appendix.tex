@@ -1,0 +1,10 @@
+% !TEX root = main.tex
+The proof of the theorem is two-part. Via a linear transformation mapping $L \in\calL(\R^n)$, we first transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere, while the sphere $\sphere$ maps to the ellipsoid $E_{L}$ in this new coordinates. Given $\epsilon \in (0, 1)$, we then compute an upper bound on the JSR in the transformed space, and using Remark \ref{rem:scaling}, we conclude that the same upper bound is valid in the original space as well.
+
+\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying
+\begin{equation*}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in E_P \setminus E', \forall\,j \in, M,\end{equation*}
+for some $E' \subset E_P$ where $\sigma^{n-1}(E') \leq \epsilon$, then we have:
+\begin{equation*}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in M,
+\end{equation*}
+for some $S' \subset S$, where $\sigma^{n-1}(S') \leq \frac{1}{\det(L)}\epsilon$.
+\end{lemma}
