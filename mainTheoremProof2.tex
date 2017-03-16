@@ -1,7 +1,7 @@
 % !TEX root = main.tex
 
-\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1]$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
-$$\rho \leq \frac{\gamma^*(\omega_N)}{\delta(\beta, \omega_N)},$$
+\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1]$, $\eta > 0$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+$$\rho \leq \frac{\gamma^*(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
 where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
 \end{theorem}
 
@@ -17,9 +17,17 @@ Then, by Theorem \ref{thm:mainTheorem0} for all $\epsilon$ satisfying \eqref{eqn
 \begin{equation*} (A_jx)^TP(A_jx) \leq  {\gamma^*}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V.\end{equation*}
 By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
 \begin{equation*} (A_jx)^TP(A_jx) \leq  {\gamma^*}^2 x^TPx, \quad \forall x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
-for some $E'$ where $\sigma_P(E') \leq m \epsilon$.  Then, applying Theorem \ref{mainTheorem1}, we can compute $\delta(\beta, \omega_N)= \alpha(\epsilon) = 1- I^{-1}(\beta;d+1,N-d)$ such that:
-\begin{equation*} 
+for some $E'$ where $\sigma_P(E') \leq m \epsilon$.  Then, applying Theorem \ref{thm:mainTheorem1}, we can compute $$\delta(\beta, \omega_N)= \alpha(\epsilon) = \alpha(1- I^{-1}(\beta;d+1,N-d)),$$ such that with probability at least $\beta$ we have:
+\begin{equation*}
+\frac{A_j}{{\gamma^*}^2} E_P \subset \delta(\beta, \omega_N)E_P, \forall\, j \in M,
 \end{equation*}
+where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1.$
+This means that $P$ defines a CQLF for the switched system \eqref{eq:switchedSystem} since we have $\frac{A_j}{\gamma^*}^TP\frac{A_j}{\gamma^*} \preceq P,\, \forall\, j$, due to Property \ref{rem:scaling}, the followings holds with probability at least $\beta$:
+$$\rho \leq \frac{\gamma^*(\omega_N) (1 + \eta)}{\delta(\beta, \omega_N)},$$
+which completes the proof of the theorem.
+
+
+
 %
 %$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
 %for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
