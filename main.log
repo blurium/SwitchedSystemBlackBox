@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -625,38 +625,31 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 18.
 [5]
-Underfull \hbox (badness 2310) in paragraph at lines 90--91
-[]\T1/ptm/m/n/10 (+20) Let $\OML/cmm/m/it/10 X$ \T1/ptm/m/n/10 (+20) be a spher
--i-cal cap such that
+Underfull \hbox (badness 2990) in paragraph at lines 90--91
+[]\T1/ptm/m/n/10 (+20) Let $\OML/cmm/m/it/10 X[]$ \T1/ptm/m/n/10 (+20) be a sph
+er-i-cal cap such that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--100
-\T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10 I$ \T1/ptm/m/n/10 (+20) is the in-
-com-plete beta func-tion. Since,
- []
-
-
-Underfull \hbox (badness 3354) in paragraph at lines 135--137
+Underfull \hbox (badness 3354) in paragraph at lines 131--133
 \T1/ptm/m/n/10 (+20) where $[] \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 L[]AL$\T1/pt
 m/m/n/10 (+20) , for some $[][] \OMS/cmsy/m/n/10 ^^Z []$ \T1/ptm/m/n/10 (+20) w
 here
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 172--174
+Underfull \hbox (badness 4595) in paragraph at lines 168--170
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
  []
 
-[6]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 182.
+(amsmath)                 on input line 178.
 
-
-Overfull \hbox (8.86882pt too wide) detected at line 186
+[6]
+Overfull \hbox (8.86882pt too wide) detected at line 182
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
@@ -667,7 +660,7 @@ msb/m/n/10 N\OML/cmm/m/it/10 :
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 187--188
+Underfull \hbox (badness 3872) in paragraph at lines 183--184
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
@@ -697,11 +690,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6565 strings out of 493089
+ 6564 strings out of 493089
  100314 string characters out of 6134842
- 197376 words of memory out of 5000000
- 9682 multiletter control sequences out of 15000+600000
- 131064 words of font info for 276 fonts, out of 8000000 for 9000
+ 198395 words of memory out of 5000000
+ 9684 multiletter control sequences out of 15000+600000
+ 130934 words of font info for 274 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -724,7 +717,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 249642 bytes).
+Output written on main.pdf (7 pages, 248050 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream

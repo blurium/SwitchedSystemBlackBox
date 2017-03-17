@@ -77,54 +77,50 @@ $\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Del
 We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
 \end{proof}
 
-\begin{lemma}\label{thm:mainSphericalCap}Let $\calX_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
+\begin{lemma}\label{thm:mainSphericalCap}Let $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$. Then, for any $\epsilon \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon}$ for some $X$ which is a spherical cap.
 \end{lemma}
 
-\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
+\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon$. 
 
-Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ by Remark \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ by Corollary \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
+Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon$, satisfies $\tilde{k} < k$ by Remark \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ by Corollary \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon}$ at $X^*$.
 \end{proof}
 
 
 
-\begin{theorem}Let $X$ be a spherical cap such that $\sigma^{n-1}(X) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
-$$\ball_{\alpha(\epsilon)^2} \subset \conv(\sphere \setminus X),$$
-where  $\alpha(\epsilon) := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{n}{2})}{\pi^{n/2}}, \frac{n-1}{2}, \frac{1}{2}\right)$, and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
-\end{theorem}
+\begin{lemma}\label{lemma:eps}Let $X_\epsilon$ be a spherical cap such that $\sigma^{n-1}(X_\epsilon) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
+\begin{equation}\label{eqn:ballinc}\ball_{\alpha(\epsilon)^2} \subset \conv(\sphere \setminus X),\end{equation}
+where  \begin{equation}\label{defn:alpha}\alpha(\epsilon) = 1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right),\end{equation} and $\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
+\end{lemma}
 
-\begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:
-\begin{equation}\sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
+\begin{proof} It is known (see e.g. \cite{sphericalCapRef}) that the area of the spherical cap $X\subset \sphere$ where $\sigma^{n-1}(X_\epsilon) = \epsilon$, is given by the equation:
+\begin{equation}\sigma^{n-1}(X_\epsilon) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I\left(1-\Delta(X_\epsilon)^2; \frac{d-1}{2}, \frac{1}{2}\right),
 \end{equation}
-where $I$ is the incomplete beta function. 
-Since, \mbox{$\sigma^{n-1}(\calC_{c,k})=\epsilon'$,} we get the following set of equations:
-\begin{eqnarray}\nonumber \frac{\epsilon' \Gamma[\frac{d}{2}]}{\pi^{d/2}} &=& I_{2h-h^2}\left(\frac{d-1}{2}, \frac{1}{2}\right) \\
-\nonumber 2h-h^2 &=&  I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right) \\
-\nonumber 2h-h^2 & = & \alpha \\
-\label{lasteqn}h^2 -2h +\alpha &=& 0.
+where $I$ is the regularized incomplete beta function. Since, \mbox{$\sigma^{n-1}(X_\epsilon)\leq \epsilon$,} we get the following set of equations:
+\begin{eqnarray}\nonumber \frac{\epsilon \Gamma[\frac{d}{2}]}{\pi^{d/2}} &\leq& I\left(1- \Delta(X_\epsilon)^2;\frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber 1- \Delta(X_\epsilon)^2 &\leq&  I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber \Delta(X_\epsilon)^2 &\geq&  1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)
 \end{eqnarray}
-From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon'$ for fixed $n$.
+By the definition of the function $\Delta(X)$ this implies the inclusion \eqref{eqn:ballinc}, where $\alpha(\epsilon)=1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right).$
 \end{proof}
 
 
 We are now ready to prove the first main lemma in this section.
-\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider the set of matrices and $A \in \calM$, and a sphere $\sphere$ satisfying:
+\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider the set of matrices and $A \in \calM$ satisfying:
 \begin{equation}\label{eqn:contraction}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
 where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we can compute
 $\alpha(\epsilon)$ such that we have:
 \begin{equation*}
-A_j \sphere \subset \alpha(\epsilon) \sphere,\, \forall\,j \in M.
+A_j \ball \subset \alpha(\epsilon)^2 \ball,\, \forall\,j \in M.
 \end{equation*}
 \end{lemma}
 
-
 \begin{proof}Note that, \eqref{eqn:contraction} implies that:
 $$A_j (\sphere \setminus \sphere') \subset \ball.$$
-By Remark ?? this implies:
-$$A_j (\convhull (\sphere \setminus \sphere')) \subset \ball.$$
-Then by Lemma \ref{thm:mainSphericalCap}, we have
-$$A_j \ball_{\delta()} \subset \ball,$$
-This means that $\frac{A_j}{\sqrt{\alpha(\epsilon)}}^T\frac{A_j}{\sqrt{\alpha(\epsilon)}} \preceq I$, which 
-implies that the statement of the theorem holds for $\sqrt(\alpha())$
+Using Property \ref{property:convpres} together with Lemma \ref{lemma:eps}, this implies:
+$$A_j \ball_{\alpha(\epsilon)^2} \subset A_j (\convhull (\sphere \setminus \sphere')) \subset \ball, \quad  \forall\, j \in M,$$
+where $\alpha(\epsilon)$ is defined as in \eqref{defn:alpha}.
+%This means that $\frac{A_j}{\sqrt{\alpha(\epsilon)}}^T\frac{A_j}{\sqrt{\alpha(\epsilon)}} \preceq I$, which 
+%implies that the statement of the theorem holds.
 \end{proof}
 
  
@@ -146,10 +142,10 @@ where $\bar{A}:=L^{-1}AL$.
 
 
 
-%. We denote $\epsilon':=\frac{m\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V_\sphere$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
+%. We denote $\epsilon:=\frac{m\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V_\sphere$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
 
 \begin{corollary}\label{cor:main} Let $\beta \in (0,1)$. We have: $$\delta(\beta, \omega_N) =  \Delta(\calC_{c, k}),$$ where
-$\sigma^{n-1}(\calC_{c,k}) = \epsilon'$.
+$\sigma^{n-1}(\calC_{c,k}) = \epsilon$.
 \end{corollary}
 
 
