@@ -8,6 +8,11 @@ Ruxandra Bobiti and Mircea Lazar.
   Systems: Computation and Control}, HSCC '15, pages 140--148, New York, NY,
   USA, 2015. ACM.
 
+\bibitem{boyd}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, New York, NY, USA, 2004.
+
 \bibitem{campi}
 Giuseppe~Carlo Calafiore.
 \newblock Random convex programs.

@@ -1,7 +1,5 @@
 % !TEX root = main.tex
-The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere and compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We use Remark ?? to tie these two results.
-
-Before proving the first main lemma of the Appendix, we introduce the necessary preliminary definitions and related background.
+The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this result on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere. We then compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We finally use the invariance of JSR under similarity transformations stated in Remark \ref{rem:scaling} to tie these two results. Before proceeding to the main lemmas we use to prove Theorem \ref{thm:mainTheorem1}, we first introduce the necessary preliminary definitions and related background.
 
 Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
 
@@ -10,17 +8,22 @@ We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k
 \begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
 \end{definition}
 
-\begin{definition}A \emph{supporting hyperplane} of a set $X \subset \R^n$ is a hyperplane that has the following two properties:
+\begin{remark}\label{lemma:muMonotone}Consider the spherical caps $\calC_{c, k_1}$ and $\calC_{c, k_2}$ such that $k_1 > k_2$, then we have:
+$$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2}).$$
+\end{remark}
+
+
+\begin{definition}A \emph{supporting hyperplane} of a set $X \subset \R^n$ is a hyperplane $\{x:c^Tx = k\}$ that has the following two properties:
 \begin{itemize}
-\item $X$ is entirely contained in one of the two closed half-spaces bounded by the hyperplane.
-\item $X$ has at least one boundary-point on the hyperplane.
+\item $X \subset \{x: c^Tx \leq k\}$ or $X \subset \{x: c^Tx \geq k\}$.
+\item $X \cap \{x: c^Tx = k\} \not= \emptyset$.
 \end{itemize}
 \end{definition}
 
 \begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is smooth, then this supporting hyperplane is unique.
 \end{remark}
 
-\begin{remark}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
+\begin{remark}\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
 \end{remark}
 
 We now define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
@@ -32,11 +35,13 @@ Note that, $\Delta(X)$ can be rewritten as:
 \end{equation}
 
 
-\begin{lemma}\label{lemma:delta2}$\Delta(\calC_{c,k}) = \min\left(1, \frac{|k|}{\|c\|}\right)$.
+\begin{lemma} \label{lemma:delta2} Consider the spherical cap $\calC_{c,k}$. We have:
+$$\Delta(\calC_{c,k}) = \min\left(1, \frac{|k|}{\|c\|}\right).$$
 \end{lemma}
 
 \begin{proof}
-Note that $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}.$$
+Note that: $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}.$$
+Then the following equalities hold:
 \begin{eqnarray}
 \nonumber \Delta(X) &=& \dist(\partial \conv(\sphere \setminus X), 0) \\
 \nonumber &=& \min(\dist(\partial \ball, 0), \dist(\partial\{x : c^Tx \leq k\}, 0)) \\
@@ -45,15 +50,9 @@ Note that $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\
 \end{eqnarray}
 \end{proof}
 
-\begin{corollary}\label{lemma:deltaMonotone}$\Delta(\calC_{c,k_1}) < \Delta(\calC_{c,k_2})$ when $k_1 < k_2$.
+\begin{corollary}\label{lemma:deltaMonotone} Consider the spherical caps $\calC_{c, k_1}$ and $\calC_{c, k_2}$ such that $k_1 \leq k_2$. Then we have: $$\Delta(\calC_{c,k_1}) \leq \Delta(\calC_{c,k_2}).$$
 \end{corollary}
 
-\begin{lemma}\label{lemma:muMonotone}$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2})$, for $k_1 > k_2$.
-\end{lemma}
-
-\begin{proof}$\conv(\sphere \setminus \{x\in \sphere: c^Tx >k_1\}) \subset \conv(\sphere \setminus \{x\in \sphere: c^Tx >k_2\})$, for $k_1 > k_2$.
-\end{proof}
-Now we are ready to present the following lemma which is the key in proving that violating points forming a spherical cap leads to the worst case $\delta$.
 \begin{lemma}\label{lemma:constructSC}For any set $X \subset \sphere$, there exist $c$ and $k$ such that $\calC_{c,k}$ satisfies:
 \begin{equation*}\calC_{c,k} \subset X,
 \end{equation*}
@@ -83,14 +82,14 @@ We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x
 
 \begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
 
-Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ due to Lemma \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
+Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ by Remark \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ by Corollary \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
 \end{proof}
 
 
 
 \begin{theorem}Let $X$ be a spherical cap such that $\sigma^{n-1}(X) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
-$\ball_(\alpha(\epsilon))^2 \subset \conv(\sphere \setminus X)$,
-where  $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{n}{2})}{\pi^{n/2}}, \frac{n-1}{2}, \frac{1}{2}\right)$, and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
+$$\ball_{\alpha(\epsilon)^2} \subset \conv(\sphere \setminus X),$$
+where  $\alpha(\epsilon) := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{n}{2})}{\pi^{n/2}}, \frac{n-1}{2}, \frac{1}{2}\right)$, and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
 \end{theorem}
 
 \begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:

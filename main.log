@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 MAR 2017 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,68 +397,72 @@ No file references.bib.tex.
 \c@remark=\count110
 \c@property=\count111
 \c@theorem=\count112
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `lemma:epsilon1' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 92.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    ... okay on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <16> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 90.
-LaTeX Info: Redefining \microtypecontext on input line 90.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+LaTeX Info: Redefining \microtypecontext on input line 92.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -535,15 +539,15 @@ e
 ))
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 90.
-Package gensymb Info: Math companion symbols declared on input line 90.
-LaTeX Info: Redefining \degree on input line 90.
-LaTeX Info: Redefining \celsius on input line 90.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 92.
+Package gensymb Info: Math companion symbols declared on input line 92.
+LaTeX Info: Redefining \degree on input line 92.
+LaTeX Info: Redefining \celsius on input line 92.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 90.
-LaTeX Info: Redefining \ohm on input line 90.
-Package gensymb Info: Using \textohm for \ohm on input line 90.
-Package gensymb Info: Using \textmu for \micro on input line 90.
+erthousand on input line 92.
+LaTeX Info: Redefining \ohm on input line 92.
+Package gensymb Info: Using \textohm for \ohm on input line 92.
+Package gensymb Info: Using \textmu for \micro on input line 92.
 
 
 LaTeX Warning: No \author given.
@@ -555,7 +559,7 @@ LaTeX Warning: No \author given.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -563,7 +567,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 94.
+LaTeX Font Info:    Try loading font information for U+msb on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -571,307 +575,76 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 94.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 94.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 (./introduction.tex
 
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 8.
-
-
 LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 8.
 
 
 LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 8.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `jungersBook' on page 1 undefined on input line 14.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 
-]
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-16.
-
-
-LaTeX Warning: Citation `jungersBook' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation `campi' on page 2 undefined on input line 16.
-
-) (./Preliminaries.tex) (./stability.tex
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-10.
-
-
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 2 undefined on inp
-ut line 15.
-
-
-LaTeX Warning: Citation `jungers_lncis' on page 2 undefined on input line 23.
-
-
+])
+(./Preliminaries.tex) (./stability.tex
 Underfull \hbox (badness 7504) in paragraph at lines 29--30
 []\T1/ptm/m/n/10 (+20) For any
  []
 
-[2]) (./lowerBound.tex
-
-LaTeX Warning: Citation `jungers_lncis' on page 3 undefined on input line 4.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 3 undefined on input line 
-8.
-
-
-LaTeX Warning: Reference `eq:lowerbound' on page 3 undefined on input line 25.
-
-
-LaTeX Warning: Reference `thm:john' on page 3 undefined on input line 29.
-
-) (./mainTheoremProof.tex
+[2]) (./lowerBound.tex) (./mainTheoremProof.tex
 
 LaTeX Warning: Reference `jungersRho' on page 3 undefined on input line 2.
 
-
-LaTeX Warning: Reference `property:homogeneity' on page 3 undefined on input li
-ne 2.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 11.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 11.
-
-
-LaTeX Warning: Reference `eqn:campiOpt00' on page 3 undefined on input line 21.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Reference `eqn:campiOpt00' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `property:homogeneity' on page 3 undefined on input li
-ne 30.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 32.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 34.
-
-
-LaTeX Warning: Reference `eqn:violation' on page 3 undefined on input line 39.
-
-[3]
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 4 undefined on input line 59.
-
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 68.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `mainTheorem0' on page 4 undefined on input line 86.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 4 undefined on input line 86.
-
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 4 undefined on input line 1
-38.
-
-) (./mainTheoremProof2.tex
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 4 undefined on input line 
-3.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Reference `eqn:violation' on page 4 undefined on input line 12.
-
-
-LaTeX Warning: Reference `mainTheorem0' on page 4 undefined on input line 12.
-
+[3]) (./mainTheoremProof2.tex
 
 LaTeX Warning: Reference `thm:mainTheorem0' on page 4 undefined on input line 1
 6.
 
-
-LaTeX Warning: Reference `eqn:eps' on page 4 undefined on input line 16.
-
-[4]
-
-LaTeX Warning: Reference `thm:mainTheorem01' on page 5 undefined on input line 
-18.
-
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 5 undefined on input line 2
-0.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 5 undefined on input line 
-25.
-
-
-LaTeX Warning: Reference `rem:scaling' on page 5 undefined on input line 25.
-
-) (./experiments.tex) (./conclusions.tex) (./appendix.tex
-
-LaTeX Warning: Reference `lemma:epsilon1' on page 5 undefined on input line 2.
-
+[4]) (./experiments.tex) (./conclusions.tex) (./appendix.tex
 
 LaTeX Warning: Reference `lemma:epsilon2' on page 5 undefined on input line 2.
 
 
-LaTeX Warning: Citation `boyd' on page 5 undefined on input line 20.
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 18.
 
-
-LaTeX Warning: Citation `boyd' on page 5 undefined on input line 23.
-
-
-LaTeX Warning: Reference `suppHyperplaneRemark' on page 5 undefined on input li
-ne 70.
-
-
-LaTeX Warning: Reference `lemma:delta2' on page 5 undefined on input line 74.
-
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 18.
 [5]
-
-LaTeX Warning: Reference `lemma:constructSC' on page 6 undefined on input line 
-84.
-
-
-LaTeX Warning: Reference `lemma:muMonotone' on page 6 undefined on input line 8
-6.
-
-
-LaTeX Warning: Reference `lemma:deltaMonotone' on page 6 undefined on input lin
-e 86.
-
-
-Underfull \hbox (badness 2310) in paragraph at lines 91--93
+Underfull \hbox (badness 2310) in paragraph at lines 90--91
 []\T1/ptm/m/n/10 (+20) Let $\OML/cmm/m/it/10 X$ \T1/ptm/m/n/10 (+20) be a spher
 -i-cal cap such that
  []
 
 
-LaTeX Warning: Citation `sphericalCapRef' on page 6 undefined on input line 96.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--101
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
 \T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10 I$ \T1/ptm/m/n/10 (+20) is the in-
 com-plete beta func-tion. Since,
  []
 
 
-LaTeX Warning: Reference `lasteqn' on page 6 undefined on input line 106.
-
-
-LaTeX Warning: Reference `eqn:contraction' on page 6 undefined on input line 12
-1.
-
-
-LaTeX Warning: Reference `thm:mainSphericalCap' on page 6 undefined on input li
-ne 125.
-
-
-Underfull \hbox (badness 3354) in paragraph at lines 136--138
+Underfull \hbox (badness 3354) in paragraph at lines 135--137
 \T1/ptm/m/n/10 (+20) where $[] \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 L[]AL$\T1/pt
 m/m/n/10 (+20) , for some $[][] \OMS/cmsy/m/n/10 ^^Z []$ \T1/ptm/m/n/10 (+20) w
 here
  []
 
 
-LaTeX Warning: Reference `eqn:appendix' on page 6 undefined on input line 174.
-
-
-Underfull \hbox (badness 4595) in paragraph at lines 173--175
+Underfull \hbox (badness 4595) in paragraph at lines 172--174
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
  []
@@ -880,13 +653,10 @@ cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 183.
+(amsmath)                 on input line 182.
 
 
-LaTeX Warning: Reference `eqn:beta' on page 7 undefined on input line 185.
-
-
-Overfull \hbox (8.86882pt too wide) detected at line 187
+Overfull \hbox (8.86882pt too wide) detected at line 186
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
@@ -897,7 +667,7 @@ msb/m/n/10 N\OML/cmm/m/it/10 :
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 188--189
+Underfull \hbox (badness 3872) in paragraph at lines 187--188
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
@@ -917,21 +687,25 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./main.aux)
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6515 strings out of 493089
- 99585 string characters out of 6134842
- 196962 words of memory out of 5000000
- 9648 multiletter control sequences out of 15000+600000
- 127019 words of font info for 260 fonts, out of 8000000 for 9000
+ 6565 strings out of 493089
+ 100314 string characters out of 6134842
+ 197376 words of memory out of 5000000
+ 9682 multiletter control sequences out of 15000+600000
+ 131064 words of font info for 276 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,35p,1528b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
@@ -950,10 +724,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 243000 bytes).
+Output written on main.pdf (7 pages, 249642 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 30721 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 33793 words of extra memory for PDF output out of 35830 (max. 10000000)
 

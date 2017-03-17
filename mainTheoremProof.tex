@@ -32,11 +32,11 @@ where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \
 The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the random convex optimization literature \cite{campi}. It turns out that under certain technical assumptions, the optimal solution of \eqref{eqn:campiOpt01} is feasible for the original problem \eqref{eqn:campiOpt0}, with some probability which is a function of the sample size $N$. To formalize this discussion, we define the constraint violation probability next.
 
 \begin{definition}(from \cite{campi}) For all $\omega_N$ for which a solution to $\Opt(\omega_N)$ exists, the \emph{constraint violation probability} is defined as:
-\begin{equation}\label{eqn:violation}
+\begin{equation}\label{eqn:violation0}
 \calV^*(\omega_N)=
       \mathbb{P}\{z \in Z: f(P(\omega_N), z) > 0\}.
 \end{equation}
-Note that, since we have $\mathbb{P}(\calA) = \frac{\mu(\calA)}{\mu(Z)}$, we can rewrite \eqref{eqn:violation} as:
+Note that, since we have $\mathbb{P}(\calA) = \frac{\mu(\calA)}{\mu(Z)}$, we can rewrite \eqref{eqn:violation0} as:
 \begin{equation*}
 \calV^*(\omega_N)=
       \frac{\mu(V(\omega_N))}{\mu(Z)},
