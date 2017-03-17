@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 MAR 2017 10:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 MAR 2017 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -401,6 +401,9 @@ No file references.bib.tex.
 
 LaTeX Warning: Label `eqn:violation' multiply defined.
 
+
+LaTeX Warning: Label `lemma:epsilon1' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -605,17 +608,63 @@ Underfull \hbox (badness 7504) in paragraph at lines 29--30
 
 LaTeX Warning: Reference `jungersRho' on page 3 undefined on input line 2.
 
-
-Overfull \hbox (3.35617pt too wide) detected at line 29
-[] []
- []
-
 [3]) (./mainTheoremProof2.tex
 
 LaTeX Warning: Reference `thm:mainTheorem0' on page 4 undefined on input line 1
 6.
 
-[4]) (./experiments.tex) (./conclusions.tex) (./appendix.tex) (./main.bbl)
+[4]) (./experiments.tex) (./conclusions.tex) (./appendix.tex
+
+LaTeX Warning: Reference `lemma:epsilon2' on page 5 undefined on input line 2.
+
+
+LaTeX Warning: Citation `boyd' on page 5 undefined on input line 20.
+
+
+LaTeX Warning: Citation `boyd' on page 5 undefined on input line 23.
+
+[5]
+Underfull \hbox (badness 3354) in paragraph at lines 115--117
+\T1/ptm/m/n/10 (+20) where $[] \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 L[]AL$\T1/pt
+m/m/n/10 (+20) , for some $[][] \OMS/cmsy/m/n/10 ^^Z []$ \T1/ptm/m/n/10 (+20) w
+here
+ []
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 152--154
+\T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
+cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
+\T1/ptm/m/n/10 (+20) where $\OML/cmm/m/it/10 I$ \T1/ptm/m/n/10 (+20) is the in-
+com-plete beta func-tion. Since,
+ []
+
+[6]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 179.
+
+
+Overfull \hbox (8.86882pt too wide) detected at line 183
+\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
+T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
+OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
+\OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\O
+ML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^N\
+OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
+msb/m/n/10 N\OML/cmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 184--185
+\T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
+ []
+
+) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -627,7 +676,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[5] (./main.aux)
+[7
+
+] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -636,11 +687,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6480 strings out of 493089
- 99167 string characters out of 6134842
- 195219 words of memory out of 5000000
- 9631 multiletter control sequences out of 15000+600000
- 126049 words of font info for 248 fonts, out of 8000000 for 9000
+ 6509 strings out of 493089
+ 99531 string characters out of 6134842
+ 197362 words of memory out of 5000000
+ 9648 multiletter control sequences out of 15000+600000
+ 126759 words of font info for 256 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -662,10 +713,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (5 pages, 217684 bytes).
+Output written on main.pdf (7 pages, 242656 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  30721 words of extra memory for PDF output out of 35830 (max. 10000000)
 

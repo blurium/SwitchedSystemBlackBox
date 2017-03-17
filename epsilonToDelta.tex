@@ -17,30 +17,9 @@ We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k
 
 \begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is smooth, then this supporting hyperplane is unique.
 \end{remark}
-%\begin{proposition}Let $X \subset \R^n$ be a closed convex set. The set $X$ can be written as the intersection of all its support vectors:
-%\begin{equation*} X = \cap_{i \in \partial X} c_i^Tx \leq k_i\end{equation*}
-%\end{proposition}
 
-
-%\begin{proposition}\label{distanceSet} Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Then if $X$ is compact, we have:
-%\begin{equation*}\dist(X,p)= \min_{x \in X}\dist(x,p). \end{equation*} 
-%\end{proposition}
-
-%\begin{proof}This is due to the fact that the function $\dist$ is continuous and hence attains its minimum on the compact set $X$.
-%\end{proof}
 \begin{remark}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
 \end{remark}
-
-%\begin{lemma}\label{prop:distanceSet}Consider the boundary of the compact convex set
-%\begin{equation*}X := \bigcap\limits_{i\in I}\{x: c_i^Tx \leq k_i\},\end{equation*} denoted by $\partial X$, then:
-%\begin{equation*} \dist(\partial X,0) = \min_{i \in I} \frac{|k_i|}{\|c_i\|}.\end{equation*}
-%\end{lemma}
-
-%\begin{proof}Due to Proposition \ref{prop:distance} we have:
-%\begin{equation}\dist(\partial X,0)= \inf_{i \in I} \dist\left(\{x: c_i^Tx = k_i\},0\right) = \inf_{i \in I}\koverc.
-%\end{equation}
-%Note that due to Proposition \ref{distanceSet}, the $\inf_{x \in \partial X}\dist(x,0)$ is attained by a point $x^* \in\partial X$ due to compactness of $\partial X$. Hence, there exists an $i \in I$ such that $c_i^Tx^*=k_i$ and this leads to: $\inf_{i \in I}\koverc = \min_{i \in I}\koverc$.
-%\end{proof}
 
 We now define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
 \begin{equation}\label{shrinkage}
@@ -63,20 +42,6 @@ Note that $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\
 \nonumber &=& \min\left(1, \frac{|k|}{\|c\|}\right).
 \end{eqnarray}
 \end{proof}
-%\begin{lemma}\label{lemma:delta2}Given a set $X \subseteq \sphere$, let $\conv(\sphere \setminus X) := \ball \cap \calP$. Then we have:
-%$$\Delta(X) = \min\left(\min_{i \in \partial X} \frac{|k_i|}{\|c_i\|}, 1\right),$$
-%where $\left\{x \middle | c_i^Tx = k_i\right\} \in H_x(\calP)$ and $H \subseteq \{x : c_i^Tx \leq k_i\}$.
-%\end{lemma}
-%
-%\begin{proof}
-%Note that, $\calP = \cap_{i \in \partial X}\left\{x \middle | c_i^Tx \leq k_i\right\}$.
-%\begin{eqnarray}
-%\nonumber \Delta(X) &=& \sup \{r: \ball_r \subseteq \conv(\sphere \setminus X)\} \\
-%\nonumber&=&\min \left(\dist(\partial \calP, 0), \dist(\sphere, 0) \right) \\
-%\label{shrinkage1}&=&\min\left(\min_{i \in \partial X} \frac{|k_i|}{\|c_i\|},1\right) \qquad \qquad\text{due to Lemma\,} 
-%{\ref{prop:distanceSet}}.
-%\end{eqnarray}
-%\end{proof}
 
 \begin{corollary}\label{lemma:deltaMonotone}$\Delta(\calC_{c,k_1}) < \Delta(\calC_{c,k_2})$ when $k_1 < k_2$.
 \end{corollary}
@@ -110,33 +75,7 @@ $\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Del
 
 We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
 \end{proof}
-%\begin{lemma} The function $\tilde{\lambda}_{max} : \R^{n(n-1)/2} \to \R$ is convex in $z$.
-%\end{lemma}
 
-%\begin{proof}Let the function $\phi: \mathbb{S}^{n} \to \R^{n(n-1)/2}$ map a given symmetric matrix to a vector of its elements. Then we have $\tilde{\lambda}_{max}(z) = \lambda_{max}(\phi^{-1}(z))$. Note that the function $\phi$, and so is its inverse $\phi^{-1}$, and so is the maximum eigenvalue function. Since the composition a convex function with a linear function is convex, $\tilde{\lambda}_{max}$ is a convex function of $z$.
-%\end{proof}
-
-
-%\begin{section}{Main Results}
-%
-%\begin{lemma}If I lose $\epsilon$ measure on the product, I lose $m \epsilon$ points on $\sphere_1$.
-%\end{lemma}
-%
-%\begin{proof}Let $X:=\sphere_1 \times M$ then $\sigma^{n-1}(bad) = \epsilon \sigma^{n-1}(\sphere_1 \times M) = \gamma \\
-%\sigma^{n-1}(bad) = \sum_{x \in X} \sigma^{n-1}(bad \sphere_1) \leq \epsilon \sigma^{n-1}(X)$
-%$\gamma = \sum_{x \in X} \sigma^{n-1}_1(x)\sigma^{n-1}_2(M_x)$
-%We have $\sigma^{n-1}_2(M_x) \geq \sigma^{n-1}_2(m_i) = k > 0$. \\
-%$\gamma \geq \sum k \sigma^{n-1}_1(x)$.
-%This means that $\sigma^{n-1}_1(B_x) \leq m \epsilon$.
-%\end{proof}
-
-%\begin{lemma}\label{lemma:Convex}The function
-%\begin{equation}\label{funcDelta0}\Delta_\epsilon(X):=\sup \{d: \ball_d \subset \conv(\sphere_1 \setminus X), \sigma^{n-1}(X) = \epsilon, X \subset \sphere_1\},
-%\end{equation}
-%attains its minimum when $X$ is a convex set.
-%\end{lemma}
-%\substack{\text{Some long text that} \\ \text{should be multiline}}
-We now prove our main result.
 \begin{theorem}\label{thm:mainSphericalCap}Let $\calX_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
 \end{theorem}
 

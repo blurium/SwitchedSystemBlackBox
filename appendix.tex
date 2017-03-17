@@ -1,10 +1,188 @@
 % !TEX root = main.tex
-The proof of the theorem is two-part. Via a linear transformation mapping $L \in\calL(\R^n)$, we first transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere, while the sphere $\sphere$ maps to the ellipsoid $E_{L}$ in this new coordinates. Given $\epsilon \in (0, 1)$, we then compute an upper bound on the JSR in the transformed space, and using Remark \ref{rem:scaling}, we conclude that the same upper bound is valid in the original space as well.
+The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere and compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We use Remark ?? to tie these two results.
+
+Before proving the first main lemma of the Appendix, we introduce the necessary preliminary definitions and related background.
+
+Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
+
+\begin{definition}%[Spherical Cap]
+We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
+\begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
+\end{definition}
+
+\begin{definition}A \emph{supporting hyperplane} of a set $X \subset \R^n$ is a hyperplane that has the following two properties:
+\begin{itemize}
+\item $X$ is entirely contained in one of the two closed half-spaces bounded by the hyperplane.
+\item $X$ has at least one boundary-point on the hyperplane.
+\end{itemize}
+\end{definition}
+
+\begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is smooth, then this supporting hyperplane is unique.
+\end{remark}
+
+\begin{remark}[see e.g. \cite{boyd}]\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
+\end{remark}
+
+We now define the function $\Delta: \wp(\sphere) \to [0,1]$ as:
+\begin{equation}\label{shrinkage}
+\Delta(X) := \sup \{r: \ball_r \subset \conv(\sphere \setminus X)\}.\end{equation}
+Note that, $\Delta(X)$ can be rewritten as:
+\begin{equation}\label{shrinkage2}
+\Delta(X) =  \dist(\partial  \conv(\sphere \setminus X), 0).
+\end{equation}
+
+
+\begin{lemma}\label{lemma:delta2}$\Delta(\calC_{c,k}) = \min\left(1, \frac{|k|}{\|c\|}\right)$.
+\end{lemma}
+
+\begin{proof}
+Note that $$\conv(\sphere \setminus X)= \left\{x \in \ball : c^Tx \leq k \right\}.$$
+\begin{eqnarray}
+\nonumber \Delta(X) &=& \dist(\partial \conv(\sphere \setminus X), 0) \\
+\nonumber &=& \min(\dist(\partial \ball, 0), \dist(\partial\{x : c^Tx \leq k\}, 0)) \\
+\nonumber &=& \min(\dist(\sphere, 0), \dist(\{x : c^Tx = k\}, 0)) \\
+\nonumber &=& \min\left(1, \frac{|k|}{\|c\|}\right).
+\end{eqnarray}
+\end{proof}
+
+\begin{corollary}\label{lemma:deltaMonotone}$\Delta(\calC_{c,k_1}) < \Delta(\calC_{c,k_2})$ when $k_1 < k_2$.
+\end{corollary}
+
+\begin{lemma}\label{lemma:muMonotone}$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2})$, for $k_1 > k_2$.
+\end{lemma}
+
+\begin{proof}$\conv(\sphere \setminus \{x\in \sphere: c^Tx >k_1\}) \subset \conv(\sphere \setminus \{x\in \sphere: c^Tx >k_2\})$, for $k_1 > k_2$.
+\end{proof}
+Now we are ready to present the following lemma which is the key in proving that violating points forming a spherical cap leads to the worst case $\delta$.
+\begin{lemma}\label{lemma:constructSC}For any set $X \subset \sphere$, there exist $c$ and $k$ such that $\calC_{c,k}$ satisfies:
+\begin{equation*}\calC_{c,k} \subset X,
+\end{equation*}
+ and
+\begin{equation}\Delta(\calC_{c,k}) = \Delta(X).
+\end{equation}
+\end{lemma}
+
+\begin{proof} Let $\tilde{X} := \conv(S \setminus X)$.
+Since $\dist$ is continuous and the set $\partial \tilde{X}$ is compact, there exists a point $x^* \in \partial \tilde{X}$, such that:
+\begin{eqnarray}\nonumber \Delta(X) = \dist(\partial X_S, 0) = 
+\label{deltaSupporting} \min_{x \in \partial \tilde{X}}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
+Next, consider the supporting hyperplane of $\tilde{X}$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $\ball_{\Delta(X)}$ at $x^*$ since we have:
+\begin{equation*} \partial \ball_{\Delta(X)} \subset \partial \tilde{X} \subset \left\{x : c^Tx = k\right\}.\end{equation*}  By Remark \ref{suppHyperplaneRemark}, this implies that $\left\{x : c^Tx = k\right\}$ is in fact the unique supporting hyperplane at $x^*$.
+Then we have:
+\begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \min\left(1, \frac{|k|}{\|c\|}\right).
+\end{equation*}
+Now, consider the spherical cap $\calC_{c,k}$. Then, by Lemma \ref{lemma:delta2} we have
+$\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Delta(X) = \Delta(\calC_{c,k})$.
+
+
+We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
+\end{proof}
+
+\begin{lemma}\label{thm:mainSphericalCap}Let $\calX_{\epsilon'} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon'\}$. Then, for any $\epsilon' \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon'}$ for some $X$ which is a spherical cap.
+\end{lemma}
+
+\begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon'}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon'}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon'}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon'$. 
+
+Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ due to Lemma \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
+\end{proof}
+
+We are now ready to prove the first main lemma in this section.
+\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider the set of matrices and $A \in \calM$, and a sphere $\sphere$ satisfying:
+\begin{equation}\label{eqn:contraction}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
+where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we can compute
+$\alpha(\epsilon)$ such that we have:
+\begin{equation*}
+A_j \sphere \subset \alpha(\epsilon) \sphere,\, \forall\,j \in M.
+\end{equation*}
+\end{lemma}
+
+
+\begin{proof}Note that, \eqref{eqn:contraction} implies that:
+$$A_j (\sphere \setminus \sphere') \subset \ball.$$
+By Remark ?? this implies:
+$$A_j (\convhull (\sphere \setminus \sphere')) \subset \ball.$$
+Then by Lemma \ref{thm:mainSphericalCap}, we have:
+$$A_j \ball_{\delta()} \subset \ball,$$
+This means that $\frac{A_j}{\sqrt{\alpha(\epsilon)}}^T\frac{A_j}{\sqrt{\alpha(\epsilon)}} \preceq I$, which 
+implies that the statement of the theorem holds for $\sqrt(\alpha())$
+\end{proof}
+
+ 
 
 \begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying
 \begin{equation*}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in E_P \setminus E', \forall\,j \in, M,\end{equation*}
 for some $E' \subset E_P$ where $\sigma^{n-1}(E') \leq \epsilon$, then we have:
-\begin{equation*}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in M,
-\end{equation*}
-for some $S' \subset S$, where $\sigma^{n-1}(S') \leq \frac{1}{\det(L)}\epsilon$.
+\begin{equation*}(\bar{A}_jLx)^T(\bar{A}_jLx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation*}
+where $\bar{A}:=L^{-1}AL$, for some $\sphere'  \subset \sphere$ where \mbox{$\sigma^{n-1}(\sphere') \leq \frac{1}{\lambda_{\min}(L)^n} \epsilon$}
 \end{lemma}
+
+
+Given the bound $\sigma^{n-1}(\sphere')\leq \frac{1}{\lambda_{\min}(L)^n} \epsilon$, we now proceed to the second part where we compute $a$
+\begin{equation*}\bar{A} \sphere \subset \alpha(\epsilon) \sphere, \forall\, j \in M,
+\end{equation*}
+where $\bar{A}:=L^{-1}AL$.
+
+
+
+
+
+%. We denote $\epsilon':=\frac{m\epsilon}{2} \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$, where the additional factor $\frac{1}{2}$ follows from the homogeneity of the dynamics which implies a symmetry of $V_\sphere$, i.e., \begin{equation*}x \in V_{\sphere} \implies -x \in V_{\sphere}.\end{equation*}
+
+\begin{corollary}\label{cor:main} Let $\beta \in (0,1)$. We have: $$\delta(\beta, \omega_N) =  \Delta(\calC_{c, k}),$$ where
+$\sigma^{n-1}(\calC_{c,k}) = \epsilon'$.
+\end{corollary}
+
+
+\begin{lemma}\textcolor{blue}{Consider the sequential sampling $\omega_N$.} Let $d=\frac{n(n+1)}{2}$ and $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$ and let $\lambda_{\max}(P(\omega_N))$ be the optimal objective function value for this $P(\omega_N)$. Then, $\lambda_{\max}(P(\omega_N))$ is uniformly bounded in $N$.
+\end{lemma}
+
+\begin{proof}We first define the following optimization problem:
+\begin{equation}\label{eqn:appendix}
+\begin{aligned}
+& \text{min}_{P} & & \lambda_{\max}(P) \\
+& \text{s.t.} 
+&  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
+& && P \succeq I, \\
+\end{aligned}
+\end{equation}
+where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
+
+Note that, for all $d \in \Z$ such that $0< d \leq N$ we have $\gamma^*(\omega_d) \leq \gamma^*(\omega_N)$. Also note that,
+\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_d), \omega_N).
+\end{equation*}
+But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) \leq c$, which completes the proof of this lemma.
+\end{proof}
+
+\begin{theorem}Let $\beta \in (0,1)$. We have:
+\begin{equation*}\delta(\beta, \omega_N) = \sqrt{(1-\alpha)}, \end{equation*}
+where $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right)$ and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y, a,b)= x$ where $I_x(a,b)=y$.
+\end{theorem}
+
+\begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:
+\begin{equation}\sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
+\end{equation}
+where $I$ is the incomplete beta function. 
+Since, \mbox{$\sigma^{n-1}(\calC_{c,k})=\epsilon'$,} we get the following set of equations:
+\begin{eqnarray}\nonumber \frac{\epsilon' \Gamma[\frac{d}{2}]}{\pi^{d/2}} &=& I_{2h-h^2}\left(\frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber 2h-h^2 &=&  I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber 2h-h^2 & = & \alpha \\
+\label{lasteqn}h^2 -2h +\alpha &=& 0.
+\end{eqnarray}
+From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon'$ for fixed $n$.
+\end{proof}
+
+%\begin{corollary}\label{cor:final}Let $\beta \in (0,1)$. $$\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$$
+%\end{corollary}
+
+\begin{proof} 
+We first prove that $\lim_{N \to \infty} \epsilon(\beta, N)= 0$. Note that, we can upper bound $1-\beta$ as follows:
+\begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
+\end{equation}
+We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon(\beta, N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > \delta$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+\begin{equation*}1-\beta\leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
+\end{equation*}
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$.
+
+\textcolor{red}{Still to show: If $\frac{\lambda{\max}(P)}{\lambda{\min}(P)}$ is uniformly bounded in $N$, then
+since $I^{-1}$ is monotonic in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.}
+\end{proof}
