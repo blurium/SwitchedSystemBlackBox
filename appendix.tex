@@ -86,6 +86,27 @@ We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x
 Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \tilde{k}}) = \epsilon'$, satisfies $\tilde{k} < k$ due to Lemma \ref{lemma:muMonotone}. This implies $$\Delta(\calC_{c, \tilde{k}}) < \Delta(\calC_{c, k}) = \Delta(X^*)$$ due to Lemma \ref{lemma:deltaMonotone}. Therefore, $\Delta(\calC_{c, \tilde{k}}) < \Delta(X^*)$. This is a contradiction since we initially assumed that $\Delta(X)$ attains its minimum over $\calX_{\epsilon'}$ at $X^*$.
 \end{proof}
 
+
+
+\begin{theorem}Let $X$ be a spherical cap such that $\sigma^{n-1}(X) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
+$\ball_(\alpha(\epsilon))^2 \subset \conv(\sphere \setminus X)$,
+where  $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{n}{2})}{\pi^{n/2}}, \frac{n-1}{2}, \frac{1}{2}\right)$, and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
+\end{theorem}
+
+\begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:
+\begin{equation}\sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
+\end{equation}
+where $I$ is the incomplete beta function. 
+Since, \mbox{$\sigma^{n-1}(\calC_{c,k})=\epsilon'$,} we get the following set of equations:
+\begin{eqnarray}\nonumber \frac{\epsilon' \Gamma[\frac{d}{2}]}{\pi^{d/2}} &=& I_{2h-h^2}\left(\frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber 2h-h^2 &=&  I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right) \\
+\nonumber 2h-h^2 & = & \alpha \\
+\label{lasteqn}h^2 -2h +\alpha &=& 0.
+\end{eqnarray}
+From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon'$ for fixed $n$.
+\end{proof}
+
+
 We are now ready to prove the first main lemma in this section.
 \begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider the set of matrices and $A \in \calM$, and a sphere $\sphere$ satisfying:
 \begin{equation}\label{eqn:contraction}(A_jx)^TP(A_jx) \leq \gamma^* x^TPx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
@@ -101,7 +122,7 @@ A_j \sphere \subset \alpha(\epsilon) \sphere,\, \forall\,j \in M.
 $$A_j (\sphere \setminus \sphere') \subset \ball.$$
 By Remark ?? this implies:
 $$A_j (\convhull (\sphere \setminus \sphere')) \subset \ball.$$
-Then by Lemma \ref{thm:mainSphericalCap}, we have:
+Then by Lemma \ref{thm:mainSphericalCap}, we have
 $$A_j \ball_{\delta()} \subset \ball,$$
 This means that $\frac{A_j}{\sqrt{\alpha(\epsilon)}}^T\frac{A_j}{\sqrt{\alpha(\epsilon)}} \preceq I$, which 
 implies that the statement of the theorem holds for $\sqrt(\alpha())$
@@ -153,23 +174,6 @@ Note that, for all $d \in \Z$ such that $0< d \leq N$ we have $\gamma^*(\omega_d
 But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) \leq c$, which completes the proof of this lemma.
 \end{proof}
 
-\begin{theorem}Let $\beta \in (0,1)$. We have:
-\begin{equation*}\delta(\beta, \omega_N) = \sqrt{(1-\alpha)}, \end{equation*}
-where $\alpha := I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right)$ and $$\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y, a,b)= x$ where $I_x(a,b)=y$.
-\end{theorem}
-
-\begin{proof}Let $h:=1-\delta = 1- \Delta(\calC_{c,k})$, where $\sigma^{n-1}(\calC_{c,k}) = \epsilon'$. It is well known \cite{sphericalCapRef} that the area of the spherical cap $\calC_{c,k} \subset \sphere$ is given by the equation:
-\begin{equation}\sigma^{n-1}(\calC_{c,k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I_{2h-h^2} \left(\frac{d-1}{2}, \frac{1}{2}\right),
-\end{equation}
-where $I$ is the incomplete beta function. 
-Since, \mbox{$\sigma^{n-1}(\calC_{c,k})=\epsilon'$,} we get the following set of equations:
-\begin{eqnarray}\nonumber \frac{\epsilon' \Gamma[\frac{d}{2}]}{\pi^{d/2}} &=& I_{2h-h^2}\left(\frac{d-1}{2}, \frac{1}{2}\right) \\
-\nonumber 2h-h^2 &=&  I^{-1}\left(\frac{\epsilon'\Gamma(\frac{d}{2})}{\pi^{d/2}}, \frac{d-1}{2}, \frac{1}{2}\right) \\
-\nonumber 2h-h^2 & = & \alpha \\
-\label{lasteqn}h^2 -2h +\alpha &=& 0.
-\end{eqnarray}
-From \eqref{lasteqn}, we get $h=1\pm \sqrt{(1-\alpha)}$. Since $h\leq1$, we conclude that \mbox{$\Delta(\calC_{c,k}) = \sqrt{(1-\alpha)}$.} Note that, $\Delta(\calC_{c,k})$ only depends on $\epsilon'$ for fixed $n$.
-\end{proof}
 
 %\begin{corollary}\label{cor:final}Let $\beta \in (0,1)$. $$\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$$
 %\end{corollary}
