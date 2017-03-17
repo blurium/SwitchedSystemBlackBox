@@ -23,11 +23,11 @@ Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can p
 \begin{aligned}
 & \text{min}_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
-&  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma^*}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
+&  & (A_j x)^TP(A_j x) \leq {((1 +\eta)\gamma^*)}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
 & && P \succeq I. \\
 \end{aligned}
 \end{equation}
-where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}, $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$. We drop the explicit dependence of $P$ and $\gamma^*$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are able to replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta(N)$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the preceding discussion.
+where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}, $\eta > 0$, and $\gamma^*$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$ and $\gamma^*(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are able to replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta(N)$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the preceding discussion.
 
 The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the random convex optimization literature \cite{campi}. It turns out that under certain technical assumptions, the optimal solution of \eqref{eqn:campiOpt01} is feasible for the original problem \eqref{eqn:campiOpt0}, with some probability which is a function of the sample size $N$. To formalize this discussion, we define the constraint violation probability next.
 
@@ -96,10 +96,10 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 %\end{equation*}
 %for some $ X_P \subset E_P$ and $\sigma^{n-1}_P(X_P) \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det{(P)}}}$.
 %\end{theorem}
-\begin{theorem}\label{thm:mainTheorem01}Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
-\begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
+\begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
+\begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
-\begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
+\begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
 for some $E' \subset E_P$ where $\sigma_P(E') \leq \frac{m}{\sqrt{\det(P)}}\epsilon$.
 \end{theorem}
 
@@ -124,10 +124,10 @@ Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \f
 \textcolor{blue}{Joris: Here, we need the discussion on relating $\sigma^{n-1}(V_{\sphere})$ with $\sigma_P(E')$.}
 \end{proof}
 
-\begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
-\begin{equation}(A_j x)^TP(A_j x) \leq {\gamma^*}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
+\begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$ and $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
+\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
 for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\alpha(\epsilon) > 0$ such that we have:
-\begin{equation}\label{eqn:contractionEllipsoid}A_j E_P \subset \alpha(\epsilon)E_P, \forall\, j \in M.
+\begin{equation}\label{eqn:contractionEllipsoid}A_j \tilde{E}_P \subset \frac{\gamma}{\alpha(\epsilon)}\tilde{E}_P, \forall\, j \in M.
 \end{equation}
 Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
 \end{theorem}
