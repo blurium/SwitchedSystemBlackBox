@@ -17,7 +17,7 @@ Then, by Theorem \ref{mainTheorem0} for all $\epsilon$ satisfying \eqref{eqn:eps
 \begin{equation*} (A_jx)^TP(A_jx) \leq  {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V.\end{equation*}
 By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
 \begin{equation*}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $S'$ where $\sigma^{n-1}(S') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$ Then, applying Lemma \ref{lemma:epsilon1}, we can compute $$\delta(\beta, \omega_N) = \bar{\alpha}(m(1- I^{-1}(1-\beta; N-d, d+1)))$$ such that with probability at least $\beta$ we have:
+for some $S'$ where $\sigma^{n-1}(S') \leq m\epsilon \kappa(P).$ Then, applying Lemma \ref{lemma:epsilon1}, we can compute $$\delta(\beta, \omega_N) =\alpha(m\kappa(P)(1- I^{-1}(1-\beta; N-d, d+1)))$$ such that with probability at least $\beta$ we have:
 \begin{equation*}
 \bar{A_j} \ball \subset \frac{\gamma^*(\omega_N)(1+\eta)}{\delta(\beta, \omega_N)}\ball,\, \forall\, j \in M,
 \end{equation*}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{lazar}
 Ruxandra Bobiti and Mircea Lazar.
@@ -17,6 +17,17 @@ Stephen Boyd and Lieven Vandenberghe.
 Giuseppe~Carlo Calafiore.
 \newblock Random convex programs.
 \newblock {\em SIAM Journal on Optimization}, 20(6):3427--3464, 2010.
+
+\bibitem{campi-garatti}
+M.~C. Campi and S.~Garatti.
+\newblock The exact feasibility of randomized solutions of uncertain convex
+  programs.
+\newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
+
+\bibitem{sun-ge}
+S.S. Ge and Z.~Sun.
+\newblock {\em Switched linear systems: Control and design}.
+\newblock Communications and control engineering series. Springer, 2005.
 
 \bibitem{jungers_lncis}
 R.~M. Jungers.
@@ -43,6 +54,16 @@ James Kapinski, Jyotirmoy~V. Deshmukh, Sriram Sankaranarayanan, and Nikos
 S.~Li.
 \newblock Concise formulas for the area and volume of a hyperspherical cap.
 \newblock {\em Asian Journal of Mathematics \& Statistics}, 4:66--70, 2011.
+
+\bibitem{liberzon-switching}
+D.~Liberzon.
+\newblock {\em Switching in Systems and Control}.
+\newblock {Birkh\"auser}, Boston, MA, 2003.
+
+\bibitem{nemirovski}
+Arkadi Nemirovski and Alexander Shapiro.
+\newblock Convex approximations of chance constrained programs.
+\newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
 
 \bibitem{topcu}
 Ufuk Topcu, Andrew Packard, and Peter Seiler.

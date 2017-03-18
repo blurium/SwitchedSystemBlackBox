@@ -1,11 +1,51 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
 The style file: plain.bst
-White space in argument---line 79 of file main.aux
- : \bibdata{bibliography,
- :                        references}
-I'm skipping whatever remains of this command
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "stabilityHard1"
 Warning--I didn't find a database entry for "stabilityHard2"
+Warning--I didn't find a database entry for "lauer"
 Warning--I didn't find a database entry for "aliprantis"
-(There was 1 error message)
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            584 strings with 5789 characters,
+and the built_in function-call counts, 3908 in all, are:
+= -- 396
+> -- 141
+< -- 4
++ -- 59
+- -- 44
+* -- 256
+:= -- 644
+add.period$ -- 41
+call.type$ -- 12
+change.case$ -- 54
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 165
+empty$ -- 336
+format.name$ -- 44
+if$ -- 845
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 16
+newline$ -- 64
+num.names$ -- 24
+pop$ -- 59
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 107
+stack$ -- 0
+substring$ -- 254
+swap$ -- 33
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 0
+while$ -- 36
+width$ -- 14
+write$ -- 145
+(There were 4 warnings)

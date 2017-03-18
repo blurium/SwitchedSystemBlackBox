@@ -97,7 +97,8 @@ Let $X \subset \R^n$ and $L \in \calL(\R^n)$. Then we have:
 \begin{equation}\label{eqn:P}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
 \begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $\sphere' \subset \sphere$ where $\bar{A_j} = L^{-1}A_jL$, where $L$ is defined as in \eqref{choleski} and $$\sigma(\sphere') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$$
+for some $\sphere' \subset \sphere$ where $\bar{A_j} = L^{-1}A_jL$, where $L$ is defined as in \eqref{choleski} and $$\sigma(\sphere') \leq m\epsilon \kappa(P),$$
+where $\kappa(P) = \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}$.
 \end{theorem}
 
 \begin{proof}
