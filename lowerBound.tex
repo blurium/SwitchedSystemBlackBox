@@ -1,5 +1,9 @@
 % !TEX root = main.tex
-CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system. More generally, if there exists a $\gamma \geq 0$ such that $$\forall\, A \in \calM, A^TPA \preceq \gamma^2P$$ then one has $\rho(\cM) \leq \gamma$ (see \cite{jungers_lncis}, Prop. 2.8). Even though an upper bound is more difficult to obtain in the black box model where only a finite number of observations are available, in this section we leverage Theorem 3.1 in order to derive an easy lower bound in our setting.
+CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system as the following theorem formalizes:
+\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a bounded set of matrices $\cM$. If there exists a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\, A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$. 
+\end{theorem}
+
+Even though an upper bound is more difficult to obtain in the black box model where only a finite number of observations are available, in this section we leverage Theorem 3.1 in order to derive an easy lower bound in our setting.
 
 \begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
 For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$

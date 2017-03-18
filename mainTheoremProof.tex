@@ -1,5 +1,5 @@
 % !TEX root = main.tex
-In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in [0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF on a implies $\rho < 1$ due to Theorem \ref{jungersRho} and due to Property \ref{property:homogeneity}, it is enough to show that the CQLF is decreasing on a set enclosing the origin, e.g. $\sphere$. Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
+In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in [0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf} and due to Property \ref{property:homogeneity}, it is enough to show that the CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere $\sphere$. Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
 \begin{equation}\label{eqn:campiOpt0}
 \begin{aligned}
 & \text{min}_{\gamma, P} & & \gamma \\
@@ -8,17 +8,19 @@ In this section, we show how to compute an upper bound on $\rho$, with a user-de
 & && P \succ 0. \\
 \end{aligned}
 \end{equation}
-Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, we instead sample $N$ initial states and modes uniformly random from the set $Z :=\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
-\begin{equation}\label{eqn:campiOpt00}
-\begin{aligned}
-& \text{min}_{\gamma, P} & & \gamma \\
-& \text{s.t.} 
-&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall (x, j) \in \omega_N,\\
-& && P \succ 0. \\
-\end{aligned}
-\end{equation}
-where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}.
-Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can perform bisection on $\gamma$ and solve a series of feasibility problems in $P$ instead. Therefore, we now analyze the relationship between the solutions of the optimization problem \eqref{eqn:campiOpt0} and the following optimization problem:
+Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the Problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is impossible for us since it involves infinitely many constraints.
+% Therefore, we instead sample $N$ initial states and modes uniformly random from the set $Z :=\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
+%\begin{equation}\label{eqn:campiOpt00}
+%\begin{aligned}
+%& \text{min}_{\gamma, P} & & \gamma \\
+%& \text{s.t.} 
+%&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall (x, j) \in \omega_N,\\
+%& && P \succ 0. \\
+%\end{aligned}
+%\end{equation}
+%where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}.
+%Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can perform bisection on $\gamma$ and solve a series of feasibility problems in $P$ instead. 
+We now analyze the relationship between the solutions of the optimization problem \eqref{eqn:campiOpt0} and the following optimization problem with finitely many constraints:
 \begin{equation}\label{eqn:campiOpt01}
 \begin{aligned}
 & \text{min}_{P} & & \lambda_{\max}(P) \\
@@ -27,11 +29,11 @@ Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can p
 & && P \succeq I. \\
 \end{aligned}
 \end{equation}
-where $\omega_N$ is a $N$-uniform random sampling of the set $Z$, $\eta > 0$, and $\gamma^*$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$ and $\gamma^*(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are able to replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the preceding discussion.
+Recall that $\omega_N$ is an $N$-uniform random sampling of the set $Z$, $\eta > 0$, and $\gamma^*$ is the optimal solution to the optimization problem \eqref{eqn:campiOpt00}. For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$ and $\gamma^*(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are can replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the following discussion.
 
-The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the random convex optimization literature \cite{campi}. It turns out that under certain technical assumptions, the optimal solution of \eqref{eqn:campiOpt01} is feasible for the original problem \eqref{eqn:campiOpt0}, with some probability which is a function of the sample size $N$. To formalize this discussion, we define the constraint violation probability next.
+The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the amount of constraints of the original problem \eqref{eqn:campiOpt0} that are violated by the optimal solution of \eqref{eqn:campiOpt01}, with some with some probability which is a function of the sample size $N$. 
 
-\begin{definition}(from \cite{campi}) For all $\omega_N$ for which a solution to $\Opt(\omega_N)$ exists, the \emph{constraint violation probability} is defined as:
+\begin{definition}(from \cite{campi}) Consider the optimization problem $\Opt(\omega_N)$ where the set of constraints $\omega_N$ is randomly sampled according to a measure $\mu$. We define the \emph{constraint violation probability} as:
 \begin{equation}\label{eqn:violation0}
 \calV^*(\omega_N)=
       \mathbb{P}\{z \in Z: f(P(\omega_N), z) > 0\}.
@@ -56,16 +58,18 @@ where $V(\omega_N):=\{z \in Z: f(P(\omega_N), z) > 0\},$ i.e., the set of points
 %Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
 \begin{theorem}\label{mainTheorem0}
-Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
-\begin{enumerate}
-\item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
-\item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
-\end{enumerate}
-Then, for all $\epsilon \in (0,1)$ the following holds:
+Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$.
+%\begin{enumerate}
+%\item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
+%\item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
+%\end{enumerate}
+For all $\epsilon \in (0,1)$ the following holds:
 \begin{equation}\label{eqn:violation}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation}
 \end{theorem}
 
-\begin{proof}The proof is an immediate application of Theorem ?? in \cite{campi}, since the $\Opt(\omega_N)$
+Before proceeding to the proof, we note that this theorem is an immediate application of Theorem 3.3 in \cite{campi}, which comes with two technical assumptions on $\Opt(\omega_N)$we do not explicitly state here. The reason is that, even if these assumptions do not hold for the optimization problem \ref{eqn:campiOpt2}, it is possible to obtain a slightly modified problem for which they hold and solve that problem instead. We refer the interested reader to \cite{campi} for a more detailed discussion of such modification techniques.
+
+\begin{proof}Note that the optimization problem $\Opt(\omega_N)$
 can be written as:
 \begin{equation}
 \label{eqn:campiOpt2}
@@ -80,24 +84,24 @@ g_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 g_2(P) &:=& \lambda_{\max}(-P) +1. \\
 g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
-We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold for the optimization problem \ref{eqn:campiOpt2}, it is possible to obtain . We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
 \end{proof}
+The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem 3.3 in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
 
-Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
+Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates note more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
 
-Before proceeding to the next proof, we present the following lemma which will be helpful.
-\begin{remark} (see e.g. \cite{aliprantis}) \label{rem:mappingMeasures}
-Let $X \subset \R^n$ and $L \in \calL(\R^n)$. Then we have:
-\begin{equation*}
-\lambda(\calL(X)) = |\det(L)| \lambda(X).
-\end{equation*}
-\end{remark}
+%Before proceeding to our main results in this section, we present the following lemma which will be helpful.
+%\begin{remark} (see e.g. \cite{aliprantis}) \label{rem:mappingMeasures}
+%Let $X \subset \R^n$ and $L \in \calL(\R^n)$. Then we have:
+%\begin{equation*}
+%\lambda(\calL(X)) = |\det(L)| \lambda(X).
+%\end{equation*}
+%\end{remark}
 
-\begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
+\begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and a matrix $P$ satisfying:
 \begin{equation}\label{eqn:P}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
-for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
+for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, defining $L$ as in \eqref{choleski} and $\bar{A_j}=  L^{-1}A_jL$, one also has:
 \begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $\sphere' \subset \sphere$ where $\bar{A_j} = L^{-1}A_jL$, where $L$ is defined as in \eqref{choleski} and $$\sigma(\sphere') \leq m\epsilon \kappa(P),$$
+for some $\sphere' \subset \sphere$ such that: $$\sigma(\sphere') \leq m\epsilon \kappa(P),$$
 where $\kappa(P) = \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}$.
 \end{theorem}
 
