@@ -157,25 +157,25 @@ $$\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$$
 %\end{corollary}
 %
 %
-%\begin{lemma}\textcolor{blue}{Consider the sequential sampling $\omega_N$.} Let $d=\frac{n(n+1)}{2}$ and $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$ and let $\lambda_{\max}(P(\omega_N))$ be the optimal objective function value for this $P(\omega_N)$. Then, $\lambda_{\max}(P(\omega_N))$ is uniformly bounded in $N$.
-%\end{lemma}
-%
-%\begin{proof}We first define the following optimization problem:
-%\begin{equation}\label{eqn:appendix}
-%\begin{aligned}
-%& \text{min}_{P} & & \lambda_{\max}(P) \\
-%& \text{s.t.} 
-%&  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
-%& && P \succeq I, \\
-%\end{aligned}
-%\end{equation}
-%where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
-%
-%Note that, for all $d \in \Z$ such that $0< d \leq N$ we have $\gamma^*(\omega_d) \leq \gamma^*(\omega_N)$. Also note that,
-%\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_d), \omega_N).
-%\end{equation*}
-%But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) \leq c$, which completes the proof of this lemma.
-%\end{proof}
+\begin{lemma}\textcolor{blue}{Consider the sequential sampling $\omega_N$.} Let $d=\frac{n(n+1)}{2}$ and $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$ and let $\lambda_{\max}(P(\omega_N))$ be the optimal objective function value for this $P(\omega_N)$. Then, $\lambda_{\max}(P(\omega_N))$ is uniformly bounded in $N$.
+\end{lemma}
+
+\begin{proof}We first define the following optimization problem:
+\begin{equation}\label{eqn:appendix}
+\begin{aligned}
+& \text{min}_{P} & & \lambda_{\max}(P) \\
+& \text{s.t.} 
+&  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
+& && P \succeq I, \\
+\end{aligned}
+\end{equation}
+where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
+
+Note that, for all $d \in \Z$ such that $0< d \leq N$ we have $\gamma^*(\omega_d) \leq \gamma^*(\omega_N)$. Also note that,
+\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_d), \omega_N).
+\end{equation*}
+But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) \leq c$, which completes the proof of this lemma.
+\end{proof}
 %
 %
 %%\begin{corollary}\label{cor:final}Let $\beta \in (0,1)$. $$\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$$
