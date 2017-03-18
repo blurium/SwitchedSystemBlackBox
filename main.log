@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,9 +607,18 @@ File: ex1.jpg Graphic file (type jpg)
  <use ex1.jpg>
 Package pdftex.def Info: ex1.jpg used on input line 26.
 (pdftex.def)             Requested size: 226.59995pt x 190.76555pt.
-) (./Preliminaries.tex) (./stability.tex [2 <./ex1.jpg>]) (./lowerBound.tex) (.
-/mainTheoremProof.tex
-[3] [4]
+) (./Preliminaries.tex) (./stability.tex [2 <./ex1.jpg>]) (./lowerBound.tex
+Overfull \hbox (2.04555pt too wide) detected at line 46
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/
+10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/
+10 x[]Px;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \U/msb/m/n/1
+0 R[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 
+2 M\OML/cmm/m/it/10 :
+ []
+
+) (./mainTheoremProof.tex [3] [4]
 Overfull \hbox (1.14061pt too wide) detected at line 140
 \OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]([]\OML/cmm/m/it/10 x\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^M[]x[]x;   \OMS/cmsy/m/
@@ -719,7 +728,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 277709 bytes).
+Output written on main.pdf (7 pages, 277769 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
