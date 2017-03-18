@@ -56,7 +56,7 @@ where $V(\omega_N):=\{z \in Z: f(P(\omega_N), z) > 0\},$ i.e., the set of points
 %Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
 \begin{theorem}\label{mainTheorem0}
-Let $d:=\frac{n(n+1)}{2}+2$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
+Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
 \begin{enumerate}
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
 \item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
@@ -94,10 +94,10 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 
 
 \begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
-\begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
+\begin{equation}\label{eqn:P}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
-\begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
-for some $E' \subset E_P$ where $\sigma_P(E') \leq m\epsilon$.
+\begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
+for some $\sphere' \subset \sphere$ where $\bar{A_j} = LA_jL^{-1}$, where $P= L^TL$ and $$\sigma(\sphere') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$$
 \end{theorem}
 
 \begin{proof}
@@ -118,7 +118,12 @@ Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \f
 \begin{equation}
 \sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{\frac{1}{m}} \leq m \epsilon.
 \end{equation}
-Then, if we let $E':=L^{-1} V_S$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, then we have: $\sigma_P(E') = \sigma^{n-1}(V_S)$, and the result of the theorem follows.
+We then perform the change of coordinates defined by $L \in \calL(\R^n)$ such that $P=L^TL$ which maps $E_P$ to $\sphere$. Note that, this transformation exists since $P \succ 0$. We can then rewrite
+\eqref{eqn:P} in this new coordinates system as in: 
+\begin{equation}\label{eqn:P}(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
+
+
+%Then, if we let $E':=L^{-1} V_S$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_S), and the result of the theorem follows.
 \end{proof}
 
 
@@ -162,18 +167,18 @@ for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\
 where, $\lim_{\epsilon \to 0} \bar{\alpha}(\epsilon) = 1$.
 
 
-\begin{proof} 
-
-
-
-Due to Property \ref{property:homogeneity}, the inequality in \eqref{eqn:ellipsoid} implies
-\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in \sphere \setminus \proj_S(E'), \forall\, j \in M, \end{equation}
-
-
-
-Let $V_S:=\proj_S(V)$. Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  We have then 
-$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means: $$\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C).$$ Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
-\end{proof}
+%\begin{proof} We first rewrite the inequality in \eqref{eqn:ellipsoid} under the linear transformation $L$ which maps the ellipsoid $E_P$ to $\sphere$ as follows:
+%\begin{equation}(\bar{A}_j x)^T(\bar{A}_j x) \leq \gamma^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M, \end{equation}
+%
+%
+%Due to Property \ref{property:homogeneity}, the inequality in \eqref{eqn:ellipsoid} implies
+%\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in \sphere \setminus \proj_S(E'), \forall\, j \in M, \end{equation}
+%
+%
+%
+%Let $V_S:=\proj_S(V)$. Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  We have then 
+%$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means: $$\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C).$$ Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
+%\end{proof}
 
 %
 %\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem}. For any given $\beta \in (0,1]$ and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$, and let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:

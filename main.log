@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,7 +397,11 @@ No file references.bib.tex.
 \c@remark=\count110
 \c@property=\count111
 \c@theorem=\count112
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `eqn:P' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -606,12 +610,7 @@ Overfull \hbox (7.59224pt too wide) detected at line 29
 [] []
  []
 
-[3] [4]
-
-LaTeX Warning: Reference `rem:mappingMeasures' on page 5 undefined on input lin
-e 175.
-
-) (./mainTheoremProof2.tex
+[3] [4]) (./mainTheoremProof2.tex
 
 LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 1
 6.
@@ -642,7 +641,7 @@ Underfull \hbox (badness 4595) in paragraph at lines 211--213
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
  []
 
-[6]) (./main.bbl)
+) (./main.bbl [6])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -663,13 +662,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 6562 strings out of 493089
- 100307 string characters out of 6134842
- 197364 words of memory out of 5000000
+ 6564 strings out of 493089
+ 100311 string characters out of 6134842
+ 196412 words of memory out of 5000000
  9684 multiletter control sequences out of 15000+600000
- 131787 words of font info for 273 fonts, out of 8000000 for 9000
+ 130839 words of font info for 274 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -692,7 +694,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 244624 bytes).
+Output written on main.pdf (7 pages, 242482 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
