@@ -5,47 +5,46 @@ The style file: plain.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "stabilityHard1"
 Warning--I didn't find a database entry for "stabilityHard2"
-Warning--I didn't find a database entry for "lauer"
 Warning--I didn't find a database entry for "aliprantis"
-You've used 12 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            584 strings with 5789 characters,
-and the built_in function-call counts, 3908 in all, are:
-= -- 396
-> -- 141
+            587 strings with 5881 characters,
+and the built_in function-call counts, 4112 in all, are:
+= -- 416
+> -- 148
 < -- 4
-+ -- 59
-- -- 44
-* -- 256
-:= -- 644
-add.period$ -- 41
-call.type$ -- 12
-change.case$ -- 54
++ -- 62
+- -- 46
+* -- 264
+:= -- 683
+add.period$ -- 44
+call.type$ -- 13
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 165
-empty$ -- 336
-format.name$ -- 44
-if$ -- 845
+cite$ -- 13
+duplicate$ -- 175
+empty$ -- 353
+format.name$ -- 46
+if$ -- 886
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 16
-newline$ -- 64
-num.names$ -- 24
-pop$ -- 59
+int.to.str$ -- 13
+missing$ -- 17
+newline$ -- 69
+num.names$ -- 26
+pop$ -- 63
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 49
 quote$ -- 0
-skip$ -- 107
+skip$ -- 114
 stack$ -- 0
-substring$ -- 254
-swap$ -- 33
+substring$ -- 259
+swap$ -- 34
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 40
+type$ -- 44
 warning$ -- 0
-while$ -- 36
-width$ -- 14
-write$ -- 145
-(There were 4 warnings)
+while$ -- 38
+width$ -- 15
+write$ -- 155
+(There were 3 warnings)

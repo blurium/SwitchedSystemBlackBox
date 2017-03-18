@@ -8,14 +8,14 @@ $$\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau). $$
 \end{property}
 \begin{property}\label{property:convpres}
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
-$$ f(\conv{X})\subset \conv\{f(X)\}. $$
+$$ f(\conv({X}))\subset \conv(f(X)). $$
 \end{property}
 %Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
 %\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
 %Under certain conditions deciding stability amounts to decide whether $\rho<1.$ 
 
 The joint spectral radius of the set of matrices $\calM$ is defined as follows:
-\begin{definition} \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
+\begin{definition} \cite{jungers_lncis} Given a finite set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
 $$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k}\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\}. $$
 \end{definition}
 
@@ -25,7 +25,7 @@ Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamic
 
 \begin{property}[Proposition 1.3, \cite{jungersBook}]\label{rem:scaling}
 Given a finite of matrices $\mathcal{M}$, and any invertible matrix $T$, 
-$$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}).$$
+$$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}),$$
+i.e., JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\, \rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}$.
 \end{property}
 
-Note that this last result implies that the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\, \rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}$.

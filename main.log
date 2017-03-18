@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -596,9 +596,6 @@ LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 11.
 
 LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 11.
 
-
-LaTeX Warning: Citation `lauer' on page 1 undefined on input line 11.
-
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -615,12 +612,11 @@ Package pdftex.def Info: ex1.jpg used on input line 26.
 
 LaTeX Warning: Reference `jungersRho' on page 3 undefined on input line 2.
 
-
+[3]
 Overfull \hbox (7.59224pt too wide) detected at line 29
 [] []
  []
 
-[3]
 
 LaTeX Warning: Citation `aliprantis' on page 4 undefined on input line 89.
 
@@ -640,8 +636,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
  []
 
-) (./mainTheoremProof2.tex) (./experiments.tex) (./conclusions.tex)
-(./appendix.tex [5]
+) (./mainTheoremProof2.tex [5]) (./experiments.tex) (./conclusions.tex)
+(./appendix.tex
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 20.
@@ -703,11 +699,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6597 strings out of 493089
- 100598 string characters out of 6134842
- 196853 words of memory out of 5000000
+ 6600 strings out of 493089
+ 100622 string characters out of 6134842
+ 194858 words of memory out of 5000000
  9699 multiletter control sequences out of 15000+600000
- 132757 words of font info for 285 fonts, out of 8000000 for 9000
+ 132887 words of font info for 287 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1456b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -730,7 +726,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 277638 bytes).
+Output written on main.pdf (7 pages, 279834 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
