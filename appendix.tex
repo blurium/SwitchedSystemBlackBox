@@ -1,5 +1,5 @@
 % !TEX root = main.tex
-The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this result on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere. We then compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We finally use the invariance of JSR under similarity transformations stated in Remark \ref{rem:scaling} to tie these two results.
+%The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this result on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere. We then compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We finally use the invariance of JSR under similarity transformations stated in Remark \ref{rem:scaling} to tie these two results.
 \begin{subsection}{Notation and Background}
 Before proceeding to the main lemmas we use to prove Theorem \ref{thm:mainTheorem1}, we first introduce the necessary preliminary definitions and related background.
 
@@ -108,6 +108,27 @@ where $I$ is the regularized incomplete beta function. Since, \mbox{$\sigma^{n-1
 \label{eqn:last}\Delta(\calC_{c, k})^2 &\geq&  1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)
 \end{eqnarray}
 The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given in \eqref{eqn:ballinc}, where \begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)}.\end{equation}
+
+%We next show $\lim_{N \to 0}\alpha(\epsilon) = 0.$
+%%\begin{corollary}\label{cor:final}Let $\beta \in (0,1)$. $$\lim_{N \to \infty} \delta(\beta, \omega_N) = 1.$$
+%%\end{corollary}
+%
+%\begin{proof} 
+%We first prove that $\lim_{N \to \infty} \epsilon(\beta, N)= 0$. Note that, we can upper bound $1-\beta$ as follows:
+%\begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
+%\end{equation}
+%We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon(\beta, N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > \delta$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+%\begin{equation*}1-\beta\leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
+%\end{equation*}
+%Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$.
+%
+%\textcolor{red}{Still to show: If $\frac{\lambda{\max}(P)}{\lambda{\min}(P)}$ is uniformly bounded in $N$, then
+%since $I^{-1}$ is monotonic in its first parameter, $\delta = \sqrt{1-\alpha}$ tends to $1$ as $\epsilon \to 0$.}
+%\end{proof}
+
+
+
+
 \end{proof}
 \end{subsection}
 
@@ -133,7 +154,7 @@ The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given i
 %which implies that $\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$
 %\end{proof}
 
-We next show that we can apply Lemma \ref{lemma:epsilon1} even when the inequality \eqref{lemma:epsilon1} is satisfied on an ellipsoid instead of a sphere, and complete the proof of the theorem.
+%We next show that we can apply Lemma \ref{lemma:epsilon1} even when the inequality \eqref{lemma:epsilon1} is satisfied on an ellipsoid instead of a sphere, and complete the proof of the theorem.
 
 \begin{subsection}{Proof of Theorem ??}
 
