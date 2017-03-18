@@ -1,13 +1,14 @@
 % !TEX root = main.tex
+We start by computing a lower bound for $\rho$ which is based on the following theorem from the switched linear systems literature.
+\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
+For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$
+\end{theorem}
+
 CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system as the following theorem formalizes:
 \begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a bounded set of matrices $\cM$. If there exists a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\, A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$. 
 \end{theorem}
 
 Even though an upper bound is more difficult to obtain in the black box model where only a finite number of observations are available, in this section we leverage Theorem 3.1 in order to derive an easy lower bound in our setting.
-
-\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
-For any bounded set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall A\in \cM,\, A^TPA\preceq P. $$
-\end{theorem}
 
 The following theorem shows that the existence of a CQLF for \eqref{eq:switchedSystem} can be checked by considering $N$ pairs $(x_i, j_i) \in \R^n \times M$, where $i \in \{1, \ldots N\}.$ Recall that in our setting, we assume that we observe pairs of the form $(x_t,x_{t+1}),$ but we do not observe the mode applied to the system during this time step.
 %The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 

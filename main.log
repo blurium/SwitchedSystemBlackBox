@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -613,11 +613,12 @@ Overfull \hbox (7.59224pt too wide) detected at line 31
 [] []
  []
 
+[3]
 
-LaTeX Warning: Reference `eqn:campiOpt00' on page 3 undefined on input line 32.
+LaTeX Warning: Reference `eqn:campiOpt00' on page 4 undefined on input line 32.
 
 
-[3] [4]
+[4]
 Overfull \hbox (1.14061pt too wide) detected at line 135
 \OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]([]\OML/cmm/m/it/10 x\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^M[]x[]x;   \OMS/cmsy/m/
@@ -702,7 +703,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6575 strings out of 493089
  100265 string characters out of 6134842
- 196849 words of memory out of 5000000
+ 194849 words of memory out of 5000000
  9680 multiletter control sequences out of 15000+600000
  128104 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -727,7 +728,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 278821 bytes).
+Output written on main.pdf (7 pages, 278811 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
