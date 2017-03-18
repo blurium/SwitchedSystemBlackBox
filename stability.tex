@@ -1,5 +1,5 @@
  % !TEX root = main.tex
-A switched linear system related to a set of modes $\mathcal{M}= \{A_i, i \in M \}$ is of the form:
+A \emph{switched linear system} related to a set of modes $\mathcal{M}= \{A_i, i \in M \}$ is of the form:
 \begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\tau(k)}x_k,\end{equation}
 with switching sequence $\tau: \N \to M$. There are two important properties of linear switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
@@ -10,27 +10,22 @@ $$\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau). $$
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
 $$ f(\conv{X})\subset \conv\{f(X)\}. $$
 \end{property}
-
-We now introduce the \emph{Lyapunov exponent} of the system, which is a numerical quantity describing its stability.
-\begin{definition}Given a dynamical system as in \eqref{eq:dynamicalsystemGeneral}, its \emph{Lyapunov exponent} is given by
-$$\rho =\inf{\{r:\,\forall\, x_0, \exists\, C\in \re^+: \xi(x_0, k)\leq Cr^k\}}. $$
-\end{definition}
 %Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
 %\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
 %Under certain conditions deciding stability amounts to decide whether $\rho<1.$ 
 
-In the case of switched linear systems, the Lyapunov exponent is known as the joint spectral radius of the set of matrices, which can be alternatively defined as follows:
+The joint spectral radius of the set of matrices $\calM$ is defined as follows:
 \begin{definition} \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
 $$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k}\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\}. $$
 \end{definition}
 
 \begin{property}[Corollary 1.1, \cite{jungersBook}]
-For any bounded set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
+Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
 \end{property}
 
 \begin{property}[Proposition 1.3, \cite{jungersBook}]\label{rem:scaling}
-For any bounded set of matrices $\mathcal{M}$, and any invertible matrix $T$, 
+Given a finite of matrices $\mathcal{M}$, and any invertible matrix $T$, 
 $$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}).$$
 \end{property}
 
-Note that this last result implies that the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}, \forall \gamma > 0$).
+Note that this last result implies that the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\, \rho\left(\frac{\cM}{\gamma}\right)=\frac{\rho(\cM)}{\gamma}$.
