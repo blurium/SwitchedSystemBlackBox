@@ -1,14 +1,16 @@
 % !TEX root = main.tex
-In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in [0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf} and due to Property \ref{property:homogeneity}, it is enough to show that the CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere $\sphere$. Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
-\begin{equation}\label{eqn:campiOpt0}
-\begin{aligned}
-& \text{min}_{\gamma, P} & & \gamma \\
-& \text{s.t.} 
-&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall A \in \calM, \,\forall\, x \in \sphere,\\
-& && P \succ 0. \\
-\end{aligned}
-\end{equation}
-Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the Problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$. However, solving the optimization problem \eqref{eqn:campiOpt0} is impossible for us since it involves infinitely many constraints. Nevertheless, we are going to show that the solution of the Optimization problem \eqref{eq:lowerbound} allows to not only compute a lower bound, but also a (probabilistic) upper bound.
+In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in [0, 1)$. We do this by constructing a CQLF which is valid with probability at least $\beta$. Note that, the existence of a CQLF implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf}.
+%Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
+%\begin{equation}\label{eqn:campiOpt0}
+%\begin{aligned}
+%& \text{min}_{\gamma, P} & & \gamma \\
+%& \text{s.t.} 
+%&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall A \in \calM, \,\forall\, x \in \sphere,\\
+%& && P \succ 0. \\
+%\end{aligned}
+%\end{equation}
+%Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the Problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$.
+However, solving the optimization problem \eqref{eqn:campiOpt0} is impossible for us since it involves infinitely many constraints. Nevertheless, we are going to show that the solution of the Optimization problem \eqref{eq:lowerbound} allows to not only compute a lower bound, but also a (probabilistic) upper bound.
 % Therefore, we instead sample $N$ initial states and modes uniformly random from the set $Z :=\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
 %\begin{equation}\label{eqn:campiOpt00}
 %\begin{aligned}
