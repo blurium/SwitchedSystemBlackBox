@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 00:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 00:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,12 +602,12 @@ LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 8.
 
 
 ])
-(./Preliminaries.tex) (./stability.tex
+(./Preliminaries.tex) (./stability.tex [2]
 Underfull \hbox (badness 7504) in paragraph at lines 29--30
 []\T1/ptm/m/n/10 (+20) For any
  []
 
-[2]) (./lowerBound.tex) (./mainTheoremProof.tex
+) (./lowerBound.tex) (./mainTheoremProof.tex
 
 LaTeX Warning: Reference `jungersRho' on page 3 undefined on input line 2.
 
@@ -636,29 +636,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
 mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
  []
 
-[4]) (./mainTheoremProof2.tex
-
-LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 1
-6.
-
-
-Overfull \hbox (19.93837pt too wide) detected at line 19
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\OT1
-/cmr/m/n/10 (\OML/cmm/m/it/10 A[]x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T [][]\O
-ML/cmm/m/it/10 x[]Px;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 
-\OML/cmm/m/it/10 E[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 E[]; \OMS/cmsy/m/n/10 
-8 \OML/cmm/m/it/10 j \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 M;
- []
-
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 5 undefined on input line 2
-0.
-
-) (./experiments.tex) (./conclusions.tex) (./appendix.tex
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 5 undefined on input line 4
-.
-
+[4]) (./mainTheoremProof2.tex) (./experiments.tex) (./conclusions.tex)
+(./appendix.tex
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 20.
@@ -670,9 +649,30 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 20.
 [5] [6]
-Underfull \hbox (badness 4595) in paragraph at lines 211--213
+Underfull \hbox (badness 4595) in paragraph at lines 156--158
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
+ []
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 161.
+
+
+Overfull \hbox (8.86882pt too wide) detected at line 165
+\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
+T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
+OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
+\OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\O
+ML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^N\
+OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
+msb/m/n/10 N\OML/cmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 166--167
+\T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
 ) (./main.bbl)
@@ -687,9 +687,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7
-
-] (./main.aux)
+[7] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -701,10 +699,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6559 strings out of 493089
- 100259 string characters out of 6134842
- 197421 words of memory out of 5000000
- 9687 multiletter control sequences out of 15000+600000
+ 6560 strings out of 493089
+ 100257 string characters out of 6134842
+ 196448 words of memory out of 5000000
+ 9688 multiletter control sequences out of 15000+600000
  131527 words of font info for 269 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -728,7 +726,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 246917 bytes).
+Output written on main.pdf (7 pages, 249732 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream

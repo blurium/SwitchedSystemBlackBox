@@ -13,18 +13,17 @@ Note that the inequality \eqref{eqn:violation} in Theorem \ref{mainTheorem0} can
 \begin{equation}\label{eqn:violation2}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- I(1-\epsilon; N-d, d+1),\end{equation}
 where $I(\ell;a,b)$ is the regularized in complete beta function. Then, for all $\epsilon \in (0,1)$ satisfying:
 \begin{equation}\label{eqn:eps}\epsilon \leq 1- I^{-1}(\beta; N-d, d+1),\end{equation} we have $\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq \beta$.
-Then, by Theorem \ref{thm:mainTheorem0} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
+Then, by Theorem \ref{mainTheorem0} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
 \begin{equation*} (A_jx)^TP(A_jx) \leq  {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V.\end{equation*}
 By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
-\begin{equation*} (A_jx)^TP(A_jx) \leq  {(\gamma^*(1+\eta))}^2x^TPx, \quad \forall x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
-for some $E'$ where $\sigma_P(E') \leq m \epsilon$.  Then, applying Theorem \ref{thm:mainTheorem1}, we can compute $$\delta(\beta, \omega_N) = \bar{\alpha}(m(1- I^{-1}(1-\beta; N-d, d+1)))$$ such that with probability at least $\beta$ we have:
+\begin{equation*}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
+for some $S'$ where $\sigma^{n-1}(S') \leq \sigma(\sphere') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$ Then, applying Lemma \ref{lemma:epsilon1}, we can compute $$\delta(\beta, \omega_N) = \bar{\alpha}(m(1- I^{-1}(1-\beta; N-d, d+1)))$$ such that with probability at least $\beta$ we have:
 \begin{equation*}
-A_j E_P \subset \frac{\gamma^*(\omega_N)(1+\eta)}{\delta(\beta, \omega_N)}E_P, \forall\, j \in M,
+\bar{A_j} \ball \subset \frac{\gamma^*(\omega_N)(1+\eta)}{\delta(\beta, \omega_N)}\ball,\, \forall\, j \in M,
 \end{equation*}
-where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1.$
-By Property \ref{rem:scaling}, this means that $P$ defines a CQLF for the switched system \eqref{eq:switchedSystem} since we have $\frac{A_j}{\gamma^*(1+\eta)}^TP\frac{A_j}{\gamma^*(1+\eta)} \preceq P,\, \forall\, j$. Then, the followings holds with probability at least $\beta$:
+By Property \ref{rem:scaling}, this means that with probability at least $\beta$:
 $$\rho \leq \frac{\gamma^*(\omega_N) (1 + \eta)}{\delta(\beta, \omega_N)},$$
-which completes the proof of the theorem.
+which completes the proof of the theorem. We show that $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1.$ in the Appendix \ref{app:delta}.
 
 
 

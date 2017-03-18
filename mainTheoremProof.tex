@@ -155,22 +155,22 @@ for all $X_\epsilon \in \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$.
 
 \begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$ and $\gamma \in \R_{> 0}$. Consider the set of matrices and $A \in \calM$ satisfying:
 \begin{equation}\label{eqn:contraction}(A_jx)^T(A_jx) \leq \gamma x^Tx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
-where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we can compute
-$\alpha(\epsilon)$ such that we have:
+where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we have:
 \begin{equation*}
-A_j \sphere \subset \frac{\gamma}{\alpha(\epsilon)} \sphere,\quad \forall\, j \in M.
+\rho(\calM) \leq \frac{\gamma}{\alpha(\epsilon)}
 \end{equation*}
+where $\alpha(\epsilon)$ is defined as in \eqref{eqn:ballinc}.
 \end{lemma}
 
 \begin{proof}Note that, \eqref{eqn:contraction} implies that:
-$$A_j (\sphere \setminus \sphere') \subset \gamma^* \ball.$$
+$$A_j (\sphere \setminus \sphere') \subset \gamma \ball.$$
 Using Property \ref{property:convpres} this also implies:
 $$A_j \convhull(\sphere \setminus \sphere') \subset \convhull(A_j(\sphere \setminus \sphere')) \subset \gamma^* \ball .$$
 By Lemma \ref{lemma:eps} we have:
 $$A_j (\alpha(\epsilon) \ball) \subset A_j (\convhull (\sphere \setminus \sphere')) \subset \ball, \quad  \forall\, j \in M,$$
 where $\alpha(\epsilon)$ is defined as in \eqref{eqn:alphaEpsilon}. Therefore, we get:
-$$A_j (\alpha(\epsilon) \ball) \subset \gamma^*\ball,$$
-which implies that $\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$
+$$\alpha(\epsilon) A_j (\ball) \subset \gamma\ball.$$
+which implies that $\rho(\calM) \leq \frac{\gamma}{\alpha(\epsilon)}.$
 \end{proof}
 
 
