@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 MAR 2017 20:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -581,219 +581,40 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 (./introduction.tex
 
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 8.
-
-
 LaTeX Warning: Citation `stabilityHard1' on page 1 undefined on input line 8.
 
 
 LaTeX Warning: Citation `stabilityHard2' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 1 undefined on inp
-ut line 8.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `topcu' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `kapinski' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `lazar' on page 1 undefined on input line 10.
-
-
-LaTeX Warning: Citation `jungersBook' on page 1 undefined on input line 14.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 
-]
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-16.
-
-
-LaTeX Warning: Citation `jungersBook' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation `campi' on page 2 undefined on input line 16.
-
-) (./Preliminaries.tex) (./stability.tex
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-6.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 2 undefined on input line 
-10.
-
-
-LaTeX Warning: Reference `eq:dynamicalsystemGeneral' on page 2 undefined on inp
-ut line 15.
-
-
-LaTeX Warning: Citation `jungers_lncis' on page 2 undefined on input line 23.
-
-
+])
+(./Preliminaries.tex) (./stability.tex
 Underfull \hbox (badness 7504) in paragraph at lines 29--30
 []\T1/ptm/m/n/10 (+20) For any
  []
 
-[2]) (./lowerBound.tex
-
-LaTeX Warning: Citation `jungers_lncis' on page 3 undefined on input line 4.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 3 undefined on input line 
-8.
-
-
-LaTeX Warning: Reference `eq:lowerbound' on page 3 undefined on input line 25.
-
-
-LaTeX Warning: Reference `thm:john' on page 3 undefined on input line 29.
-
-) (./mainTheoremProof.tex
+[2]) (./lowerBound.tex) (./mainTheoremProof.tex
 
 LaTeX Warning: Reference `jungersRho' on page 3 undefined on input line 2.
-
-
-LaTeX Warning: Reference `property:homogeneity' on page 3 undefined on input li
-ne 2.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 11.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 11.
-
-
-LaTeX Warning: Reference `eqn:campiOpt00' on page 3 undefined on input line 21.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 21.
 
 
 Overfull \hbox (7.59224pt too wide) detected at line 29
 [] []
  []
 
+[3] [4]
 
-LaTeX Warning: Reference `eqn:campiOpt00' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `property:homogeneity' on page 3 undefined on input li
-ne 30.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 3 undefined on input line 32.
-
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Citation `campi' on page 3 undefined on input line 34.
-
-
-LaTeX Warning: Reference `eqn:violation0' on page 3 undefined on input line 39.
-
-
-[3]
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 4 undefined on input line 59.
-
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 68.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Citation `campi' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `eqn:campiOpt2' on page 4 undefined on input line 83.
-
-
-LaTeX Warning: Reference `mainTheorem0' on page 4 undefined on input line 86.
-
-
-LaTeX Warning: Reference `eqn:campiOpt0' on page 4 undefined on input line 86.
-
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 4 undefined on input line 1
-38.
+LaTeX Warning: Reference `rem:mappingMeasures' on page 5 undefined on input lin
+e 170.
 
 ) (./mainTheoremProof2.tex
 
-LaTeX Warning: Reference `eq:switchedSystem' on page 4 undefined on input line 
-3.
-
-
-LaTeX Warning: Reference `eqn:campiOpt01' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Reference `eqn:violation' on page 4 undefined on input line 12.
-
-
-LaTeX Warning: Reference `mainTheorem0' on page 4 undefined on input line 12.
-
-
-LaTeX Warning: Reference `thm:mainTheorem0' on page 4 undefined on input line 1
+LaTeX Warning: Reference `thm:mainTheorem0' on page 5 undefined on input line 1
 6.
-
-
-LaTeX Warning: Reference `eqn:eps' on page 4 undefined on input line 16.
-
-[4]
-
-LaTeX Warning: Reference `thm:mainTheorem01' on page 5 undefined on input line 
-18.
 
 
 Overfull \hbox (19.93837pt too wide) detected at line 19
@@ -804,30 +625,9 @@ ML/cmm/m/it/10 x[]Px;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2
 8 \OML/cmm/m/it/10 j \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 M;
  []
 
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 5 undefined on input line 2
-0.
-
-
-LaTeX Warning: Reference `rem:scaling' on page 5 undefined on input line 25.
-
-
-LaTeX Warning: Reference `eq:switchedSystem' on page 5 undefined on input line 
-25.
-
 ) (./experiments.tex) (./conclusions.tex) (./appendix.tex
 
-LaTeX Warning: Reference `lemma:epsilon1' on page 5 undefined on input line 2.
-
-
 LaTeX Warning: Reference `lemma:epsilon2' on page 5 undefined on input line 2.
-
-
-LaTeX Warning: Reference `rem:scaling' on page 5 undefined on input line 2.
-
-
-LaTeX Warning: Reference `thm:mainTheorem1' on page 5 undefined on input line 4
-.
 
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
@@ -839,64 +639,13 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 20.
-
-LaTeX Warning: Citation `boyd' on page 5 undefined on input line 25.
-
-
-LaTeX Warning: Reference `suppHyperplaneRemark' on page 5 undefined on input li
-ne 73.
-
-
-LaTeX Warning: Reference `lemma:delta2' on page 5 undefined on input line 77.
-
-[5]
-
-LaTeX Warning: Reference `lemma:constructSC' on page 6 undefined on input line 
-87.
-
-
-LaTeX Warning: Reference `lemma:muMonotone' on page 6 undefined on input line 8
-9.
-
-
-LaTeX Warning: Reference `lemma:deltaMonotone' on page 6 undefined on input lin
-e 89.
-
-
-LaTeX Warning: Reference `thm:mainSphericalCap' on page 6 undefined on input li
-ne 99.
-
-
-LaTeX Warning: Citation `sphericalCapRef' on page 6 undefined on input line 102
-.
-
-
-LaTeX Warning: Reference `eqn:last' on page 6 undefined on input line 110.
-
-
-LaTeX Warning: Reference `eqn:sc' on page 6 undefined on input line 110.
-
-
-LaTeX Warning: Reference `eqn:ballinc' on page 6 undefined on input line 110.
-
-
-LaTeX Warning: Reference `lemma:epsilon1' on page 6 undefined on input line 136
-.
-
-
-LaTeX Warning: Reference `lemma:epsilon1' on page 6 undefined on input line 136
-.
-
-
-LaTeX Warning: Reference `eqn:appendix' on page 6 undefined on input line 191.
-
-
+[5] [6]
 Underfull \hbox (badness 4595) in paragraph at lines 190--192
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
  []
 
-) (./main.bbl [6])
+) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -917,18 +666,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  6562 strings out of 493089
- 100279 string characters out of 6134842
- 195965 words of memory out of 5000000
- 9682 multiletter control sequences out of 15000+600000
- 130839 words of font info for 274 fonts, out of 8000000 for 9000
+ 100305 string characters out of 6134842
+ 196355 words of memory out of 5000000
+ 9684 multiletter control sequences out of 15000+600000
+ 131787 words of font info for 273 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,35p,1528b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,35p,1528b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
@@ -949,7 +695,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 243671 bytes).
+Output written on main.pdf (7 pages, 247203 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream

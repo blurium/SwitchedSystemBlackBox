@@ -90,16 +90,16 @@ Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \til
 \end{proof}
 \end{subsection}
 
-\begin{subsection}{Proof of Lemma??}
-\begin{lemma}\label{lemma:eps}Let $X_\epsilon \subset \sphere$ such that $\sigma^{n-1}(X_\epsilon) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
-\begin{equation}\label{eqn:ballinc}\Delta(X_\epsilon) \geq \alpha(\epsilon)^2.\end{equation}
-where  \begin{equation}\label{defn:alpha}\alpha(\epsilon) = 1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right),\end{equation} and $\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
-\end{lemma}
+\begin{subsection}{Proof of Lemma \ref{lemma:eps}}
+%\begin{lemma}\label{lemma:eps}Let $X_\epsilon \subset \sphere$ such that $\sigma^{n-1}(X_\epsilon) \leq \epsilon$ for some $\epsilon \in (0, 1)$, then the following holds:
+%\begin{equation}\label{eqn:ballinc}\Delta(X_\epsilon) \geq \alpha(\epsilon)^2.\end{equation}
+%where  \begin{equation}\label{defn:alpha}\alpha(\epsilon) = 1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right),\end{equation} and $\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} \text{d}t.$ Here $I^{-1}$ is the inverse incomplete beta function, i.e.,  $I^{-1}(y; a,b)= x$ where $I(x;a,b)=y$.
+%\end{lemma}
 
-\begin{proof}By Lemma \ref{thm:mainSphericalCap} we know that:
+\begin{proof}Let the function $\Delta(X)$ be defined as in \eqref{shrinkage}. Then by Lemma \ref{thm:mainSphericalCap} we know that:
 \begin{equation}\label{eqn:sc}\Delta(X_\epsilon) \geq \Delta(\calC_{c, k}),
 \end{equation}
-for some spherical cap $\calC_{c,K} \subset \sphere$, where  $\sigma^{n-1}(\calC_{c, k}) = \epsilon$. It is known (see e.g. \cite{sphericalCapRef}) that the area of such $\calC_{c, k}$, is given by the equation:
+for some spherical cap $\calC_{c,k} \subset \sphere$, where  $\sigma^{n-1}(\calC_{c, k}) = \epsilon$. It is known (see e.g. \cite{sphericalCapRef}) that the area of such $\calC_{c, k}$, is given by the equation:
 \begin{equation}\sigma^{n-1}(\calC_{c, k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I\left(1-\Delta(X_\epsilon)^2; \frac{d-1}{2}, \frac{1}{2}\right),
 \end{equation}
 where $I$ is the regularized incomplete beta function. Since, \mbox{$\sigma^{n-1}(X_\epsilon)\leq \epsilon$,} we get the following set of equations:
@@ -107,7 +107,7 @@ where $I$ is the regularized incomplete beta function. Since, \mbox{$\sigma^{n-1
 \nonumber 1- \Delta(\calC_{c, k})^2 &\leq&  I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right) \\
 \label{eqn:last}\Delta(\calC_{c, k})^2 &\geq&  1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)
 \end{eqnarray}
-The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given in \eqref{eqn:ballinc}.
+The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given in \eqref{eqn:ballinc}, where \begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = 1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right).\end{equation}
 \end{proof}
 \end{subsection}
 
