@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 14:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,17 +609,8 @@ Package pdftex.def Info: ex1.jpg used on input line 26.
 (pdftex.def)             Requested size: 226.59995pt x 190.76555pt.
 ) (./Preliminaries.tex) (./stability.tex [2 <./ex1.jpg>]) (./lowerBound.tex) (.
 /mainTheoremProof.tex
-[3]
-Overfull \hbox (7.59224pt too wide) detected at line 33
-[] []
- []
-
-
-LaTeX Warning: Reference `eqn:campiOpt00' on page 4 undefined on input line 34.
-
-
-[4]
-Overfull \hbox (1.14061pt too wide) detected at line 137
+[3] [4]
+Overfull \hbox (1.14061pt too wide) detected at line 140
 \OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]([]\OML/cmm/m/it/10 x\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^M[]x[]x;   \OMS/cmsy/m/
 n/10 8 \OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 [] n \OT1/cmr/m/n/10 ^^E[](\OML/cm
@@ -629,14 +620,14 @@ it/10 ;  \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 m \OMS/cmsy/m/n/10 2 \OML/cmm/m/it
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 []\T1/ptm/m/n/10 (+20) We now show how to re-late $\OML/cmm/m/it/10 ^^[[]\OT1/c
 mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
  []
 
 
 LaTeX Warning: Reference `rem:mappingMeasures' on page 5 undefined on input lin
-e 147.
+e 150.
 
 ) (./mainTheoremProof2.tex) (./experiments.tex) (./conclusions.tex)
 (./appendix.tex [5]
@@ -701,10 +692,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6575 strings out of 493089
- 100265 string characters out of 6134842
- 194849 words of memory out of 5000000
- 9680 multiletter control sequences out of 15000+600000
+ 6573 strings out of 493089
+ 100233 string characters out of 6134842
+ 194841 words of memory out of 5000000
+ 9678 multiletter control sequences out of 15000+600000
  128104 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1456b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -728,7 +719,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 278552 bytes).
+Output written on main.pdf (7 pages, 277709 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
