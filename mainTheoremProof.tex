@@ -85,19 +85,19 @@ We first note that, both of the assumptions in the statement of the theorem are 
 
 Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
 
-%\begin{remark} (see e.g. \cite{aliprantis}) \label{rem:mappingMeasures}
-%Let $X \subset \R^n$ and $L \in \calL(\R^n)$. Then we have:
-%\begin{equation*}
-%\lambda(\calL(X)) = |\det(L)| \lambda(X).
-%\end{equation*}
-%\end{remark}
-
+Before proceeding to the next proof, we present the following lemma which will be helpful.
+\begin{remark} (see e.g. \cite{aliprantis}) \label{rem:mappingMeasures}
+Let $X \subset \R^n$ and $L \in \calL(\R^n)$. Then we have:
+\begin{equation*}
+\lambda(\calL(X)) = |\det(L)| \lambda(X).
+\end{equation*}
+\end{remark}
 
 \begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and the matrix $P$, satisfying:
 \begin{equation}\label{eqn:P}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
 \begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $\sphere' \subset \sphere$ where $\bar{A_j} = LA_jL^{-1}$, where $P= L^TL$ and $$\sigma(\sphere') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$$
+for some $\sphere' \subset \sphere$ where $\bar{A_j} = L^{-1}A_jL$, where $L$ is defined as in \eqref{choleski} and $$\sigma(\sphere') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)}{\det(P)^n}}.$$
 \end{theorem}
 
 \begin{proof}
@@ -118,11 +118,27 @@ Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \f
 \begin{equation}
 \sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{\frac{1}{m}} \leq m \epsilon.
 \end{equation}
-We then perform the change of coordinates defined by $L \in \calL(\R^n)$ such that $P=L^TL$ which maps $E_P$ to $\sphere$. Note that, this transformation exists since $P \succ 0$. We can then rewrite
-\eqref{eqn:P} in this new coordinates system as in: 
-\begin{equation}\label{eqn:P}(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
+This means that 
+\begin{equation}\label{eqn:P2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in \sphere \setminus V_S, \,\forall\, m \in M,\end{equation}
+where $\sigma^{n-1}(V_S) \leq m \epsilon.$
 
+We then perform the change of coordinates defined by $L^{-1} \in \calL(\R^n)$ which maps $\sphere$ to $P$ defined as in \eqref{choleski}. We can then rewrite
+\eqref{eqn:P2} in this new coordinates system as in: 
+\begin{equation}\label{eqn:P}(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in E_P\setminus L^{-1}(V_S), \,\forall\, m \in M.\end{equation}
 
+Due to the  the homogeneity Property \ref{property:homogeneity}, this implies
+\begin{equation}\label{eqn:P}(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere\setminus \proj_S(L^{-1}(V_S)), \,\forall\, m \in M.\end{equation}
+
+%We now show how to relate $\sigma^{n-1}({V_S})$ to $\sigma^{n-1}(\proj_S(L^{-1}(V_S)))$. Note that, since $L \in \calL({\R^n})$ by Remark \ref{rem:mappingMeasures} we have:
+%\begin{equation}\label{eqn:det}\sigma_P(L^{-1}(V_S)) = |\det(L^{-1})| \sigma^{n-1}(V_S).\end{equation}
+
+We now show how to relate $\sigma^{n-1}(V_S)$ to $\sigma^{n-1}(\proj_S(L^{-1}(V_S)))$. Consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$ and $V':=\proj_S(L^{-1}(V_S))$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  This leads to:
+$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means the following holds:
+\begin{eqnarray}\nonumber\sigma^{n-1}(V') &\leq& \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda( L^{-1}(S^{V_{\sphere}}))\\ \nonumber &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\sigma(S^{V_S}),\\
+ \label{eqn:map1} &=&\sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(V_S)
+\end{eqnarray}
+where the first equality follows from Remark \ref{rem:mappingMeasures}.
+Putting together \eqref{eqn:map1}, \eqref{eqn:P2}, \label{eqn:P}, we get the statement of the theorem where $S' = \proj_S(L^{-1}(V_S)).$
 %Then, if we let $E':=L^{-1} V_S$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_S), and the result of the theorem follows.
 \end{proof}
 
@@ -158,13 +174,13 @@ which implies that $\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$
 \end{proof}
 
 
-\begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$ and $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
-\begin{equation}\label{eqn:ellipsoid}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
-for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\bar{\alpha}(\epsilon) > 0$ such that we have:
-\begin{equation}\label{eqn:contractionEllipsoid}A_j \tilde{E}_P \subset \frac{\gamma}{\bar{\alpha}(\epsilon)}\tilde{E}_P, \forall\, j \in M.
-\end{equation}
-\end{theorem}
-where, $\lim_{\epsilon \to 0} \bar{\alpha}(\epsilon) = 1$.
+%\begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$ and $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
+%\begin{equation}\label{eqn:ellipsoid}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
+%for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\bar{\alpha}(\epsilon) > 0$ such that we have:
+%\begin{equation}\label{eqn:contractionEllipsoid}A_j \tilde{E}_P \subset \frac{\gamma}{\bar{\alpha}(\epsilon)}\tilde{E}_P, \forall\, j \in M.
+%\end{equation}
+%\end{theorem}
+%where, $\lim_{\epsilon \to 0} \bar{\alpha}(\epsilon) = 1$.
 
 
 %\begin{proof} We first rewrite the inequality in \eqref{eqn:ellipsoid} under the linear transformation $L$ which maps the ellipsoid $E_P$ to $\sphere$ as follows:
