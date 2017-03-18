@@ -9,7 +9,20 @@ We start with the following question to serve as a stepping stone: Given N pairs
 
 The initial idea behind this paper was influenced by the recent efforts in \cite{topcu}, \cite{kapinski} and \cite{lazar} in using simulation traces to find Lyapunov functions for systems with known dynamics. \textcolor{red}{Will put Liberzon here.} In these works, the main idea is that if one can construct a Lyapunov function candidate decreasing along many finite trajectories starting from different initial conditions, it should also decrease along every other trajectory. Then, once a Lyapunov function candidate is constructed, this intuition is put to test by verifying the candidate function either via off-the-shelf tools as in \cite{topcu} and \cite{kapinski}, or via sampling based techniques as in \cite{lazar}. Note that, since we do not have access to the dynamics, the second step cannot be directly applied to black-box systems. However, these sampling based ideas raise the following question that we address in this paper: By observing that a candidate Lyapunov function decreases on a large number of simulations we empirically build a certain confidence that such candidate Lyapunov function is a bona-fide Lyapunov function. \emph{Can we translate this confidence into a confidence in the stability of the underlying system?} 
 
-Note that, even in the case of a 2D linear system the connection between these two beliefs is nontrivial. In fact, one can easily construct an example with one stable and one unstable eigenvalue for which even though almost all trajectories diverge to the infinity, it is possible to construct a Lyapunov function candidate whose level sets are contracting everywhere except a small set. \textcolor{red}{Should we give a specific example here, and put a figure?} Moreover, the size of this "violating set" can be arbitrarily small based on the magnitude of the unstable eigenvalue.
+Note that, even in the case of a 2D linear system the connection between these two beliefs is nontrivial. In fact, one can easily construct an example with one stable and one unstable eigenvalue for which even though almost all trajectories diverge to the infinity, it is possible to construct a Lyapunov function candidate whose level sets are contracting everywhere except a small set. 
+The system
+\[
+\begin{bmatrix}
+-2 & 0\\
+0 & 0.3
+\end{bmatrix}
+\]
+admits a Lyapunov function candidate on the unit circle except the two red areas.
+\begin{center}
+\includegraphics[scale=0.40]{ex1.jpg}
+\end{center}
+
+Moreover, the size of this "violating set" can be arbitrarily small based on the magnitude of the unstable eigenvalue. 
 
 In this paper, we take the first step to close this gap. Since the identification and stability analysis of linear systems are well understood, we do so by focusing on switched linear systems. Note that identification and deciding the stability of arbitrary switched linear systems is NP-hard \cite{jungersBook}. Aside from their theoretical value, switched systems model the behavior of dynamical systems in the presence of known or unknown varying parameters. These parameters can model internal properties of the dynamical system such as uncertainties, look-up tables, values in a discrete register as well as exogenous inputs provided by a controller in a closed-loop control system. \textcolor{red}{Need to make these examples more specific.}
 
