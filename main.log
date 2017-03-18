@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 14:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,11 +609,11 @@ Package pdftex.def Info: ex1.jpg used on input line 26.
 (pdftex.def)             Requested size: 226.59995pt x 190.76555pt.
 ) (./Preliminaries.tex) (./stability.tex [2 <./ex1.jpg>]) (./lowerBound.tex) (.
 /mainTheoremProof.tex
+[3]
 Overfull \hbox (7.59224pt too wide) detected at line 31
 [] []
  []
 
-[3]
 
 LaTeX Warning: Reference `eqn:campiOpt00' on page 4 undefined on input line 32.
 
@@ -728,7 +728,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (7 pages, 278811 bytes).
+Output written on main.pdf (7 pages, 278894 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
