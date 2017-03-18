@@ -17,9 +17,9 @@ Moreover, the size of this "violating set" can be arbitrarily small based on the
 The system
 \[
 x^+ = \begin{bmatrix}
--2 & 0\\
-0 & 0.3
-\end{bmatrix}x
+0.14 & 0\\
+0 & 1.35
+\end{bmatrix}x,
 \]
 admits a Lyapunov function candidate on the unit circle except the two red areas.
 \begin{figure}
@@ -31,7 +31,7 @@ admits a Lyapunov function candidate on the unit circle except the two red areas
 
 In this paper, we take the a step to close this gap by focusing on switched linear systems. The identification and deciding the stability of arbitrary switched linear systems is NP-hard \cite{jungersBook}. Aside from their theoretical value, switched systems are a popular model for many complex systems, as for instance dynamics with (known or unknown) varying parameters. These parameters can model internal properties of the dynamical system such as uncertainties, look-up tables, values in a discrete register as well as exogenous inputs provided by a controller in a closed-loop control system \cite{liberzon-switching}, \cite{sun-ge}.
 
-The stability of switched systems as in Equation \eqref{eq:switchedSystem} is closely related to the \emph{joint spectral radius} (JSR) of the matrices appearing in \eqref{eq:switchedSystem}. Deciding stability amounts to deciding whether the JSR is less than one \cite{jungersBook}. In this paper, we present an algorithm to bound the JSR of a switched linear system from a finite number $N$ of observations. This algorithm partly relies on tools from the random convex optimization literature (also known as chance-constrained optimization, see \cite{campi} \cite{nemirovski}, \cite{campi-garatti}), and provides an upper bound on the JSR with a user-defined confidence level. As $N$ increases, this bound gets tighter. Moreover, with a closed form expression, we characterize what is the exact trade-off between the tightness of this bound and the number of samples. In order to understand the quality of our upper bound, the algorithm also provides a deterministic lower bound.
+The stability of switched systems as in Equation \eqref{eq:switchedSystem} is closely related to the \emph{joint spectral radius} (JSR) of the matrices appearing in \eqref{eq:switchedSystem}. Deciding stability amounts to deciding whether the JSR is less than one \cite{jungersBook}. In this paper, we present an algorithm to bound the JSR of a switched linear system from a finite number $N$ of observations. This algorithm partly relies on tools from the random convex optimization literature (also known as chance-constrained optimization, see \cite{campi} \cite{nemirovski}, \cite{campi-garatti}), and provides an upper bound on the JSR with a user-defined confidence level. As $N$ increases, this bound gets tighter. Moreover, with a closed form expression, we characterize what is the exact trade-off between the tightness of this bound and the number of samples. In order to understand the quality of our upper bound, the algorithm also provides a deterministic lower bound. Finally, we provide an asymptotic guarantee on the gap between the upper and lower bound, for large $N$.
 
 The organization of the paper is as follows: \textcolor{red}{TO BE FILLED.}
 %. Topcu et.al. \cite{topcu}, Kapinski et.al. \cite{kapinski}construct Lyapunov function candidates using the simulation traces, however to be able to formally verify the constructed Lyapunov function, they require the knowledge of the full dynamics. In \cite{lazar} and \cite{lazar2} Bobiti and Lazar address this and provide sampling based probabilistic and deterministic guarantees of a given Lyapunov function candidate.
