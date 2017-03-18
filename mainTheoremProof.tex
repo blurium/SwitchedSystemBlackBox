@@ -56,7 +56,7 @@ where $V(\omega_N):=\{z \in Z: f(P(\omega_N), z) > 0\},$ i.e., the set of points
 %Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 
 \begin{theorem}\label{mainTheorem0}
-Let $d:=\frac{n(n+1)}{2}+1$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
+Let $d:=\frac{n(n+1)}{2}+2$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$. If $\Opt(\omega_N)$ satisfies the following technical assumptions:
 \begin{enumerate}
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
 \item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{\textcolor{red}{Explain this in a footnote maybe?}} with probability one.
@@ -80,7 +80,7 @@ g_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 g_2(P) &:=& \lambda_{\max}(-P) +1. \\
 g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
-We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold for the optimization problem \ref{eqn:campiOpt2}, it is possible to obtain . We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
+We first note that, both of the assumptions in the statement of the theorem are technical and even if they do not hold for the optimization problem \ref{eqn:campiOpt2}, it is possible to obtain . We refer the interested reader to \cite{campi} for a more detailed discussion of such techniques. The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Moreover, the set $\calP$ being closed and convex, without limiting the feasible region further we can assume $t$ lies in a closed interval as well. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+2}.$  Then, we can invoke Theorem ?? in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem.
 \end{proof}
 
 Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
@@ -97,7 +97,7 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 \begin{equation*}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation*}
 for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, the following also holds:
 \begin{equation*}\label{eqn:thm01-2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M,\end{equation*}
-for some $E' \subset E_P$ where $\sigma_P(E') \leq \frac{m}{\sqrt{\det(P)}}\epsilon$.
+for some $E' \subset E_P$ where $\sigma_P(E') \leq m\epsilon$.
 \end{theorem}
 
 \begin{proof}
@@ -118,15 +118,12 @@ Note that we have $$\min_{j \in M} \mu_M(\{j\}) = \frac{1}{m}.$$ Then since $ \f
 \begin{equation}
 \sigma^{n-1}(V_{\sphere}) \leq \frac{\mu(V)}{\frac{1}{m}} \leq m \epsilon.
 \end{equation}
-We now relate $\sigma^{n-1}(V_{\sphere})$ to $\sigma_P(E')$. Consider the transformation linear transformation $L \in \calL({\R^n})$ mapping $\sphere$ to $E_P$. Note that since $P \in \calS^n$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n$. Then, $L = P^{1/2}=U D^{1/2} U^{-1}$ where $D^{1/2}$ is the diagonal matrix comprised of square root of elements of $D$.
-
-
-
+Then, if we let $E':=L^{-1} V_S$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, then we have: $\sigma_P(E') = \sigma^{n-1}(V_S)$, and the result of the theorem follows.
 \end{proof}
 
 
 \begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$. Then, we can compute $\alpha(\epsilon)$ satisfying:
-\begin{equation}\label{eqn:ballinc}\alpha(\epsilon)^2 \ball \subset \conv(\sphere \setminus X_\epsilon).
+\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) \ball \subset \conv(\sphere \setminus X_\epsilon).
 \end{equation}
 for all $X_\epsilon \in \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$. 
 Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
@@ -149,15 +146,15 @@ $$A_j (\sphere \setminus \sphere') \subset \gamma^* \ball.$$
 Using Property \ref{property:convpres} this also implies:
 $$A_j \convhull(\sphere \setminus \sphere') \subset \convhull(A_j(\sphere \setminus \sphere')) \subset \gamma^* \ball .$$
 By Lemma \ref{lemma:eps} we have:
-$$A_j (\alpha(\epsilon)^2 \ball) \subset A_j (\convhull (\sphere \setminus \sphere')) \subset \ball, \quad  \forall\, j \in M,$$
+$$A_j (\alpha(\epsilon) \ball) \subset A_j (\convhull (\sphere \setminus \sphere')) \subset \ball, \quad  \forall\, j \in M,$$
 where $\alpha(\epsilon)$ is defined as in \eqref{eqn:alphaEpsilon}. Therefore, we get:
-$$A_j (\alpha(\epsilon)^2 \ball) \subset \gamma^*\ball,$$
+$$A_j (\alpha(\epsilon) \ball) \subset \gamma^*\ball,$$
 which implies that $\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$
 \end{proof}
 
 
 \begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$ and $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
-\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
+\begin{equation}\label{eqn:ellipsoid}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
 for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\bar{\alpha}(\epsilon) > 0$ such that we have:
 \begin{equation}\label{eqn:contractionEllipsoid}A_j \tilde{E}_P \subset \frac{\gamma}{\bar{\alpha}(\epsilon)}\tilde{E}_P, \forall\, j \in M.
 \end{equation}
@@ -165,7 +162,15 @@ for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\
 where, $\lim_{\epsilon \to 0} \bar{\alpha}(\epsilon) = 1$.
 
 
-\begin{proof}
+\begin{proof} 
+
+
+
+Due to Property \ref{property:homogeneity}, the inequality in \eqref{eqn:ellipsoid} implies
+\begin{equation}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in \sphere \setminus \proj_S(E'), \forall\, j \in M, \end{equation}
+
+
+
 Let $V_S:=\proj_S(V)$. Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  We have then 
 $$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means: $$\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C).$$ Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
 \end{proof}
