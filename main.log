@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 23:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -625,8 +625,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
 mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
  []
 
-) (./mainTheoremProof2.tex [5]) (./experiments.tex) (./conclusions.tex)
-(./appendix.tex
+) (./mainTheoremProof2.tex [5]) (./experiments.tex
+<delta1.jpg, id=39, 562.1pt x 421.575pt>
+File: delta1.jpg Graphic file (type jpg)
+ <use delta1.jpg>
+Package pdftex.def Info: delta1.jpg used on input line 8.
+(pdftex.def)             Requested size: 196.73795pt x 147.55345pt.
+
+<bounds1.jpg, id=40, 487.8225pt x 375.4025pt>
+File: bounds1.jpg Graphic file (type jpg)
+ <use bounds1.jpg>
+Package pdftex.def Info: bounds1.jpg used on input line 16.
+(pdftex.def)             Requested size: 170.74043pt x 131.39284pt.
+)
+(./conclusions.tex) [6 <./delta1.jpg> <./bounds1.jpg>] (./appendix.tex
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 19.
@@ -637,7 +649,7 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
-[6] [7]
+[7]
 Underfull \hbox (badness 4595) in paragraph at lines 128--129
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
@@ -670,7 +682,7 @@ Underfull \hbox (badness 3872) in paragraph at lines 141--143
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
-) (./main.bbl)
+) (./main.bbl [8])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -682,7 +694,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[8] (./main.aux)
+[9
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -691,10 +705,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6635 strings out of 493089
- 100952 string characters out of 6134842
- 197101 words of memory out of 5000000
- 9707 multiletter control sequences out of 15000+600000
+ 6645 strings out of 493089
+ 101095 string characters out of 6134842
+ 196101 words of memory out of 5000000
+ 9715 multiletter control sequences out of 15000+600000
  134437 words of font info for 305 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1554b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -720,10 +734,10 @@ t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on main.pdf (8 pages, 303318 bytes).
+Output written on main.pdf (9 pages, 348964 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33798 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 33808 words of extra memory for PDF output out of 35830 (max. 10000000)
 
