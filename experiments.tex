@@ -19,10 +19,9 @@ We illustrate our technique on a two-dimensional switched system with $4$ modes.
 \end{center}
 \end{figure}
 
-We next test our algorithm on a $4$-dimensional system, with $5$ modes. We observe a slower convergence of $\delta$ as well as upper and lower bounds on $\rho$.
-\textcolor{blue}{[to add plots here, but they are not super nice: we do not see the convergence to $1$ of $\delta$: even after $10 000$ points, $\delta$ is below $0.85$].}
+We have tested our algorithm for larger dimension (up to $n=6$), and have observed as expected given the expression of $\delta$ a much slower convergence when $n$ increases. We need for example in average $10,000$ points in diension $4$ to have $\delta \geq 0.9$. We nevertheless observe convergence of the upper bound to the $\rho$, and convergence of the lower bound to $\frac{\rho}{\sqrt{n}}$. This limit gap $\frac{\rho}{\sqrt{n}}$ between the two bounds could be improved in future work by considering other techniques, in particuler, the use of sum of squares.
 
-Finally, we randomly generate $10,000$ cases with systems of dimension between $2$ and $7$, number of modes between $2$ and $5$, and size of samples $N$ between $30$ and $800$. We take $\beta = 0.92$ and we check if the upper bound computed by our techniques is greater than the actual JSR of the system. We get $xxx$ positive tests, out of $10,000$, which gives us a probability of $??$ of the correctness of the upper bound computed. Note that, this probability is significantly above the provided $\beta$. This is expected, since our techniques are based on worst-case analysis and thus conservative.
+Finally, we randomly generate $10,000$ cases with systems of dimension between $2$ and $7$, number of modes between $2$ and $5$, and size of samples $N$ between $30$ and $800$. We take $\beta = 0.92$ and we check if the upper bound computed by our techniques is greater than the actual JSR of the system. We get $9858$ positive tests, out of $10,000$, which gives us a probability of $0.9858$ of the correctness of the upper bound computed. Note that, this probability is significantly above the provided $\beta$. This is expected, since our techniques are based on worst-case analysis and thus conservative.
 
 
 
