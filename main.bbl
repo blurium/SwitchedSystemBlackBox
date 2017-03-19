@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{balkan}
+A.~Balkan, P.~Tabuada, J.~V. Deshmukh, X.~Jin, and J.~Kapinski.
+\newblock Underminer: A framework for automatically identifying non-converging
+  behaviors in black box system models.
+\newblock In {\em 2016 International Conference on Embedded Software (EMSOFT)},
+  pages 1--10, Oct 2016.
+
+\bibitem{bianchini}
+F.~Blanchini, G.~Fenu, G.~Giordano, and F.~A. Pellegrino.
+\newblock Model-free plant tuning.
+\newblock {\em IEEE Transactions on Automatic Control}, PP(99):1--1, 2016.
+
 \bibitem{stabilityHard1}
 Vincent~D Blondel and John~N Tsitsiklis.
 \newblock Complexity of stability and controllability of elementary hybrid
