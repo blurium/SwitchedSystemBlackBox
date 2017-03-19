@@ -116,22 +116,32 @@ We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove tha
 \begin{proof}We first define the following optimization problem:
 \begin{equation}\label{eqn:appendix}
 \begin{aligned}
-& \text{min}_{P} & & \lambda_{\max}(P) \\
+& \max_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
 &  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
-& && P \succeq I, \\
+& && \lamba_{\min}(P) = 1, \\
 \end{aligned}
 \end{equation}
 where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
-Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. Note that, since $\omega_N$ is sequential, for any $t \in \N_{>0}$ such that \mbox{$d < t \leq N$} we have \mbox{$\gamma^*(\omega_t) \leq \gamma^*(\omega_N) \leq \gamma^*(Z)$.} Also note that,
-\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_t), \omega_N) \geq \lambda_{\max}(\gamma^*(\omega_Z), \omega_N).
+Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. Note that, since $\omega_N$ is sequential, for any $t \in \N_{>0}$ such that \mbox{$d < t \leq N$} we have \mbox{$\gamma^*(\omega_t) \geq \gamma^*(\omega_N) \leq \gamma^{*}_{Z}$}, with $\gamma^{*}_Z$ being the solution of the optimization problem [cite?] with infinitely many constraints. Also note that,
+\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^{*}_Z, \omega_N)
 \end{equation*}
-Since the problem \eqref{eqn:appendix} is strictly feasible for $\gamma^*(\omega_t)(1 + \eta),$ there exists a $c > 0$ such that \mbox{$\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$.} This implies: $$\lambda_{\max}(P({\omega_N})) = \lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq c.$$ Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
+since we constrain the optimization more.
+We also have \begin{equation*}\lambda_{\max}(\gamma^{*}_Z, \omega_N) \leq \lambda_{\max}(\gamma^{*}_Z, \omega_t))
+\end{equation*}
+by the same argument. We denote $u = \lambda_{\max}((1+\eta)\gamma^{*}_Z, \omega_{d+1})$.
+
+We then have $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N) \leq u$.
+
+This gives us that $\lamda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N)$ obtained by solving our optimization problem [cite?] is bounded by u, for any $N \geq d+1$.
+
+
+%Since the problem \eqref{eqn:appendix} is strictly feasible for $\gamma^*(\omega_t)(1 + \eta),$ there exists a $c > 0$ such that \mbox{$\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$.} This implies: $$\lambda_{\max}(P({\omega_N})) = \lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq c.$$ Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
 \end{proof}
 
 Note that, even though we proved that $\kappa(P(\omega_N))$ is uniformly bounded for the special case of sequential sampling, a similar probabilistic result can be proved even when new sample points are chosen for each value of $N$.
 
-We now show that for a fixed $\beta \in (0,1]$ $\lim_{N \to \infty} \epsilon(\beta, N) = 0.$ Note that, $\epsilon(\beta, N)$ is also intrinsically defined by the following equation:
+We now show that for a fixed $\beta \in [0,1)$ $\lim_{N \to \infty} \epsilon(\beta, N) = 0.$ Note that, $\epsilon(\beta, N)$ is also intrinsically defined by the following equation:
 $$1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}.$$
 We can then upper bound the term $1-\beta$ as in:
 \begin{equation}\label{eqn:beta}1-\beta \leq  (d+1)N^d (1-\epsilon)^{N-d}.\end{equation}
