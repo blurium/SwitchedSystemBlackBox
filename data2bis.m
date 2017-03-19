@@ -6,7 +6,7 @@ lb=[0.4751 0.5204 0.5370 0.5392 0.5458 0.5458 0.5469 0.5469 0.5469 0.5469 0.5469
 ub=[0.8944 0.9132 0.8547 0.8247 0.8133 0.8063 0.7977 0.7950 0.7930 0.7913 0.7900];
 
 points=[15:50:515];
-set(gca,'FontSize',15)
+set(gca,'FontSize',20)
 
 a=0.7727*ones(1,11);
 b=1/sqrt(2)*a;
@@ -23,6 +23,7 @@ xlim([0 520]);
 
 xlabel('Number of samples (N)','FontWeight','bold')
 
-legend('Lower Bound','Upper bound','\rho','\rho / \surd n','Interpreter','latex')
+h_legend = legend('Lower Bound','Upper bound','\rho','\rho / \surd n','Interpreter','latex','FontSize')
+set(h_legend,'FontSize',20);
 %legend('\sqrt{n}','Interpreter','latex')
 %ylabel('Bounds','FontWeight','bold')
