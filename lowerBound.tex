@@ -4,10 +4,10 @@ We start by computing a lower bound for $\rho$ which is based on the following t
 For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM,\, A^TPA\preceq P. $$
 \end{theorem}
 
-CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system as the following theorem formalizes:
+CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system as formalized in the following theorem:
 \begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
 \end{theorem}
-Note that smaller the $\gamma$ is, a tighter upper bound we get on $\rho(\cM)$. Therefore, we can consider in particular the optimal solution $\gamma^*$ of the following optimization problem:
+Note that the smaller $\gamma$ is, the tighter is the upper bound we get on $\rho(\cM)$. Therefore, we can consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
 \begin{equation}\label{eqn:campiOpt0}
 \begin{aligned}
 & \text{min}_{\gamma, P} & & \gamma \\
@@ -26,7 +26,7 @@ The following theorem shows that the existence of a CQLF for \eqref{eq:switchedS
 
 %Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
 \begin{theorem}\label{thm:lowerbound}
-For a given uniform sampling: $$\omega_N := \{(x_1, j_1), (x_2, j_2), \ldots, (x_N, j_N)\} \subset \R^n \times M,$$ let $W_{\omega_N}=\{(x_1,y_1),...,(x_N,y_N)\}$ be the corresponding observations available, which satisfy $$y_i= A_{j_i}x_i\,\, \forall (x_i, y_i) \in W_{\omega_N}.$$
+For a given uniform sampling: $$\omega_N := \{(x_1, j_1), (x_2, j_2), \ldots, (x_N, j_N)\} \subset \R^n \times M,$$ let $W_{\omega_N}=\{(x_1,y_1),...,(x_N,y_N)\}$ be the corresponding available observations, which satisfy $$y_i= A_{j_i}x_i\,\, \forall (x_i, y_i) \in W_{\omega_N}.$$
 Also let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
 \begin{equation}\label{eq:lowerbound}
 \begin{aligned}
