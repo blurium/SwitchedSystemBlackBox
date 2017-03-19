@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{stabilityHard1}
+Vincent~D Blondel and John~N Tsitsiklis.
+\newblock Complexity of stability and controllability of elementary hybrid
+  systems.
+\newblock {\em Automatica}, 35(3):479 -- 489, 1999.
+
 \bibitem{lazar}
 Ruxandra Bobiti and Mircea Lazar.
 \newblock A delta-sampling verification theorem for discrete-time, possibly
@@ -65,10 +71,21 @@ D.~Liberzon.
 \newblock {\em Switching in Systems and Control}.
 \newblock {Birkh\"auser}, Boston, MA, 2003.
 
+\bibitem{liberzon}
+S.~Liu, D.~Liberzon, and V.~Zharnitsky.
+\newblock On almost lyapunov functions for non-vanishing vector fields.
+\newblock In {\em 2016 IEEE 55th Conference on Decision and Control (CDC)},
+  pages 5557--5562, Dec 2016.
+
 \bibitem{nemirovski}
 Arkadi Nemirovski and Alexander Shapiro.
 \newblock Convex approximations of chance constrained programs.
 \newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
+
+\bibitem{rudin}
+Walter Rudin.
+\newblock {\em Real and complex analysis}.
+\newblock McGraw-Hill Book Co., New York, third edition, 1987.
 
 \bibitem{topcu}
 Ufuk Topcu, Andrew Packard, and Peter Seiler.

@@ -1,9 +1,8 @@
 % !TEX root = main.tex
-%The proof of the theorem is two-part. We first prove the statement of the theorem when $P=I$, i.e., when $E_P = \sphere$. (Lemma \ref{lemma:epsilon1}) Then, to apply this result on an arbitrary ellipsoid defined by $P$, via a linear transformation mapping $L \in\calL(\R^n)$, we transform the problem into a new coordinates system, such that the ellipsoid $E_P$ maps to a sphere. We then compute an upper bound on the measure of the image of the set $E'$ in this new coordinate system. (Lemma \ref{lemma:epsilon2}) We finally use the invariance of JSR under similarity transformations stated in Remark \ref{rem:scaling} to tie these two results.
 \begin{subsection}{Notation and Background}
 Before proceeding to the main lemmas we use to prove Lemma \ref{lemma:eps}, we first introduce the necessary preliminary definitions and related background.
 
-Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$.
+Let $\dist$ be a distance on $\R^n$. The distance between a set $X \subset \R^n$ and a point $p \in \R^n$ is $\dist(X, p):=\inf_{x \in X}\dist(x,p)$. Note that the map $p \mapsto \dist(X,p)$ is continuous on $\R^n$. Given a set $X \subset \R^n$, we denote $\partial X$ denotes the boundary of set $X$.
 
 \begin{definition}%[Spherical Cap]
 We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
@@ -22,7 +21,7 @@ $$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2}).$$
 \end{itemize}
 \end{definition}
 
-\begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is smooth, then this supporting hyperplane is unique.
+\begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is a smooth manifold, then this supporting hyperplane is unique.
 \end{remark}
 
 \begin{remark}\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
@@ -81,8 +80,8 @@ $\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Del
 We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
 \end{proof}
 
-\begin{lemma}\label{thm:mainSphericalCap}Let $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$. Then, for any $\epsilon \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon}$ for some $X$ which is a spherical cap.
-\end{lemma}
+\begin{proposition}\label{thm:mainSphericalCap}Let $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$. Then, for any $\epsilon \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon}$ for some $X$ which is a spherical cap.
+\end{proposition}
 
 \begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon$. 
 
@@ -110,30 +109,6 @@ where $I$ is the regularized incomplete beta function. Since, \mbox{$\sigma^{n-1
 The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given in \eqref{eqn:ballinc}, where \begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)}.\end{equation}
 \end{proof}
 \end{subsection}
-
-%put this in main text!
-%We are now ready to prove the first main lemma in this subsection.
-%\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$. Consider the set of matrices and $A \in \calM$ satisfying:
-%\begin{equation}\label{eqn:contraction}(A_jx)^T(A_jx) \leq \gamma^* x^Tx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
-%where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we can compute
-%$\alpha(\epsilon)$ such that we have:
-%\begin{equation*}
-%A_j \sphere \subset \frac{\gamma^*}{\delta} \sphere,\quad \forall\, j \in M.
-%\end{equation*}
-%\end{lemma}
-%
-%\begin{proof}Note that, \eqref{eqn:contraction} implies that:
-%$$A_j (\sphere \setminus \sphere') \subset \gamma^* \ball.$$
-%Using Property \ref{property:convpres} this also implies:
-%$$A_j \convhull(\sphere \setminus \sphere') \subset \convhull(A_j(\sphere \setminus \sphere')) \subset \gamma^* \ball .$$
-%By using Lemma \ref{lemma:eps} and the definition of the function $\Delta(X)$ we have:
-%$$A_j (\alpha(\epsilon)^2 \ball) \subset A_j (\convhull (\sphere \setminus \sphere')) \subset \ball, \quad  \forall\, j \in M,$$
-%where $\alpha(\epsilon)$ is defined as in \eqref{defn:alpha}. Therefore, we get:
-%$$A_j (\alpha(\epsilon)^2 \ball) \subset \gamma^*\ball,$$
-%which implies that $\rho \leq \frac{\gamma^*}{\alpha(\epsilon)}.$
-%\end{proof}
-
-%We next show that we can apply Lemma \ref{lemma:epsilon1} even when the inequality \eqref{lemma:epsilon1} is satisfied on an ellipsoid instead of a sphere, and complete the proof of the theorem.
 
 \begin{subsection}{Proof of  $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ in Theorem \ref{thm:mainTheorem}} \label{app:delta}
 Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \Phi(\beta,N))$

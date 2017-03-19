@@ -142,21 +142,23 @@ Due to the  the homogeneity Property \ref{property:homogeneity}, this implies
 %We now show how to relate $\sigma^{n-1}({V_S})$ to $\sigma^{n-1}(\proj_S(L^{-1}(V_S)))$. Note that, since $L \in \calL({\R^n})$ by Remark \ref{rem:mappingMeasures} we have:
 %\begin{equation}\label{eqn:det}\sigma_P(L^{-1}(V_S)) = |\det(L^{-1})| \sigma^{n-1}(V_S).\end{equation}
 
-We now show how to relate $\sigma^{n-1}(V_S)$ to $\sigma^{n-1}(\proj_S(L^{-1}(V_S)))$. Consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$ and $V':=\proj_S(L^{-1}(V_S))$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  This leads to:
+We now show how to relate $\sigma^{n-1}(V_S)$ to $\sigma^{n-1}(\proj_S(L^{-1}(V_S)))$. Consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$ and $V':=\proj_S(L^{-1}(V_S))$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C),$
+where $\calH$ is the homothety of ratio $1/ \lambda_{\min}(L^{-1})$. This leads to:
 $$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means the following holds:
 \begin{eqnarray}\nonumber\sigma^{n-1}(V') &\leq& \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda( L^{-1}(S^{V_{\sphere}}))\\ \nonumber &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\sigma(S^{V_S}),\\
  \label{eqn:map1} &=&\sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(V_S)
 \end{eqnarray}
-where the first equality follows from Remark \ref{rem:mappingMeasures}.
+where the first equality follows from the fact that
+$$ \lambda(Q(X)) = |\det(Q)| \lambda(X),$$
+where $X \subset \R^n$ and $Q \in \calL(\R^n)$ (see e.g. \cite{rudin}).
 Putting together \eqref{eqn:map1}, \eqref{eqn:P2}, \label{eqn:P}, we get the statement of the theorem where $S' = \proj_S(L^{-1}(V_S)).$
 %Then, if we let $E':=L^{-1} V_S$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_S), and the result of the theorem follows.
 \end{proof}
 
 
 \begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$. Then, we can compute $\alpha(\epsilon)$ satisfying:
-\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup\{r: r\ball \subset \conv(\sphere \setminus X_\epsilon),
+\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup_{\sphere' \subset \sphere: \sigma^{n-1}(\sphere') \leq \epsilon }\{r: r\ball \subset \conv(\sphere \setminus \sphere').
 \end{equation}
-for all $X_\epsilon \in \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$. 
 %Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
 \end{lemma}
 
