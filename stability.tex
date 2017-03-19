@@ -1,7 +1,7 @@
  % !TEX root = main.tex
-A \emph{switched linear system} related to a set of modes $\mathcal{M}= \{A_i, i \in M \}$ is of the form:
-\begin{equation}\label{eq:switchedSystem}x_{k+1} = A_{\tau(k)}x_k,\end{equation}
-with switching sequence $\tau: \N \to M$. There are two important properties of linear switched systems that we exploit in this paper.
+A \emph{switched linear system} with a set of modes $\mathcal{M}= \{A_i, i \in M \}$ is of the form:
+\begin{equation}\label{eq:switchedSystem}x_{k+1} = f(k,x_k),\end{equation}
+with $f(k,x_k) = A_{\tau(k)}x_k$ and switching sequence $\tau: \N \to M$. There are two important properties of linear switched systems that we exploit in this paper.
 \begin{property}\label{property:homogeneity}
 Let $\xi(x, k, \tau)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$ and with switching sequence $\tau$. The dynamical system \eqref{eq:switchedSystem} is homogeneous: $\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau).$
 \end{property}
@@ -15,7 +15,7 @@ $$ f(\conv({X}))\subset \conv(f(X)). $$
 
 The joint spectral radius of the set of matrices $\calM$ closely relates to the stability of the System \eqref{eq:switchedSystem} and is defined as follows:
 \begin{definition} \cite{jungers_lncis} Given a finite set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
-$$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k}\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\}. $$
+$$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k} \left\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\ \right\}. $$
 \end{definition}
 
 \begin{property}[Corollary 1.1, \cite{jungersBook}]
