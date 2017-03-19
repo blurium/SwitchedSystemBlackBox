@@ -1,19 +1,19 @@
 % !TEX root = main.tex
 
-\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$. and a uniform random sampling $\omega_N \subset Z$, with $N \geq \frac{n(n+1)}{2}+1$ For any given $\beta \in (0,1]$, $\eta > 0$. Let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switching system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, for any given $\beta \in (0,1]$ and $\eta > 0$ we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
 $$\rho \leq \frac{\gamma^*(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
 where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
 \end{theorem}
 
 \begin{proof}
-Note that, by definition of $\gamma^*(\omega_N)$ we have:
+By definition of $\gamma^*(\omega_N)$ we have:
 \begin{equation*} (A_j x)^TP(A_j x) \leq {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall\, (x, j)  \in \omega_N \end{equation*}
 for some $P \succ 0$. 
-Note that the inequality \eqref{eqn:violation} in Theorem \ref{mainTheorem0} can be also written as:
+Then, by rewriting Theorem \ref{mainTheorem0} we also have:
 \begin{equation}\label{eqn:violation2}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- I(1-\epsilon; N-d, d+1),\end{equation}
 where $I(\ell;a,b)$ is the regularized incomplete beta function. Let $\Phi(\beta, N):=1- I^{-1}(1-\beta; N-d, d+1)$. Then, for all $\epsilon \in (0,1)$ satisfying:
 \begin{equation}\label{eqn:eps}\epsilon \leq \Phi(\beta, N),\end{equation} we have $\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq \beta$.
-Then, by Theorem \ref{mainTheorem0} for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
+Then, by Theorem \ref{mainTheorem0}, for all $\epsilon$ satisfying \eqref{eqn:eps}, with probability at least $\beta$ the following holds:
 \begin{equation*} (A_jx)^TP(A_jx) \leq  {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V.\end{equation*}
 By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
 \begin{equation*}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
