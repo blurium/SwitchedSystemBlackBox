@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 01:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -407,65 +407,65 @@ LaTeX Warning: Label `eqn:P' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    ... okay on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <16> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 92.
-LaTeX Info: Redefining \microtypecontext on input line 92.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -542,27 +542,22 @@ e
 ))
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 92.
-Package gensymb Info: Math companion symbols declared on input line 92.
-LaTeX Info: Redefining \degree on input line 92.
-LaTeX Info: Redefining \celsius on input line 92.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 93.
+Package gensymb Info: Math companion symbols declared on input line 93.
+LaTeX Info: Redefining \degree on input line 93.
+LaTeX Info: Redefining \celsius on input line 93.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 92.
-LaTeX Info: Redefining \ohm on input line 92.
-Package gensymb Info: Using \textohm for \ohm on input line 92.
-Package gensymb Info: Using \textmu for \micro on input line 92.
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
+erthousand on input line 93.
+LaTeX Info: Redefining \ohm on input line 93.
+Package gensymb Info: Using \textohm for \ohm on input line 93.
+Package gensymb Info: Using \textmu for \micro on input line 93.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 96.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -570,7 +565,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 96.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -578,10 +573,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 96.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 96.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -592,7 +587,7 @@ p/pdftex.map}
 
 
 
-] <ex1.jpg, id=18, 647.41875pt x 545.03625pt>
+] <ex1.jpg, id=19, 647.41875pt x 545.03625pt>
 File: ex1.jpg Graphic file (type jpg)
  <use ex1.jpg>
 Package pdftex.def Info: ex1.jpg used on input line 26.
@@ -626,17 +621,17 @@ mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
  []
 
 ) (./mainTheoremProof2.tex [5]) (./experiments.tex
-<delta1.jpg, id=39, 562.1pt x 421.575pt>
+<delta1.jpg, id=40, 562.1pt x 421.575pt>
 File: delta1.jpg Graphic file (type jpg)
  <use delta1.jpg>
 Package pdftex.def Info: delta1.jpg used on input line 6.
-(pdftex.def)             Requested size: 196.73795pt x 147.55345pt.
+(pdftex.def)             Requested size: 186.77934pt x 137.59485pt.
 
-<bounds1.jpg, id=40, 562.1pt x 421.575pt>
+<bounds1.jpg, id=41, 562.1pt x 421.575pt>
 File: bounds1.jpg Graphic file (type jpg)
  <use bounds1.jpg>
 Package pdftex.def Info: bounds1.jpg used on input line 15.
-(pdftex.def)             Requested size: 196.73795pt x 147.55345pt.
+(pdftex.def)             Requested size: 186.77934pt x 137.59485pt.
 ) (./conclusions.tex [6 <./delta1.jpg> <./bounds1.jpg>]) (./appendix.tex
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
@@ -649,21 +644,15 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
 [7]
-Underfull \hbox (badness 4595) in paragraph at lines 128--129
-\T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
-cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
+Underfull \hbox (badness 7504) in paragraph at lines 134--135
+[]\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
+cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$
  []
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 135.
-
-
-Underfull \hbox (badness 7504) in paragraph at lines 134--137
-[]\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
-cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$
- []
 
 
 Overfull \hbox (8.37347pt too wide) detected at line 140
@@ -679,6 +668,18 @@ b/m/n/10 N\OML/cmm/m/it/10 :
 
 Underfull \hbox (badness 3872) in paragraph at lines 141--144
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
+ []
+
+
+Underfull \hbox (badness 5652) in paragraph at lines 141--144
+[][] \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L; N\OT1/cmr/m/n/1
+0 ) = 0$\T1/ptm/m/n/10 (+20) . Putting to-gether this with
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 141--144
+\T1/ptm/m/n/10 (+20) By the con-ti-nu-ity of the func-tion $\OML/cmm/m/it/10 I[
+]$ \T1/ptm/m/n/10 (+20) this im-plies:
  []
 
 ) (./main.bbl [8])
@@ -704,11 +705,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6647 strings out of 493089
- 101117 string characters out of 6134842
- 195128 words of memory out of 5000000
- 9717 multiletter control sequences out of 15000+600000
- 134342 words of font info for 305 fonts, out of 8000000 for 9000
+ 6701 strings out of 493089
+ 102175 string characters out of 6134842
+ 195694 words of memory out of 5000000
+ 9770 multiletter control sequences out of 15000+600000
+ 139401 words of font info for 322 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1547b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -723,20 +724,21 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on main.pdf (9 pages, 352981 bytes).
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on main.pdf (9 pages, 360972 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33808 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 35856 words of extra memory for PDF output out of 42996 (max. 10000000)
 

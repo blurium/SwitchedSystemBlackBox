@@ -83,9 +83,9 @@ can be written as:
 \begin{aligned}
 & \text{min}_{P, t} & & t \\
 & \text{s.t.} 
-& & g_{\gamma^*}(P, z) \leq 0,\,\forall\ z \in Z\end{aligned}
+& & g_{\gamma^*}(P,t,z) \leq 0,\,\forall\ z \in Z\end{aligned}
 \end{equation}
-where $g_{\gamma^*}(P,z) = \max(g_1(P, z), g_2(P), g_3(P))$, and 
+where $g_{\gamma^*}(P,t,z) = \max(g_1(P, z), g_2(P), g_3(P, t))$, and 
 \begin{eqnarray*}
 g_1(P, z) &=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
 g_2(P) &=& \lambda_{\max}(-P) +1. \\
