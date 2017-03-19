@@ -71,7 +71,7 @@ Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the opti
 Then, for all $\epsilon \in (0,1)$ the following holds:
 \begin{equation}\label{eqn:violation}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j},\end{equation}
 where $$V(\omega_N) = \{z \in Z: (A_jz)^TP(\omega_N)(A_j) > \gamma^*z^TP(\omega_N)z\},$$
-i.e., the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$ which is $P(\omega_N)$.
+i.e., the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$.
 \end{theorem}
 
 Before proceeding to the proof, we note that this theorem is an immediate application of Theorem 3.3 in \cite{campi}. Note that, the assumptions given in the statement of the theorem are of technical nature. That is, if any of the two does not hold for the optimization problem $\Opt(\omega_N)$, it is possible to construct a slightly modified optimization problem for which they indeed hold and work with this modified optimization problem instead. We refer the interested reader to \cite{campi} for a more detailed discussion of such modification techniques.
@@ -123,8 +123,7 @@ and
 \end{equation*}
 We have 
 \begin{eqnarray*}
-\mu(V) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
-&=& \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
+\mu(V) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) = \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
  &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
  & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
 \end{eqnarray*}
