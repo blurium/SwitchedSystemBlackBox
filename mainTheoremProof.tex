@@ -36,7 +36,7 @@ where $Z:=\sphere \times M$, $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal
 
 For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we are can replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the following discussion.
 
-The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the proportion of the constraints of the original problem \eqref{eqn:campiOpt0} that are violated by the optimal solution of \eqref{eqn:campiOpt01}, with some with some probability which is a function of the sample size $N$. 
+The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the proportion of the constraints of the original problem \eqref{eqn:campiOpt0} that are violated by the optimal solution of \eqref{eqn:campiOpt01}, with some probability which is a function of the sample size $N$. 
 
 %\begin{definition}(from \cite{campi}) Consider the optimization problem $\Opt(\omega_N)$ where the set of constraints $\omega_N$ is randomly sampled according to a measure $\mu$. We define the \emph{constraint violation probability} as:
 %\begin{equation}\label{eqn:violation0}
@@ -68,9 +68,9 @@ Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the opti
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
 \item Problem $\Opt(\omega_N)$ is nondegenerate\footnote{Informally, the problem $\Opt{\omega_N}$ is nondegenerate, when there are no redundant support constraints.} with probability one.
 \end{enumerate}
-Then, for all $\epsilon \in (0,1)$ the following holds:
+Then, for all $\epsilon \in (0,1]$ the following holds:
 \begin{equation}\label{eqn:violation}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j},\end{equation}
-where $$V(\omega_N) = \{z \in Z: (A_jz)^TP(\omega_N)(A_j) > \gamma^*z^TP(\omega_N)z\},$$
+where $$V(\omega_N) = \{z \in Z: (A_j zz)^TP(\omega_N)(A_j z) > \gamma^*z^TP(\omega_N)z\},$$
 i.e., the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$.
 \end{theorem}
 
@@ -92,9 +92,9 @@ g_2(P) &:=& \lambda_{\max}(-P) +1. \\
 g_3(P) &:=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
 \end{proof}
-The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables are in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem 3.3 in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem, with $d=\frac{n(n+1)}{2}+1.$
+The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables is in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem 3.3 in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem, with $d=\frac{n(n+1)}{2}+1.$
 
-Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates not more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
+Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates no more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
 
 %Before proceeding to our main results in this section, we present the following lemma which will be helpful.
 %\begin{remark} (see e.g. \cite{aliprantis}) \label{rem:mappingMeasures}
@@ -103,19 +103,19 @@ Theorem \ref{mainTheorem0} states that the optimal solution of the sampled probl
 %\lambda(\calL(X)) = |\det(L)| \lambda(X).
 %\end{equation*}
 %\end{remark}
-The rest of this section has two important intermediate results that leads us to our main theorem.  
+The rest of this section has two important intermediate results that lead us to our main theorem.  
 In Theorem \ref{thm:mainTheorem01}, we first show how to map the measure of the violated constraints on $Z$ to the measure of violating points on the unit sphere, $\sphere$. We next show via Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR by working on $\sphere$. We then tie this Lemma with Theorem \ref{mainTheorem0} to prove the main result of this section. 
 
-\begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and a matrix $P$ satisfying:
+\begin{theorem}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and a matrix $P \succ 0$ satisfying:
 \begin{equation}\label{eqn:P}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
-for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, defining $L$ as in \eqref{choleski} and $\bar{A_j}=  L^{-1}A_jL$, one also has:
+for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, by defining $L$ as in \eqref{choleski} and $\bar{A_j}=  L^{-1}A_jL$, one also has:
 \begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
 for some $\sphere' \subset \sphere$ such that: $$\sigma(\sphere') \leq m\epsilon \kappa(P),$$
 where $\kappa(P) = \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$.
 \end{theorem}
 
 \begin{proof}
-Note that $V \subset \Sigma$. Let $V_{\sphere} = \pi_{\sphere}(V)$ and \mbox{$V_M = \pi_M (V)$}. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $V$ can be written as the disjoint union $V = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma(\sphere)$. We notice that 
+Note that $V \subset \Sigma$. Let $V_{\sphere} = \pi_{\sphere}(V)$ and \mbox{$V_M = \pi_M (V)$}. We know that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $V$ can be written as the disjoint union $V = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma_{\sphere}$. We notice that 
 $V_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
 and
 \begin{equation*}
@@ -150,7 +150,7 @@ where $\calH$ is the homothety of ratio $1/ \lambda_{\min}(L^{-1})$. This leads 
 $$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means the following holds:
 \begin{eqnarray}\nonumber\sigma^{n-1}(V') &\leq& \frac{1}{\lambda_{\min}(L^{-1})^n}\lambda(C) \\
 \nonumber &\leq&\frac{1}{\lambda_{\min}(L^{-1})^n} \lambda( L^{-1}(S^{V_{\sphere}}))\\ 
-\label{eqn:lt} &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\sigma(S^{V_S}),\\
+\label{eqn:lt} &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\lambda(S^{V_S}),\\
  \label{eqn:map1} &=&\sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(V_S)
 \end{eqnarray}
 where \eqref{eqn:lt} follows from the fact that
@@ -161,16 +161,17 @@ Putting together \eqref{eqn:P2}, \eqref{eqn:map1}, and \eqref{eqn:P}, we get the
 \end{proof}
 
 
-\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$. Then, we can compute $\alpha(\epsilon)$ satisfying:
+\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1]$. Then, we can compute $\alpha(\epsilon)$ satisfying:
 \begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup_{\substack{\sphere' \subset \sphere: \\  \sigma^{n-1}(\sphere') \leq \epsilon}}\{r: r\ball \subset \conv(\sphere \setminus \sphere').
 \end{equation}
+where we recall that $B$ (respectively $S$) denote the unit ball (respectively sphere) centered at the origin.
 %Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
 \end{lemma}
 
 \begin{proof}See Appendix \ref{app:eps}.
 \end{proof}
 
-\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$ and $\gamma \in \R_{> 0}$. Consider the set of matrices and $A \in \calM$ satisfying:
+\begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1]$ and $\gamma \in \R_{> 0}$. Consider the set of matrices and $A \in \calM$ satisfying:
 \begin{equation}\label{eqn:contraction}(A_jx)^T(A_jx) \leq \gamma x^Tx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,\end{equation}
 where $\sphere' \subset \sphere$ and $\sigma^{n-1}(\sphere') \leq \epsilon$, then we have:
 \begin{equation*}
