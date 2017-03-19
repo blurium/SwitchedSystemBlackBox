@@ -105,4 +105,11 @@ Ufuk Topcu, Andrew Packard, and Peter Seiler.
   programming.
 \newblock {\em Automatica}, 44(10):2669 -- 2675, 2008.
 
+\bibitem{jsrtoolbox}
+Guillaume Vankeerberghen, Julien Hendrickx, and Rapha\"{e}l~M. Jungers.
+\newblock Jsr: A toolbox to compute the joint spectral radius.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 151--156, New York, NY,
+  USA, 2014. ACM.
+
 \end{thebibliography}
