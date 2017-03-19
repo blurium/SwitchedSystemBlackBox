@@ -23,7 +23,9 @@ xlim([0 520]);
 
 xlabel('Number of samples (N)','FontWeight','bold')
 
-h_legend = legend('Lower Bound','Upper bound','\rho','\rho / \surd n','Interpreter','latex','FontSize')
+
+
+h_legend = legend('\gamma*(\omega_N)/\surd n','\gamma*(\omega_N)/\delta','\rho','\rho / \surd n','Interpreter','latex','FontSize')
 set(h_legend,'FontSize',20);
 %legend('\sqrt{n}','Interpreter','latex')
 %ylabel('Bounds','FontWeight','bold')

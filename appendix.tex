@@ -123,8 +123,8 @@ We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove tha
 \end{aligned}
 \end{equation}
 where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
-Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. Note that, since $\omega_N$ is sequential, for any $t \in \N_{>0}$ such that \mbox{$d < t \leq N$} we have \mbox{$\gamma^*(\omega_t) \geq \gamma^*(\omega_N) \leq \gamma*_{Z}$.} Also note that,
-\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_t), \omega_N) \lambda_{\max}(\gamma^*(\omega_Z)).
+Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. Note that, since $\omega_N$ is sequential, for any $t \in \N_{>0}$ such that \mbox{$d < t \leq N$} we have \mbox{$\gamma^*(\omega_t) \leq \gamma^*(\omega_N) \leq \gamma^*(Z)$.} Also note that,
+\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_t), \omega_N) \geq \lambda_{\max}(\gamma^*(\omega_Z), \omega_N).
 \end{equation*}
 Since the problem \eqref{eqn:appendix} is strictly feasible for $\gamma^*(\omega_t)(1 + \eta),$ there exists a $c > 0$ such that \mbox{$\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$.} This implies: $$\lambda_{\max}(P({\omega_N})) = \lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq c.$$ Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
 \end{proof}

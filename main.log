@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 12:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 15:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,7 +604,14 @@ mr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OT1/cmr/m
 2 M\OML/cmm/m/it/10 :
  []
 
-[3]) (./mainTheoremProof.tex [4]
+[3]) (./mainTheoremProof.tex
+Overfull \hbox (10.83734pt too wide) detected at line 72
+\OML/cmm/m/it/10 ^^V[] [] \OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/
+10 ^^@ [] []\OML/cmm/m/it/10 ^^O[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/
+cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ;
+ []
+
+[4]
 Overfull \hbox (1.14061pt too wide) detected at line 143
 \OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]([]\OML/cmm/m/it/10 x\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^M[]x[]x;   \OMS/cmsy/m/
@@ -632,7 +639,7 @@ File: bounds1.jpg Graphic file (type jpg)
  <use bounds1.jpg>
 Package pdftex.def Info: bounds1.jpg used on input line 15.
 (pdftex.def)             Requested size: 186.77934pt x 137.59485pt.
-) (./conclusions.tex [6 <./delta1.jpg> <./bounds1.jpg>]) (./appendix.tex
+) (./conclusions.tex) [6 <./delta1.jpg> <./bounds1.jpg>] (./appendix.tex
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 19.
@@ -644,6 +651,17 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
 [7]
+Overfull \hbox (15.63339pt too wide) detected at line 128
+\OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ![]\OT1/cmr/m/n/10 ) \OM
+S/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^M[]
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ![]\OT
+1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^U \OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+ []
+
+
 Underfull \hbox (badness 7504) in paragraph at lines 134--135
 []\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
 cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$
@@ -705,11 +723,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6701 strings out of 493089
- 102175 string characters out of 6134842
- 195694 words of memory out of 5000000
+ 6704 strings out of 493089
+ 102202 string characters out of 6134842
+ 195663 words of memory out of 5000000
  9770 multiletter control sequences out of 15000+600000
- 139401 words of font info for 322 fonts, out of 8000000 for 9000
+ 139436 words of font info for 324 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1547b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -735,7 +753,7 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on main.pdf (9 pages, 360972 bytes).
+Output written on main.pdf (9 pages, 361323 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream
