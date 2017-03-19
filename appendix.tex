@@ -107,10 +107,10 @@ The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given i
 \end{subsection}
 
 \begin{subsection}{Proof of  $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ in Theorem \ref{thm:mainTheorem}} \label{app:delta}
-Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \Phi(\beta,N)).$
-We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove that $\kappa(P(\omega_N))$ is uniformly bounded in $N$. We then show that $\lim_{N \to \infty} \Phi(\beta,N) = 0$. Then, the result of the theorem follows since $\lim_{\epsilon \to 0}\alpha(\epsilon) = 1$, which is immediate from the definition of $\alpha(\epsilon)$.
+Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \epsilon(\beta,N)).$
+We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove that $\kappa(P(\omega_N))$ is uniformly bounded in $N$. We then show that $\lim_{N \to \infty} \epsilon(\beta,N) = 0$. Then, the result of the theorem follows since $\lim_{\epsilon \to 0}\alpha(\epsilon) = 1$, which is immediate from the definition of $\alpha(\epsilon)$.
 
-\begin{lemma}\label{lem:bounded} We consider a sampling $\omega(N)$, where $N \in \N_{>0}$ and $N \geq d$. We assume that $\omega_N$ is sequential, i.e., $\forall\ d \leq N_1  < N_2$, $\omega_{N_1} \subset \omega_{N_2}$. Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$. Then, $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
+\begin{lemma}\label{lem:bounded} We consider a sampling $\omega(N)$, where $N \in \N_{>0}$ and $N \geq d$. We assume that $\omega_N$ is sequential, i.e., $$\forall\ d \leq N_1  < N_2,\, \omega_{N_1} \subset \omega_{N_2}.$$ Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$. Then, $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
 \end{lemma}
 
 \begin{proof}We first define the following optimization problem:
@@ -131,15 +131,15 @@ But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_
 
 Note that, even though we proved that $\kappa(P(\omega_N))$ is uniformly bounded for the special case of sequential sampling, a similar probabilistic result can be proved even when new sample points are chosen for each value of $N$.
 
-We now show that for a fixed $\beta \in (0,1]$ $\lim_{N \to \infty} \Phi(\beta, N) = 0.$ Note that, this is equivalent to showing that for a fixed $\beta \in (0, 1]$, $\lim_{N \to \infty}\epsilon(\beta, N) = 0$, where $\epsilon(\beta, N)$ is intrinsically defined by the following equation:
+We now show that for a fixed $\beta \in (0,1]$ $\lim_{N \to \infty} \Phi(\beta, N) = 0.$ Note that, this is equivalent to showing that for a fixed $\beta \in (0, 1]$, $\lim_{N \to \infty}\epsilon(\beta, N) = 0$, where $\epsilon(\beta, N)$ is also intrinsically defined by the following equation:
 $1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}.$
 We can then upper bound the $1-\beta$ as in:
 \begin{equation}\label{eqn:beta}1-\beta \leq  (d+1)N^d (1-\epsilon)^{N-d}.\end{equation}
 We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $c > 0$ such that $\epsilon(\beta, N) > c$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > c$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
 \begin{equation*}1-\beta\leq  (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-c)^{N_k-d}\, \forall\,k \in \N. 
 \end{equation*}
-Note that $\lim_{k \to \infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-c)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$, which implies $\lim_{N \to \infty} \Phi(\beta, N) = 0$ as well. Putting together this with Lemma \ref{lem:bounded}, we get:
-$\lim_{N \to \infty} m \kappa(P(\omega_N))\Phi(\beta, \omega_N) = 0,$ which implies by the continuity of the function $I^{-1}$ this implies: $\lim_{N \to \infty} \alpha(m \kappa(P(\omega_N))\Phi(\beta, \omega_N)) = 1.$
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-c)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$. Putting together this with Lemma \ref{lem:bounded}, we get:
+$\lim_{N \to \infty} m \kappa(P(\omega_N))\epsilon(\beta, \omega_N) = 0,$ which implies by the continuity of the function $I^{-1}$ this implies: $\lim_{N \to \infty} \alpha(m \kappa(P(\omega_N))\epsilon(\beta, \omega_N)) = 1.$
 \end{subsection}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 23:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -629,13 +629,13 @@ mr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) to
 <delta1.jpg, id=39, 562.1pt x 421.575pt>
 File: delta1.jpg Graphic file (type jpg)
  <use delta1.jpg>
-Package pdftex.def Info: delta1.jpg used on input line 8.
+Package pdftex.def Info: delta1.jpg used on input line 11.
 (pdftex.def)             Requested size: 196.73795pt x 147.55345pt.
 
 <bounds1.jpg, id=40, 562.1pt x 421.575pt>
 File: bounds1.jpg Graphic file (type jpg)
  <use bounds1.jpg>
-Package pdftex.def Info: bounds1.jpg used on input line 16.
+Package pdftex.def Info: bounds1.jpg used on input line 19.
 (pdftex.def)             Requested size: 196.73795pt x 147.55345pt.
 ) (./conclusions.tex) [6 <./delta1.jpg> <./bounds1.jpg>] (./appendix.tex
 
@@ -681,12 +681,6 @@ Underfull \hbox (badness 3872) in paragraph at lines 141--144
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
-
-Underfull \hbox (badness 2828) in paragraph at lines 141--144
-\T1/ptm/m/n/10 (+20) by the con-ti-nu-ity of the func-tion $\OML/cmm/m/it/10 I[
-]$ \T1/ptm/m/n/10 (+20) this im-plies:
- []
-
 ) (./main.bbl [8])
 
 ** Conference Paper **
@@ -712,7 +706,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6644 strings out of 493089
  101086 string characters out of 6134842
- 196092 words of memory out of 5000000
+ 195092 words of memory out of 5000000
  9714 multiletter control sequences out of 15000+600000
  134437 words of font info for 305 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -739,7 +733,7 @@ t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on main.pdf (9 pages, 353122 bytes).
+Output written on main.pdf (9 pages, 352817 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream
