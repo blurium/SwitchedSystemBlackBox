@@ -7,7 +7,7 @@ addpath(genpath('JSR'));
 addpath(genpath('sdpt3'));
 
 %options for the solver
-ops = sdpsettings('solver','sdpt3');
+ops = sdpsettings('solver','sdpt3','verbose','0');
 
 % dimension of the state space
 n = 4;
@@ -45,25 +45,25 @@ c=jsr_prod_bruteForce(A);
 
 %Campi's certainty
 beta = 0.92;
-d=n*(n+1)/2;
+d=n*(n+1)/2+1; %t minized 
 
-deltaarray=zeros(1,50);
-lbarray=zeros(1,50);
-ubarray=zeros(1,50);
+deltaarray=zeros(1,11);
+lbarray=zeros(1,11);
+ubarray=zeros(1,11);
 
-for N=20:20:1000
+for N=5000:5000:10000
 
 %epsilon as function of beta and N
 %epsilon = 1 - I^{-1}(beta, N-d,d+1)
-epsilon=1-betaincinv(beta,N-d,d+1);
+epsilon=1-betaincinv(1-beta,N-d,d+1);
 
-for i=(N-19):N %generate uniformly 20 more random points of the unit sphere
+for i=(N-499):N %generate uniformly 20 more random points of the unit sphere
       v=randn(n,1);
       X{i}=v/sqrt(sum(v.^2));
 end
 
 %apply randomly one mode to every point, store the result in array Y
-for i=(N-19):N
+for i=(N-499):N
     k=unidrnd(m);
     Y{i}=A{k}*X{i};
 end
@@ -141,10 +141,16 @@ if feasible==false
 end
 
 lowerBound=lambda/sqrt(n);
-lbarray(N/20)=lowerBound;
+lbarray((N)/500)=lowerBound;
 end
 %%%%%%%%%%%%%%%%%%%%%%%UPPER BOUND%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %we compute the gamma* for the problem of the upper bound
+lambdaNext = 1;
+lambdU = 1;
+lambdaL = 0;
+counter = 0;
+lambdaUfound = false;
+
 while(counter<50 && lambdaUfound==false)
     Constraints = [];
     lambda = lambdaNext;
@@ -168,7 +174,7 @@ if lambdaUfound==false
     display('lower bound too high')
 end
 
-    feasible = true;
+feasible = true;
 lambdaNext = (lambdaU + lambdaL)/2;
 if lambdaUfound==true
     while((lambdaU - lambdaL) > 0.005)
@@ -214,14 +220,15 @@ P=value(P_var);
     
 lambdaMax=max(eig(P));
 dP=det(P);
-epsilon1 = min(1,m*epsilon/2*sqrt(lambdaMax^n/dP));
+epsilon1 = min(1,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
 
 alpha1=min(1,epsilon1*gamma(d/2)/(pi^(d/2)));
 alpha=betaincinv(alpha1,(d-1)/2,1/2);
 
 delta=sqrt(1-alpha);
 upperBound=gammaStar/delta;
-deltaarray(N/20)=delta;
-ubarray(N/20)=upperBound;
+deltaarray(N/500)=delta;
+ubarray(N/500)=upperBound;
 
 end
+display('FINI!!!!')
