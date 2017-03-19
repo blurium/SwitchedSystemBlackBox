@@ -136,8 +136,13 @@ The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given i
 %We next show that we can apply Lemma \ref{lemma:epsilon1} even when the inequality \eqref{lemma:epsilon1} is satisfied on an ellipsoid instead of a sphere, and complete the proof of the theorem.
 
 \begin{subsection}{Proof of  $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ in Theorem \ref{thm:mainTheorem}} \label{app:delta}
-We start with the following lemma.
-\begin{lemma}\label{lem:bounded}\textcolor{blue}{Consider the sequential sampling $\omega_N$.} Let $d=\frac{n(n+1)}{2}$ and $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$ and let $\lambda_{\max}(P(\omega_N))$ be the optimal objective function value for this $P(\omega_N)$. Then, $\lambda_{\max}(P(\omega_N))$ is uniformly bounded in $N$.
+Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \Phi(\beta,N))$
+We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove that $\kappa(P(\omega_N))$ is uniformly bounded in $N$. We then show that $\lim_{N \to \infty} \Phi(\beta,N) = 0$. Then, the result of the theorem follows since $\lim_{\epsilon \to 0}\alpha(\epsilon) = 1$, which is immediate from the definition of $\alpha(\epsilon)$.
+
+We show the first result only for a \emph{sequential sampling} $\omega_N$, satisfying:
+$$N_1  < N_2 \implies \omega_{N_1} \subset \omega_{N_2},$$
+however a similar probabilistic argument can be made whenever this assumption is not satisfied.
+\begin{lemma}\label{lem:bounded} Let $K \in \Z_{>0}$. Consider the sequential sampling $\omega(N)$, where $N\geq K$, that is $$N_1  < N_2 \implies \omega_{N_1} \subset \omega_{N_2}.$$ Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$ and let $\lambda_{\max}(P(\omega_N))$ be the optimal objective function value for this $P(\omega_N)$. Then, $\lambda_{\max}(P(\omega_N))$ is uniformly bounded in $N$.
 \end{lemma}
 
 \begin{proof}We first define the following optimization problem:
@@ -150,20 +155,25 @@ We start with the following lemma.
 \end{aligned}
 \end{equation}
 where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
-
-Note that, for all $d \in \Z$ such that $0< d \leq N$ we have $\gamma^*(\omega_d) \leq \gamma^*(\omega_N)$. Also note that,
-\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_d), \omega_N).
+Note that, for all $t \in \Z$ such that $K < t \leq N$ we have $\gamma^*(\omega_t) \leq \gamma^*(\omega_N)$. Also note that,
+\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^*(\omega_t), \omega_N).
 \end{equation*}
-But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_d), \omega_N) \leq c$, which completes the proof of this lemma.
+But note that, there exists a $c > 0$ such that $\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$ since the problem \eqref{eqn:appendix} is strictly feasible for any $\gamma$ such that $\gamma \leq \gamma^*$. This implies: $\lambda_{\max}(\gamma^*(\omega_t), \omega_N) \leq c$. Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
 \end{proof}
 
-We now prove that $\lim_{N \to \infty} \epsilon(\beta, N)= 0$. Note that, we can upper bound $1-\beta$ as follows:
+
+We now show that for a fixed $\beta \in (0,1]$ $\lim_{N \to \infty} \Phi(\beta, N) = 0$, where $\Phi(\beta, N)$. Note that, this is equivalent to showing that for a fixed $\beta \in (0, 1]$, $\lim_{N \to \infty}\epsilon(\beta, N)$, where $\epsilon(\beta, N)$ is intrinsically defined by the following equation:
 \begin{equation}\label{eqn:beta}1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j} \leq  (d+1)N^d (1-\epsilon)^{N-d}.
 \end{equation}
-We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $\delta > 0$ such that $\epsilon(\beta, N) > \delta$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > \delta$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
-\begin{equation*}1-\beta\leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-\delta)^{N_k-d}\, \forall\,k \in \N. 
+We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $c > 0$ such that $\epsilon(\beta, N) > c$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > c$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+\begin{equation*}1-\beta\leq (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-c)^{N_k-d}\, \forall\,k \in \N. 
 \end{equation*}
-Note that $\lim_{k \to \infty}(d+1)N_k^d (1-\delta)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$.
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-\delta)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$, which implies $\lim_{N \to \infty} \Phi(\beta, N) = 0$ as well. Putting together this with Lemma \ref{lem:bounded}, we get:
+$\alpha(m \kappa(P))$
+
+
+
+
 
 
 

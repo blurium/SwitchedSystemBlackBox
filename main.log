@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,33 +651,39 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 20.
 [6]
-Underfull \hbox (badness 4595) in paragraph at lines 156--158
+Underfull \hbox (badness 4595) in paragraph at lines 160--161
 \T1/ptm/m/n/10 (+20) But note that, there ex-ists a $\OML/cmm/m/it/10 c > \OT1/
 cmr/m/n/10 0$ \T1/ptm/m/n/10 (+20) such that
  []
 
 
+Underfull \hbox (badness 7504) in paragraph at lines 165--166
+[]\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
+cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$
+ []
+
+
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 161.
+(amsmath)                 on input line 166.
 
 
-Overfull \hbox (8.86882pt too wide) detected at line 165
+Overfull \hbox (8.37347pt too wide) detected at line 170
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
 \OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\O
-ML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^N\
-OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
-msb/m/n/10 N\OML/cmm/m/it/10 :
+ML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 c\OT
+1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/ms
+b/m/n/10 N\OML/cmm/m/it/10 :
  []
 
-
-Underfull \hbox (badness 3872) in paragraph at lines 166--167
+[7]
+Underfull \hbox (badness 3872) in paragraph at lines 171--173
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
-) (./main.bbl [7])
+) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -703,10 +709,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6600 strings out of 493089
- 100606 string characters out of 6134842
- 195854 words of memory out of 5000000
- 9696 multiletter control sequences out of 15000+600000
+ 6601 strings out of 493089
+ 100616 string characters out of 6134842
+ 195863 words of memory out of 5000000
+ 9697 multiletter control sequences out of 15000+600000
  133112 words of font info for 289 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,35p,1456b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -730,7 +736,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (8 pages, 281463 bytes).
+Output written on main.pdf (8 pages, 284041 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
