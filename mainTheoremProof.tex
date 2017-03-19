@@ -70,7 +70,7 @@ Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the opti
 \end{enumerate}
 Then, for all $\epsilon \in (0,1]$ the following holds:
 \begin{equation}\label{eqn:violation}\mathbb{P}^N\left\{ \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j},\end{equation}
-where $$V(\omega_N) = \{z \in Z: (A_j zz)^TP(\omega_N)(A_j z) > \gamma^*z^TP(\omega_N)z\},$$
+where $$V(\omega_N) = \{z \in Z: (A_j z)^TP(\omega_N)(A_j z) > \gamma^*z^TP(\omega_N)z\},$$
 i.e., the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$.
 \end{theorem}
 
@@ -83,13 +83,13 @@ can be written as:
 \begin{aligned}
 & \text{min}_{P, t} & & t \\
 & \text{s.t.} 
-& & f_{\gamma^*}(P, z) \leq 0,\,\forall\ z \in Z\end{aligned}
+& & g_{\gamma^*}(P, z) \leq 0,\,\forall\ z \in Z\end{aligned}
 \end{equation}
 where $g_{\gamma^*}(P,z) = \max(g_1(P, z), g_2(P), g_3(P))$, and 
 \begin{eqnarray*}
-g_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
-g_2(P) &:=& \lambda_{\max}(-P) +1. \\
-g_3(P) &:=&  \lambda_{\max}(P) - t.
+g_1(P, z) &=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
+g_2(P) &=& \lambda_{\max}(-P) +1. \\
+g_3(P,t) &=&  \lambda_{\max}(P) - t.
 \end{eqnarray*}
 \end{proof}
 The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables is in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem 3.3 in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem, with $d=\frac{n(n+1)}{2}+1.$
