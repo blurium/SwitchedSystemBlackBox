@@ -1,0 +1,85 @@
+% !TEX root = main.tex
+\begin{subsection}{Proof of  $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$}
+\label{app:bound}
+Note that, the optimization problem \eqref{eqn:campiOpt01}, with $\gamma^*(\omega_N)$ replaced by $\gamma^*(Z)+\frac{\eta}{2}$ is strictly feasible, and thus admits a finite optimal value $K$ for some solution $P_{\eta/2}$ Note that, $\lim_{N \to \infty} \gamma^*(\omega_N)= \gamma^*(Z).$ Thus, for $N$ large enough, \eqref{eqn:campiOpt01} admits $P_{\eta/2}$ as a feasible solution, and thus its optimal value is bounded by $K.$ In other words, \mbox{$\lambda_{\max}(P({\omega_N})) \leq K$.} Moreover, since  
+$\lambda_{\max}(P(\omega_N))\geq 1$, we also have \mbox{$\det(P(\omega_N)) \geq 1$,} which means that
+\begin{equation}\label{kappa}\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{K^n}.\end{equation}
+
+We now show that for a fixed $\beta \in (0,1)$ $\lim_{N \to \infty} \epsilon(\beta, N) = 0.$ Note that, $\epsilon(\beta, N)$ is intrinsically defined by the following equation:
+$$1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}.$$
+We can then upper bound the term $1-\beta$ as in:
+\begin{equation}\label{eqn:beta}1-\beta \leq  (d+1)N^d (1-\epsilon)^{N-d}.\end{equation}
+We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $c > 0$ such that $\epsilon(\beta, N) > c$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > c$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+\begin{equation*}1-\beta\leq  (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-c)^{N_k-d}\, \forall\,k \in \N. 
+\end{equation*}
+Note that $\lim_{k \to \infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that:
+$$(d+1)N_{k'}^d (1-c)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$.
+
+Putting together this with \eqref{kappa}, we get:
+$$\lim_{N \to \infty} m \kappa(P(\omega_N))\epsilon(\beta, \omega_N) = 0.$$ By the continuity of the function $I^{-1}$ this implies: $\lim_{N \to \infty} \alpha(m \kappa(P(\omega_N))\epsilon(\beta, \omega_N)) = 1.$
+
+
+\end{subsection}
+
+
+
+
+
+
+
+
+%\begin{subsection}{Proof of  $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ in Theorem \ref{thm:mainTheorem}} \label{app:delta}
+%Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \epsilon(\beta,N)).$
+%We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove that $\kappa(P(\omega_N))$ is uniformly bounded in $N$. We then show that $\lim_{N \to \infty} \epsilon(\beta,N) = 0$. Then, the result of the theorem follows since $\lim_{\epsilon \to 0}\alpha(\epsilon) = 1$, which is immediate from the definition of $\alpha(\epsilon)$.
+%
+%\begin{lemma}\label{lem:bounded} We consider a sampling $\omega(N)$, where $N \in \N_{>0}$ and $N > d$. We assume that $\omega_N$ is sequential, i.e., $$\forall\ d \leq N_1  < N_2,\, \omega_{N_1} \subset \omega_{N_2}.$$ Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$. Then, $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
+%\end{lemma}
+%
+%\begin{proof}We first define the following optimization problem:
+%\begin{equation}\label{eqn:appendix}
+%\begin{aligned}
+%& \max_{P} & & \lambda_{\max}(P) \\
+%& \text{s.t.} 
+%&  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
+%& && \lambda_{\min}(P) = 1, \\
+%\end{aligned}
+%\end{equation}
+%where we denote its optimal solution by $c_{\max}(\gamma , \omega_N)$.
+%Recall that $\gamma^*(\omega_N)$ is the optimal solution to \eqref{eq:lowerbound}. Then we have:
+%\begin{eqnarray*}c_{\max}(\gamma^*(\omega_N), \omega_N) & \leq & c_{\max}(\gamma^*(Z), \omega_N) \\ 
+%& \leq & c_{\max}(\gamma^*(Z), \omega_{d+1}),
+%\end{eqnarray*}
+%where the first inequality follows from the fact that \mbox{$\gamma^*(Z) \geq \gamma^*(\omega_N)$.} The second inequality follows from the inclusion $\omega_{d+1} \subset\omega_N$, and the fact that as we add less constraints the value of the objective function of \eqref{eqn:appendix} increases. Let: $$\bar{\lambda}_{\max} = c_{\max}(\gamma^{*}(Z), \omega_{d+1}).$$
+%Note that, $\bar{\lambda}_{\max} = c_{\max}(\gamma^{*}(Z), \omega_{d+1}) < \infty$ since we know $c_{\max}(\gamma^{*}(Z), Z) < \infty$ thanks to the additional $\eta$ factor. We then have $c_{\max}(\gamma^{*}(\omega_N), \omega_N) \leq \bar{\lambda}_{\max}.$  Note that, the optimal solution of the optimization problem \eqref{eqn:appendix} will in fact satisfy $\lambda_{\min}(P(\omega_N)) = 1$. Therefore, the optimal solution of \eqref{eqn:appendix} is an upper bound on the optimal solution of the problem \eqref{eqn:campiOpt01}. Therefore, we get $\lambda_{\max}(P(\omega_N)) \leq \bar{\lambda}.$ This immediately shows that:
+%$$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{\bar{\lambda}_{\max}^n},$$
+%which means $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
+%
+%% being the solution of the optimization problem \eqref{eqn:campiOpt0} with infinitely many constraints. Also note that, 
+%%\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^{*}(Z), \omega_N)
+%%\end{equation*}
+%%%Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. 
+%%since we constrain the optimization more.
+%%We also have \begin{equation*}\lambda_{\max}(\gamma^*(Z), \omega_N) \leq \lambda_{\max}(\gamma^{*}(Z), \omega_t))
+%%\end{equation*}
+%%by the same argument. We denote $$\bar{\lambda}_{\max} = \lambda_{\max}((1+\eta)\gamma^{*}(Z), \omega_{d+1}).$$
+%%
+%%We then have $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N) \leq \bar{\lambda}_{\max} $.
+%
+%%This gives us that $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N)$ obtained by solving our optimization problem [cite?] is bounded by u, for any $N \geq d+1$.
+%
+%
+%%Since the problem \eqref{eqn:appendix} is strictly feasible for $\gamma^*(\omega_t)(1 + \eta),$ there exists a $c > 0$ such that \mbox{$\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$.} This implies: $$\lambda_{\max}(P({\omega_N})) = \lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq c.$$ Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
+%\end{proof}
+%
+%Note that, even though we proved that $\kappa(P(\omega_N))$ is uniformly bounded for the special case of sequential sampling, a similar probabilistic result can be proved even when new sample points are chosen for each value of $N$.
+%
+%We now show that for a fixed $\beta \in [0,1)$ $\lim_{N \to \infty} \epsilon(\beta, N) = 0.$ Note that, $\epsilon(\beta, N)$ is also intrinsically defined by the following equation:
+%$$1-\beta = \sum_{j=0}^d {{N}\choose{j}} \epsilon^j (1-\epsilon)^{N-j}.$$
+%We can then upper bound the term $1-\beta$ as in:
+%\begin{equation}\label{eqn:beta}1-\beta \leq  (d+1)N^d (1-\epsilon)^{N-d}.\end{equation}
+%We prove $\lim_{N \to \infty} \epsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \epsilon(\beta, N) \not= 0$. This means that, there exists some $c > 0$ such that $\epsilon(\beta, N) > c$ infinitely often. Then, consider the subsequence $N_k$ such that $\epsilon(\beta, N_k) > c$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+%\begin{equation*}1-\beta\leq  (d+1)N_k^d (1-\epsilon)^{N_k-d} \leq (d+1)N_k^d (1-c)^{N_k-d}\, \forall\,k \in \N. 
+%\end{equation*}
+%Note that $\lim_{k \to \infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that, we have $$(d+1)N_{k'}^d (1-c)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \epsilon (\beta, N) = 0$. Putting together this with Lemma~\ref{lem:bounded}, we get:
+%\mbox{$\lim_{N \to \infty} m \kappa(P(\omega_N))\epsilon(\beta, \omega_N) = 0.$} By the continuity of the function $I^{-1}$ this implies: $\lim_{N \to \infty} \alpha(m \kappa(P(\omega_N))\epsilon(\beta, \omega_N)) = 1.$
+%\end{subsection}

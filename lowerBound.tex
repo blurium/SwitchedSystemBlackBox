@@ -4,8 +4,7 @@ We start by computing a lower bound for $\rho$ which is based on the following t
 For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM,\, A^TPA\preceq P. $$
 \end{theorem}
 
-CQLFs are useful because they can be computed (if they exist) with Semidefinite Programming (see \cite{boyd}), and they constitute a stability guarantee for the switched system as formalized in the following theorem:
-\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
+CQLFs are useful because they can be computed (if they exist) with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
 \end{theorem}
 Note that the smaller $\gamma$ is, the tighter is the upper bound we get on $\rho(\cM)$. Therefore, we can consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
 \begin{equation}\label{eqn:campiOpt0}
@@ -37,12 +36,12 @@ Also let $\gamma^*(\omega_N)$ be the optimal solution of the following optimizat
 \end{aligned}
 \end{equation}
 Then, we have:
-$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt{n}}.$$ Note that, \eqref{eq:lowerbound} can be efficiently solved by Semidefinite Programming and bisection on the variable $\gamma$ (see \cite{boyd}).
+$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt{n}}.$$ Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}).
 \end{theorem}
 \begin{proof}
 Let $\epsilon >0$. By definition of $\gamma^*$,  there exists no matrix $P \in \calS^n_{++}$ such that:
 \begin{equation*}(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\epsilon)^2x^TPx,\quad \forall x \in \R^n, \forall\, A \in \calM.
 \end{equation*}
-By Remark \ref{rem:scaling} this means that, there exists no CQLF for the scaled set of matrices $\frac{\cM}{(\gamma^*(\omega_N)-\epsilon)}$. Then, using Theorem \ref{thm:john}, we conclude:
+By Property \ref{rem:scaling}, this means that there exists no CQLF for the scaled set of matrices $\frac{\cM}{(\gamma^*(\omega_N)-\epsilon)}$. Then, using Theorem~\ref{thm:john}, we conclude:
 \begin{equation*}\frac{\rho(\cM)}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt{n}}.\end{equation*}
 \end{proof}

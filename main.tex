@@ -13,6 +13,8 @@
 \usepackage{gensymb,bbm}
 \usepackage{stmaryrd}
 \include{references.bib}
+
+\IEEEoverridecommandlockouts        
  
 
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
@@ -35,7 +37,7 @@
 \newcommand{\koverc}{\frac{|k_i|}{\|c_i\|} }
 
 \newcommand{\calA}{\mathcal{A}}
-\newcommand{\ball}{\text{B}}
+\newcommand{\ball}{\mathbb{B}}
 \newcommand{\calC}{\mathcal{C}}
 \newcommand{\calD}{\mathcal{D}}
 \newcommand{\calE}{\mathcal{E}}
@@ -59,7 +61,7 @@
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\calQ}{\mathcal{Q}}
 \newcommand{\calR}{\mathcal{R}}
-\newcommand{\sphere}{\text{S}}
+\newcommand{\sphere}{\mathbb{S}}
 \newcommand{\calU}{\mathcal{U}}
 \newcommand{\calV}{\mathcal{V}}
 
@@ -83,20 +85,29 @@
 \newtheorem{remark}{Remark}[section]
 \newtheorem{property}{Property}[section]
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
-\newenvironment{definition}[1][Definition]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+%\newenvironment{definition}[1][Definition]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \title{Data Driven Stability Analysis of Black-box Switched Linear Systems}
-\author{Ayca Balkan$^{1}$ and Raphael Jungers$^{2}$ and Joris Kenanian$^{1}$ and Paulo Tabuada$^{1}$ }
+
+%\thanks{\textcolor{red}{*This work was supported by.}}
+\author{Ayca Balkan$^{1}$ and Raphael Jungers$^{2}$ and Joris Kenanian$^{1}$ and Paulo Tabuada$^{1}$ 
+\thanks{\textcolor{red}{This work is supported by ??}}
+\thanks{$^{1}$A. Balkan, J.Kenanian, and Paulo Tabuada are with University of California, Los Angeles.}
+\thanks{$^{2}$R. Jungers is with  ICTEAM Institute, at Universit\'e catholique de Louvain.}}
+
+
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched-linear system. 
+We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched linear system. 
 
-We show that, for a given (randomly generated) set of observations, one can give a stability guarantee , for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of  both the number of observations and the required level of confidence. Our results rely on geometrical analysis, combining chance-constrained optimization theory with stability analysis techniques for switched systems.
+We show that, for a given (randomly generated) set of observations, one can give a stability guarantee, for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of  both the number of observations and the required level of confidence. Our results rely on geometrical analysis and combining chance-constrained optimization theory with stability analysis techniques for switched systems.
 \end{abstract}
 
 \begin{section}{Introduction}
@@ -108,7 +119,7 @@ We show that, for a given (randomly generated) set of observations, one can give
 \begin{subsection}{Notation}
 \input{Preliminaries} 
 \end{subsection}
-\begin{subsection}{Stability of Linear Switched Systems}
+\begin{subsection}{Stability of Switched Linear Systems}
 \input{stability}
 \end{subsection}
 \end{section}
@@ -143,6 +154,7 @@ We show that, for a given (randomly generated) set of observations, one can give
 \appendix
 \label{appendix}
 \input{appendix}
+\input{appendixBound}
 
 
 \bibliographystyle{plain}

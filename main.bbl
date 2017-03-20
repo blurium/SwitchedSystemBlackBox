@@ -42,10 +42,19 @@ M.~C. Campi and S.~Garatti.
   programs.
 \newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
 
-\bibitem{sun-ge}
-S.S. Ge and Z.~Sun.
-\newblock {\em Switched linear systems: Control and design}.
-\newblock Communications and control engineering series. Springer, 2005.
+\bibitem{mitra2}
+Parasara~Sridhar Duggirala, Sayan Mitra, and Mahesh Viswanathan.
+\newblock Verification of annotated models from executions.
+\newblock In {\em Proceedings of the Eleventh ACM International Conference on
+  Embedded Software}, EMSOFT '13, pages 26:1--26:10, Piscataway, NJ, USA, 2013.
+  IEEE Press.
+
+\bibitem{mitra}
+Zhenqi Huang and Sayan Mitra.
+\newblock Proofs from simulations and modular annotations.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 183--192, New York, NY,
+  USA, 2014. ACM.
 
 \bibitem{jungers_lncis}
 R.~M. Jungers.
@@ -78,11 +87,6 @@ S.~Li.
 \newblock Concise formulas for the area and volume of a hyperspherical cap.
 \newblock {\em Asian Journal of Mathematics \& Statistics}, 4:66--70, 2011.
 
-\bibitem{liberzon-switching}
-D.~Liberzon.
-\newblock {\em Switching in Systems and Control}.
-\newblock {Birkh\"auser}, Boston, MA, 2003.
-
 \bibitem{liberzon}
 S.~Liu, D.~Liberzon, and V.~Zharnitsky.
 \newblock On almost lyapunov functions for non-vanishing vector fields.
@@ -93,6 +97,13 @@ S.~Liu, D.~Liberzon, and V.~Zharnitsky.
 Arkadi Nemirovski and Alexander Shapiro.
 \newblock Convex approximations of chance constrained programs.
 \newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
+
+\bibitem{sosLyap}
+A.~Papachristodoulou and S.~Prajna.
+\newblock {On the construction of Lyapunov functions using the sum of squares
+  decomposition}.
+\newblock In {\em Proceedings of 41st IEEE Conference on Decision and Control},
+  pages 3482--3487, Las Vegas, Nevada USA, December 2002.
 
 \bibitem{rudin}
 Walter Rudin.
