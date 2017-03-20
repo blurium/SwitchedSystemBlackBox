@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 15:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2017 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,29 +651,23 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
 [7]
-Overfull \hbox (15.63339pt too wide) detected at line 128
-\OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\
-OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ![]\OT1/cmr/m/n/10 ) \OM
-S/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^M[]
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ![]\OT
-1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^U \OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 (\OML
-/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )\OML/cm
-m/m/it/10 ; ![]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+Underfull \hbox (badness 1701) in paragraph at lines 129--130
+\T1/ptm/m/n/10 (+20) where the first in-equal-ity fol-lows from the fact that
  []
 
 
-Underfull \hbox (badness 7504) in paragraph at lines 134--135
+Underfull \hbox (badness 7907) in paragraph at lines 154--155
 []\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
-cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$
+cmsy/m/n/10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$
  []
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 135.
+(amsmath)                 on input line 155.
 
 
-Overfull \hbox (8.37347pt too wide) detected at line 140
+Overfull \hbox (8.37347pt too wide) detected at line 160
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
@@ -684,23 +678,23 @@ b/m/n/10 N\OML/cmm/m/it/10 :
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 141--144
+Underfull \hbox (badness 3872) in paragraph at lines 161--164
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
  []
 
 
-Underfull \hbox (badness 5652) in paragraph at lines 141--144
+Underfull \hbox (badness 5652) in paragraph at lines 161--164
 [][] \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L; N\OT1/cmr/m/n/1
 0 ) = 0$\T1/ptm/m/n/10 (+20) . Putting to-gether this with
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 141--144
+Underfull \hbox (badness 2452) in paragraph at lines 161--164
 \T1/ptm/m/n/10 (+20) By the con-ti-nu-ity of the func-tion $\OML/cmm/m/it/10 I[
 ]$ \T1/ptm/m/n/10 (+20) this im-plies:
  []
 
-) (./main.bbl [8])
+[8]) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -725,7 +719,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6704 strings out of 493089
  102202 string characters out of 6134842
- 195663 words of memory out of 5000000
+ 196070 words of memory out of 5000000
  9770 multiletter control sequences out of 15000+600000
  139436 words of font info for 324 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -753,7 +747,7 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on main.pdf (9 pages, 361323 bytes).
+Output written on main.pdf (9 pages, 361843 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream

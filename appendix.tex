@@ -110,7 +110,7 @@ The inequalities \eqref{eqn:last} and \eqref{eqn:sc} imply the inclusion given i
 Recall that $\delta(\beta, \omega_N) = \alpha(m\kappa(P(\omega_N) \epsilon(\beta,N)).$
 We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove that $\kappa(P(\omega_N))$ is uniformly bounded in $N$. We then show that $\lim_{N \to \infty} \epsilon(\beta,N) = 0$. Then, the result of the theorem follows since $\lim_{\epsilon \to 0}\alpha(\epsilon) = 1$, which is immediate from the definition of $\alpha(\epsilon)$.
 
-\begin{lemma}\label{lem:bounded} We consider a sampling $\omega(N)$, where $N \in \N_{>0}$ and $N \geq d$. We assume that $\omega_N$ is sequential, i.e., $$\forall\ d \leq N_1  < N_2,\, \omega_{N_1} \subset \omega_{N_2}.$$ Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$. Then, $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
+\begin{lemma}\label{lem:bounded} We consider a sampling $\omega(N)$, where $N \in \N_{>0}$ and $N > d$. We assume that $\omega_N$ is sequential, i.e., $$\forall\ d \leq N_1  < N_2,\, \omega_{N_1} \subset \omega_{N_2}.$$ Let $P(\omega_N)$ be the optimal solution to the optimization problem $\Opt(\omega_N)$. Then, $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
 \end{lemma}
 
 \begin{proof}We first define the following optimization problem:
@@ -119,21 +119,31 @@ We prove the limit of $\delta(\beta, \omega_N)$ in two parts. We first prove tha
 & \max_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
 &  & (A_j x)^TP(A_j x) \leq {(1 +\eta)\gamma}^2 x^TPx,\,\forall (x, j) \in \omega_N, \\
-& && \lamba_{\min}(P) = 1, \\
+& && \lambda_{\min}(P) = 1, \\
 \end{aligned}
 \end{equation}
-where we denote its optimal solution by $\lambda_{\max}(\gamma , \omega_N)$.
-Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. Note that, since $\omega_N$ is sequential, for any $t \in \N_{>0}$ such that \mbox{$d < t \leq N$} we have \mbox{$\gamma^*(\omega_t) \geq \gamma^*(\omega_N) \leq \gamma^{*}_{Z}$}, with $\gamma^{*}_Z$ being the solution of the optimization problem [cite?] with infinitely many constraints. Also note that,
-\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^{*}_Z, \omega_N)
-\end{equation*}
-since we constrain the optimization more.
-We also have \begin{equation*}\lambda_{\max}(\gamma^{*}_Z, \omega_N) \leq \lambda_{\max}(\gamma^{*}_Z, \omega_t))
-\end{equation*}
-by the same argument. We denote $u = \lambda_{\max}((1+\eta)\gamma^{*}_Z, \omega_{d+1})$.
+where we denote its optimal solution by $c_{\max}(\gamma , \omega_N)$.
+Recall that $\gamma^*(\omega_N)$ is the optimal solution to \eqref{eq:lowerbound}. Then we have:
+\begin{eqnarray*}c_{\max}(\gamma^*(\omega_N), \omega_N) & \leq & c_{\max}(\gamma^*(Z), \omega_N) \\ 
+& \leq & \lambda_{\max}(\gamma^*(Z), \omega_{d+1}),
+\end{eqnarray*}
+where the first inequality follows from the fact that \mbox{$\gamma^*(Z) \leq \gamma^*(\omega_N)$.} The second inequality follows from the inclusion $\omega_{d+1} \subset\omega_N$, and the fact that as we add less constraints the value of the objective function of \eqref{eqn:appendix} increases. Let: $$\bar{\lambda}_{\max} = c_{\max}(\gamma^{*}(Z), \omega_{d+1}).$$
+Note that, $\bar{\lambda}_{\max} = c_{\max}(\gamma^{*}(Z), \omega_{d+1}) < \infty$ since we know $c_{\max}(\gamma^{*}(Z), Z) < \infty$ thanks to the additional $\eta$ factor. We then have $c_{\max}(\gamma^{*}(\omega_N), \omega_N) \leq \bar{\lambda}_{\max}.$  Note that, the optimal solution of the optimization problem \eqref{eqn:appendix} will in fact satisfy $\lambda_{\min}(P(\omega_N)) = 1$. Therefore, the optimal solution of \eqref{eqn:appendix} is an upper bound on the optimal solution of the problem \eqref{eqn:campiOpt01}. Therefore, we get $\lambda_{\max}(P(\omega_N)) \leq \bar{\lambda}.$ This immediately shows that:
+$$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{\bar{\lambda}_{\max}^n},$$
+which means $\kappa(P(\omega_N))$ is uniformly bounded in $N$.
 
-We then have $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N) \leq u$.
+% being the solution of the optimization problem \eqref{eqn:campiOpt0} with infinitely many constraints. Also note that, 
+%\begin{equation*}\lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq \lambda_{\max}(\gamma^{*}(Z), \omega_N)
+%\end{equation*}
+%%Recall that $\gamma^*(\omega_N)$ is the optimal solution to the problem \eqref{eq:lowerbound}. 
+%since we constrain the optimization more.
+%We also have \begin{equation*}\lambda_{\max}(\gamma^*(Z), \omega_N) \leq \lambda_{\max}(\gamma^{*}(Z), \omega_t))
+%\end{equation*}
+%by the same argument. We denote $$\bar{\lambda}_{\max} = \lambda_{\max}((1+\eta)\gamma^{*}(Z), \omega_{d+1}).$$
+%
+%We then have $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N) \leq \bar{\lambda}_{\max} $.
 
-This gives us that $\lamda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N)$ obtained by solving our optimization problem [cite?] is bounded by u, for any $N \geq d+1$.
+%This gives us that $\lambda_{\max}((1+\eta)\gamma^{*}(\omega_N), \omega_N)$ obtained by solving our optimization problem [cite?] is bounded by u, for any $N \geq d+1$.
 
 
 %Since the problem \eqref{eqn:appendix} is strictly feasible for $\gamma^*(\omega_t)(1 + \eta),$ there exists a $c > 0$ such that \mbox{$\lambda_{\max}(\gamma^*(\omega_t), \omega_N) <  c$.} This implies: $$\lambda_{\max}(P({\omega_N})) = \lambda_{\max}(\gamma^*(\omega_N), \omega_N) \leq c.$$ Since $\det(P(\omega_N)) \geq 1$, this means $$\kappa(P(\omega_N)) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{c^n},$$ which completes the proof of this lemma.
