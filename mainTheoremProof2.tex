@@ -3,7 +3,7 @@ We are now ready to prove our main theorem by putting together all the above pie
 
 \begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switched linear system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, for any given $\beta \in (0,1)$ and $\eta > 0$, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
 $$\rho \leq \frac{\gamma^*(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
-where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
+where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
 \end{theorem}
 
 \begin{proof}
@@ -26,7 +26,7 @@ where
 \end{equation*}
 By Property \ref{rem:scaling}, this means that with probability at least $\beta$:
 $$\rho \leq \frac{\gamma^*(\omega_N) (1 + \eta)}{\delta(\beta, \omega_N)},$$
-which completes the proof of the first part of the theorem. Note that, the ratio $\frac{1}{2}$ introduced in the expression of $\epsilon'$ is due to the homogeneity of the system described in Property \ref{property:homogeneity}, which implies that $x \in V_{\sphere} \iff -x \in V_{\sphere}$. We refer the interested reader to Appendix \ref{app:bound} for the second part of this proof, namely showing that $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$.
+which completes the proof of the first part of the theorem. Note that, the ratio $\frac{1}{2}$ introduced in the expression of $\epsilon'$ is due to the homogeneity of the system described in Property \ref{property:homogeneity}, which implies that $x \in V_{\sphere} \iff -x \in V_{\sphere}$. We refer the interested reader to Appendix \ref{app:bound} for the second part of this proof, namely showing that $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
 
 
 
