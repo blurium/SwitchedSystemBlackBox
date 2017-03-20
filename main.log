@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAR 2017 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAR 2017 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,15 +669,9 @@ LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 19.
 [6 <./delta1.jpg> <./bounds1.jpg>] [7]) (./appendixBound.tex
-Underfull \hbox (badness 1383) in paragraph at lines 4--6
-\T1/ptm/m/n/10 (+20) its op-ti-mal value is bounded by $\OML/cmm/m/it/10 K:$ \T
-1/ptm/m/n/10 (+20) In other words,
- []
-
-
-Underfull \hbox (badness 7522) in paragraph at lines 8--9
-[]\T1/ptm/m/n/10 (+20) We now show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS/
-cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$
+Underfull \hbox (badness 7504) in paragraph at lines 8--9
+[]\T1/ptm/m/n/10 (+20) We next show that for a fixed $\OML/cmm/m/it/10 ^^L \OMS
+/cmsy/m/n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$
  []
 
 
@@ -686,25 +680,19 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                 on input line 9.
 
 
-Overfull \hbox (8.37347pt too wide) detected at line 14
+Overfull \hbox (5.2437pt too wide) detected at line 14
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^
 T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\OML/cmm/m/it/10 N[]\
 OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 )[] 
-\OMS/cmsy/m/n/10 ^^T \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)\O
-ML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 c\OT
-1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/ms
-b/m/n/10 N\OML/cmm/m/it/10 :
+ \OMS/cmsy/m/n/10 ^^T  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 + 1)
+\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 c\
+OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 \U/
+msb/m/n/10 N\OML/cmm/m/it/10 :
  []
 
 
 Underfull \hbox (badness 3872) in paragraph at lines 16--17
 \T1/ptm/m/n/10 (+20) which is a con-tra-dic-tion. There-fore, we must have
- []
-
-
-Underfull \hbox (badness 2452) in paragraph at lines 19--20
-\T1/ptm/m/n/10 (+20) By the con-ti-nu-ity of the func-tion $\OML/cmm/m/it/10 I[
-]$ \T1/ptm/m/n/10 (+20) this im-plies:
  []
 
 ) (./main.bbl)
@@ -757,7 +745,7 @@ fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (8 pages, 371866 bytes).
+Output written on main.pdf (8 pages, 372317 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream
