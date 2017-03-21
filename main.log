@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAR 2017 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAR 2017 19:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,11 +609,6 @@ k; x[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 A[]x[]$ \T1/ptm/m/n/10 (+20) and swi
 tch-ing se-quence
  []
 
-
-Underfull \hbox (badness 1424) in paragraph at lines 17--18
-[] \T1/ptm/m/n/10 (+20) [10] Given a fi-nite set of ma-tri-ces
- []
-
 ) (./lowerBound.tex
 Overfull \hbox (2.04555pt too wide) detected at line 44
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\OT1/c
@@ -735,7 +730,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (8 pages, 344446 bytes).
+Output written on main.pdf (8 pages, 344575 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream

@@ -93,10 +93,10 @@ Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \til
 
 
 
-\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$. Let $\alpha(\epsilon)$ be defined as in:
-\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup_{x \in \calX_\epsilon} \{r: r\ball \subset \convhull(\sphere \setminus X)\},
+\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$ and $\alpha: (0,1) \to \R_{\geq 0}$ be defined by:
+\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) := \sup_{X \in \calX_\epsilon} \{r: r\ball \subset \convhull(\sphere \setminus X)\},
 \end{equation}
-where $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$ and $\Delta(X)$ is defined as in  \eqref{shrinkage}. Then, we can compute $\alpha(\epsilon)$ by the formula:
+where $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$. Then, $\alpha(\epsilon)$ is given by the formula:
 \begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right)}, \end{equation}
 where $I$ is the regularized incomplete beta function, and $$\Gamma(t) = \int_{0}^\infty x^{t-1}e^{-x} dx.$$
 \end{lemma}
