@@ -75,7 +75,7 @@ $\Delta(\calC_{c,k}) =  \min\left(1, \frac{|k|}{\|c\|}\right)$. Therefore, $\Del
 We next show $\calC_{c, k} \subset X$. We prove this by contradiction. Assume $x \in \calC_{c,k}$ and $x \notin X$. Note that, if $x \notin X$, then $x \in \sphere \setminus X \subset \conv(\sphere \setminus X).$ Since $x \in \calC_{c,k}$, we have $c^Tx>k$. But due to the fact that $x \in \conv(\sphere \setminus X)$, we also have $c^Tx \leq k$, which leads to a contradiction. Therefore, $\calC_{c, k} \subset X$. 
 \end{proof}
 
-\begin{proposition}\label{thm:mainSphericalCap}Let $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$. Then, for any $\epsilon \in (0,1)$, the function $\Delta(X)$ attains its minimum over $X_{\epsilon}$ for some $X$ which is a spherical cap.
+\begin{proposition}\label{thm:mainSphericalCap}Let $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$. Then, for any $\epsilon \in (0,1)$, the function $\Delta(X)$ attains its minimum over $\calX_{\epsilon}$ for some $X$ which is a spherical cap.
 \end{proposition}
 
 \begin{proof}We prove this via contradiction. Assume that there exists no spherical cap in $\calX_{\epsilon}$ such that $\Delta(X)$ attains its minimum. This means there exists an $X^* \in \calX_{\epsilon}$, where $X^*$ is not a spherical cap and $\argmin_{X \in \calX_{\epsilon}}(\Delta(X))=X^*$. By Lemma \ref{lemma:constructSC}, we can construct a spherical cap $\calC_{c,k}$ such that $\calC_{c,k} \subset X^*$ and $\calC_{c,k} = \Delta(X^*)$. Note that, we further have $\calC_{c,k} \subsetneq X^*$, since $X^*$ is assumed not to be a spherical cap. This means that, there exists a spherical cap $\sigma^{n-1}(\calC_{c,k})$ such that $\sigma^{n-1}(\calC_{c,k}) < \epsilon$. 
@@ -93,15 +93,15 @@ Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \til
 
 
 
-\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1]$. Then, we can compute $\alpha(\epsilon)$ satisfying:
-\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup_{\substack{\sphere' \subset \sphere: \\  \sigma^{n-1}(\sphere') \leq \epsilon}}\{r: r\ball \subset \conv(\sphere \setminus \sphere')\}.
+\begin{lemma}\label{lemma:eps}Let $\epsilon \in (0, 1)$. Then, we can compute $\alpha(\epsilon)$ satisfying:
+\begin{equation}\label{eqn:ballinc}\alpha(\epsilon) = \sup_{x \in \calX_\epsilon} \{r: r\ball \subset \convhull(\sphere \setminus X)\},
 \end{equation}
-where we recall that $\ball$ (respectively $\sphere$) denote the unit ball (respectively unit sphere).
+where we recall that $\ball$ (respectively $\sphere$) denote the unit ball (respectively unit sphere), $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) = \epsilon\}$ and $\Delta(X)$ is defined as in  \eqref{shrinkage}.
 %Moreover, $\lim_{\epsilon \to 0} \alpha(\epsilon) = 1$.
 \end{lemma}
 
-\begin{proof}Let the function $\Delta(X)$ be defined as in \eqref{shrinkage}. Then by Lemma \ref{thm:mainSphericalCap} we know that:
-\begin{equation}\label{eqn:sc}\Delta(X_\epsilon) \geq \Delta(\calC_{c, k}),
+\begin{proof}By Proposition\ref{thm:mainSphericalCap} we know that:
+\begin{equation}\label{eqn:sc}\alpha(\epsilon) = \Delta(\calC_{c, k}),
 \end{equation}
 for some spherical cap $\calC_{c,k} \subset \sphere$, where  $\sigma^{n-1}(\calC_{c, k}) = \epsilon$. It is known (see e.g. \cite{sphericalCapRef}) that the area of such $\calC_{c, k}$, is given by the equation:
 \begin{equation}\sigma^{n-1}(\calC_{c, k}) = \frac{\pi^{d/2}}{\Gamma[\frac{d}{2}]}I\left(1-\Delta(X_\epsilon)^2; \frac{d-1}{2}, \frac{1}{2}\right),
