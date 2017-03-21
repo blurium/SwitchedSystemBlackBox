@@ -13,13 +13,13 @@ F.~Blanchini, G.~Fenu, G.~Giordano, and F.~A. Pellegrino.
 \newblock {\em IEEE Transactions on Automatic Control}, PP(99):1--1, 2016.
 
 \bibitem{stabilityHard1}
-Vincent~D Blondel and John~N Tsitsiklis.
+V.~D. Blondel and J.~N. Tsitsiklis.
 \newblock Complexity of stability and controllability of elementary hybrid
   systems.
 \newblock {\em Automatica}, 35(3):479 -- 489, 1999.
 
 \bibitem{lazar}
-Ruxandra Bobiti and Mircea Lazar.
+R.~Bobiti and M.~Lazar.
 \newblock A delta-sampling verification theorem for discrete-time, possibly
   discontinuous systems.
 \newblock In {\em Proceedings of the 18th International Conference on Hybrid
@@ -27,12 +27,12 @@ Ruxandra Bobiti and Mircea Lazar.
   USA, 2015. ACM.
 
 \bibitem{boyd}
-Stephen Boyd and Lieven Vandenberghe.
+S.~Boyd and L.~Vandenberghe.
 \newblock {\em Convex Optimization}.
 \newblock Cambridge University Press, New York, NY, USA, 2004.
 
 \bibitem{campi}
-Giuseppe~Carlo Calafiore.
+Giuseppe~C. C.
 \newblock Random convex programs.
 \newblock {\em SIAM Journal on Optimization}, 20(6):3427--3464, 2010.
 
@@ -43,14 +43,14 @@ M.~C. Campi and S.~Garatti.
 \newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
 
 \bibitem{mitra2}
-Parasara~Sridhar Duggirala, Sayan Mitra, and Mahesh Viswanathan.
+P.~S. Duggirala, S.~Mitra, and M.~Viswanathan.
 \newblock Verification of annotated models from executions.
 \newblock In {\em Proceedings of the Eleventh ACM International Conference on
   Embedded Software}, EMSOFT '13, pages 26:1--26:10, Piscataway, NJ, USA, 2013.
   IEEE Press.
 
 \bibitem{mitra}
-Zhenqi Huang and Sayan Mitra.
+Z.~Huang and S.~Mitra.
 \newblock Proofs from simulations and modular annotations.
 \newblock In {\em Proceedings of the 17th International Conference on Hybrid
   Systems: Computation and Control}, HSCC '14, pages 183--192, New York, NY,
@@ -63,8 +63,7 @@ R.~M. Jungers.
   385. Springer-Verlag, Berlin, 2009.
 
 \bibitem{kapinski}
-James Kapinski, Jyotirmoy~V. Deshmukh, Sriram Sankaranarayanan, and Nikos
-  Arechiga.
+J.~Kapinski, J.~V. Deshmukh, and N.~Sankaranarayanan, S.and~Arechiga.
 \newblock Simulation-guided lyapunov analysis for hybrid dynamical systems.
 \newblock In {\em Proceedings of the 17th International Conference on Hybrid
   Systems: Computation and Control}, HSCC '14, pages 133--142, New York, NY,
@@ -87,7 +86,7 @@ S.~Liu, D.~Liberzon, and V.~Zharnitsky.
   pages 5557--5562, Dec 2016.
 
 \bibitem{nemirovski}
-Arkadi Nemirovski and Alexander Shapiro.
+A.~Nemirovski and A.~Shapiro.
 \newblock Convex approximations of chance constrained programs.
 \newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
 
@@ -99,18 +98,18 @@ A.~Papachristodoulou and S.~Prajna.
   pages 3482--3487, Las Vegas, Nevada USA, December 2002.
 
 \bibitem{rudin}
-Walter Rudin.
+W.~Rudin.
 \newblock {\em Real and complex analysis}.
 \newblock McGraw-Hill Book Co., New York, third edition, 1987.
 
 \bibitem{topcu}
-Ufuk Topcu, Andrew Packard, and Peter Seiler.
+U.~Topcu, A.~Packard, and P.~Seiler.
 \newblock Local stability analysis using simulations and sum-of-squares
   programming.
 \newblock {\em Automatica}, 44(10):2669 -- 2675, 2008.
 
 \bibitem{jsrtoolbox}
-Guillaume Vankeerberghen, Julien Hendrickx, and Rapha\"{e}l~M. Jungers.
+G.~Vankeerberghen, J.~Hendrickx, and R.~Jungers.
 \newblock Jsr: A toolbox to compute the joint spectral radius.
 \newblock In {\em Proceedings of the 17th International Conference on Hybrid
   Systems: Computation and Control}, HSCC '14, pages 151--156, New York, NY,
