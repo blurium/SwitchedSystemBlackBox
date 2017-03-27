@@ -18,7 +18,7 @@ plot(points,lb,'b','LineWidth',2)
 plot(points2,ub,'r','LineWidth',2)
 plot(points,a,'--k','LineWidth',1)
 plot(points,b,'-.k','LineWidth',1)
-ylim([0 1.2]);
+ylim([0.3 1.2]);
 xlim([0 380]);
 
 

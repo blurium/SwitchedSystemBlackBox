@@ -21,7 +21,7 @@ $$\sigma^{n-1}(\calC_{c,k_1}) < \sigma^{n-1}(\calC_{c,k_2}).$$
 \end{itemize}
 \end{definition}
 
-\begin{remark}\label{suppHyperplaneRemark}\cite{boyd} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is a smooth manifold, then this supporting hyperplane is unique.
+\begin{remark}[see e.g. \cite{boyd}]\label{suppHyperplaneRemark} Consider a convex set $X \subset \R^n$. For every $x \in \partial X$, there exists a supporting hyperplane containing $x$. Moreover, if $X$ is a smooth manifold, then this supporting hyperplane is unique.
 \end{remark}
 
 \begin{remark}\label{prop:distance}The distance between the point $x=0$ and the hyperplane $c^Tx = k$ is $\frac{|k|}{\|c\|}$.
@@ -63,7 +63,7 @@ Then the following equalities hold:
 Since $\dist$ is continuous and the set $\partial \tilde{X}$ is compact, there exists a point $x^* \in \partial \tilde{X}$, such that:
 \begin{eqnarray}\nonumber \Delta(X) = \dist(\partial X_S, 0) = 
 \label{deltaSupporting} \min_{x \in \partial \tilde{X}}\dist(x, 0) = \dist(x^*, 0).\end{eqnarray} 
-Next, consider the supporting hyperplane of $\tilde{X}$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $(\Delta(X)\ball)$ at $x^*$ since we have:
+Next, consider the supporting hyperplane of $\tilde{X}$ at $x^*$, which we denote by $\left\{x : c^Tx = k\right\}$. Note that this supporting hyperplane is a supporting hyperplane of the ball $\Delta(X)\ball$ at $x^*$ since we have:
 \begin{equation*} \partial (\Delta(X)\ball) \subset \partial \tilde{X} \subset \left\{x : c^Tx = k\right\}.\end{equation*}  By Remark \ref{suppHyperplaneRemark}, this implies that $\left\{x : c^Tx = k\right\}$ is in fact the unique supporting hyperplane at $x^*$.
 Then we have:
 \begin{equation*}\Delta(X) =  \dist(x^*, 0) = \dist(\{x : c^Tx = k\}, 0) = \min\left(1, \frac{|k|}{\|c\|}\right).
@@ -97,20 +97,19 @@ Then, the spherical cap $\calC_{c, \tilde{k}}$ with $\sigma^{n-1}(\calC_{c, \til
 \begin{equation}\label{eqn:ballinc}\alpha(\epsilon) := \sup_{X \in \calX_\epsilon} \{r: r\ball \subset \convhull(\sphere \setminus X)\},
 \end{equation}
 where $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$. Then, $\alpha(\epsilon)$ is given by the formula:
-\begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right)}, \end{equation}
-where $I$ is the regularized incomplete beta function, and $$\Gamma(t) = \int_{0}^\infty x^{t-1}e^{-x} dx.$$
-\end{lemma}
+\begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\epsilon; \frac{n-1}{2}, \frac{1}{2}\right)}, \end{equation}
+where $I$ is the regularized incomplete beta function.\end{lemma}
 
 \begin{proof}By Proposition \ref{thm:mainSphericalCap} we know that:
 \begin{equation}\label{eqn:sc}\alpha(\epsilon) = \Delta(\calC_{c, k}),
 \end{equation}
 for some spherical cap $\calC_{c,k} \subset \sphere$, where  $\sigma^{n-1}(\calC_{c, k}) = \epsilon$. It is known (see e.g. \cite{sphericalCapRef}) that the area of such $\calC_{c, k}$, is given by the equation:
-\begin{equation}\sigma^{n-1}(\calC_{c, k}) = \frac{\pi^{n/2}}{\Gamma[\frac{n}{2}]}I\left(1-\Delta(\calC_{c,k})^2; \frac{n-1}{2}, \frac{1}{2}\right).
+\begin{equation}\sigma^{n-1}(\calC_{c, k}) = I\left(1-\Delta(\calC_{c,k})^2; \frac{n-1}{2}, \frac{1}{2}\right).
 \end{equation}
-Since, \mbox{$\sigma^{n-1}(X_\epsilon)\leq \epsilon$,} we get the following set of equations:
-\begin{eqnarray}\nonumber \frac{\epsilon \Gamma[\frac{n}{2}]}{\pi^{n/2}} &\leq& I\left(1- \Delta(\calC_{c,k})^2;\frac{n-1}{2}, \frac{1}{2}\right) \\
-\nonumber 1- \Delta(\calC_{c, k})^2 &\leq&  I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right) \\
-\label{eqn:last}\Delta(\calC_{c, k})^2 &\geq&  1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{n}{2})}{\pi^{n/2}}; \frac{n-1}{2}, \frac{1}{2}\right)
+Since, \mbox{$\sigma^{n-1}(\calC_{c, k})= \epsilon$,} we get the following set of equations:
+\begin{eqnarray}\nonumber \epsilon &=& I\left(1- \Delta(\calC_{c,k})^2;\frac{n-1}{2}, \frac{1}{2}\right) \\
+\nonumber 1- \Delta(\calC_{c, k})^2 &=&  I^{-1}\left(\epsilon; \frac{n-1}{2}, \frac{1}{2}\right) \\
+\label{eqn:last}\Delta(\calC_{c, k})^2 &=&  1- I^{-1}\left(\epsilon; \frac{n-1}{2}, \frac{1}{2}\right).
 \end{eqnarray}
 Then, the inequalities \eqref{eqn:sc} and \eqref{eqn:last} imply the inclusion given in \eqref{eqn:ballinc}.%\begin{equation}\label{eqn:alphaEpsilon}\alpha(\epsilon) = \sqrt{1- I^{-1}\left(\frac{\epsilon\Gamma(\frac{d}{2})}{\pi^{d/2}}; \frac{d-1}{2}, \frac{1}{2}\right)}.\end{equation}
 \end{proof}
