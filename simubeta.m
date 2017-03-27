@@ -135,8 +135,8 @@ lambdaMax=max(eig(P));
 dP=det(P);
 epsilon1 = min(1,m*epsilon/2*sqrt(lambdaMax^n/dP));
 
-alpha1=min(1,epsilon1*gamma(d/2)/(pi^(d/2)));
-alpha=betaincinv(alpha1,(d-1)/2,1/2);
+alpha1=min(1,epsilon1);
+alpha=betaincinv(alpha1,(n-1)/2,1/2);
 
 delta=sqrt(1-alpha);
 upperBound=gammaStar/delta;
