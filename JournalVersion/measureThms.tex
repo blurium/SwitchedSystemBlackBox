@@ -1,0 +1,89 @@
+% !TEX root =main.tex
+
+Given $V$, the set of points violating the constraints of the optimization problem \eqref{eqn:campiOpt02}, we look first for an upper bound on the measure of points on $\sphere$ violating at least one constraint.
+
+\begin{lemma}$$\sigma^{n-1}(V_\sphere) \leq \frac{\mu(V)}{m_1},$$ where $m_1 = \min \{\mu_M(\{j\}), j \in M\}$.\end{lemma}
+\begin{proof}
+
+Let $\calZ \subset \Sigma$, $\calZ_{\sphere} = \pi_{\sphere} (\calZ)$ and $\calZ_M = \pi_M (\calZ)$. We notice that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $\calZ$ can be written as the disjoint union $\calZ = \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma(\sphere)$. We notice that 
+$\calZ_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
+and
+\begin{equation*}
+\sigma^{n-1} (\calZ_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
+\end{equation*}
+We have 
+\begin{eqnarray*}
+\mu(\calZ) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) \\
+&=& \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
+ &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
+ & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
+\end{eqnarray*}
+Let $m_1$ be the minimum value  of $\mu_M$ on its atoms (recall that $m_1 > 0$):
+$$m_1 = \min \{\mu_M(\{j\}), j \in M\}.$$ Then since $ \forall \ i$, $\mu_M(\calM_i) \geq m_1$, we have
+\begin{equation}
+\sigma^{n-1}(\calZ_{\sphere}) \leq \frac{\mu(\calZ)}{m_1}.
+\end{equation}
+This proves our statement by taking $\calZ = V$.
+%Remark: In our case, we consider the special case where measures $\mu_1$ and $\mu_2$ are uniform and of total measure $1$ on $\sphere$ and $M$. $\mu_1$ is the classical spherical measure $\sigma^n$ and $\mu_2$ the classical uniform probability measure on $M$. We have then $m_2 = \frac{1}{m}$ and the inequality becomes:
+\end{proof}
+
+We recall that we consider the specific case of a uniform sampling both on $\sphere$ and on $M$. 
+
+\begin{corollary} \label{cor:measure}When the modes are sampled from the set $M$ uniformly random, 
+\begin{equation*}\sigma^{n-1}(V_\sphere) \leq m \mu(V). \end{equation*}
+\end{corollary}
+
+We now have the measure of points on $\sphere$ that may violate at least one constraint of $\Opt(\omega_N)$. These points correspond to points on $E_P$ where the system may not be $\gamma$-contracting. However, the computation of $\delta(\beta, \omega_N)$ on $E_P$ is hard. To circumvent this, we perform a change of coordinates so that the ellipsoid $E_P$ becomes a sphere in this new coordinate system. We now formalize how the measure of violating points in $E_P$ can be mapped to this new coordinate system.
+
+We consider the linear transformation mapping $\sphere$ to $E_P$, denoted by $L \in \mathcal{L}(\R^n)$. Note that since $P \in \calS^n$, it can be written in its Choleski form $P = U D U^{-1}$, with $D$ diagonal matrix of its eigenvalues, and $U \in O_n$. We define $D^{1/2}$ the positive square root of $D$ as the matrix diag($\sqrt{d_1},\dots, \sqrt{d_n}$). Then, the positive square root of $P$ is $U D^{1/2} U^{-1}$. This means that $L = P^{1/2}$. 
+We now examine $L^{-1}$, which maps points from $\sphere$ to the ellipsoid that is the image of $\sphere$ after the linear transformation $L^{-1}$. We denote $$V':=\proj_{\sphere}(L^{-1}(V_\sphere)).$$
+We now show how to over approximate $\sigma^{n-1}(V')$ in terms of $\mu(V)$.
+
+\begin{remark} \label{rem:mappingMeasures}
+If $\psi$ is a smooth change of coordinates in $\R^n$ and $X$ $\subset \mathbb{R}^n$, whose image under $\psi$ is $X' \subset \R^n$, then
+\begin{equation}
+\lambda(X') = \int_{x \in X} 1_{x \in X} |\det J(\psi(x))| d\lambda(x),
+\end{equation}
+which becomes when $\psi \in \mathcal{L}(\R^n)$:
+\begin{equation}
+\lambda(X') = |\det(\psi)| \lambda(X).
+\end{equation}
+\end{remark}
+
+\begin{theorem} \label{lemma:lip}
+\begin{equation}
+\sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere))) \leq \frac{\det(L^{-1})}{\left(\lambda_{\min}(L^{-1})\right)^n} \sigma^{n-1}(V_\sphere).
+\end{equation}   
+\end{theorem}
+
+\begin{proof}
+Let us consider $S^{V_{\sphere}}$ the sector of $\ball$ defined by $V_{\sphere}$. We denote $C:= L^{-1}(S^{V_{\sphere}})$. We have $\proj_{\sphere}(C) = V'$ and $S^{V'} \subset \calH_{1/ \lambda_{\min}(L^{-1})}(C)$.  We have then 
+$$\sigma^{n-1}(V') = \lambda(S^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min}(L^{-1})}(C)),$$ which means: $$\sigma^{n-1}(V') \leq \frac{1}{\lambda_{\min}(L^{-1})^n} \lambda(C).$$ Using Remark \ref{rem:mappingMeasures}, we have the result of the theorem.
+
+%Note that the mapping $\proj_\sphere$ can be seen as the composition of the $\proj_{\sphere_r}$ for some $r > 0$, and $\calH_{\frac{1}{r}}$. Let $E':=L^{-1}(\sphere)$, then when $r < \min_{x \in E'}\|x\| = \lambda_{\min}(L^{-1})$ we have
+%\begin{equation*}\proj_{\sphere_{\lambda_{\min}}} (x)= \proj_{\ball_{\lambda_{\min}}}(x) \qquad \forall\, x \in E'.
+%\end{equation*}
+%This shows that the restriction of $\proj_{\sphere_{\lambda_{\min}}}$ to $E'$ is a convex projector.
+
+%We consider then $B_{\lambda_{\min}}$, and $P_{B_{\lambda_{\min}}}$ projector on $B_{\lambda_{\min}}$ defined in $\mathbb{R}^n$.
+
+%Then by Corollary \ref{cor:proj} 
+%\begin{equation}
+%\lVert \proj_{\sphere_{\lambda_{\min}}}(x) - \proj_{\sphere_{\lambda_{\min}}}(y) \rVert \leq \lVert x - y \rVert, \qquad \forall \ x,y \in E'.
+%\end{equation} 
+%This shows that $1$ is a Lipschitz constant of the function $\proj_{\sphere_{\lambda_{\min}}}$ on $E'$. 
+
+%By composing $\proj_{\sphere_{\lambda_{\min}}}$ with $\calH_{\frac{1}{\lambda_{\min}}}$, we obtain $\proj_\sphere$. Since the %Lipschitz constant of composition of two functions can be bounded by the multiplication of Lipschitz constants of each %function, the Lipschitz constant of $\Pi_S$ on $E'$ is $\frac{1}{\lambda_{\min}}$, which means that:
+%\begin{equation}\label{eqn:lip}
+%\lVert \proj_\sphere(x) - \proj_\sphere(y) \rVert \leq \frac{1}{\lambda_{\min}} \lVert x-y \rVert, \qquad \forall\,x,y \in E'.
+%\end{equation}
+%Note that, the inequality in \eqref{eqn:lip} is an equality when $x$ is in the eigenspace of $\lambda_{\min}$ and $y=-x$.
+
+%Recall that for any smooth Lipschitz function $\phi$ with Lipschitz constant, Lip$(\phi)$, we have for all $x$, $|\det(J(\phi(x))| \leq \text{Lip}(\phi)^n$. Combining this with  \eqref{eqn:lip} and Lemma \ref{lemma:lip}, we get the statement %of the lemma.
+\end{proof}
+
+Using Corollary \ref{cor:measure} with the fact that $\mu(V) = \epsilon \mu(Z) = \epsilon$, the following corollary of this theorem follows by replacing $L$ with $P^{1/2}$.
+\begin{corollary}$\sigma^{n-1}(V') \leq m\epsilon \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}$.
+\end{corollary}
+
+

@@ -1,0 +1,40 @@
+% !TEX root = main.tex
+We are now ready to prove our main theorem by putting together all the above pieces. For a given level of confidence $\beta,$ we prove that the upper bound $\gamma^*(\omega_N)$, which is valid solely on finitely many observations, is in fact a true upper bound, at the price of increasing it by the factor $\frac{1}{\delta(\beta, \omega_N)}$. Moreover, as expected, this factor gets smaller as we increase $N$ and decrease $\beta$.
+
+\begin{theorem}\label{thm:mainTheorem}Consider an $n$-dimensional switched linear system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt01}. Then, for any given $\beta \in (0,1)$ and $\eta > 0$, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+$$\rho \leq \frac{\gamma^*(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
+where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
+\end{theorem}
+
+\begin{proof}
+By definition of $\gamma^*(\omega_N)$ we have:
+\begin{equation*} (A_j x)^TP(A_j x) \leq {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall\, (x, j)  \in \omega_N \end{equation*}
+for some $P \succ 0$. 
+Then, by rewriting Theorem \ref{mainTheorem0} we also have:
+\begin{equation}\label{eqn:violation2}\mu^N\left\{\omega_N \in Z^N : \mu(V(\omega_N)) \leq \epsilon \right\} \geq 1- I(1-\epsilon; N-d, d+1),\end{equation}
+where $I(\ell;a,b)$ is the regularized incomplete beta function. Let $\epsilon(\beta, N)=1- I^{-1}(1-\beta; N-d, d+1)$. 
+Then, by Theorem~\ref{mainTheorem0}, with probability at least $\beta$ the following holds:
+\begin{equation*} (A_jx)^TP(A_jx) \leq  {(\gamma^*(1+\eta))}^2 x^TPx, \quad \forall (x, j) \in Z \setminus V.\end{equation*}
+By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
+\begin{equation*}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
+for some $\sphere'$ where $\sigma^{n-1}(\sphere') \leq m\epsilon \kappa(P)$. Then, applying Lemma \ref{lemma:epsilon1}, we can compute
+$$\delta(\beta, \omega_N) =\alpha(\epsilon'(\beta,N)),$$
+where
+\begin{equation}\label{eqn:eps2}\epsilon'(\beta, N) = \frac{1}{2} m\kappa(P)\epsilon(\beta,N)\end{equation} such that with probability at least $\beta$ we have:
+\begin{equation*}
+\bar{A_j} \ball \subset \frac{\gamma^*(\omega_N)(1+\eta)}{\delta(\beta, \omega_N)}\ball,\, \forall\, j \in M,
+\end{equation*}
+By Property \ref{rem:scaling}, this means that with probability at least $\beta$:
+$$\rho \leq \frac{\gamma^*(\omega_N) (1 + \eta)}{\delta(\beta, \omega_N)},$$
+which completes the proof of the first part of the theorem. Note that, the ratio $\frac{1}{2}$ introduced in the expression of $\epsilon'$ is due to the homogeneity of the system described in Property \ref{property:homogeneity}, which implies that $x \in V_{\sphere} \iff -x \in V_{\sphere}$. We refer the interested reader to Appendix \ref{app:bound} for the second part of this proof, namely showing that $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
+
+
+
+%
+%$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
+%for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
+%Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
+%$$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus X_P) \subset \convhull (E_P\setminus X_P).$$
+%Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
+\end{proof}
+

@@ -1,0 +1,112 @@
+%\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  
+\documentclass[letterpaper,11pt]{paper}
+\usepackage{amsthm}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+\usepackage{color, comment}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{gensymb,bbm}
+\usepackage{stmaryrd}
+\include{references.bib}
+ 
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand{\convhull}{\mbox{convhull } }
+\newcommand{\R}{\mathbb{R} }
+\newcommand{\B}{\mathbb{B} }
+\newcommand{\Z}{\mathbb{Z} }
+\newcommand{\N}{\mathbb{N} }
+\newcommand{\conv}{\convhull }
+\newcommand{\proj}{\Pi }
+\newcommand{\koverc}{\frac{|k_i|}{\|c_i\|} }
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\ball}{\text{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\dist}{d}
+
+\providecommand{\rmj[1]}{{\color{red}#1}}
+\providecommand{\com[2]}{\begin{tt}[#1: #2]\end{tt}}
+\providecommand{\comrj[1]}{\com{RJ}{\rmj{#1}}}
+\providecommand{\comff[1]}{{\small \color{blue} [FF: {#1}]}}
+
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\sphere}{\text{S}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\calL}{\mathcal{L}}
+%\newcommand{\calV}{\mathcal{V}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\Opt}{\text{Opt} }
+
+
+ 
+
+\newtheorem{remark}{Remark}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\title{Sampling Based Stability Analysis of Switched Linear Systems}
+\begin{document}
+\maketitle
+
+\begin{section}{Introduction}
+\input{introduction}
+\end{section}
+\begin{section}{Preliminaries}
+\input{Preliminaries}
+\end{section}
+\begin{section}{Optimization Problem}
+\input{campi}
+\end{section}
+\begin{section}{Relating the measure of bad sets}
+\input{measureThms}
+\end{section}
+\begin{section}{Relating $\epsilon$ to $\delta$}
+\input{epsilonToDelta}
+\end{section}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+
+
+\end{document}

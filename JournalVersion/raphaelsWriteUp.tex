@@ -1,0 +1,314 @@
+\documentclass[letterpaper,11pt]{paper}
+
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{mathtools}
+\usepackage{color, comment}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\include{references.bib}
+ 
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand{\convhull}{\mbox{convhull } }
+\newcommand{\R}{\mathbb{R} }
+\newcommand{\B}{\mathbb{B} }
+\newcommand{\Z}{\mathbb{Z} }
+\newcommand{\N}{\mathbb{N} }
+\newcommand{\conv}{\convhull }
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\re}{\mathbb{R}}
+
+\providecommand{\rmj[1]}{{\color{red}#1}}
+\providecommand{\com[2]}{\begin{tt}[#1: #2]\end{tt}}
+\providecommand{\comrj[1]}{\com{RJ}{\rmj{#1}}}
+\providecommand{\comff[1]}{{\small \color{blue} [FF: {#1}]}}
+
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+ 
+
+\newtheorem{remark}{Remark}[section]
+\newtheorem{}{Property}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\title{Black-box stability proof}
+\begin{document}
+\maketitle
+We want to investigate how to analyze the stability of discrete-time or continuous-time black-box dynamical systems. Since linear systems are too easy to investigate, we will start by looking at switched linear systems, but our hope is to obtain results amenable to other types of systems (e.g. nonlinear deterministic systems).  Motivations and similar works include \cite{bobiti2016sampling,kapinski2014simulation,blanchinimodel}
+\begin{section}{Problem definition}
+Given the switched linear system: \comrj{hopefully, we will make the presentation more general, and consider a system $x_{k+1}=f(x_k).$ Right now I kept the particular case of switching system; since our results are restricted to this framework until now}
+\begin{equation}\label{eq:dynamicalsystem}x_{k+1} = A_{\sigma(k)}x_k,
+\end{equation}
+where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence. Let $y_k := x_{k+1}$. 
+There are many variants to the problem.  Here we assume that we are not given the index of the matrix which is applied at every time.
+
+\begin{centering}
+\emph{Given N input-output-matrix pairs, $(x_1, y_1)$, $(x_2, y_2)$, $\ldots$, $(x_N, y_N)$ such that
+\begin{equation}\label{eq:triples}y_{k} = A_{\sigma(k)}x_k,
+\end{equation} for some $\sigma(k),$
+ (but not necessarily $x_{k+1}=y_k$) how can we decide if the switching system is stable?}
+\end{centering}
+
+To make our reasoning clearer, we introduce the \emph{Lyapunov exponent} of the system, which is a numerical quantity describing its stability.
+\begin{definition}   Given a dynamical system as in \eqref{eq:dynamicalsystem} its \emph{Lyapunov exponent} is given by
+$$\rho =\inf{\{r:\,\forall x_0, \exists C\in \re^+: \quad x(0)=x_0 \Rightarrow x(t)\leq Cr^t\}}. $$
+\end{definition}
+Under certain conditions \comrj{to be epxplicited}, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
+
+
+
+\subsection{Examples}
+\begin{example}\label{ex:bad}
+\comrj{here comes the examples showing that many observations, coherent with the existence of a quadratic lyap, do not mean much, even for linear systems.  For instanc Paulo's example}
+\end{example}
+
+
+\subsection{Assumptions}
+It is clear that one has to pose assumptions on the dynamical system studied in order to be able to infer stability properties from the observations of samplings of its dynamics: one can easily build nonlinear systems such that the Euclidean norm of most points is dramatically decreased by one iteration of the system, but however the system is unstable.  Even more, as we have seen in Example \ref{ex:bad}, there are linear systems that exhibit this property.  One goal of this work is to understand what are the important properties that a system should enjoy, and what type of guarantees they could imply in terms of stability.  We list here a few properties that are going to be studied in this work.
+
+\begin{property}\label{property:poly}
+The dynamical system is a polynomial of bounded degree $d.$
+\end{property}
+\begin{property}\label{property:homogeneity}
+The dynamical system is a homogeneous function of the statespace: $$x'_0=\lambda x_0 \Rightarrow x'(t)=\lambda x(t). $$
+\end{property}
+\begin{property}
+The dynamical system is a switching linear system
+
+\begin{equation}\label{switchedSystem}x_{k+1} = A_{\sigma(k)}x_k,
+\end{equation}
+where, $x_k \in \R^n$, k is index of time and $\sigma: \N \to \{1,2, \ldots, m\}$ is the switching sequence.  This is the first example we'll study.
+In this case the Lyapunov exponent is known as the Joint Spectral Radius of the set of matrices, which can be alternatively defined as follows:
+\begin{definition}  \cite{jungers_lncis} Given a set of matrices $\cM \subset \re^{n\times n},$ its \emph{joint spectral radius} (JSR) is given by
+$$\rho(\cM) =\lim_{t\rightarrow \infty} \max_{i_1,\dots, i_t}\{||A_{i_1} \dots A_{i_t}||^{1/t}: A_i\in\cM\}. $$
+\end{definition}
+\begin{remark}
+ Note that one can scale the problem because the JSR is homogeneous:
+$$\rho(\cM/\lambda)=\rho(\cM)/\lambda\, \forall \lambda>0, $$ and $\cM/\lambda$ can be studied by studying the scaled inputs $$(x_t, y_t/\lambda,\sigma(t)).$$
+\end{remark}
+\end{property}
+\begin{property}\label{property:convpres}
+ The function $f$ is \emph{convex-preserving,} meaning that for any set of points $X=\{x_i\},$ one has
+$$ f(\conv{X})\subset \conv\{f(x_i)\}. $$
+\end{property}
+We do not know until now whether there are many functions that have the above property, or even whether there are non-linear functions that have it. It turns out that switching linear systems have this property. There is a similar property, that seems to imply (something similar to) the previous one:
+\begin{property}\label{property:kconvexity} \cite{VaB:96}Let $K$ be a (convex solid pointed) cone. The function $f$ is \emph{$K$-convex,}  meaning that \begin{itemize} \item it is $K$-monotone: for any $x,y\in K,$ $$x\preceq_K y \Rightarrow f( x )\preceq_K  f(y)$$ \item for any $x,y\in \re^n,$ and $\lambda \in \re,$ $f(\lambda x + (1-\lambda)y)\preceq_K \lambda f(x) + (1-\lambda)f(y).$ \end{itemize}
+\end{property}
+
+\end{section}
+
+\section{A lower bound}
+
+
+
+For the lower bound, we will leverage the following theorem from the switching system literature.
+
+\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
+For any bounded set of matrices such that $\rho(\cM)<1/\sqrt(n),$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succeq 0$ such that $$\forall A\in \cM,\, A^TPA\preceq P. $$
+\end{theorem}
+
+\comrj{We can probably generalize this result.  What is needed is a Converse Convex Lyapunov Theorem: stability implies the existence of a convex (or, quasiconvex, it should suffice) Lyapunov function.  Maybe we should use Mircea's result \cite{geiselhart2014alternative}.  This would be nice per se, I think.}
+%
+%\begin{theorem}{jungers_lncis}\label{thm:john}
+%If a For any bounded set of matrices such that $\rho(\cM)<1/\sqrt(n),$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succeq 0$ such that $$\forall A\in \cM,\, A^TPA\preceq P. $$
+%\end{theorem}
+
+The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
+
+\begin{eqnarray}
+\nonumber \mbox{min}&&\lambda\\
+ s.t.& & \label{eq:lowerbound} \forall 1\leq i \leq N,\ (y_i^T P y_i)/\lambda^2 \leq x_i^TPx_i\\
+\nonumber && P \succeq 0.
+\end{eqnarray}
+Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
+
+\begin{theorem}
+Let $\lambda^*$ be the minimum $\lambda$ such that \eqref{eq:lowerbound} above has a solution.  If $\lambda^*<\infty,$ one has $$\rho(\cM) \geq \lambda^*/\sqrt(n) .$$
+\end{theorem}
+\begin{proof}
+Just apply Theorem \ref{thm:john} to $\cM /(\lambda^*-\epsilon),$ for any $\epsilon>0.$ Since this latter set has no CQLF, we obtain that $\rho(\cM)/\lambda^*\geq 1/\sqrt{n}.$
+\end{proof}
+
+
+This result could be improved in several ways: first, it is classical in the JSR literature to replace the CQLF with a SOS polynomial of degree $2d,$ $d>1.$ this narrows the $1/\sqrt(n)$ accuracy factor, up to one when $d\rightarrow \infty.$  \comrj{this is not 100 \% clear but interesting: if we take a too large degree for a fixed number of points, we will always find a very small lower bound! Nevertheless I hope that it will be easy to understand how increasing the degree can improve the accuracy, and anyway there are interesting things there.}
+
+
+\section{An upper bound}
+\comrj{it is not clear how this upper bound can be useful for switching systems, because we need to know the modes here, and then the system can be easily identified, but maybe for general $f$ it is? Or, maybe it's possible to reuse the same type of ideas without knowing the nodes?}
+It is classical to try to upper bound the JSR by constructing a polytope norm \cite{GP11}, defined by a set of points $X=\{x_i:\, i=1,\dots,N\}$ satisfying the following property:
+if $$ (A_i/\lambda) \convhull{(X\cup -X)} \subset \convhull{(X\cup -X)},\quad \forall A_i\in \cM$$ then, $$\rho(\{A_1,\dots,A_m\}) \leq \lambda.$$ This can easily be checked by verifying that $$\forall x\in X,\, \forall A\in \cM,\, Ax/\lambda \in \convhull{(X\cup -X)}, $$ that is, by verifying the property only for the vertices of the polytope.
+
+Now, in our situation, we would like to address situations where we do not command what matrix is applied, and/or which point in the state space is selected for the next triple $(x_t, y_t,\sigma(t)).$  It turns out that this slight difference with the `classical JSR computation' can be accounted for:
+
+\begin{theorem}
+Suppose that one has m sets of observations $$S_j=\{(x_{j,1}, y_{j,1}),\dots, (x_{j,t_j}, y_{j,t_j})\}$$ as in \eqref{eq:triples}, and denote $$X_j=\{x_{j,t}:t=1,\dots,t_j\},$$ then the solution of the following optimization problem
+\begin{eqnarray} \label{eq:upperbound}
+\mbox{min}&&\lambda\\
+\nonumber s.t.& &\forall i,t,\quad y_{i,t}/\lambda \in \bigcap_{1\leq j \leq m} \convhull{(X_j\cup -X_j)}
+\end{eqnarray}
+is a valid upper bound on $\rho(\cM).$
+\end{theorem}
+\begin{proof}
+Let us denote $S=\bigcap_{1\leq j \leq m} \convhull{(X_j\cup -X_j)}.$  Fix any feasible $\lambda$ for \eqref{eq:upperbound}. Since for all $j:\ 1\leq j \leq m$ $$S \subset \convhull{(X_j\cup -X_j)}$$ and $$ (A_j/\lambda)\  \convhull{(X_j\cup -X_j)} \subset S,$$ we have that $$ (A_j/\lambda) S\subset S\, \quad \forall 1\leq j \leq m, $$ and this proves that $\rho \leq \lambda.$
+\end{proof}
+
+It is not difficult to see that the above bound could be improved further: indeed, it relies on sets of points $X_i,$ for which we know the image by the matrix $A_i.$ However, if we know that $A_ix=y,$ then, we know of course that, for any real number $\lambda,$  $ A_i(x/\lambda)=y/\lambda.$ In other words, we can scale the couples $(x_{j,i},y_{j,i})$ above by any factor $\lambda,$ and this would still give a valid upper bound.  Thus, one could try to optimize over this scaling factors in order to get the best possible upper bound.
+This gives the following optimization problem:
+
+\begin{theorem}
+Suppose that one has m sets of observations $$S_j=\{(x_{j,1}, y_{j,1}),\dots, (x_{j,t_j}, y_{j,t_j})\}$$ as in \eqref{eq:triples}, and denote $$X_j=\{x_{j,t}:t=1,\dots,t_j\},$$ then the solution of the following optimization problem
+\begin{eqnarray} \label{eq:upperbound2}
+\mbox{min}_{\lambda,\lambda_{j,t}} &&\lambda\\
+\nonumber s.t.& &y_{j,t}/(\lambda \lambda_{j,t}) \in \bigcap_{1\leq j \leq m} \convhull{(\{x_{j,t}/\lambda_{j,t},-x_{j,t}/\lambda_{j,t}\})}.
+\end{eqnarray}
+is a valid upper bound on $\rho(\cM).$
+\end{theorem}
+
+\subsection{A heuristic to improve the upper bound}
+
+The above program \eqref{eq:upperbound2} aims at finding scaling factors of the couples $(x_{j,i},y_{j,i})$ so as to minimize the upper bound.  Intuitively, there is an optimal scaling factor which can be defined as follows: let us denote $||\cdot||_*$ the \emph{extremal norm} of the set of matrices ; that is, the norm satisfying \begin{equation}\label{eq:extremal}\forall x\in \re^n \quad  \max_{A_i \in \cM}||A_ix||_*=\rho ||A_i||_*. \end{equation}  Such a norm always exists for any bounded set of matrices $\cM$, provided that the matrices do not share a common invariant subspace \cite[Section 2.1.2]{jungers_lncis} (if they do, this does not change our discourse, since there exists in any case a norm satisfying \eqref{eq:extremal}, with $\rho$ replaced by $\rho+\epsilon,$ for any $\epsilon>0$).
+
+Suppose that every set $(X_j)$ is the complete unit ball $B_*=\{x:||x||_*=1\}.$
+Then, by the definition \eqref{eq:extremal} of $||\cdot ||_*$,we have that $$y_{j,t}/\rho \in \bigcap_{1\leq j \leq m} \convhull{(X_j\cup -(X_j))}, $$ because $ \convhull{(X_j)\cup -(X_j)}=B_*,$
+and by \eqref{eq:upperbound} one has a perfect upper bound on $\rho.$  This suggests to scale the $x_{j,t}$ with an approximation of the extremal norm.  Now, remark that Equation \eqref{eq:lowerbound} is precisely aiming at approximating the Definition \eqref{eq:extremal} of an extremal norm.  Of course, it is only an approximation, because it only takes into account the finite number of points available, and restricts the possible norms to ellipsoidal ones.  However, if no other way is available for optimizing \eqref{eq:upperbound}, it is hopeful that this approximation could work well.  Summarizing, we propose to fix \begin{equation}\label{eq:heuristic}\lambda_{j,t}=\sqrt{x_{j,t}^TPx_{j,t}},\end{equation} where $P$ is the solution of \eqref{eq:lowerbound} as a heuristic solution to \eqref{eq:upperbound2}. \comrj{again we might have to trash all the above because knowing the modes allows us to identify the matrices, but it seems that there are good ideas to use for more general models...}
+
+\section{An upper bound with a level of confidence.}\label{section-campi}
+In this section we suppose that we do not observe the modes, but only the pairs $(x_k,y_k).$
+Our goal here is to improve the upper bound by paying a little bit of uncertainty. Also, it allows us to provide a bound even if we do not know the modes. The idea is that if we have a polytope that is contracted for all our observed pairs $(x,y),$  it is not enough to imply stability, because we observed only some possible behaviours of the dynamics.  However, suppose that we observed that the $\lambda-$contraction of the polytope $\cP$ is satisfied for many values of $x,$ then, it is tempting to extrapolate our observation, and claim that (noting $y=f(x) $ as always),
+
+
+\begin{equation}\label{eq:polytopic norm}
+\forall{x} \in \re^n \mbox{ s.t. } Cx\leq b \Rightarrow \quad Cy/\lambda \leq b,
+\end{equation}
+
+where $C,b$ is the canonical representation of the polytope $\cP.$ 
+
+Similarly, if we observed the $\lambda-$contraction for the quadratic Lyapunov function $x^\top P x,$ it is tempting to generalize to the whole state space:
+
+\begin{equation}\label{eq:cqlf}
+\forall{x} \in \re^n,\,  (y^T P y)/\lambda^2 \leq x^TPx.
+\end{equation}
+Both equations imply that $\rho\leq \lambda.$
+
+Unfortunately, the true observations only imply that these inequalities are valid for a few points $x_i,$ not for the whole statespace. However we will use classical probability results to bridge the gap between our observations, and a stability guarantee for the complete statespace. Observe that a priori this gap is not negligible, and for instance in Example \ref{ex:bad} one can see that there exists a quadratic function which satisfies the Lyapunov equation for almost all the points, but yet, almost all the trajectories are unstable.
+We recall a classical result on optimization with a sampled subset of constraints:
+\begin{theorem} \cite{calafiore2005uncertain,calafiore2006scenario}\label{thm:campi}
+For any convex program, with a measure on the constraints, in any fixed dimension $n,$ and for any $0 < \epsilon,$ $ \beta< 1,$ there exists a number $N(\epsilon, \beta)$ such that, if one samples $N$ constraints, then, with probability larger than $\beta,$ the solution of the optimization program with these $N$ constraints satisfies a subset of the full constraints set of measure at least $1-\epsilon.$
+\end{theorem}
+
+We first consider a simpler version of our theorem, which corresponds to the case $n=0$ above, and where the polytope is fixed a priori.  This is clearly conservative but is there for the sake of clarity.
+\comrj{We are trying to prove something as clean as possible... probably this simpler version will be removed later.
+%It seems crucial that there is a switching phenomenon here, because in the other case, one could just use the generalized convexity Assumption \ref{property:convpres} in order to prove stability without paying some confidence.  In the future, we plan to understand what other types of situations necessitate to pay a little of confidence in order to deduce stability (digital controller with hidden variables?).
+}
+\begin{theorem}
+Consider a polytope\footnote{all our polytopes are supposed to be symmetric wrt the origin, so that they can be considered as the unit ball of a norm.} $$\cP_{C,b}=\{x: Cx\leq b\}$$ which is fixed a priori.  Consider a black-box switching system and $N$ couples (randomly, uniformly sampled) of its dynamics as in \eqref{eq:triples}.   Suppose that the polytope is invariant for all the observations (one can always scale the set of matrices and apply the theorem to the scaled version).  That is, if the observed couples $(x,y)$ are scaled so that $x$ belongs to the boundary of the polytope, one has \begin{equation}\label{eq:invpoly} Cy\leq b.\end{equation} Then, for any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta.$  
+% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
+
+\end{theorem}
+
+\begin{proof}
+
+
+Let us fix $\delta>1.$  Define $\epsilon$ as the smallest measure of a set \begin{equation}\label{eq:epsilonvsdelta} X\subset \partial \cP \mbox{ s.t. } \delta^{-1} = \sup{\{d: d \cP \subset \conv{\partial \cP\setminus X}\} }. \end{equation}
+In the equation above, $\partial$ represents the boundary of a set, and by measure, we mean the uniform measure on the Euclidean ball $B$ (more precisely, $\mu(X)= \mu'(\{x\in B: \exists x'\in X, \lambda \in \re^+; x = \lambda x'\});$ and $\mu'$ is the uniform measure on the Euclidean ball).
+
+ Since Equation \eqref{eq:invpoly} does not contain any variable, it is a trivial application of Theorem \ref{thm:campi}, (or an application of first principles in probability) that, if the (scaled) vectors $x$ are sampled randomly (say, on the unit sphere), and if we have $N$ of these observations all of them satisfying  \eqref{eq:invpoly}, then we can claim that the measure of points $x$ that violate  \eqref{eq:invpoly} (more precisely, the points $x$ such that, denoting $ \hat x$ the scaled vector such that $\hat x$ belongs to the boundary of the polytope, we have that the image $y=f(\hat x)$ does not satisfy $ Cy\leq b$) is smaller than $ \epsilon$ with confidence $1-(1-\epsilon)^N.$   Indeed, suppose by contradiction that the measure is $\epsilon ' \geq \epsilon.$ Then, the probability that our $N$ samples satisfy \eqref{eq:invpoly} is equal to $(1-\epsilon')^N \leq (1-\epsilon)^N .$  Thus, the level of confidence of our Hypothesis that only an $\epsilon$ measure of points $x$ violate  \eqref{eq:invpoly} is $1-(1-\epsilon)^N.$
+
+Summarizing, the equation above means that with confidence $\beta := 1-(1-\epsilon)^N$, one has that \eqref{eq:invpoly} is satisfied for all $x\in \re^n,$ except for a set of measure $\epsilon.$   Let us denote $S_\epsilon$ this set of violated constraints.  That is, $$f(\partial\cP\setminus S_\epsilon) \subset \cP.$$  By our assumption \ref{property:convpres}, $$f( \convhull (\partial\cP\setminus S_\epsilon) \subset \convhull (f(\partial\cP\setminus S_\epsilon)).$$  Combining the above two equations with our choice of $\epsilon$ in Equation \eqref{eq:epsilonvsdelta},  we have that  
+$$f( \convhull (\partial\cP\setminus S_\epsilon) \subset \convhull (\partial\cP\setminus S_\epsilon)/\delta,$$
+
+and so $\rho\leq \delta$ with confidence $\beta := 1-(1-\epsilon)^N.$
+ 
+\end{proof}
+
+
+\subsection{the stronger version of the theorem}
+\comrj{This stronger version looks for an ellipsoid. We believe that everything is correct below too, but there's a little catch in the 'one can compute': for the moment we do not really know how to algorithmically compute $\epsilon$ like in the proof above, essentially because we have ellipsoids (but note that even for the polytope above, everything is not crystal clear yet).}
+\begin{theorem}
+Consider a black-box switching system and $N$ samples of its dynamics as in \eqref{eq:triples}. Consider the optimal solution $(\lambda^*,P)$ which minimizes $\lambda$ in \eqref{eq:lowerbound}. For any factor $1<\delta,$ one can compute the level of confidence $\beta$ such that $\rho<\delta\cdot\lambda^*.$ 
+% denote $\gamma(P,\epsilon)$ the largest $\gamma$ such that $\gamma^2y_i^TPy_i\leq x_i^TPx_i$ 
+
+\end{theorem}
+
+\begin{proof}
+
+
+Let us fix $\delta>1$ and denote $E_P$ the ellipsoid described by $P$ (i.e., $\{x:x^TPx= 1\}$), and denote $\epsilon$ such that for any subset $S_\epsilon$ of measure $\epsilon,$ 
+$$ E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon) .$$ 
+  
+	(\comrj{this is where we still have to find a solution} First prove that the worst-case $S_\epsilon$ should be one single connected set, then, it should be centered around the longest axis of the ellipsoid.) \comrj{Alternatively, can't we simply rescale the state space so that the ellipsoid becomes a sphere? Then, we know how to compute the $\epsilon.$ We hope that this would come at the only price of increasing the measure of the points we miss, because we know how we distorded the measure.  To be checked, fingers crossed.}
+	
+	
+Now, denoting $N$ the number of observations available, compute $0< \beta< 1$ such that $$N=N(\epsilon,\beta)$$ in Theorem \ref{thm:campi} above. 
+
+Summarizing, the equation above means that with high probability, one has that \eqref{eq:lowerbound} is satisfied for all $x\in \re^n,$ except for a set of measure $\epsilon.$  Let us denote $S_\epsilon$ this set of violated constraints.  Thus, $$(\cM/\lambda^*) \convhull (E_P\setminus S_\epsilon) \subset \convhull (E_P\setminus S_\epsilon).$$  Now, by definition of $\epsilon,$ one has
+
+$$ E_{\delta^2P} \subset  \convhull (E_P\setminus S_\epsilon) ,$$ and so
+$$
+(\cM/\delta \lambda^*) \convhull (E_P \setminus S_\epsilon) \subset \convhull (E_P\setminus S_\epsilon).$$
+
+%Moreover, except for $x\in S_\epsilon$, one has $$(y^T P y)/(\lambda^2 *\gamma^2) \leq x^TPx/\gamma^2,$$  N
+
+Then, $\delta\lambda$ is un upper bound on $\rho,$ with a confidence $\beta.$ 
+\end{proof}
+
+\section{Further ideas}
+\begin{itemize}
+\item develop the 'brute force campi application' (without our reasoning) on an example, and show with counterexamples and so that more hypotheses have to be used (as we do in Section \ref{section-campi}) in order to make it useful. Maybe this can be done on the first example (which still needs to be written down)?
+\item how to present/argue of usefulness against the fact that we can identify the matrices if we have a lot of points? Partial answer: identify the matrices is not easy (e.g. Paulo found a recent paper where they prove that it's NP-hard.\cite{lauer2015complexity}. )
+\item
+We should certainly try to improve our estimate by playing with sos of higher degree rather than cqlf
+
+\item{Noise}
+\comrj{Following Paulo's idea}
+If one has Property \ref{property:poly}, then the Lyapunov inequality can be replaced by an equality.  This could allow for a better decision algorithm.  \comrj{it is not completely clear how we can leverage that, and what nontrivial results we can claim (especially in view of the fact that we could identify the system).  We thought that the more sensible was to add noise; and then to study how does a direct Lyapunov construction bypassing the identification step would compare with a 2 step (identification+stability analysis) method.  We think that nontrivial (new?) questions might already appear for linear systems.}
+
+\item Find how to exploit the switching systems approach to other systems.  How about a linear system which is intermittently controlled by a linear controller?
+Homogeneity, convex-preservation, $K-$convexity, seem to be key properties, but none of this is clear. (Also, Convex Converse Lyapunov Theorem seems to be important, at least for the lower bound.)
+\item How about continuous time?  There, it seems that identification of the system is not possible. Thus, it is maybe a better framework to develop our ideas?
+\end{itemize}
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

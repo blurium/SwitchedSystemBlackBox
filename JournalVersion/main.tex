@@ -1,0 +1,165 @@
+%\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  
+\documentclass[letterpaper,11pt]{paper}
+\usepackage{amsthm}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+\usepackage{color, comment}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{gensymb,bbm}
+\usepackage{stmaryrd}
+\usepackage{cite}
+\include{references.bib}
+   
+ 
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand{\convhull}{\mbox{convhull } }
+\newcommand{\R}{\mathbb{R} }
+\newcommand{\B}{\mathbb{B} }
+\newcommand{\Z}{\mathbb{Z} }
+\newcommand{\N}{\mathbb{N} }
+\newcommand{\conv}{\convhull }
+\newcommand{\proj}{\Pi }
+\newcommand{\koverc}{\frac{|k_i|}{\|c_i\|} }
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\ball}{\mathbb{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\dist}{d}
+
+\providecommand{\rmj[1]}{{\color{red}#1}}
+\providecommand{\com[2]}{\begin{tt}[#1: #2]\end{tt}}
+\providecommand{\comrj[1]}{\com{RJ}{\rmj{#1}}}
+\providecommand{\comff[1]}{{\small \color{blue} [FF: {#1}]}}
+
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calS}{\mathcal{S}}
+%\newcommand{\calV}{\mathcal{V}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\Opt}{\text{Opt} }
+
+\renewcommand\labelitemi{{\boldmath$\cdot$}}
+
+
+ 
+
+\newtheorem{remark}{Remark}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+%\newenvironment{definition}[1][Definition]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\title{Data Driven Stability Analysis of Black-box Switched Linear Systems}
+
+%\thanks{\textcolor{red}{*This work was supported by.}}
+%\author{Ayca Balkan$^{1}$ and Raphael Jungers$^{2}$ and Joris Kenanian$^{1}$ and Paulo Tabuada$^{1}$ 
+%\thanks{$^{1}$A. Balkan, J.Kenanian, and P. Tabuada are with Dept. of Electrical Engineering at University of California, Los Angeles (UCLA). Their work is supported by NSF Grants 1645824, 1521617, and NSF Expeditions in Computer Augmented Program Engineering.}
+%\thanks{$^{2}$R. Jungers is a Fulbright Fellow and a F.N.R.S. fellow currently visiting the Dept. of
+%Electrical Engineering at UCLA. His work is supported by the French Community of Belgium and the IAP network Dysco.}}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched linear system. 
+
+We show that, for a given (randomly generated) set of observations, one can give a stability guarantee, for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of both the number of observations and the required level of confidence. Our results rely on geometrical analysis and combining chance-constrained optimization theory with stability analysis techniques for switched systems.
+\end{abstract}
+
+\begin{section}{Introduction}
+\input{introduction}
+\end{section}
+
+\begin{section}{Preliminaries}
+\label{sec:preliminaries}
+\begin{subsection}{Notation}
+\input{Preliminaries} 
+\end{subsection}
+\begin{subsection}{Stability of Switched Linear Systems}
+\input{stability}
+\end{subsection}
+\end{section}
+
+\begin{section}{A Deterministic Lower Bound for the JSR}
+\label{sec:lowerbound}
+\input{lowerBound}
+\end{section}
+
+\begin{section}{A Probabilistic Stability Guarantee}
+\label{sec:upperbound}
+\input{mainTheoremProof}
+\input{mainTheoremProof2}
+
+%\begin{subsection}{Proving Theorem \ref{thm:mainTheorem0}}
+%\input{campiIntro}
+%\input{measureThms}
+%\input{epsilonToDelta}
+%\end{subsection}
+\end{section}
+
+\begin{section}{Experimental Results}
+\label{sec:experiments}
+%\input{experiments}
+\end{section}
+
+\begin{section}{Conclusions}
+\label{sec:conclusions}
+\input{conclusions}
+\end{section}
+
+\appendix
+\label{appendix}
+\input{appendix}
+\input{appendixBound}
+
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+
+
+\end{document}

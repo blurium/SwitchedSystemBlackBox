@@ -1,0 +1,69 @@
+% !TEX root = main.tex
+
+%\textcolor{red}{Here, we need to talk about proving the Lyapunov decrement in finitely, many points, talk about campi and then make a transition}
+
+%In this section we suppose that we do not observe the modes, but only the pairs $(x_k,y_k).$
+%The idea is that if we have an ellipsoid that is contracted for all our observed pairs $(x,y),$  it is not enough to imply stability, because we observed only some possible behaviours of the dynamics.  However, suppose that we observed that the $\lambda-$contraction of the polytope $\cP$ is satisfied for many values of $x,$ then, it is tempting to extrapolate our observation, and claim that (noting $y=f(x) $ as always),
+Before proceeding to the proof of Theorem \ref{thm:mainTheorem0}, we introduce some further notation that will help us in the rest of this section. Let us consider $Z = \sphere \times M$, the Cartesian product of the unit sphere $\sphere$ with $M$. Every element of $Z$ can be written as $z = (x_z, j_z)$ with $x_z \in \sphere$ and $j_z \in M$. For notational simplicity, we drop the subscript $z$ whenever it is clear from the context. We define the classical projections of $Z$ on the sphere and $M$ by $\pi_{\sphere}: Z \to \sphere$ and $\pi_M: Z \to M$.
+
+%The first statement in the Theorem \ref{thm:mainTheorem0} is equation \eqref{eqn:exceptEps}, which states that $\gamma^*$ and $P$ satisfying:
+%\begin{equation*} (A_ix_i)^TP(A_ix_i)\leq \gamma^*x_i^TPx_i, \forall (x_i, A_i) \in \omega_N\end{equation*}
+%also satisfies \eqref{eqn:exceptEps}. In other words, $\gamma^*$ and $P$ that are found from finitely many observations generalizes to the rest of the observations except a set of measure $\epsilon$. We now formalize.
+To obtain an upper bound on $\rho$, we consider the following optimization problem:
+\begin{equation}%\label{eqn:campiOpt0}
+\begin{aligned}
+& \text{min} & & \gamma \\
+& \text{s.t.} 
+&  & (Ax)^TP(Ax) \leq \gamma x^TPx,\,\forall A \in \calM, \,\forall\, x \in \sphere,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+Note that if $P$ is a solution of \eqref{eqn:campiOpt0}, due to Property \ref{property:homogeneity}, then so is $\alpha P$ for any $\alpha \in \R_{> 0}.$ Therefore, the constraint $P \succ 0$ can be replaced with the constraint $P \succeq I$. Also note that, the optimal solution $\gamma^*$ satisfies $\rho \leq \gamma^*$. However, solving \eqref{eqn:campiOpt0} is hard since it involves infinitely many constraints. Therefore, for a given sampling $\omega_N$, we instead consider the optimization problem \eqref{eqn:campiOpt01} with finitely many constraints sampled from $Z$.
+
+Let $\gamma^*(\omega_N)$ be the optimal solution of \eqref{eqn:campiOpt01}. We now analyze the relationship between the solutions of the optimization problem \eqref{eqn:campiOpt0} and:
+\begin{equation}\label{eqn:campiOpt02}
+\begin{aligned}
+& \text{find} & & P \\
+& \text{s.t.} 
+&  & (A_j x)^TP(A_j x) \leq \gamma^* x^TPx,\,\forall (x, j) \in \omega_N \\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+We can rewrite \eqref{eqn:campiOpt02} in the following form:
+\begin{equation}
+\label{eqn:campiOpt2}
+\begin{aligned}
+& \text{find} & & P \\
+& \text{s.t.} 
+& & f_{\gamma^*}(P, z) \leq 0,\,\forall\ z \in Z\end{aligned}
+\end{equation}
+where $f_{\gamma^*}(P,z) = \max(f_1(P, z), f_2(P))$, and 
+\begin{eqnarray*}
+f_1(P, z) &:=& (A_j z)^TP(A_j z) - {\gamma^*}^2 z^TPz \\
+f_2(P) &:=& \lambda_{\max}(-P) +1.
+\end{eqnarray*}
+We denote by  $\Opt(\omega_N)$ the optimization problem \eqref{eqn:campiOpt02} for the rest of the paper. Let $P(\omega_N)$ be the solution of $\Opt(\omega_N)$. We are interested in the probability of $P(\omega_N)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt0}. Therefore, we define the constraint violation property next.
+
+\begin{definition}(from \cite{campi}) The \emph{constraint violation probability} is defined as:
+\begin{equation}\label{eqn:violation}
+\calV^*(\omega_N)=
+      \mathbb{P}\{z \in Z: f(P(\omega_N), z) > 0\},\, \forall\, \omega_N \in Z^{N*}\}.
+\end{equation}
+where $$Z^{N*}:=\{\omega_N \in Z^N: \text{the solution of $\Opt(\omega_N)$ exists}\}.$$ 
+Due to the definition of $\gamma^*$, we know that a solution to $\Opt(\omega_N)$ exists for any $\omega_N$ and therefore $Z^{N*} = Z^N$. Also note that, since we have $\mathbb{P}(\calA) = \frac{\mu(\calA)}{\mu(Z)}$, we can rewrite \eqref{eqn:violation} as:
+\begin{equation*}
+\calV^*(\omega_N)=
+      \frac{\mu(V)}{\mu(Z)},\, \forall\, \omega_N \in Z^N,
+\end{equation*}
+where $\mu$ is a measure on $Z$ and $$V:=\{z \in Z: f(P(\omega_N), z) > 0\},$$ i.e., the set of points for which at least one constraint is violated.
+\end{definition}
+
+The following theorem from \cite{campi} gives an explicit relationship between $\calV^*(\omega_N)$, $N$, and $n$.
+\begin{theorem}[from \cite{campi}]\label{thm:campi}Let $d:=\frac{n(n+1)}{2}$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt02}. \textcolor{red}{How to talk about assumptions of this theorem here?} Then, for all $\epsilon \in (0,1)$ the following holds:
+\begin{equation*}\mathbb{P}^N\{\{\calV^*(\omega) \leq \epsilon\} \} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
+\end{theorem}
+Note that $\epsilon=1-I^{-1}(\beta, N-d, d+1)$, where $I$ is the regularized incomplete beta function. It can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt02} to the measure of all points in $Z$.
+
+We are now ready to start proving Theorem \ref{thm:mainTheorem0}. The proof of Theorem \ref{thm:mainTheorem0} consists of finding an upper bound on the measure of points of $\sphere$ violating the constraints of $\Opt(\omega_N)$, and then of computing an lower bound for $\delta$.
+
+We assume from now that $\sphere$ is provided with $(\mathcal{B}_{\sphere},\sigma^{n-1})$ and that $M$ is provided with the classical $\sigma$-algebra associated to finite sets: $\Sigma_M = \wp(M)$, where $\wp(M)$ is the power set of $M$. We consider an unsigned finite measure\footnote{Recall that the support of a measure $\mu$ defined on a measurable space $(X, \Sigma)$ is $\text{supp}(\mu) = \overline{\{A \in \Sigma | \mu(A) > 0 \}}$} $\mu_M$ on $(M, \Sigma_M)$ with $\text{supp} (\mu_M) = M$. In other words, $\forall\,j \in M$, $\mu_M(\{j\})  > 0$. We denote the product $\sigma$-algebra $\mathcal{B}_{\sphere} \bigotimes \Sigma_M$ engendered by $\mathcal{B}_{\sphere}$ and $\Sigma_M$: $\Sigma = \sigma( \pi_{\sphere}^{-1}(\mathcal{B}_{\sphere}),  \pi_{M}^{-1}(\Sigma_M))$. On this set, we define the product measure $\mu = \sigma^{n-1} \otimes \mu_M$ which is an unsigned finite measure on $Z$. We also define $V_\sphere:=\pi_S(V),$ $V_M:=\pi_M(V)$.

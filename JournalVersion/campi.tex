@@ -1,0 +1,107 @@
+% !TEX root = main.tex
+We are interested in solving the following optimization problem for a given $\gamma \in (0,1)$:
+\begin{equation}
+\label{eqn:campiOpt0}
+\begin{aligned}
+& \text{find} & & P \\
+& \text{subject to} 
+&  & (A_is)^TP(A_is) \leq \gamma^2 s^TPs, \quad \forall i = \{1,2, \ldots, m\},  \forall\, s \in \sphere,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+Note that if $P$ is a solution to \eqref{eqn:campiOpt0}, then so is $\alpha P$ for any $\alpha \in \R_{> 0}.$Therefore, we can rewrite \eqref{eqn:campiOpt0} as the following optimization problem:
+
+\begin{equation}
+\label{eqn:campiOpt01}
+\begin{aligned}
+& \text{find} & & P \\
+& \text{subject to} 
+&  & (A_ks)^TP(A_ks) \leq \gamma^2 s^TPs, \quad \forall i = \{1,2, \ldots, m\},  \forall\, s \in \sphere,\\
+& & & P \succeq I.
+\end{aligned}
+\end{equation}
+
+We define the linear isomorphism $\Phi$ as the natural mapping \mbox{$\Phi: \mathbb{R}^{\frac{n(n+1)}{2}} \to \mathbb{S}^n$.} Using this mapping, for a fixed $\gamma \in (0, 1]$ we can rewrite \eqref{eqn:campiOpt01} as:
+
+\begin{equation}
+\label{eqn:campiOpt1}
+\begin{aligned}
+& \text{find} & & p \\
+& \text{subject to} 
+& & f(p,x) \leq 0, \forall x \in X.
+\end{aligned}
+\end{equation}
+where $f(p,x) = \max(f_1(p, x), f_2(p))$, and 
+\begin{eqnarray*}
+f_1(p,x) &:=& (A_ks)^T\Phi(p)(A_ks) - \gamma^2 s^T\Phi(p)s \\
+f_2(p) &:=& \lambda_{\max}(\Phi(-p)) +1.
+\end{eqnarray*}
+
+%$f(p, \xi)$ is defined as in:
+%\begin{equation}\label{eqn:objFunction}f_\gamma(p, x) = \max\left((A_is)^T\Phi(p)(A_is) - \gamma x^T\Phi(p)x,\lambda_{\max}(\Phi(p)) - t, \lambda_{\max}(\Phi(-p)) +1\right).\end{equation}
+
+\begin{proposition}The optimization problem \eqref{eqn:campiOpt1} is convex.
+\end{proposition}
+
+\begin{proof}The function $f_1(p,x)$ is clearly convex in $p$ for a fixed $x \in X$. The function 
+$\lambda_{max}: \mathbb{S}^n \to \R$ maps a symmetric positive matrix to its maximum eigenvalue. It is well-known that the function $\lambda_{\max}$ is a convex function of $P$. \cite{boyd}. This means that, $p \mapsto \Phi(\lambda_{\max}(p))$ is convex in $p$. Moreover, maximum of convex functions is also convex, which shows that $f(p, x)$ is convex in $p$.
+\end{proof}
+
+Note that the optimization problem \eqref{eqn:campiOpt1} has infinitely many constraints. We next consider the following optimization problem where we sample $N$ constraints of \eqref{eqn:campiOpt1} independently and identically with the probability measure
+$\mathbb{P}(A) = \frac{\mu(A)}{\mu(X)}, \forall\, A \in \Sigma$, where $N \geq d+1$, and $d := \frac{n(n+1)}{2}$. We denote this sampling by $\omega:=\{x_1, x_2, \ldots, x_N\} \subset X$, and obtain the following convex optimization problem $\Opt(\omega)$: 
+
+\begin{equation}
+\label{eqn:campiOpt2}
+\begin{aligned}
+& \text{find} & & p \\
+& \text{subject to} 
+& & f(p, x) \leq 0, \forall x \in \omega. \end{aligned}
+\end{equation}
+
+Let $p^*(\omega)$ be the solution of $\Opt(\omega)$. We are interested in the probability of $p^*(\omega)$ violating at least one constraint in the original problem \eqref{eqn:campiOpt1}. Therefore, we define constraint violation property next.
+
+\begin{definition}[Constraint violation probability \cite{campi}] The constraint violation probability is defined as:
+\begin{equation*}
+\calV^*(\omega)=
+    \begin{cases}
+      \mathbb{P}\{x \in X: f(p^*(\omega), x) > 0\} &\text{if}\,\, \omega \in X^{N*},\\
+      1, & \text{otherwise}
+    \end{cases}
+\end{equation*}
+where $X^{N*}:=\{\omega \in X^N: \text{the solution of $\Opt(\omega)$ exists}\}$. 
+Note that, since we have $\mathbb{P}(A) = \frac{\mu(A)}{\mu(X)}$, we can rewrite this as:
+\begin{equation*}
+\calV^*(\omega)=
+    \begin{cases}
+      \frac{\mu\{x \in X: f(p^*(\omega), x) > 0\}}{\mu(X)} &\text{if}\,\, \omega \in X^{N*},\\
+      1, & \text{otherwise}
+    \end{cases}
+\end{equation*}
+\end{definition}
+
+We make the following assumptions on the problem $\Opt(\omega)$:
+\begin{enumerate}
+\item \label{assumption1} Uniqueness of solution: Note that this can be enforced by adding a tie-break rule of at most $\frac{n(n-1)}{2}$ convex conditions discriminating our solutions. 
+\item \label{assumption2} Nondegenaracy: with probability $1$, there is no redundancy in the constraint obtained from the sampling. 
+%We can notice that a constraint obtained for a point $(s, k)$ gives us a constraint also on the point $(-s, k)$, and that a set of constraints containing some redundancy in them will be a set of constraints obtained from samples for a same mode. Now, let assume we consider for a fixed mode of index $k$ a nondegenerate sample of points $\{x_1, \dots, x_i\}$. Then if $x_{i+1} \notin \{(\pm s_{x_j},k), \ j \in \{1, \dots, i\} \}$ (which is a set of measure zero), the constraint obtained from $x_{i+1}$ is not redundant. Indeed, the mode of index $k$ might have all its eigenvalues but one with norm lower than $1$, and $x_{i+1}$ might be in the eigenspace of the latter eigenvalue (thus the constraint given by $x_{i+1}$ will be violated). Then, by considering the shortest distance between $x_{i+1}$ and the other points of the sample, we can choose for this eigenvalue a value close enough to $1$ (while being strictly greater than $1$) such that the constraints relative to the other points will still be satisfied.
+\end{enumerate}
+
+The following theorem from \cite{campi} explicitly gives a relationship between $V^*(\omega)$ and $N$, $n$.
+\begin{theorem}[from \cite{campi}]\label{thm:campi}Consider the optimization problem $\Opt(\omega)$ given in \eqref{eqn:campiOpt2}. Let Assumption \ref{assumption1} and Assumption \ref{assumption2} hold. Then, for all $\epsilon \in (0,1)$ the following holds:
+\begin{equation*}\mathbb{P}^N\{\{\calV^*(\omega) \leq \epsilon\} \cap X^{N*}\} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j}.\end{equation*}
+\end{theorem}
+
+Note that $\epsilon=1-I^{-1}(\beta, N-d, d+1)$ and can be interpreted as the ratio of the measure of points in $X$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $X$.
+
+We now state our main theorem, which is based on Theorem \ref{thm:campi} and devote the next section to proving it step by step. We denote by $\gamma^*$, the optimum value of the following optimization problem:
+\begin{equation}
+\begin{aligned}
+& \min_{P, \gamma} & & \gamma \\
+& \text{subject to} 
+&  & (A_is)^TP(A_is) \leq \gamma^2 s^TPs, \quad \forall i = \{1,2, \ldots, m\},  \forall\, s \in \sphere,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+
+\begin{theorem}[Main Theorem] \label{thm:mainTheorem} For any $\eta > 0$, given $N \geq n+1$ and $\beta \in [0,1)$, we can compute $\delta < \infty$ such that with probability at least $\beta$, $\rho \leq \delta (1 + \eta) \gamma^*$. Moreover, as $N \to \infty$, $\delta \to 1$.
+\end{theorem}

@@ -1,0 +1,30 @@
+ % !TEX root = main.tex
+A \emph{switched linear system} with a set of modes \mbox{$\mathcal{M}= \{A_i, i \in M \}$} is of the form:
+\begin{equation}\label{eq:switchedSystem}x_{k+1} = f(k,x_k),\end{equation}
+with $f(k,x_k) = A_{\tau(k)}x_k$ and switching sequence \mbox{$\tau: \N \to M$.} There are two important properties of switched linear systems that we exploit in this paper.
+\begin{property}\label{property:homogeneity}
+Let $\xi(x, k, \tau)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$ and with switching sequence $\tau$. The dynamical system \eqref{eq:switchedSystem} is homogeneous: $\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau).$
+\end{property}
+\begin{property}\label{property:convpres}
+The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
+$$ f(\conv({X}))\subset \conv(f(X)). $$
+\end{property}
+%Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
+%\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
+%Under certain conditions deciding stability amounts to decide whether $\rho<1.$ 
+
+The joint spectral radius of the set of matrices $\calM$ closely relates to the stability of the system \eqref{eq:switchedSystem} and is defined as follows:
+\begin{definition}[from \cite{jungers_lncis}] Given a finite set of matrices \mbox{$\cM \subset \re^{n\times n},$} its \emph{joint spectral radius} (JSR) is given by
+$$\rho(\cM) =\lim_{k\rightarrow \infty} \max_{i_1,\dots, i_k} \left\{||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j}\in\cM\ \right\}. $$
+\end{definition}
+
+\begin{property}[Corollary 1.1, \cite{jungers_lncis}]
+Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
+\end{property}
+
+\begin{property}[Proposition 1.3, \cite{jungers_lncis}]\label{rem:scaling}
+Given a finite set of matrices $\mathcal{M}$, and any invertible matrix $T$, 
+$$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}),$$
+i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\,$\linebreak$\rho\left(\cM/\gamma\right)=\cM/\gamma$).
+\end{property}
+
