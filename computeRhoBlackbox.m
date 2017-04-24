@@ -14,6 +14,12 @@ Y = cell(1,N); %cell where output vectors are stored
 
 %epsilon as function of beta and N ; epsilon = 1 - I^{-1}(beta, N-d,d+1)
 epsilon=1-betaincinv(1-beta,N-d,d+1);
+if (epsilon > 2 / m)
+    lowerBound = 0;
+    upperBound = inf;
+    return;
+end
+
 
 for j=1:N %generate uniformly random points of the unit sphere
     v=randn(n,1);
@@ -26,96 +32,89 @@ end
 %by looking for a valid upper bound, lambdaU, of gamma* before starting the bisection
 %itself
 
-lambdaNext = 1;
-lambdU = 1;
 lambdaL = 0;
 
 P_var = sdpvar(n,n); %optimization variable
 Objective = 1;
-counter = 0;
-lambdaUfound = false;
+flag = 0;
 
-while(counter<50 && lambdaUfound==false)
-    Constraints = [];
-    lambda = lambdaNext;
-    Constraints = Constraints + (P_var >= eye(n));
-    for j=1:N
-        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= lambda^2*X{j}'*P_var*X{j});
-    end
-    sol = optimize(Constraints,Objective,ops);
-    if sol.problem == 0
-        lambdaU = lambda;
-        lambdaL = lambda/2;
-        lambdaUfound=true;
-    else
-        lambdaNext=2*lambda;
-    end
-    counter=counter+1;
-    display('rho bigger!');
-end
+lambdaVar = 0;
 
-if lambdaUfound==false
-    display('rho too high!')
+for j=1:N
+   lambdaVar = max((Y{j}'*Y{j})/(X{j}'*X{j}), lambdaVar);
 end
 
 %we proceed to the bisection to find gamma* (we get in fact an
 %overapproximation of gamma*, ensuring feasibility of the next optimization
 %problem)
-feasible = true;
+lambdaU = double(lambdaVar)
 lambdaNext = (lambdaU + lambdaL)/2;
+feasibleLast = false;
 
-if lambdaUfound==true
-    
-    while(lambdaU - lambdaL > 0.005)
-        Constraints = [];
-        Constraints = Constraints + (P_var >= eye(n));
-        lambda =  lambdaNext;
-        for j=1:N
-            Constraints = Constraints + (Y{j}'*P_var*Y{j} <= lambda^2*X{j}'*P_var*X{j});
-        end
-        sol = optimize(Constraints,Objective,ops);
-        if sol.problem==0
-            feasible=true;
-            lambdaU=lambda;
-            lambdaNext=(lambdaU+lambdaL)/2;
-        else
-            feasible=false;
-            lambdaL=lambda;
-            lambdaNext=(lambdaU+lambdaL)/2;
-        end
-    end
-    if feasible==false
-        lambda=lambdaU;
-    end
-    
-    
-    lowerBound=lambda/sqrt(n);
-    
-    gammaStar=lambda; %this is the value of gamma*(\omega_N) we will use for to find P, delta and the upper bound
-    
-    %find P
+while(lambdaU - lambdaL > 0.1 || feasibleLast ~= true)
     Constraints = [];
     Constraints = Constraints + (P_var >= eye(n));
-    Objective=lambda_max(P_var); %we want to minize lambda_max(P), while keeping lambda_min(P)>=1
+    lambda =  lambdaNext;
     for j=1:N
-        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= gammaStar^2*X{j}'*P_var*X{j});
+        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= lambda^2*X{j}'*P_var*X{j});
     end
     sol = optimize(Constraints,Objective,ops);
-    if sol.problem~=0
-        display('Feasibility problem')
-    end
-    
-    P=value(P_var);
-    
-    %computation of delta and the upper bound
-    lambdaMax=max(eig(P));
-    dP=det(P);
-    epsilon1 = min(1,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
-    
-    alpha=betaincinv(epsilon1,(n-1)/2,1/2);
-    
-    delta=sqrt(1-alpha);
-    upperBound=gammaStar/delta;
+    if sol.problem==0
+        flag = 1;
+        lambdaU=lambda;
+        lambdaNext=(lambdaU+lambdaL)/2;
+        feasibleLast = true;
+    else
+        if (flag == 0)
+            lambdaU = 2*lambdaU;
+            lambdaNext=(lambdaU+lambdaL)/2;
+            feasibleLast = false;
+        else
+            lambdaL=lambda;
+            lambdaNext=(lambdaU+lambdaL)/2;
+            lambda = lambdaU;
+            feasibleLast = false;
+        end
+        
+    end    
 end
+
+if (flag == 0)
+    error('couldnt compute gammastar\n');
+end
+lowerBound=lambda/sqrt(n);
+
+gammaStar=lambda; %this is the value of gamma*(\omega_N) we will use for to find P, delta and the upper bound
+
+%find P
+Constraints = [];
+Constraints = Constraints + (P_var >= eye(n));
+Objective=lambda_max(P_var); %we want to minize lambda_max(P), while keeping lambda_min(P)>=1
+for j=1:N
+    Constraints = Constraints + (Y{j}'*P_var*Y{j} <= gammaStar^2*X{j}'*P_var*X{j});
+end
+sol = optimize(Constraints,Objective,ops);
+if sol.problem~=0
+    Constraints = [];
+    Constraints = Constraints + (P_var >= eye(n));
+    for j=1:N
+        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= (gammaStar+0.02)^2*X{j}'*P_var*X{j});
+    end
+    if sol.problem~=0
+        error('Feasibility problem')
+    end
+end
+
+P=value(P_var);
+
+%computation of delta and the upper bound
+lambdaMax=max(eig(P));
+dP=det(P);
+epsilon1 = min(1,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
+
+alpha=betaincinv(epsilon1,(n-1)/2,1/2);
+
+delta=sqrt(1-alpha);
+upperBound=gammaStar/delta;
 
 end
