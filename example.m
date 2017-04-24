@@ -1,33 +1,35 @@
 x=[0:pi/300:2*pi];
+close all;
 %set(0,'defaultAxesFontSize', 40);
-set(gca,'FontSize',15)
-hold on
-grid on
-axis([-1.1 1.1 -1.1 1.1])
-
-x1=[1.20:pi/300:1.94];
-x2=[4.34:pi/300:5.08];
-plot(cos(x),sin(x),'k')
-plot(cos(x1),sin(x1),'r','LineWidth',2)
-plot(cos(x2),sin(x2),'r','LineWidth',2)
-
-y=[0:pi/20:2*pi];
-y1=cos(y);
-y2=sin(y);
-q=quiver(y1,y2,-2*y1,0.3*y2,'MaxHeadSize',0.1);
-
-xlabel('x1','FontWeight','bold')
-ylabel('x2','FontWeight','bold')
-
-pbaspect([1 1 1])
-
-U=q.UData;
-V=q.VData;
-X=q.XData;
-Y=q.YData;
+% set(gca,'FontSize',15)
+% hold on
+% grid on
+% axis([-1.1 1.1 -1.1 1.1])
+% 
+% x1=[1.20:pi/300:1.94];
+% x2=[4.34:pi/300:5.08];
+% plot(cos(x),sin(x),'k')
+% plot(cos(x1),sin(x1),'r','LineWidth',2)
+% plot(cos(x2),sin(x2),'r','LineWidth',2)
+% 
+% y=[0:pi/20:2*pi];
+% y1=cos(y);
+% y2=sin(y);
+% q=quiver(y1,y2,-2*y1,0.3*y2,'MaxHeadSize',0.1);
+% 
+% xlabel('x1','FontWeight','bold')
+% ylabel('x2','FontWeight','bold')
+% 
+% pbaspect([1 1 1])
+% 
+% U=q.UData;
+% V=q.VData;
+% X=q.XData;
+% Y=q.YData;
 
 figure
-set(gca,'FontSize',15)
+set(gcf,'paperunits','centimeters','papersize',[9 9],'paperposition',[0 0 9 9])
+set(gca,'FontSize',12)
 hold on
 grid on
 axis([-1.1 1.1 -1.1 1.1])
@@ -47,12 +49,12 @@ for i = 1:length(Y)
 end
 
 pbaspect([1 1 1])
-xlabel('x1','FontWeight','bold')
-ylabel('x2','FontWeight','bold')
-
-
+xlabel('x1')
+ylabel('x2')
+return;
 figure
-set(gca,'FontSize',15)
+set(gca,'FontSize',12)
+
 hold on
 grid on
 axis([-1.1 1.1 -1.1 1.1])
@@ -76,6 +78,7 @@ Y1=q1.YData;
 
 figure
 set(gca,'FontSize',15)
+%set(gcf,'Position', [100, 100, 100 100]);
 hold on
 grid on
 axis([-1.1 1.1 -1.1 1.1])
@@ -95,8 +98,8 @@ for i = 1:length(Y1)
 end
 
 
-xlabel('x1','FontWeight','bold')
-ylabel('x2','FontWeight','bold')
+xlabel('x1')
+ylabel('x2')
 pbaspect([1 1 1])
 %hTitle = title('Title of the plot');
 %set(hTitle,'FontSize',30)
