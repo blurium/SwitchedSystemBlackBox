@@ -1,4 +1,4 @@
-function [gammaStar, P]=computePandGamma(X, Y)
+function [gammaStar, P, lowerBound]=computePandGamma(X, Y)
 lambdaL = 0;
 ops = sdpsettings('solver','sdpt3','verbose','0');
 

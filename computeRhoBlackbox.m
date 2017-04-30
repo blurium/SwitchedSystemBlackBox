@@ -31,7 +31,7 @@ end
 %by looking for a valid upper bound, lambdaU, of gamma* before starting the bisection
 %itself
 
-[gammaStar, P]=computePandGamma(X, Y);
+[gammaStar, P, lowerBound]=computePandGamma(X, Y);
 %computation of delta and the upper bound
 lambdaMax=max(eig(P));
 dP=det(P);

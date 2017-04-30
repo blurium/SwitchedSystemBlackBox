@@ -1,4 +1,4 @@
-function [deltaBoundFrac, deltaBound] = computeBoundForFixedBetaAndN(beta,Nsystems,N)
+function [deltaBoundFrac, deltaBound] = computeGapForFixedBetaAndN(beta,Nsystems,N)
 close all;
 
 tic;
@@ -17,8 +17,12 @@ for i = 1:Nsystems
         Y = cell(1,N);
         
         %generate the m modes
-        for j = 1:m          
-            A{j} = -10*rand(n,n)+20;
+        for j = 1:m
+            v=-2+rand(1,n)*2;
+            D = diag(v); % random eigenvalues of the mode i
+            V = orth(randn(n));
+            E = V*D*V';
+            A{j} = E;
         end
         
         for j= 1:N

@@ -1,12 +1,16 @@
-function [lowerBound, upperBound] = computeRhoBlackboxGivenXY(A, beta, X, Y)
+function [lowerBound, upperBound, gammaStar, delta] = computeGammaAndDelta(A, beta, N)
 %inputs : A matrices of switched system
 %beta : desired confidence factor
-%X = cell(1,N); %cell where sampled vectors of the unit sphere are stored
+%N : number of samples
 
 m = length(A); % number of modes
 n = size(A{1},1); % number of states
 d = n*(n+1)/2+1;
-N = length(X);
+
+X = cell(1,N); %cell where sampled vectors of the unit sphere are stored
+Y = cell(1,N); %cell where output vectors are stored
+
+
 %epsilon as function of beta and N ; epsilon = 1 - I^{-1}(beta, N-d,d+1)
 epsilon=1-betaincinv(1-beta,N-d,d+1);
 if (epsilon > 2 / m)
@@ -14,12 +18,20 @@ if (epsilon > 2 / m)
     upperBound = inf;
     return;
 end
+
+
+for j=1:N %generate uniformly random points of the unit sphere
+    v=randn(n,1);
+    X{j}=v/sqrt(sum(v.^2));
+    k=unidrnd(m); %random uniform generation of the index of the mode applied to sampled point X{j}
+    Y{j}=A{k}*X{j};
+end
+
 %computation of gamma* for the optimization problem by bisection, we start
 %by looking for a valid upper bound, lambdaU, of gamma* before starting the bisection
 %itself
 
 [gammaStar, P, lowerBound]=computePandGamma(X, Y);
-
 %computation of delta and the upper bound
 lambdaMax=max(eig(P));
 dP=det(P);
