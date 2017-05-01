@@ -10,19 +10,19 @@ n = length(X{1});
 P_var = sdpvar(n,n); %optimization variable
 
 for j=1:N
-   lambdaVar = max((Y{j}'*Y{j})/(X{j}'*X{j}), lambdaVar);
+   lambdaVar = max((Y{j}'*Y{j}), lambdaVar);
 end
 %we proceed to the bisection to find gamma* (we get in fact an
 %overapproximation of gamma*, ensuring feasibility of the next optimization
 %problem)
-lambdaU = lambdaVar;
+lambdaU = sqrt(lambdaVar);
 %we proceed to the bisection to find gamma* (we get in fact an
 %overapproximation of gamma*, ensuring feasibility of the next optimization
 %problem)
 lambdaNext = (lambdaU + lambdaL)/2;
 feasibleLast = false;
 
-while(lambdaU - lambdaL > 0.1 || feasibleLast ~= true)
+while(lambdaU - lambdaL > 0.05 || feasibleLast ~= true)
     Constraints = [];
     Constraints = Constraints + (P_var >= eye(n));
     lambda =  lambdaNext;

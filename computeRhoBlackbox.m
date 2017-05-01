@@ -35,9 +35,9 @@ end
 %computation of delta and the upper bound
 lambdaMax=max(eig(P));
 dP=det(P);
-epsilon1 = min(1,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
+epsilon1 = min(1/2,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
 
-alpha=betaincinv(epsilon1,(n-1)/2,1/2);
+alpha=betaincinv(2*epsilon1,(n-1)/2,1/2);
 
 delta=sqrt(1-alpha);
 upperBound=gammaStar/delta;
