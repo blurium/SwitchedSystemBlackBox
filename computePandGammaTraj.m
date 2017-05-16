@@ -1,4 +1,4 @@
-function [gammaStar, P, lowerBound]=computePandGamma(X, Y)
+function [gammaStar, P, lowerBound]=computePandGammaTraj(X, Y, l)
 lambdaL = 0;
 ops = sdpsettings('solver','sdpt3','verbose','0');
 
@@ -15,7 +15,7 @@ end
 %we proceed to the bisection to find gamma* (we get in fact an
 %overapproximation of gamma*, ensuring feasibility of the next optimization
 %problem)
-lambdaU = sqrt(lambdaVar);
+lambdaU = lambdaVar^(1/(2*l));
 %we proceed to the bisection to find gamma* (we get in fact an
 %overapproximation of gamma*, ensuring feasibility of the next optimization
 %problem)
@@ -27,7 +27,7 @@ while(lambdaU - lambdaL > 0.05 || feasibleLast ~= true)
     Constraints = Constraints + (P_var >= eye(n));
     lambda =  lambdaNext;
     for j=1:N
-        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= lambda^2*X{j}'*P_var*X{j});
+        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= lambda^(2*l)*X{j}'*P_var*X{j});
     end
     sol = optimize(Constraints,Objective,ops);
     if sol.problem==0
@@ -53,8 +53,7 @@ end
 if (flag == 0)
     error('couldnt compute gammastar\n');
 end
-feasibleLast
-lowerBound=lambda/sqrt(n)
+lowerBound=lambda/n^(1/(2*l));
 
 gammaStar=lambda; %this is the value of gamma*(\omega_N) we will use for to find P, delta and the upper bound
 
@@ -63,20 +62,20 @@ Constraints = [];
 Constraints = Constraints + (P_var >= eye(n));
 Objective=lambda_max(P_var); %we want to minize lambda_max(P), while keeping lambda_min(P)>=1
 for j=1:N
-    Constraints = Constraints + (Y{j}'*P_var*Y{j} <= gammaStar^2*X{j}'*P_var*X{j});
+    Constraints = Constraints + (Y{j}'*P_var*Y{j} <= gammaStar^(2*l)*X{j}'*P_var*X{j});
 end
 sol = optimize(Constraints,Objective,ops);
 if sol.problem~=0
     Constraints = [];
     Constraints = Constraints + (P_var >= eye(n));
     for j=1:N
-        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= (gammaStar+0.1)^2*X{j}'*P_var*X{j});
+        Constraints = Constraints + (Y{j}'*P_var*Y{j} <= (gammaStar+0.1)^(2*l)*X{j}'*P_var*X{j});
     end
     sol = optimize(Constraints,Objective,ops);
     if sol.problem~=0
         error('Feasibility problem')
     else
-        lowerBound = (gammaStar+0.1)/sqrt(n);
+        lowerBound = (gammaStar+0.1)/n^(1/(2*l));
         gammaStar = gammaStar + 0.1;
     end
 end

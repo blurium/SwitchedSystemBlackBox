@@ -1,4 +1,4 @@
-function [lowerBound, upperBound, delta] = computeRhoSequentialSampling(A, beta, N, increment)
+function [lowerBound, upperBound, delta] = computeRhoSequentialSamplingTraj(A, beta, N, increment, l)
 m = length(A); % number of modes
 n = size(A{1},1); % number of states
 d = n*(n+1)/2+1;
@@ -20,11 +20,11 @@ for j=1:N %generate uniformly random points of the unit sphere
     v=randn(n,1);
     X{j}=v/sqrt(sum(v.^2));
     k=unidrnd(m); %random uniform generation of the index of the mode applied to sampled point X{j}
-    Y{j}=A{k}*X{j};
+    Y{j}=(A{k}^l)*X{j};
 end
 counter = 1;
 for i = d*2:increment:N
-    [lowerBound(counter), upperBound(counter), delta(counter)] = computeRhoBlackboxGivenXY(A, beta, X(1:i), Y(1:i));
+    [lowerBound(counter), upperBound(counter), delta(counter)] = computeRhoBlackboxGivenXYTraj(A, beta, X(1:i), Y(1:i), l);
     counter = counter +1;
 end
 

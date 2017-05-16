@@ -36,8 +36,9 @@ Also let $\gamma^*(\omega_N)$ be the optimal solution of the following optimizat
 \end{aligned}
 \end{equation}
 Then, we have:
-$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt{n}}.$$ Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}).
+$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt{n}}.$$
 \end{theorem}
+Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}).
 \begin{proof}
 Let $\epsilon >0$. By definition of $\gamma^*$,  there exists no matrix $P \in \calS^n_{++}$ such that:
 \begin{equation*}(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\epsilon)^2x^TPx,\quad \forall x \in \R^n, \forall\, A \in \calM.

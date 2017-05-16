@@ -15,13 +15,9 @@ for i = 1:Nsystems
     
   
     %generate the m modes
-    for j = 1:m(i)
-        v=-5+rand(1,n(i))*10;
-        D = diag(v); % random eigenvalues of the mode i
-        V = orth(randn(n(i)));
-        E = V*D*V';
-        A{j} = E;
-    end
+    maxJSR = 1.5;
+    [A, jsrRaphael] = createRandomSystem(n(i),m(i),maxJSR);
+    
     
     c=jsr_prod_bruteForce(A); %computation of the JSR with brute force method provided by the JSR Toolbox
     upperBound = inf;

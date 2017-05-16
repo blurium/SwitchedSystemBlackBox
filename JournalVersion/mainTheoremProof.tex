@@ -198,45 +198,48 @@ Putting together \eqref{eqn:P2}, \eqref{eqn:P}, and \eqref{eqn:map1} we get the 
 %Then, if we let $E':=L^{-1} V_\sphere$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_\sphere), and the result of the theorem follows.
 \end{proof}
 
-
-\begin{proposition}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and a matrix $P \succ 0$ satisfying:
-\begin{equation}\label{eqn:P0}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
-for some $V \subset Z$ where $\mu(Z \setminus V) \geq 1 - \epsilon$. Then, by defining $L$ as in \eqref{choleski} and $\bar{A_j}=  L^{-1}A_jL$, one also has:
-\begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $\sphere' \subset \sphere$ such that: $\sigma(\sphere') \leq 1 - \epsilon \kappa(P),$
-where $$\kappa(P) = \sqrt{\frac{\lambda_{\min}(P)^n}{\det(P)}}.$$
-\end{proposition}
-
-\begin{proof}Let $\bar{V}_{\sphere} = \pi_{\sphere}(Z \setminus V)$. We know that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $Z \setminus V$ can be written as the disjoint union $Z \setminus V= \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma_{\sphere}$. We notice that 
-$\bar{V}_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
-and
-\begin{equation*}
-\sigma^{n-1} (\bar{V}_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
-\end{equation*}
-We have 
-\begin{eqnarray*}
-\mu(Z \setminus V) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) = \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
- &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
- & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
-\end{eqnarray*}
-Note that we have $\mu_M (\calM_i) \leq 1$, and we get:
-\begin{equation}
-\mu(Z \setminus V) \leq \sigma^{n-1}(\bar{V}_\sphere),
-\end{equation}
-and therefore
-\begin{equation}
-\sigma^{n-1}(\bar{V}_{\sphere}) \geq \mu(Z \setminus V) \geq 1-\epsilon.
-\end{equation}
-This means that 
-\begin{equation}\label{eqn:P2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in \sphere \setminus V_\sphere, \,\forall\, m \in M,\end{equation}
-where $\sigma^{n-1}(S \setminus V_\sphere) \geq 1 - \epsilon$.
-By similar arguments to the previous theorem we get:
-\begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
-for some $\sphere' \subset \sphere$ such that: $\sigma(\sphere' \setminus \sphere) \geq (1 - \epsilon) \kappa_{\min}(P),$
-where $$\kappa_{\min}(P) = \sqrt{\frac{\lambda_{\min}(P)^n}{\det(P)}},$$
-which means $$\sigma(\sphere') \leq 1 - (1 - \epsilon) \kappa_{\min}(P).$$
-\end{proof}
-
+\begin{remark}
+\end{remark}
+%
+%
+%\begin{proposition}\label{thm:mainTheorem01}Let $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and a matrix $P \succ 0$ satisfying:
+%\begin{equation}\label{eqn:P0}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, (x, j) \in Z \setminus V,\end{equation}
+%for some $V \subset Z$ where $\mu(V) \leq \epsilon$. Then, by defining $L$ as in \eqref{choleski} and $\bar{A_j}=  L^{-1}A_jL$, one also has:
+%\begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
+%for some $\sphere' \subset \sphere$ such that: $\sigma(\sphere') \leq 1 - (1-\epsilon) \kappa(P),$
+%where $$\kappa(P) = \sqrt{\frac{\lambda_{\min}(P)^n}{\det(P)}}.$$
+%\end{proposition}
+%
+%\begin{proof}Let $\bar{V}_{\sphere} = \pi_{\sphere}(Z \setminus V)$. We know that $\Sigma_M$ is the disjoint union of its $2^m$ elements $\{\calM_i, i \in \{1,2, \ldots 2^m\} \}$. Then $Z \setminus V$ can be written as the disjoint union $Z \setminus V= \sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)$ where $\calS_i \in \Sigma_{\sphere}$. We notice that 
+%$\bar{V}_{\sphere} = \sqcup_{1 \leq i \leq 2^m} \calS_i$, 
+%and
+%\begin{equation*}
+%\sigma^{n-1} (\bar{V}_{\sphere}) = \sum_{1 \leq i \leq 2^m} \sigma^{n-1} (\calS_i).
+%\end{equation*}
+%We have 
+%\begin{eqnarray*}
+%\mu(Z \setminus V) &=& \mu(\sqcup_{1 \leq i \leq 2^m} (\calS_i, \calM_i)) = \sum_{1 \leq i \leq 2^m} \mu(\calS_i, \calM_i) \\
+% &=& \sum_{1 \leq i \leq 2^m} \sigma^{n-1} \otimes \mu_M (\calS_i, \calM_i) \\
+% & = &\sum_{1 \leq i \leq 2^m} \sigma^{n-1}(\calS_i) \mu_M (\calM_i).
+%\end{eqnarray*}
+%Note that we have $\mu_M (\calM_i) \leq 1$, and we get:
+%\begin{equation}
+%\mu(Z \setminus V) \leq \sigma^{n-1}(\bar{V}_\sphere),
+%\end{equation}
+%and therefore
+%\begin{equation}
+%\sigma^{n-1}(\bar{V}_{\sphere}) \geq \mu(Z \setminus V) \geq 1-\epsilon.
+%\end{equation}
+%This means that 
+%\begin{equation}\label{eqn:P2}(A_j x)^TP(A_j x) \leq {\gamma}^2x^TPx,\,\, \forall\, x \in \sphere \setminus V_\sphere, \,\forall\, m \in M,\end{equation}
+%where $\sigma^{n-1}(S \setminus V_\sphere) \geq 1 - \epsilon$.
+%By similar arguments to the previous theorem we get:
+%\begin{equation*}\label{eqn:thm01-2}(\bar{A_j} x)^T(\bar{A_j} x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, j \in M,\end{equation*}
+%for some $\sphere' \subset \sphere$ such that: $\sigma(\sphere' \setminus \sphere) \geq (1 - \epsilon) \kappa_{\min}(P),$
+%where $$\kappa_{\min}(P) = \sqrt{\frac{\lambda_{\min}(P)^n}{\det(P)}},$$
+%which means $$\sigma(\sphere') \leq 1 - (1 - \epsilon) \kappa_{\min}(P).$$
+%\end{proof}
+%
 %\begin{theorem}\label{thm:mainTheorem1}Let $\epsilon \in (0,1)$ and $\gamma \in \R_{> 0}$. Consider a set of matrices $A \in \calM$, and an ellipsoid $E_P$ satisfying:
 %\begin{equation}\label{eqn:ellipsoid}(A_j x)^TP(A_j x) \leq \gamma^2x^TPx,\,\, \forall\, x \in E_P \setminus E', \forall\, j \in M, \end{equation}
 %for some $E' \subset E$ and $\sigma_P(E') \leq \epsilon$, then we can compute $\bar{\alpha}(\epsilon) > 0$ such that we have:
