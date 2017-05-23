@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAY 2017 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAY 2017 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -608,15 +608,7 @@ LaTeX Warning: Citation `campi' on page 10 undefined on input line 65.
 LaTeX Warning: Citation `rudin' on page 13 undefined on input line 196.
 
 ) (./mainTheoremProof2.tex [13]) (./conclusions.tex [14]) (./appendix.tex
-
-LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 19.
-
-[15]
-
-LaTeX Warning: Citation `boyd' on page 16 undefined on input line 24.
-
-[16] [17]
+[15] [16] [17]
 
 LaTeX Warning: Citation `sphericalCapRef' on page 18 undefined on input line 10
 6.
@@ -628,7 +620,6 @@ r/m/n/10.95 (-20) )$ \T1/cmr/m/n/10.95 (-20) with prob-a-bil-ity 1. Thus, for l
 arge enough $\OML/cmm/m/it/10.95 N$\T1/cmr/m/n/10.95 (-20) , []
  []
 
-[18]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
@@ -643,7 +634,7 @@ Overfull \hbox (13.79253pt too wide) in paragraph at lines 11--13
 /cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 (-20) =
  []
 
-
+[18]
 Overfull \hbox (54.60767pt too wide) in paragraph at lines 19--20
 \T1/cmr/m/n/10.95 (-20) By the con-ti-nu-ity of the func-tion $\OML/cmm/m/it/10
 .95 I[]$ \T1/cmr/m/n/10.95 (-20) this also im-plies: $[][] \OML/cmm/m/it/10.95 
@@ -657,9 +648,6 @@ n/10.95 (-20) ))\OML/cmm/m/it/10.95 ^^O\OT1/cmr/m/n/10.95 (-20) (\OML/cmm/m/it/
 No file main.bbl.
 [19] (./main.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were undefined references.
 
 
@@ -667,15 +655,14 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6224 strings out of 493089
- 92551 string characters out of 6134842
- 181755 words of memory out of 5000000
- 9332 multiletter control sequences out of 15000+600000
- 42847 words of font info for 190 fonts, out of 8000000 for 9000
+ 6179 strings out of 493089
+ 91834 string characters out of 6134842
+ 180742 words of memory out of 5000000
+ 9301 multiletter control sequences out of 15000+600000
+ 38857 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,35p,1683b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,35p,1683b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
@@ -700,10 +687,10 @@ xmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on main.pdf (19 pages, 421766 bytes).
+Output written on main.pdf (19 pages, 412630 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 165 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36358 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 33286 words of extra memory for PDF output out of 35830 (max. 10000000)
 
