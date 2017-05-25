@@ -91,7 +91,12 @@ i.e., it is the set of constraints that are violated by the optimal solution of 
 %\end{proof}
 
 Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates no more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
-This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except a set of measure $\epsilon$. The rest of this section builds on this, and it has two important intermediate results leading us to our main theorem. By exploiting Property \ref{property:convpres}, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when this ``almost invariant" set is the unit sphere, i.e., $\sphere$.
+This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure $\epsilon$. The rest of this section builds on this, and it has two important intermediate results leading us to our main theorem. By exploiting Property \ref{property:convpres} below, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when this ``almost invariant" set is the unit sphere, i.e., $\sphere$.
+
+\begin{property}\label{property:convpres}
+The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
+$$ f(\conv({X}))\subset \conv(f(X)). $$
+\end{property}
 
 \begin{lemma}\label{lemma:epsilon1}Let $\epsilon \in (0, 1)$ and $\gamma \in \R_{> 0}$. Consider the set of matrices $\calM$ and $A \in \calM$ satisfying:
 \begin{equation}\label{eqn:contraction}\textcolor{blue}{(A_{j_1}\ldots A_{j_l}x)^T(A_{j_1}\ldots A_{j_l}x) \leq \gamma^{2l} x^Tx, \quad \forall\, x \in \sphere \setminus \sphere', \forall\,j \in, M,}\end{equation}

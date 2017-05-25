@@ -5,10 +5,12 @@ with $f(k,x_k) = A_{\tau(k)}x_k$ and switching sequence \mbox{$\tau: \N \to M$.}
 \begin{property}\label{property:homogeneity}
 Let $\xi(x, k, \tau)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$ and with switching sequence $\tau$. The dynamical system \eqref{eq:switchedSystem} is homogeneous: $\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau).$
 \end{property}
-\begin{property}\label{property:convpres}
-The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
-$$ f(\conv({X}))\subset \conv(f(X)). $$
-\end{property}
+
+%\begin{property}\label{property:convpres}
+%The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:
+%$$ f(\conv({X}))\subset \conv(f(X)). $$
+%\end{property}
+
 %Under certain conditions, deciding stability amounts to decide whether $\rho<1.$  In order to understand the quality of our techniques, we will actually try to prove lower and upper bounds on $\rho.$ 
 %\textcolor{red}{@Raphael: We need  a theorem about the stability and $\rho<1$ here.}
 %Under certain conditions deciding stability amounts to decide whether $\rho<1.$ 
@@ -27,4 +29,3 @@ Given a finite set of matrices $\mathcal{M}$, and any invertible matrix $T$,
 $$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}),$$
 i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\,$\linebreak$\rho\left(\cM/\gamma\right)=\cM/\gamma$).
 \end{property}
-
