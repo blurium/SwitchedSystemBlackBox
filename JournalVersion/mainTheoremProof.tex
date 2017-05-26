@@ -6,7 +6,7 @@ In Section~\ref{sec:stab}, we have given an optimization problem, \eqref{eqn:cam
 \begin{aligned}
 & \text{min}_P & & \gamma \\
 & \text{s.t.} 
-&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x, \  \forall\ (x, j_1,\dots, j_l) \in \omega_N\\
+&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x \  \forall\ (x, j_1,\dots, j_l) \in \omega_N\\
 & && P \succ 0,\ \gamma \geq 0. \\
 \end{aligned}
 \end{equation}
@@ -48,7 +48,7 @@ Let us analyze the relationship between the solutions of the theoretical optimiz
 & \text{min}_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
 &  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq {((1 +\eta)\gamma^*(\omega_N))}^{2l} x^T P x,\\
-&&&\qquad \qquad \qquad \qquad \quad \qquad \forall (x, j_{1},\dots, j_{l}) \in \omega_N \subset Z_l, \\
+&&&\qquad \qquad \qquad \qquad \quad \qquad \forall (x, j_{1},\dots, j_{l}) \in \omega_N \subset Z_l \\
 & && P \succeq I, \\
 \end{aligned}
 \end{equation}
@@ -179,7 +179,7 @@ The above theorem allows us to conclude, from a finite number of observations, t
 
 Thus, we are left with the following question: ``What can we conclude on the JSR if we can assume that the Lyapunov property is satisfied by all points, except a set of measure $\epsilon$?''
 
-In Theorem~\ref{thm:mainTheorem01} below, we transform this question into a geometric problem, which we now describe.  First, we apply a change of coordinates bringing $E_P$ to $\sphere$. Since $P \in \calS_{++}^n$, it can be written in its Choleski form 
+Let us first give the rationale of our reasoning. In Theorem~\ref{thm:mainTheorem01} below, we transform this question into a geometric problem, which we now describe.  First, we apply a change of coordinates bringing $E_P$ to $\sphere$. Since $P \in \calS_{++}^n$, it can be written in its Choleski form 
 \begin{equation}\label{choleski}
 P = L^TL,
 \end{equation} 
@@ -236,12 +236,13 @@ $$ f(\conv({X}))\subset \conv(f(X)). $$
 
 This leads us to look for the largest ball in $\convhull (S \setminus X_{\epsilon})$. Indeed, by Property~\ref{property:convpres}, we know that the image by our system $f$ of this ball will be in $\convhull (S \setminus X_{\epsilon})$, i.e., the ball will expand in $\ball$ with ratio at most $\frac{1}{\delta}$, where $\delta$ denotes the radius of that largest ball. 
 
-We investigate then the case for which the largest ball included $\convhull (S \setminus X_{\epsilon})$ has the smallest radius, which will maximize our upper bound on the growth of rate of the ball considered, and thus will give us an upper bound on the JSR equal to $\frac{\gamma^{*}}{\delta}$. Minimizing $\delta$ will then give us the worst case set for a given measure $\epsilon$ of points authorized to violate our constraint. This worst case will happen when the set of violating points on $\sphere$ is a spherical cap. Let us define this notion.
+We investigate then the case for which the largest ball included $\convhull (S \setminus X_{\epsilon})$ has the smallest radius, which will maximize our upper bound on the growth of rate of the ball considered, and thus will give us an upper bound on the JSR equal to $\frac{\gamma^{*}}{\delta}$. Minimizing $\delta$ will then give us the worst case set for a given measure $\epsilon$ of points authorized to violate our constraint. This worst case will happen when the set of violating points on $\sphere$ is a spherical cap (see \ref{thm:mainSphericalCap} in the appendix). Let us define this notion.
 
 
 \begin{definition}
 We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
-\begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.\end{equation*}
+\begin{equation*}\calC_{c,k} := \{x \in \sphere : c^Tx >k\}.
+\end{equation*}
 \end{definition}
 
 \begin{center}
@@ -256,20 +257,20 @@ We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k
 \end{tikzpicture}
 \end{center}
 
+For a given spherical cap of area measure $\epsilon$, we can compute a closed form expression of the radius of the corresponding largest ball. We denote by $\alpha$ the function that associates to each $\epsilon \in [0,1]$ the value of this radius. We have an expression for $\alpha$ given by the following lemma (see the appendix for details of its proof).
 
+\begin{lemma}\label{lemma:eps}
+Let $\epsilon \in (0, \frac{1}{2})$ and $\alpha: (0,1) \to \R_{\geq 0}$ be defined by:
+\begin{equation}\label{eqn:ballinc}
+\alpha(\epsilon) := \inf_{X \in \calX_\epsilon} \sup\{r: r\ball \subset \convhull(\sphere \setminus X)\},
+\end{equation}
+where $\calX_{\epsilon} = \{X \subset \sphere: \sigma^{n-1}(X) \leq \epsilon\}$. Then, $\alpha(\epsilon)$ is given by the formula:
+\begin{equation}\label{eqn:alphaEpsilon}
+\alpha(\epsilon) = \sqrt{1- I^{-1}\left(2\epsilon; \frac{n-1}{2}, \frac{1}{2}\right)}, \end{equation}
+where $I$ is the regularized incomplete beta function.
+\end{lemma}
 
-Raphael:
-"In Figure X we illustrate this problem with $X$ being the union of two \emph{spherical caps.}}
-
-Then, we define the function alpha in terms of the volume of a spherical cap of surface epsilon.  I would say that it can be computed numerically thanks to simple expressions of well known canonical functions (see appendix.)
-
-Then I would end by saying 
-'It turns out that spherical caps are actually the worst case for our problem above, more precisely: 
-cite lemma A.3/proposition A.4, currently in appendix, ( I actually don't see the difference), saying that the proof is in appendix
-
-I'd leave in appendix the computations in lemma A.5, (and maybe also the formula?)"
-
-
+Since $f$ is homogeneous, we will have in fact $X_{\epsilon}$ union of two spherical caps, each of measure $\frac{\epsilon}{2}$. We illustrate the problem when $X_{\epsilon}$ is a this form.
 
 \begin{center}
 \begin{tikzpicture}
@@ -289,9 +290,7 @@ I'd leave in appendix the computations in lemma A.5, (and maybe also the formula
 \end{center}
 
 
-
-
-By exploiting Property \ref{property:convpres} above, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when the ``almost invariant" set is the unit sphere $\sphere$.
+Let us now formally prove the transformation of our initial problem to the geometric one. By exploiting Property \ref{property:convpres} above, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when the ``almost invariant" set is the unit sphere $\sphere$.
 
 \begin{lemma}\label{lemma:epsilon1}
 Let $\epsilon \in (0, 1)$ and $\gamma \in \R_{> 0}$. Consider the set of matrices $\calM$ and $A \in \calM^l$ satisfying:
@@ -382,19 +381,29 @@ Note that we have $\min_{(j_1,\dots,j_l) \in M^l} \mu_{M^l}(\{j_1,\dots,j_l\}) =
 \sigma^{n-1}(V_{\sphere}) \leq \frac{\mu_l(V)}{\frac{1}{m^l}} \leq m^l \epsilon.
 \end{equation}
 This means that 
-\begin{equation}\label{eqn:P2}(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x,\,\, \forall\, x \in \sphere \setminus V_\sphere, \,\forall\, (j_1,\dots,j_l) \in M^l,
+\begin{equation}\label{eqn:P2}
+(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x,\,\, \forall\, x \in \sphere \setminus V_\sphere, \,\forall\, (j_1,\dots,j_l) \in M^l,
 \end{equation}
 where $\sigma^{n-1}(V_\sphere) \leq m^l \epsilon.$
 
-We then perform the change of coordinates defined by $L^{-1} \in \calL(\R^n)$ which maps $\sphere$ to $E_P$, defined as in \eqref{choleski}. We can then rewrite
+We then perform the change of coordinates defined by $L^{-1} \in \calL(\R^n)$ which maps $\sphere$ to $E_P$, defined as in \eqref{choleski}. By defining $\bar{A_{j_i}}=  L^{-1} A_{j_i} L$, one has:
+\begin{equation*}\label{eqn:thm01-2}
+(\bar{A_{j_l}} \bar{A_{j_{l-1}}} \dots \bar{A_{j_1}} x)^T (\bar{A_{j_l}} \bar{A_{j_{l-1}}} \dots \bar{A_{j_1}} x) \leq {\gamma}^{2l} x^T x,\,\, \forall\, x \in \sphere \setminus \sphere', \forall\, (j_1,\dots,j_l) \in M^l.
+\end{equation*}
+We can then rewrite
 \eqref{eqn:P2} in this new coordinates system as in: 
-\begin{equation}(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in E_P\setminus L^{-1}(V_\sphere), \,\forall\, m \in M.\end{equation}
+\begin{equation}
+(\bar{A_{j_l}} \bar{A_{j_{l-1}}} \dots \bar{A_{j_1}} x)^T (\bar{A_{j_l}} \bar{A_{j_{l-1}}} \dots \bar{A_{j_1}} x) \leq {\gamma}^{2l} x^T x,\,\, \forall\, x \in E_P\setminus L^{-1}(V_\sphere), \,\forall\, (j_1,\dots,j_l) \in M^l.
+\end{equation}
 
 Due to the  the homogeneity of the dynamics described in Property \ref{property:homogeneity}, this implies:
 \begin{equation}\label{eqn:P}
-(\bar{A}_j x)^T(\bar{A}_j x) \leq {\gamma}^2x^Tx,\,\, \forall\, x \in \sphere\setminus \proj_\sphere(L^{-1}(V_\sphere)), \,\forall\, m \in M.
+(\bar{A_{j_l}} \bar{A_{j_{l-1}}} \dots \bar{A_{j_1}} x) \leq \gamma^{2l} x^T x,\,\, \forall\, x \in \sphere \setminus \proj_\sphere(L^{-1}(V_\sphere)), \,\forall\, (j_1,\dots,j_l) \in M^l.
 \end{equation}
-
+Thanks to the Property~\ref{rem:scaling}, we even have:
+\begin{equation}\label{eqn:P1}
+(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T x,\,\, \forall\, x \in \sphere \setminus \proj_\sphere(L^{-1}(V_\sphere)), \,\forall\, (j_1,\dots,j_l) \in M^l.
+\end{equation}
 %We now show how to relate $\sigma^{n-1}({V_\sphere})$ to $\sigma^{n-1}(\proj_\sphere(L^{-1}(V_\sphere)))$. Note that, since $L \in \calL({\R^n})$ by Remark \ref{rem:mappingMeasures} we have:
 %\begin{equation}\label{eqn:det}\sigma_P(L^{-1}(V_\sphere)) = |\det(L^{-1})| \sigma^{n-1}(V_\sphere).\end{equation}
 
@@ -408,11 +417,12 @@ $$\sigma^{n-1}(V') = \lambda(\sphere^{V'}) \leq \lambda (\calH_{1/ \lambda_{\min
 where \eqref{eqn:lt} follows from the fact that
 $$ \lambda(Q(X)) = |\det(Q)| \lambda(X),$$
 for any set $X \subset \R^n$ and $Q \in \calL(\R^n)$ (see e.g. \cite{rudin}).
-Putting together \eqref{eqn:P2}, \eqref{eqn:P}, and \eqref{eqn:map1} we get the statement of the theorem where $\sphere' = \proj_\sphere(L^{-1}(V_\sphere)).$
+Putting together \eqref{eqn:P2}, \eqref{eqn:P1}, and \eqref{eqn:map1} we get the statement of the theorem where $\sphere' = \proj_\sphere(L^{-1}(V_\sphere)).$
 %Then, if we let $E':=L^{-1} V_\sphere$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_\sphere), and the result of the theorem follows.
 \end{proof}
 
 \begin{remark}
+We are now ready to prove our main theorem by putting together all the above pieces. For a given level of confidence $\beta,$ we prove that the upper bound $\gamma^{*}(\omega_N)$, which is valid solely on finitely many observations, is in fact a true upper bound, at the price of increasing it by the factor $\frac{1}{\delta(\beta, \omega_N)}$. Moreover, as expected, this factor gets smaller as we increase $N$ and decrease $\beta$.
 \end{remark}
 %
 %

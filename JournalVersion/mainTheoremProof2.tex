@@ -1,16 +1,15 @@
 % !TEX root = main.tex
-We are now ready to prove our main theorem by putting together all the above pieces. For a given level of confidence $\beta,$ we prove that the upper bound $\gamma^*(\omega_N)$, which is valid solely on finitely many observations, is in fact a true upper bound, at the price of increasing it by the factor $\frac{1}{\delta(\beta, \omega_N)}$. Moreover, as expected, this factor gets smaller as we increase $N$ and decrease $\beta$.
 
 \begin{theorem}\label{thm:mainTheorem}
-Consider an $n$-dimensional switched linear system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z_l$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^*(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt03}. Then, for any given $\beta \in (0,1)$ and $\eta > 0$, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
-$$\rho \leq \frac{\gamma^*(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
+Consider an $n$-dimensional switched linear system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z_l$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^{*}(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt03}. Then, for any given $\beta \in (0,1)$ and $\eta > 0$, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+$$\rho \leq \frac{\gamma^{*}(\omega_N) (1+ \eta)}{\delta(\beta, \omega_N)},$$
 where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
 \end{theorem}
 
 
 \begin{proof}
 
-By definition of $\gamma^*(\omega_N)$ we have:
+By definition of $\gamma^{*}(\omega_N)$ we have:
 
 \begin{equation*} 
 (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*}(1+\eta))^{2l} x^T P x, \quad \forall\ (x, j_1, \dots, j_l)  \in \omega_N 
@@ -31,24 +30,19 @@ Then, by Theorem~\ref{mainTheorem0}, with probability at least $\beta$ the follo
 
 By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
 
-%\begin{equation}
-%
-%(\bar{A}_{j_1} \dots \bar{A}_{j_l} x)^T (\bar{A}_{j_1} \dots \bar{A}_{j_l} x) \leq ( \gamma^{*}(1+\eta) )^{2l} x^T x, \, \forall x \in \sphere \setminus \sphere', \v\forall\ j_i \in M,
-%
-%\end{equation}
+\begin{equation}
+%(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq ( \gamma^{*}(1+\eta) )^{2l} x^T x, \, \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1,\dots,j_l) \in M^l,
+\end{equation}
 
 for some $\sphere'$ where $\sigma^{n-1}(\sphere') \leq m^l \epsilon \kappa(P)$. Then, applying Lemma~\ref{lemma:epsilon1}, we can compute
 $$\delta(\beta, \omega_N) =\alpha(\epsilon'(\beta,N)),$$
 where
-
 \begin{equation}\label{eqn:eps2}
 \epsilon'(\beta, N) = \frac{1}{2} m^l \kappa(P) \epsilon(\beta,N)
 \end{equation} 
-
 such that with probability at least $\beta$ we have:
-
 \begin{equation*}
-(\bar{A}_{j_1} \dots \bar{A}_{j_l}) \ball \subset \frac{\gamma^{*}(\omega_N)(1+\eta)}{\delta(\beta, \omega_N)}\ball,\, \forall\, j \in M,
+A_{j_l} A_{j_{l-1}} \dots A_{j_1} (\ball) \subset \frac{(\gamma^{*}(\omega_N)(1+\eta))^l}{\delta(\beta, \omega_N)}\ball,\, \forall\, (j_1,\dots,j_l) \in M^l,
 \end{equation*}
 
 By Property \ref{rem:scaling}, this means that with probability at least $\beta$:
