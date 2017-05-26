@@ -1,5 +1,24 @@
 % !TEX root = main.tex
-In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in (0, 1)$. We do this by constructing a\rmj{n $l$-step CQLF} which is valid with probability at least $\beta$. Note that, the existence of a\rmj{n $l$-step CQLF} implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf}.
+In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in (0, 1)$. We do this by constructing a $l$-step CQLF which is valid with probability at least $\beta$. Note that, the existence of a $l$-step CQLF implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf}.
+
+In Section~\ref{sec:stab}, we have given an optimization problem, \eqref{eqn:campiOpt2}, that provides a stability guarantee. Nevertheless, solving this problem as stated is not possible since it involves infinitely many constraints. We consider then the following optimization problem:
+\begin{equation}\label{eq:lowerbound}
+\begin{aligned}
+& \text{min}_P & & \gamma \\
+& \text{s.t.} 
+&  & (x_l^i)^T P (x_l^i) \leq \gamma^{2l} (x_0^i)^T Px_0^i, \  \forall\ (x_0^i, \dots, x_l^i) \in W_{\omega_N}\\
+& && P \succ 0,\ \gamma \geq 0. \\
+\end{aligned}
+\end{equation}
+
+Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}). Let us denote from now by $\gamma^*(\omega_N)$ the optimal solution of this problem, which we will use to compute a (probabilistic) upper bound on the JSR.
+
+
+
+
+
+%In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in (0, 1)$. We do this by constructing a\rmj{n $l$-step CQLF} which is valid with probability at least $\beta$. Note that, the existence of a\rmj{n $l$-step CQLF} implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf}.
+
 %Therefore, to obtain an upper bound on $\rho$, we consider the following optimization problem:
 %\begin{equation}\label{eqn:campiOpt0}
 %\begin{aligned}
@@ -10,7 +29,7 @@ In this section, we show how to compute an upper bound on $\rho$, with a user-de
 %\end{aligned}
 %\end{equation}
 %Note that, for all $A \in \calM$ the optimal $P$ and the optimal $\gamma$ for the Problem \eqref{eqn:campiOpt0} satisfies: $\frac{A}{\gamma}^TP\frac{A}{\gamma} \preceq P$. Therefore, $\rho\left(\frac{\calM}{\gamma}\right) \leq 1$, which leads to the upper bound $\rho\left(\calM \right) \leq \gamma$.
-Even though the solution of the optimization problem in \eqref{eqn:campiOpt0} provides a \rmj{stability guarantee}, solving this problem as stated is not possible since it involves infinitely many constraints. Nevertheless, we show that the solution of the optimization problem \eqref{eq:lowerbound} allows us to not only compute a lower bound, but also a (probabilistic) upper bound on the JSR.
+
 % Therefore, we instead sample $N$ initial states and modes uniformly random from the set $Z :=\sphere \times M$, and solve the following optimization problem with finitely many constraints instead:
 %\begin{equation}\label{eqn:campiOpt00}
 %\begin{aligned}
@@ -22,21 +41,22 @@ Even though the solution of the optimization problem in \eqref{eqn:campiOpt0} pr
 %\end{equation}
 %where $\omega_N$ is a $N$-uniform random sampling of the set \mbox{$Z:=\sphere \times M$}.
 %Note that, since \eqref{eqn:campiOpt00} is convex for a fixed $\gamma$, we can perform bisection on $\gamma$ and solve a series of feasibility problems in $P$ instead. 
-We now analyze the relationship between the solutions of the \rmj{theoretical optimization problem \eqref{eqn:campiOpt0} and the practical version, with finitely many constraints.  Even though in practice, one would solve the optimization problem  \eqref{eq:lowerbound} as suggested above, for the sake of rigor and clarity of our proofs, we introduce a slighly different optimization problem.  In this optimization problem, an objective function is considered, and a `regularization parameter' $\eta > 0$ is added.  As the reader will see, we will derive results valid for arbitrarily small values of $\eta,$ and so this will not hamper the practical accuracy of our technique, but it will allow us to derive a theoretical asymptotic guarantee (i.e. for large number of observations).
-\begin{equation}\label{eqn:campiOpt01}
+Let us analyze the relationship between the solutions of the theoretical optimization problem \eqref{eqn:campiOpt2} and the practical version \eqref{eq:lowerbound}, with finitely many constraints. Even though in practice, one would solve the optimization problem  \eqref{eq:lowerbound} as suggested above, for the sake of rigor and clarity of our proofs, we introduce a slighly different optimization problem. In this new optimization problem, an objective function is considered, and a ``regularization parameter'', $\eta > 0$, is added. As the reader will see, we will derive results valid for arbitrarily small values of $\eta$, and so this will not hamper the practical accuracy of our technique, while allowing us to derive a theoretical asymptotic guarantee (i.e. for large number of observations).
+
+\begin{equation}\label{eqn:campiOpt03}
 \begin{aligned}
 & \text{min}_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
 &  & (A_{j_{1}}\dots A_{j_{l}}x)^TP(A_{j_{1}}\dots A_{j_{l}}x) \leq {((1 +\eta)\gamma^*(\omega_N))}^{2l} x^TPx,\\
-&&&\qquad \qquad \qquad \qquad \quad \qquad \forall (x, j_{1}\dots j_{l}) \in \omega_N \subset Z, \\
+&&&\qquad \qquad \qquad \qquad \quad \qquad \forall (x, j_{1}\dots j_{l}) \in \omega_N \subset Z_l, \\
 & && P \succeq I, \\
 \end{aligned}
-\end{equation}}
-where \rmj{$Z:=\sphere \times M^l$}, $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal solution to the optimization problem \eqref{eq:lowerbound}. Recall that $\omega_N$ is an $N$-uniform random sampling of the set $Z$. Note that, instead of the set $\R^n$ we sample on the unit sphere $\sphere$. This is due to Property \ref{property:homogeneity}, since it implies that it is sufficient to show the decrease of a CQLF on \rmj{an arbitrary set} enclosing the origin, e.g., $\sphere$.
+\end{equation}
+where $Z_l:= \sphere \times M^l$, $\eta > 0$, and $\gamma^*(\omega_N)$ is the optimal solution to the optimization problem \eqref{eq:lowerbound}. Recall that $\omega_N$ is a given uniform random sample on the set $Z_l$ and of size $N$. 
 
-For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt01} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt01}. Firstly, due to Property \ref{property:homogeneity}, we can replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt01}, which will be helpful in the following discussion.
+For the rest of the discussion, we refer to the optimization problem \eqref{eqn:campiOpt03} by $ \Opt(\omega_N)$. We denote its optimal solution by $P(\omega_N)$. We drop the explicit dependence of $P$ on $\omega_N$ when it is clear from the context. There are a few points that are worth noting about \eqref{eqn:campiOpt03}. Firstly, due to Property \ref{property:homogeneity}, we can replace the constraint $P \succ 0$ with the constraint $P \succeq I$. Moreover, for reasons that will become clear later in the discussion, we chose the objective function as $\lambda_{\max}(P)$, instead of solving a feasibility problem in $P$. Lastly, the additional $\eta$ factor is introduced to ensure strict feasibility of \eqref{eqn:campiOpt03}, which will be helpful in the following discussion.
 
-The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt0} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the proportion of the constraints of the original problem \eqref{eqn:campiOpt0} that are violated by the optimal solution of \eqref{eqn:campiOpt01}, with some probability which is a function of the sample size $N$. 
+The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt1} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the proportion of the constraints of the original problem \eqref{eqn:campiOpt1} that are violated by the optimal solution of \eqref{eqn:campiOpt02}, with some probability which is a function of the sample size $N$. 
 
 %\begin{definition}(from \cite{campi}) Consider the optimization problem $\Opt(\omega_N)$ where the set of constraints $\omega_N$ is randomly sampled according to a measure $\mu$. We define the \emph{constraint violation probability} as:
 %\begin{equation}\label{eqn:violation0}
@@ -62,11 +82,16 @@ The curious question whether the optimal solution of the sampled problem $\Opt(\
 %\end{theorem}
 %Note that, $\epsilon$ is a constant can be interpreted as the ratio of the measure of points in $Z$ that might violate at least one of the constraints in \eqref{eqn:campiOpt01} to the measure of all points in $Z$.
 In the following theorem, we adapt a classical result from random convex optimization literature to our problem.
+
+\textcolor{red}{Shoud I write there the 2 assumptions uniqueness+nondegeneracy}
+
 \begin{theorem}[adapted from Theorem 3.3, \cite{campi}]\label{mainTheorem0}
-Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt01}, where $\omega_N$ is a uniform random sampling of the set $Z$.
+Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt02}, where $\omega_N$ is a uniform random sample drawn from the set $Z_l$.
 Then, for all $\epsilon \in (0,1)$ the following holds:
-\begin{equation}\label{eqn:violation}\mu^N\hspace{-1mm}\left\{ \omega_N \in Z^N: \mu(V(\omega_N)) \leq \epsilon \right\}\hspace{-1mm} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j},\end{equation}
-where $\mu^N$ denotes the product probability measure on $Z^N$, and $V(\omega_N)$ is defined by \rmj{$$V(\omega_N) = \{z \in Z: (A_{j_{1}}\dots A_{j_{l}} z)^TP(\omega_N)(A_{j_{1}}\dots A_{j_{l}} z) > \gamma^*z^TP(\omega_N)z\},$$}
+\begin{equation}\label{eqn:violation}
+\mu_l^N\hspace{-1mm}\left\{ \omega_N \in Z_l^N: \mu_l(V(\omega_N)) \leq \epsilon \right\}\hspace{-1mm} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\epsilon^j (1-\epsilon)^{N-j},\end{equation}
+where $\mu_l^N$ denotes the product probability measure on $Z_l^N$, and $V(\omega_N)$ is defined by 
+$$V(\omega_N) := \{z=(x,j_{1},\dots,j_{l}) \in Z_l: (A_{j_{1}}\dots A_{j_{l}} x)^T P(\omega_N)(A_{j_{1}}\dots A_{j_{l}} x) > \gamma^{*} x^T P(\omega_N) x\},$$
 i.e., it is the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$.
 \end{theorem}
 
@@ -90,8 +115,40 @@ i.e., it is the set of constraints that are violated by the optimal solution of 
 %The objective function of \eqref{eqn:campiOpt2} is linear while each constraint is convex in $P$ for all $z \in Z$. Also note that, the set of decision variables is in $\R^{\frac{n(n+1)}{2}+1}.$  Then, we can invoke Theorem 3.3 in \cite{campi} with the optimization problem \eqref{eqn:campiOpt2} to conclude the statement of the theorem, with $d=\frac{n(n+1)}{2}+1.$
 %\end{proof}
 
-Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates no more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt0} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity.
-This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure $\epsilon$. The rest of this section builds on this, and it has two important intermediate results leading us to our main theorem. By exploiting Property \ref{property:convpres} below, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when this ``almost invariant" set is the unit sphere, i.e., $\sphere$.
+Theorem \ref{mainTheorem0} states that the optimal solution of the sampled problem $\Opt(\omega_N)$ violates no more than an $\epsilon$ fraction of the constraints in the original optimization problem  \eqref{eqn:campiOpt1} with probability $\beta$, where $\beta$ goes to $1$ as $N$ goes to infinity. This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure $\epsilon$. The rest of this section builds on this, and it has two important intermediate results leading us to our main theorem. By exploiting Property \ref{property:convpres} below, we first show in Lemma \ref{lemma:epsilon1} how one can compute an upper bound on the JSR when this ``almost invariant" set is the unit sphere $\sphere$.
+
+
+
+%
+%
+%here we could define properly the problem we have, namely 
+%'The above theorem allows us to conclude, from a finite number of observations, that the required property is actually true for the complete S, except a small set, whose measure we can bound by a number $\epsilon.$  Thus, we are left with the following question: `What can we conclude on the JSR if we can assume that the Lyapunov property is satisfied by all points, except a set of measure $\epsilon?$'
+%
+%In Theorem [currently Proposition 4.3] below, we transform this question into a geometric problem, which we now describe.
+%We are given a subset X of the sphere, and we want to include the largest ball in $\convhull (S \setminus X). In Figure X we illustrate this problem with $X$ being the union of two \emph{spherical caps.}
+%
+%Then come two definitions:
+% I would define here a spherical cap, motivating it by saying that it is our worst case set for a given measure. 
+%Then, we define the function alpha in terms of the volume of a spherical cap of surface epsilon.  I would say that it can be computed numerically thanks to simple expressions of well known canonical functions (see appendix.)
+%
+%Then I would end by saying 
+%'It turns out that spherical caps are actually the worst case for our problem above, more precisely: 
+%cite lemma A.3/proposition A.4, currently in appendix, ( I actually don't see the difference), saying that the proof is in appendix
+%
+%I'd leave in appendix the computations in lemma A.5, (and maybe also the formula?)
+%
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{property}\label{property:convpres}
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \R^n$ we have:

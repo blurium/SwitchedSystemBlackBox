@@ -89,6 +89,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}{Problem}[section]
 
 %\newenvironment{definition}[1][Definition]{\begin{trivlist}
 %\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
@@ -119,29 +120,29 @@ We show that, for a given (randomly generated) set of observations, one can give
 \begin{subsection}{Notation}
 \input{Preliminaries} 
 \end{subsection}
-\begin{subsection}{Stability of Switched Linear Systems}
+\begin{subsection}{Stability of Switched Linear Systems}\label{sec:stab}
 \input{stability}
 \end{subsection}
-%\begin{subsection}{Problem Formulation)
-%\input{Formulation}
-%\end{subsection}
-\end{section}
-
-\begin{section}{A Deterministic Lower Bound for the JSR}
-\label{sec:lowerbound}
-\input{lowerBound}
+\begin{subsection}{Problem Formulation}
+\input{formulation}
+\end{subsection}
 \end{section}
 
 \begin{section}{A Probabilistic Stability Guarantee}
 \label{sec:upperbound}
 \input{mainTheoremProof}
 \input{mainTheoremProof2}
+\end{section}
 
 %\begin{subsection}{Proving Theorem \ref{thm:mainTheorem0}}
 %\input{campiIntro}
 %\input{measureThms}
 %\input{epsilonToDelta}
 %\end{subsection}
+
+\begin{section}{A Deterministic Lower Bound for the JSR}
+\label{sec:lowerbound}
+\input{lowerBound}
 \end{section}
 
 \begin{section}{Experimental Results}

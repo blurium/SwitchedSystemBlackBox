@@ -27,5 +27,65 @@ Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamic
 \begin{property}[Proposition 1.3, \cite{jungers_lncis}]\label{rem:scaling}
 Given a finite set of matrices $\mathcal{M}$, and any invertible matrix $T$, 
 $$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}),$$
-i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall \gamma > 0,\,$\linebreak$\rho\left(\cM/\gamma\right)=\cM/\gamma$).
+i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall\  \gamma > 0$, $\rho \left(\cM/\gamma \right) = \cM/\gamma$).
 \end{property}
+
+
+%We start by computing a lower bound for $\rho$ which is based on the following theorem from the switched linear systems literature.
+
+\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
+For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM,\, A^TPA\preceq P. $$
+\end{theorem}
+
+CQLFs are useful because they can be computed (if they exist) with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.
+
+\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist some $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
+\end{theorem}
+
+Note that the smaller $\alpha$ is, the tighter is the upper bound we get on $\rho(\cM)$. Therefore, we could consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
+\begin{equation}\label{eqn:campiOpt0}
+\begin{aligned}
+& \text{min}_{\gamma, P} & & \gamma\\
+& \text{s.t.} 
+&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall\ A \in \calM, \,\forall\, x \in \R^n,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+%where we were able to replace the condition $\forall\,x \in \R^n$ with $\,\forall\, x \in \sphere$, where $\sphere$ is the unit sphere. This is thanks to the Property \ref{property:homogeneity} which implies that it is sufficient to show that a CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere. 
+
+%Even though this upper bound is more difficult to obtain in a black-box setting where only a finite number of observations are available, in this section we leverage Theorem \ref{thm:john} in order to derive a straightforward lower bound.
+
+Note that, instead of considering the set of constraints $x$ as being all $\R^n$, we could restrict it to the unit sphere $\sphere$. This is due to Property \ref{property:homogeneity}, since it implies that it is sufficient to show the decrease of a CQLF on an arbitrary set enclosing the origin, e.g., $\sphere$. Hence, we consider from now the following optimization problem, with its optimal solution that will also be $\gamma^{*}$:
+
+\begin{equation}\label{eqn:campiOpt1}
+\begin{aligned}
+& \text{min}_{\gamma, P} & & \gamma \\
+& \text{s.t.} 
+&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall\ A \in \calM, \,\forall\, x \in \sphere,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+
+
+
+The two theorems above provide us with a \emph{converse Lyapunov result:} if there exists a CQLF, then our system is stable. If, on the contrary, there is no such stability guarantee, one may conclude a lower bound on the JSR. By combining these two results, one obtains an approximation algorithm for the JSR: the upper bound $\gamma^*$ obtained above is within an error factor of $\frac{1}{\sqrt{n}}$ of the true value. It turns out that one can still refine this technique, in order to improve the error factor, and asymptotically get rid of it. This is a well-known technique for the ``white-box'' computation of the JSR, which we summarize in the following corollary:
+
+\begin{corollary}\label{cor:approx-products}
+For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt[2l]{n}},$ there exists a CQLF for $$\cM^l:=\{A_{i_1},\dots, A_{i_{l}}:A_i\in\cM\},$$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM^l,\, A^TPA\preceq P. $$
+\end{corollary}
+
+\begin{proof}
+It is easy to see from the definition of the JSR that $$\rho(\cM^l)=\rho(\cM)^l.$$ Thus, applying Theorem \ref{thm:john} to $\cM^l,$ one directly obtains the corollary.
+\end{proof}
+
+
+We can then consider from now, for any $l \in \N_{>0}$, the following optimization problem, whose solution $\gamma^{*}$ will be an upper bound on $\rho(\cM)$:
+
+\begin{equation}\label{eqn:campiOpt2}
+\begin{aligned}
+& \text{min}_{\alpha, P} & & \gamma \\
+& \text{s.t.} 
+&  & (Ax)^TP(Ax) \leq \gamma^{2l} x^TPx,\,\forall\ A \in \calM^l, \,\forall\, x \in \sphere,\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
