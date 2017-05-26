@@ -1,63 +1,65 @@
 % !TEX root = main.tex
-We start by computing a lower bound for $\rho$ which is based on the following theorem from the switched linear systems literature.
-\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
-For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM,\, A^TPA\preceq P. $$
-\end{theorem}
+%We start by computing a lower bound for $\rho$ which is based on the following theorem from the switched linear systems literature.
 
-CQLFs are useful because they can be computed (if they exist) with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
-\end{theorem}
+%\begin{theorem}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
+%For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $\cM,$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM,\, A^TPA\preceq P. $$
+%\end{theorem}
+%
+%CQLFs are useful because they can be computed (if they exist) with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.\begin{theorem}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} Consider a finite set of matrices $\cM$. If there exist a $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \calM, A^TPA \preceq \gamma^2P,$$ then $\rho(\cM) \leq \gamma$.
+%\end{theorem}
+%
+%
+%Note that the smaller $\gamma$ is, the tighter is the upper bound we get on $\rho(\cM)$. Therefore, we can consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
+%\begin{equation}\label{eqn:campiOpt0}
+%\begin{aligned}
+%& \text{min}_{\gamma, P} & & \gamma \\
+%& \text{s.t.} 
+%&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall\ A \in \calM, \,\forall\, x \in \R^n,\\
+%& && P \succ 0. \\
+%\end{aligned}
+%\end{equation}
+%%where we were able to replace the condition $\forall\,x \in \R^n$ with $\,\forall\, x \in \sphere$, where $\sphere$ is the unit sphere. This is thanks to the Property \ref{property:homogeneity} which implies that it is sufficient to show that a CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere. 
+%
+%Even though this upper bound is more difficult to obtain in a black-box setting where only a finite number of observations are available, in this section we leverage Theorem \ref{thm:john} in order to derive a straightforward lower bound.
+%
+%\rmj{The two theorems above provide us with a \emph{converse Lyapunov result:} if there exists a CQLF, then our system is stable.  If, on the contrary, there is no such stability guarantee, one may conclude a lower bound on the JSR. By combining these two results, one obtains an approximation algorithm for the JSR: the upper bound $\gamma^*$ obtained above is within an error factor of $1/\sqrt(n)$ of the true value.  It turns out that one can still refine this technique, in order to improve the error factor, and asymptotically get rid of it.  This is a well known technique for the `white-box' computation of the JSR, which we summarize in the following corollary:
+% \begin{corollary}\label{cor:approx-products}
+%For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt[2l]{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $$\cM^l:=\{A_{i_1},\dots, A_{i_{l}}:A_i\in\cM\},$$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM^l,\, A^TPA\preceq P. $$
+%\end{corollary}
+%\begin{proof}
+%It is easy to see from the definition of the JSR that $$\rho(\cM^l)=\rho(\cM)^l.$$ Thus, applying Theorem \ref{thm:john} to $\cM^l,$ one directly obtains the corollary.
+%\end{proof}
 
+%%%%%We are now able to proceed with the main result of this section, which leverages the fact that necessary conditions for} the existence of a CQLF for \eqref{eq:switchedSystem} can be \rmj{obtained by considering a finite number of pairs $(x_i, x_{i+l}) \in \R^n .$} Recall that in our setting, we assume that we observe pairs of the form $(x_k,x_{k+1})$ \rmj{(or $(x_k,x_{k+l})$ for some $l\in \N$)} but we do not observe the mode applied to the system during this time step.
 
-Note that the smaller $\gamma$ is, the tighter is the upper bound we get on $\rho(\cM)$. Therefore, we can consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
-\begin{equation}\label{eqn:campiOpt0}
-\begin{aligned}
-& \text{min}_{\gamma, P} & & \gamma \\
-& \text{s.t.} 
-&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall\ A \in \calM, \,\forall\, x \in \R^n,\\
-& && P \succ 0. \\
-\end{aligned}
-\end{equation}
-%where we were able to replace the condition $\forall\,x \in \R^n$ with $\,\forall\, x \in \sphere$, where $\sphere$ is the unit sphere. This is thanks to the Property \ref{property:homogeneity} which implies that it is sufficient to show that a CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere. 
-
-Even though this upper bound is more difficult to obtain in a black-box setting where only a finite number of observations are available, in this section we leverage Theorem \ref{thm:john} in order to derive a straightforward lower bound.
-
-\rmj{The two theorems above provide us with a \emph{converse Lyapunov result:} if there exists a CQLF, then our system is stable.  If, on the contrary, there is no such stability guarantee, one may conclude a lower bound on the JSR. By combining these two results, one obtains an approximation algorithm for the JSR: the upper bound $\gamma^*$ obtained above is within an error factor of $1/\sqrt(n)$ of the true value.  It turns out that one can still refine this technique, in order to improve the error factor, and asymptotically get rid of it.  This is a well known technique for the `white-box' computation of the JSR, which we summarize in the following corollary:
- \begin{corollary}\label{cor:approx-products}
-For any finite set of matrices such that $\rho(\cM)<\frac{1}{\sqrt[2l]{n}},$ there exists a Common Quadratic Lyapunov Function (CQLF) for $$\cM^l:=\{A_{i_1},\dots, A_{i_{l}}:A_i\in\cM\},$$ that is, a $P\succ 0$ such that: $$\forall\ A\in \cM^l,\, A^TPA\preceq P. $$
-\end{corollary}
-\begin{proof}
-It is easy to see from the definition of the JSR that $$\rho(\cM^l)=\rho(\cM)^l.$$ Thus, applying Theorem \ref{thm:john} to $\cM^l,$ one directly obtains the corollary.
-\end{proof}
-
-We are now able to proceed with the main result of this section, which leverages the fact that necessary conditions for} the existence of a CQLF for \eqref{eq:switchedSystem} can be \rmj{obtained by considering a finite number of pairs $(x_i, x_{i+l}) \in \R^n .$} Recall that in our setting, we assume that we observe pairs of the form $(x_k,x_{k+1})$ \rmj{(or $(x_k,x_{k+l})$ for some $l\in \N$)} but we do not observe the mode applied to the system during this time step.
 %The existence of a CQLF for our (potentially scaled) blackbox system is certainly something we can check: after collecting $N$ observations, one can solve the following optimization problem efficiently. 
 %
 
 %Indeed, when $\lambda $ is fixed, the problem is a set of LMIs, and $\lambda $ can be optimized by bisection.
-\rmj{
-In the next theorem, we provide a lower bound based on these observations, whose accuracy depends on the `horizon' $l.$
+
+In this section, we start by providing a theorem for a deterministic lower bound based on the observations $W_{\omega_N}$, whose accuracy depends on the ``horizon'' $l$.
+
 \begin{theorem}\label{thm:lowerbound}
-For an arbitrary $l\in \N,$ and a given uniform sampling: $$\omega_N := \{(x_1, j_{1,1},\dots,j_{1,l}), (x_2, j_{2,1},\dots,j_{2,l}), \ldots, (x_N, j_{N,1},\dots,j_{N,l})\} \subset \R^n \times M^l,$$ let $W_{\omega_N}=\{(x_1,y_1), \ldots,(x_N,y_N)\}$ be the corresponding available observations, which satisfy $$y_i= A_{j_{i,1}}\dots A_{j_{i,l}}x_i\,\, \forall (x_i, y_i) \in W_{\omega_N}.$$
-Also let $\gamma^*(\omega_N)$ be the optimal solution of the following optimization problem:
-\begin{equation}\label{eq:lowerbound}
+For an arbitrary $l \in \N,$ and a given uniform sample $$\omega_N := \{(x_1, j_{1,1},\dots,j_{1,l}), (x_2, j_{2,1},\dots,j_{2,l}), \ldots, (x_N, j_{N,1},\dots,j_{N,l})\} \subset Z_l,$$ 
+by considering $\gamma^*(\omega_N)$ the optimal solution of the optimization problem \eqref{eq:lowerbound}:
+\begin{equation}
 \begin{aligned}
 & \text{min}_P & & \gamma \\
 & \text{s.t.} 
-&  & (y_i)^T P (y_i) \leq \gamma^{2l} x_i^TPx_i,\,  \forall (x_i, y_i) \in W_{\omega_N}\\
-& && P \succ 0,\ \gamma \geq 0. \\
+&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x,\,  \forall (x,j_1,\dots,j_l) \in \omega_N\\
+& && P \succ 0,\ \gamma \geq 0, \\
 \end{aligned}
 \end{equation}
-Then, we have:
-$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt[2l]{n}}.$$ Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}).
+we have:
+$$\rho(\cM) \geq \frac{\gamma^{*}(\omega_N)}{\sqrt[2l]{n}}.$$ 
 \end{theorem}
+
 \begin{proof}
-Let $\epsilon >0$. By definition of $\gamma^*$,  there exists no matrix $P \in \calS^n_{++}$ such that:
-\rmj{\begin{equation*}(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\epsilon)^{2l}x^TPx,\quad \forall x \in \R^n, \forall\, A \in \calM^{l}.
-\end{equation*}}
+Let $\epsilon >0$. By definition of $\gamma^{*}$, there exists no matrix $P \in \calS^n_{++}$ such that:
+\begin{equation*}
+(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\epsilon)^{2l}x^TPx,\quad \forall x \in \R^n, \forall\, A \in \calM^{l}.
+\end{equation*}
 By Property \ref{rem:scaling}, this means that there exists no CQLF for the scaled set of matrices \rmj{$\frac{\cM^l}{(\gamma^*(\omega_N)-\epsilon)^l}$. Since the above inequality is true for every $\epsilon\geq 0,$ using Theorem~\ref{thm:john}, and the fact that $\rho(\cM^l)=\rho(\cM)^l,$ we conclude:
 \begin{equation*}\frac{\rho(\cM)}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt[2l]{n}}.\end{equation*}}
-\end{proof}}
+\end{proof}
 
-\rmj{\begin{remark}
-In the above discussion, we introduce the concept of `$l$-step CQLF', and showed that it allows to refine the initial $1/\sqrt(n)$ approximation provided by the CQLF method.  In the switching systems literature, there are other techniques for refining this approximation, as for instance replacing the LMIs in Theorem \ref{thm:john} by Sum-Of-Squares (SOS) constraints; see \cite{parrilo-jadbabaie} or \cite[Theorem 2.16]{jungers_lncis}. It seems that the concept of $l$-step CQLF is better suited for our purpose, as we briefly discuss below.  We leave for further work a more systematic analysis of the behaviours of the different refining techniques.
-\end{remark}}

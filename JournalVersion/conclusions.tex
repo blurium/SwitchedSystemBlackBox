@@ -5,3 +5,7 @@ The novelty of our contribution is twofold: First, we use as standing assumption
 Second, we apply powerful techniques from chance constrained optimization. The application is not obvious, and relies on geometric properties of linear switched systems.
 
 We believe that this guarantee is quite powerful, in view of the hardness of the general problem. In the future, we plan to investigate how to generalize our results to more complex or realistic systems. We are also improving the numerical properties of our technique by incorporating sum-of-squares optimization, and relaxing the sampling assumptions on the observations.
+
+\rmj{\begin{remark}
+In the above discussion, we introduce the concept of `$l$-step CQLF', and showed that it allows to refine the initial $1/\sqrt(n)$ approximation provided by the CQLF method.  In the switching systems literature, there are other techniques for refining this approximation, as for instance replacing the LMIs in Theorem \ref{thm:john} by Sum-Of-Squares (SOS) constraints; see \cite{parrilo-jadbabaie} or \cite[Theorem 2.16]{jungers_lncis}. It seems that the concept of $l$-step CQLF is better suited for our purpose, as we briefly discuss below.  We leave for further work a more systematic analysis of the behaviours of the different refining techniques.
+\end{remark}}
