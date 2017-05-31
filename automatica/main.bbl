@@ -1,0 +1,115 @@
+\begin{thebibliography}{10}
+
+\bibitem{balkan}
+A.~Balkan, P.~Tabuada, J.~V. Deshmukh, X.~Jin, and J.~Kapinski.
+\newblock Underminer: A framework for automatically identifying non-converging
+  behaviors in black box system models.
+\newblock In {\em 2016 International Conference on Embedded Software (EMSOFT)},
+  pages 1--10, Oct 2016.
+
+\bibitem{bianchini}
+F.~Blanchini, G.~Fenu, G.~Giordano, and F.~A. Pellegrino.
+\newblock Model-free plant tuning.
+\newblock {\em IEEE Transactions on Automatic Control}, PP(99):1--1, 2016.
+
+\bibitem{stabilityHard1}
+V.~D. Blondel and J.~N. Tsitsiklis.
+\newblock Complexity of stability and controllability of elementary hybrid
+  systems.
+\newblock {\em Automatica}, 35(3):479 -- 489, 1999.
+
+\bibitem{lazar}
+R.~Bobiti and M.~Lazar.
+\newblock A delta-sampling verification theorem for discrete-time, possibly
+  discontinuous systems.
+\newblock In {\em Proceedings of the 18th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '15, pages 140--148, New York, NY,
+  USA, 2015. ACM.
+
+\bibitem{boyd}
+S.~Boyd and L.~Vandenberghe.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, New York, NY, USA, 2004.
+
+\bibitem{campi}
+Giuseppe~C. C.
+\newblock Random convex programs.
+\newblock {\em SIAM Journal on Optimization}, 20(6):3427--3464, 2010.
+
+\bibitem{tiebreak}
+G.~Calafiore and M.~Campi.
+\newblock The scenario approach to robust control design.
+\newblock {\em IEEE Transactions on Automatic Control}, 51(5):742--753, 2006.
+
+\bibitem{nondegen}
+M.~Campi and S.~Garatti.
+\newblock The exact feasibility of randomized solutions of uncertain convex
+  programs.
+\newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
+
+\bibitem{campi-garatti}
+M.~C. Campi and S.~Garatti.
+\newblock The exact feasibility of randomized solutions of uncertain convex
+  programs.
+\newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
+
+\bibitem{mitra2}
+P.~S. Duggirala, S.~Mitra, and M.~Viswanathan.
+\newblock Verification of annotated models from executions.
+\newblock In {\em Proceedings of the Eleventh ACM International Conference on
+  Embedded Software}, EMSOFT '13, pages 26:1--26:10, Piscataway, NJ, USA, 2013.
+  IEEE Press.
+
+\bibitem{mitra}
+Z.~Huang and S.~Mitra.
+\newblock Proofs from simulations and modular annotations.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 183--192, New York, NY,
+  USA, 2014. ACM.
+
+\bibitem{jungers_lncis}
+R.~M. Jungers.
+\newblock The joint spectral radius, theory and applications.
+\newblock In {\em Lecture Notes in Control and Information Sciences}, volume
+  385. Springer-Verlag, Berlin, 2009.
+
+\bibitem{kapinski}
+J.~Kapinski, J.~V. Deshmukh, and N.~Sankaranarayanan, S.and~Arechiga.
+\newblock Simulation-guided lyapunov analysis for hybrid dynamical systems.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 133--142, New York, NY,
+  USA, 2014. ACM.
+
+\bibitem{lauer}
+Fabien Lauer.
+\newblock On the complexity of switching linear regression.
+\newblock {\em arXiv preprint arXiv:1510.06920}, 2015.
+
+\bibitem{liberzon}
+S.~Liu, D.~Liberzon, and V.~Zharnitsky.
+\newblock On almost lyapunov functions for non-vanishing vector fields.
+\newblock In {\em 2016 IEEE 55th Conference on Decision and Control (CDC)},
+  pages 5557--5562, Dec 2016.
+
+\bibitem{nemirovski}
+A.~Nemirovski and A.~Shapiro.
+\newblock Convex approximations of chance constrained programs.
+\newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
+
+\bibitem{parrilo-jadbabaie}
+P.~Parrilo and A.~Jadbabaie.
+\newblock Approximation of the joint spectral radius using sum of squares.
+\newblock {\em Linear Algebra and its Applications}, 428(10):2385--2402, 2008.
+
+\bibitem{rudin}
+W.~Rudin.
+\newblock {\em Real and complex analysis}.
+\newblock McGraw-Hill Book Co., New York, third edition, 1987.
+
+\bibitem{topcu}
+U.~Topcu, A.~Packard, and P.~Seiler.
+\newblock Local stability analysis using simulations and sum-of-squares
+  programming.
+\newblock {\em Automatica}, 44(10):2669 -- 2675, 2008.
+
+\end{thebibliography}

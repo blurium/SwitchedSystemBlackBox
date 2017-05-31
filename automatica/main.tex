@@ -1,0 +1,143 @@
+\documentclass[twocolumn]{autart} 
+
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color, comment}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{gensymb,bbm}
+\usepackage{stmaryrd}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usetikzlibrary{calc}
+\usepackage{float}
+
+
+%\include{references.bib}
+%   
+%\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+%            {-2.5ex\@plus -1ex \@minus -.25ex}%
+%            {1.25ex \@plus .25ex}%
+%            {\normalfont\normalsize\bfseries}}
+%\makeatother
+%\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+%\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+%
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%
+\newcommand{\convhull}{\mbox{convhull } }
+\newcommand{\conv}{\convhull }
+\newcommand{\proj}{\Pi }
+\newcommand{\koverc}{\frac{|k_i|}{\|c_i\|} }
+\newcommand{\ball}{\mathbb{B}}
+\newcommand{\dist}{d}
+\providecommand{\rmj[1]}{{\color{red}#1}}
+%\providecommand{\com[2]}{\begin{tt}[#1: #2]\end{tt}}
+%\providecommand{\comrj[1]}{\com{RJ}{\rmj{#1}}}
+%\providecommand{\comff[1]}{{\small \color{blue} [FF: {#1}]}}
+%
+%\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\Opt}{\text{Opt} }
+%
+%\renewcommand\labelitemi{{\boldmath$\cdot$}}
+%
+\floatname{algorithm}{Procedure:}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\newcommand{\algorithmicblabla}{\textbf{Input 2:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicreturn}{\textbf{Compute:}}
+\renewcommand{\thealgorithm}{} 
+
+%\newtheorem{remark}{Remark}[section]
+\newtheorem{property}{Property}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{problem}{Problem}[section]
+
+%\newenvironment{definition}[1][Definition]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+
+%\thanks{\textcolor{red}{*This work was supported by.}}
+%\author{Ayca Balkan$^{1}$ and Raphael Jungers$^{2}$ and Joris Kenanian$^{1}$ and Paulo Tabuada$^{1}$ 
+%\thanks{$^{1}$A. Balkan, J.Kenanian, and P. Tabuada are with Dept. of Electrical Engineering at University of California, Los Angeles (UCLA). Their work is supported by NSF Grants 1645824, 1521617, and NSF Expeditions in Computer Augmented Program Engineering.}
+%\thanks{$^{2}$R. Jungers is a Fulbright Fellow and a F.N.R.S. fellow currently visiting the Dept. of
+%Electrical Engineering at UCLA. His work is supported by the French Community of Belgium and the IAP network Dysco.}}
+
+
+\begin{document}
+\begin{frontmatter}
+%\runtitle{Insert a suggested running title} 
+\title{Data Driven Stability Analysis of Black-box Switched Linear Systems}
+
+\thanks[footnoteinfo]{This paper was not presented at any IFAC 
+meeting. Corresponding author M.~T.~Cicero. Tel. +XXXIX-VI-mmmxxi. 
+Fax +XXXIX-VI-mmmxxv.}
+
+\author[Paestum]{Marcus Tullius Cicero}\ead{cicero@senate.ir},    % Add the 
+\author[Rome]{Julius Caesar}\ead{julius@caesar.ir},               % e-mail address 
+\author[Baiae]{Publius Maro Vergilius}\ead{vergilius@culture.ir}  % (ead) as shown
+
+\address[Paestum]{Buckingham Palace, Paestum}  % Please supply                                              
+\address[Rome]{Senate House, Rome}             % full addresses
+\address[Baiae]{The White House, Baiae}        % here.
+
+
+\begin{keyword}                           % Five to ten keywords,  
+keywords to pick.                         % chosen from the IFAC 
+\end{keyword}                             % keyword list or with the 
+                                          % help of the Automatica 
+                                          % keyword wizard
+
+
+
+\begin{abstract}
+We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched linear system. We show that, for a given (randomly generated) set of observations, one can give a stability guarantee, for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of both the number of observations and the required level of confidence. Our results rely on geometrical analysis and combining chance-constrained optimization theory with stability analysis techniques for switched systems.
+\end{abstract}
+\end{frontmatter}
+
+\section{Introduction}
+\input{introduction}
+
+\section{Preliminaries}\label{sec:preliminaries}
+\subsection{Notations}
+\input{Preliminaries} 
+\subsection{Stability of Switched Linear Systems}\label{sec:stab}
+\input{stability}
+\subsection{Problem Formulation}
+\input{formulation}
+
+\section{A Deterministic Lower Bound}\label{sec:lowerBound}
+\input{lb}
+
+\section{A Probabilistic Stability Guarantee}\label{sec:upperbound}
+\input{mainTheoremProof}
+\input{mainTheoremProof2}
+
+%\section{Deterministic Lower Bound and Experimental Results}\label{sec:experiments}
+%\input{experiments}
+
+\section{Conclusions}\label{sec:conclusions}
+\input{conclusions}
+
+
+\begin{ack}                               % Place acknowledgements
+Acknowledgements, NSF etc.  % here.
+\end{ack}
+
+\bibliographystyle{plain} 
+\bibliography{bibliography}
+
+%\appendix\label{appendix}
+%\input{appendix}
+
+\end{document}

@@ -1,0 +1,87 @@
+ % !TEX root = main.tex
+A \emph{switched linear system} with a set of modes \\ 
+\mbox{$\mathcal{M}= \{A_i, i \in M \}$} is of the form:
+\begin{equation}\label{eq:switchedSystem}
+x_{k+1} = f(k,x_k),
+\end{equation}
+with $f(k,x_k) = A_{\tau(k)}x_k$ and switching sequence \mbox{$\tau: \mathbb{N} \to M$}.
+
+In this paper, we are interested in the worst-case global stability of this system, that is, we want to guarantee the following property: $$\forall\ \tau \in M^{\mathbb{N}}, \forall\ x_0 \in \mathbb{R}^n, \lVert x_k \rVert \to_{k \to +\infty} 0.$$ 
+It is well-known that the joint spectral radius of a set of matrices $\mathcal{M}$ closely relates to the stability of the underlying switched linear systems \eqref{eq:switchedSystem} defined by $\mathcal{M}$. This quantity is an extension to switched linear systems of the classic spectral radius for linear systems. It is the maximum asymptotic growth rate of the norm of the state under the dynamics \eqref{eq:switchedSystem}, over all possible initial conditions and sequences of matrices of $\mathcal{M}$.
+
+\begin{defn}[from \cite{jungers_lncis}] 
+Given a finite set of matrices \mbox{$\mathcal{M} \subset \mathbb{R}^{n\times n}$}, its \emph{joint spectral radius} (JSR) is given by $$\rho(\mathcal{M}) =\lim_{k \rightarrow +\infty} \max_{i_1,\dots, i_k} \left\{ ||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j} \in \mathcal{M}\ \right\}. $$
+\end{defn}
+
+\begin{property}[Corollary 1.1, \cite{jungers_lncis}]
+Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
+\end{property}
+
+\begin{property}[Proposition 1.3, \cite{jungers_lncis}]\label{rem:scaling}
+Given a finite set of matrices $\mathcal{M}$, and any invertible matrix $T$, $$\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1}),$$
+i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall\  \gamma > 0$, $\rho \left( \mathcal{M}/\gamma \right) = \mathcal{M}/\gamma$).
+\end{property}
+
+The JSR also relates to a tool classically used in control theory to study stability of systems: Lyapunov functions. We will consider here a family of such functions that is particularly adapted to the case of switched linear systems.
+
+\begin{defn}
+Consider a finite set of matrices $\mathcal{M} \subset \mathbb{R}^{n \times n}$. A \emph{common quadratic Lyapunov function (CQLF)} for a system \eqref{eq:switchedSystem} with set of matrices $\mathcal{M}$, is a positive definite matrix $P \in \mathcal{S}_{++}^n$ such that for some $\gamma \geq 0$, $$\forall\ A \in \mathcal{M}, A^T P A \preceq \gamma^2P.$$
+\end{defn}
+CQLFs are useful because they can be computed (if they exist) with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.
+
+\begin{thm}\cite[Prop. 2.8]{jungers_lncis}\label{thm:cqlf} 
+Consider a finite set of matrices $\mathcal{M}$. If there exist some $\gamma \geq 0$ and $P \succ 0$ such that $$\forall\ A \in \mathcal{M}, A^T P A \preceq \gamma^2 P,$$ then $\rho(\mathcal{M}) \leq \gamma$.
+\end{thm}
+
+It turns out that one can guarantee the accuracy of this Lyapunov technique thanks to the following converse CQLF theorem.
+
+\begin{thm}\cite[Theorem 2.11]{jungers_lncis}\label{thm:john}
+For any finite set of matrices such that $\rho(\mathcal{M}) < \frac{1}{\sqrt{n}},$ there exists a CQLF for $\mathcal{M}$, that is, a $P \succ 0$ such that: $$\forall\ A\in \mathcal{M},\, A^T P A \preceq P. $$
+\end{thm}
+
+Note that, the smaller $\gamma$ is in \ref{thm:cqlf}, the tighter is the upper bound we get on $\rho(\mathcal{M})$. Therefore, we could consider, in particular, the optimal solution $\gamma^*$ of the following optimization problem:
+\begin{equation}\label{eqn:campiOpt0}
+\begin{aligned}
+& \text{min}_{\gamma, P} & & \gamma\\
+& \text{s.t.} 
+&  & (Ax)^T P(Ax) \leq \gamma^2 x^T P x,\,\forall\ A \in \mathcal{M}, \,\forall\, x \in \mathbb{R}^n\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+%where we were able to replace the condition $\forall\,x \in \R^n$ with $\,\forall\, x \in \sphere$, where $\sphere$ is the unit sphere. This is thanks to the Property \ref{property:homogeneity} which implies that it is sufficient to show that a CQLF is decreasing on a set enclosing the origin, e.g. the unit sphere. 
+
+%Even though this upper bound is more difficult to obtain in a black-box setting where only a finite number of observations are available, in this section we leverage Theorem \ref{thm:john} in order to derive a straightforward lower bound.
+
+\begin{property}\label{property:homogeneity}
+Let $\xi(x, k, \tau)$ denote the state of the system \eqref{eq:switchedSystem} at time $k$ starting from the initial condition $x$ and with switching sequence $\tau$. The dynamical system \eqref{eq:switchedSystem} is homogeneous: $\xi(\gamma x, k, \tau)= \gamma \xi(x, k, \tau).$
+\end{property}
+
+Property \ref{property:homogeneity} enables us to restrict the set of constraints $x$ to the unit sphere $\sphere$, instead of considering it as being all $\mathbb{R}^n$. Indeed, the homogeneity implies that it is sufficient to show the decrease of a CQLF on an arbitrary set enclosing the origin, e.g., $\sphere$. Hence, we consider from now the following optimization problem, with its optimal solution that will also be $\gamma^{*}$:
+\begin{equation}\label{eqn:campiOpt1}
+\begin{aligned}
+& \text{min}_{\gamma, P} & & \gamma \\
+& \text{s.t.} 
+&  & (Ax)^TP(Ax) \leq \gamma^2 x^TPx,\,\forall\ A \in \mathcal{M}, \,\forall\, x \in \sphere\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}
+
+
+The two theorems above provide us with a \emph{converse Lyapunov result}: if there exists a CQLF, then our system is stable. If, on the contrary, there is no such stability guarantee, one may conclude a lower bound on the JSR. By combining these two results, one obtains an approximation algorithm for the JSR: the upper bound $\gamma^*$ obtained above is within an error factor of $\frac{1}{\sqrt{n}}$ of the true value. It turns out that one can still refine this technique, in order to improve the error factor, and asymptotically get rid of it. This is a well-known technique for the ``white-box'' computation of the JSR, which we summarize in the following corollary.
+
+\begin{cor}\label{cor:approx-products}
+For any finite set of matrices such that $\rho(\mathcal{M}) < \frac{1}{\sqrt[2l]{n}},$ there exists a CQLF for $$\mathcal{M}^l:=\{A_{i_1},\dots, A_{i_{l}}: A_i \in \mathcal{M}\},$$ that is, a $P\succ 0$ such that: $$\forall\ A \in \mathcal{M}^l,\, A^T P A\preceq P. $$
+\end{cor}
+
+\begin{pf}
+It is easy to see from the definition of the JSR that $$\rho(\mathcal{M}^l)=\rho(\mathcal{M})^l.$$ Thus, applying Theorem \ref{thm:john} to $\mathcal{M}^l,$ one directly obtains the corollary.
+\end{pf}
+We can then consider from now, for any $l \in \mathbb{N}_{>0}$, the following optimization problem, whose solution $\gamma^{*}$ will be an upper bound on $\rho(\mathcal{M})$:
+\begin{equation}\label{eqn:campiOpt2}
+\begin{aligned}
+& \text{min}_{\gamma, P} & & \gamma \\
+& \text{s.t.} 
+&  & (Ax)^T P(Ax) \leq \gamma^{2l} x^T P x,\,\forall\ A \in \mathcal{M}^l, \,\forall\, x \in \sphere\\
+& && P \succ 0. \\
+\end{aligned}
+\end{equation}

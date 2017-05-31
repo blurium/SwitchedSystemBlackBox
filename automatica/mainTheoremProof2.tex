@@ -1,0 +1,95 @@
+% !TEX root = main.tex
+\begin{subsection}{Main Theorem}
+We are now ready to prove our main theorem by putting together all the above pieces. For a given level of confidence $\beta$, we prove that the upper bound $\gamma^{*}(\omega_N)$, which is valid solely on finitely many observations, is in fact a true upper bound, at the price of increasing it by the factor $\frac{1}{\sqrt[l]{\delta(\beta, \omega_N)}}$. Moreover, as expected, this factor gets smaller as we increase $N$ and decrease $\beta$.
+
+
+\begin{thm}\label{thm:mainTheorem}
+Consider an $n$-dimensional switched linear system as in \eqref{eq:switchedSystem} and a uniform random sampling $\omega_N \subset Z_l$, where $N \geq \frac{n(n+1)}{2}+1$. Let $\gamma^{*}(\omega_N) $ be the optimal solution to \eqref{eqn:campiOpt03}. Then, for any given $\beta \in (0,1)$ and $\eta > 0$, we can compute $\delta(\beta, \omega_N)$, such that with probability at least $\beta$ we have:
+$$\rho \leq \frac{\gamma^{*}(\omega_N) (1+ \eta)}{\sqrt[l]{\delta(\beta, \omega_N)}},$$
+where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
+\end{thm}
+
+
+\begin{pf}
+
+By definition of $\gamma^{*}(\omega_N)$ we have:
+\begin{equation*} 
+(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*}(1+\eta))^{2l} x^T P x, \quad \forall\ (x, j_1, \dots, j_l)  \in \omega_N 
+\end{equation*}
+for some $P \succ 0$. 
+
+Then, by rewriting Theorem \ref{mainTheorem0}, for
+\begin{equation}\label{eqn:violation2}
+\beta = \mu_l^N \left( \{ \omega_N \in Z_l^N: \mu_l(V(\omega_N)) \leq \varepsilon \} \right) \geq 1- I(1-\varepsilon; N-d, d+1),
+\end{equation}
+where $I(\ell;a,b)$ is the regularized incomplete Beta function, with probability at least $\beta$ the following holds:
+\begin{equation*} 
+(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \quad \forall\ (x, j_1, \dots, j_l) \in Z_l \setminus V.
+\end{equation*}
+with $\mu_l(V) \leq \varepsilon$, and $\varepsilon(\beta, N)=1- I^{-1}(1-\beta; N-d, d+1)$. Thanks to Corollary~\ref{cor:gettingRidOfm}, we even have
+\begin{equation*} 
+(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \quad \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1, \dots, j_l) \in M^l
+\end{equation*}
+with $\sphere' = \pi_{\sphere}(V)$ and $\sigma^{n-1}(\sphere') \leq \varepsilon m^l$.
+
+By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least $\beta$ the following also holds:
+\begin{equation}
+\begin{aligned}
+& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq ( \gamma^{*}(1+\eta) )^{2l} x^T x, \\
+& \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1,\dots,j_l) \in M^l,
+\end{aligned}
+\end{equation}
+for some $\sphere'$ where $\sigma^{n-1}(\sphere') \leq \varepsilon m^l \kappa(P)$. Then, applying Lemma~\ref{lemma:epsilon1}, we can compute
+$$\delta(\beta, \omega_N) =\alpha(\varepsilon'(\beta,N)),$$
+where
+\begin{equation}\label{eqn:eps2}
+\varepsilon'(\beta, N) = \frac{1}{2} \varepsilon(\beta,N) m^l \kappa(P) 
+\end{equation} 
+such that with probability at least $\beta$ we have:
+\begin{equation*}
+A_{j_l} A_{j_{l-1}} \dots A_{j_1} (\ball) \subset \frac{(\gamma^{*}(\omega_N)(1+\eta))^l}{\delta(\beta, \omega_N)}\ball,\, \forall\, (j_1,\dots,j_l) \in M^l,
+\end{equation*}
+
+By Property \ref{rem:scaling}, this means that with probability at least $\beta$:
+$$\rho \leq \frac{\gamma^{*}(\omega_N) (1 + \eta)}{\sqrt[l]{\delta(\beta, \omega_N)}},$$
+which completes the proof of the first part of the theorem. Note that, the ratio $\frac{1}{2}$ introduced in the expression of $\varepsilon'$ is, as we have already mentioned Section~\ref{sec:pbsphere}, due to the homogeneity of the system described in Property \ref{property:homogeneity}.
+%
+%%
+%%$$\frac{\calM}{\gamma^*} \conv(E_P \setminus E') \subset \convhull(E_P \setminus E'),$$
+%%for some $E' \subset E_P$, where $\sigma_P(E') \leq \epsilon$.
+%%Then, due to Theorem \ref{thm:mainTheorem0} we also have \eqref{eqn:contraction}, meaning:
+%%$$\left(\frac{\cM}{\delta \gamma^*}\right) \convhull (E_P \setminus X_P) \subset \convhull (E_P\setminus X_P).$$
+%%Then, $\delta\gamma^*$ is an upper bound on $\rho,$ with probability at least~$\beta$. 
+%
+Let us prove now that $\lim_{N \to \infty} \delta(\beta, \omega_N) = 1$ with probability $1$.
+
+We recall that, $\delta(\beta, \omega_N) = \alpha \left( \varepsilon(\beta, \omega_N) m^l \kappa(P(\omega_N)) \right)$. We start by showing that $\kappa \left( P(\omega_N) \right)$  is uniformly bounded in $N$. The optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt03}, with $\gamma^{*}(\omega_N)$ replaced by $\gamma^{*}(Z_l)(1+\frac{\eta}{2})$ is strictly feasible, and thus admits a finite optimal value $K$ for some solution $P_{\eta/2}$. Note that, $\lim_{N \to \infty} \gamma^{*}(\omega_N)= \gamma^{*}(Z_l)$ with probability $1$. Thus, for large enough $N$, \mbox{$\gamma^{*}(\omega_N)(1+\eta) > \gamma^{*}(Z_l)(1+\frac{\eta}{2})$.} This also means that, for large enough $N$, $\Opt(\omega_N)$ admits $P_{\eta/2}$ as a feasible solution and thus the optimal value of $\Opt(\omega_N)$ is bounded by $K.$ In other words, \mbox{$\lambda_{\max}(P({\omega_N})) \leq K$.} Moreover, since  
+$\lambda_{\max}(P(\omega_N))\geq 1$, we also have \mbox{$\det(P(\omega_N)) \geq 1$,} which means that
+
+\begin{equation}\label{kappa}
+\kappa \left( P(\omega_N) \right) = \sqrt{\frac{\lambda_{\max}(P(\omega_N))^n}{\det(P(\omega_N))}} \leq \sqrt{K^n}.
+\end{equation}
+
+We next show that for a fixed $\beta \in (0,1)$, $\lim_{N \to \infty} \varepsilon(\beta, N) = 0$. Note that, $\varepsilon(\beta, N)$ is intrinsically defined by the following equation:
+$$1-\beta = \sum_{j=0}^d {{N}\choose{j}} \varepsilon^j (1-\varepsilon)^{N-j}.$$
+We can then upper bound the term $1-\beta$ as in:
+
+\begin{equation}\label{eqn:beta}
+1-\beta \leq  (d+1)N^d (1-\varepsilon)^{N-d}.
+\end{equation}
+
+We prove $\lim_{N \to \infty} \varepsilon(\beta, N) = 0$ by contradiction. Assume that $\lim_{N \to \infty} \varepsilon(\beta, N) \not= 0$. This means that, there exists some $c > 0$ such that $\varepsilon(\beta, N) > c$ infinitely often. Then, consider the subsequence $N_k$ such that $\varepsilon(\beta, N_k) > c$, $\forall\, k.$ Then, by \eqref{eqn:beta} we have:
+
+\begin{equation*}
+1-\beta \leq  (d+1)N_k^d (1-\varepsilon)^{N_k-d}\hspace{-0.4mm} \leq \hspace{-0.7mm}(d+1)N_k^d (1-c)^{N_k-d}\, \forall\,k \in \mathbb{N}. 
+\end{equation*}
+
+Note that $\lim_{k \to +\infty}(d+1)N_k^d (1-c)^{N_k-d} = 0.$ Therefore, there exists a $k'$ such that:
+$$(d+1)N_{k'}^d (1-c)^{N_k'-d} < 1 - \beta,$$ which is a contradiction. Therefore, we must have  $\lim_{N \to \infty} \varepsilon (\beta, N) = 0$.
+
+Putting this together with \eqref{kappa}, we get:
+$$\lim_{N \to \infty} m^l \kappa(P(\omega_N)) \varepsilon(\beta, \omega_N) = 0.$$ By the continuity of the function $I^{-1}$ this also implies: $\lim_{N \to \infty} \alpha \left( \varepsilon(\beta, \omega_N) m^l \kappa(P(\omega_N)) \right) = 1.$
+
+\end{pf}
+
+\end{subsection}

@@ -1,0 +1,53 @@
+ % !TEX root = main.tex
+We now formally present the problem we will be considering from now. We recall that our observations are traces of the form $(x_k,x_{k+1},\dots,x_{k+l})$ for some arbitrary $l \in \mathbb{N}_{>0}$, and that we do not have access to the mode applied to the system at each time step. 
+
+To generate these traces, we assume that we can randomly pick a finite number of initial conditions $x_0^i \in \mathbb{R}^n$, and that a random sequence of $l$ modes is applied to each of these points. Hence, the probability event corresponding to a given observed trace $(x_k,x_{k+1},\dots,x_{k+l})$ is another $(l+1)$-tuple $(x_k,j_1,\dots,j_l)$. More precisely, we assume that we can uniformly sample such $(l+1)$-tuples in $Z_l = \sphere \times M^l$, giving us a sample denoted by 
+\begin{equation*}
+\begin{aligned}
+\omega_N := & \{(x_0^1, j_{1,1}, \dots, j_{1,l}), (x_0^2, j_{2,1}, \dots, j_{2,l}), \ldots,\\
+           & \qquad \qquad \qquad \qquad (x_0^N, j_{N,1},\dots, j_{N,l})\} \subset Z_l.
+\end{aligned}
+\end{equation*}
+By uniformly sampling, we mean that the points in $\omega_N$ are drawn according to the measure $\mu_l$, i.e., the points $x_0^i$ are drawn from $\sphere$ according to the classical spherical measure $\sigma^{n-1}$, and the modes are drawn from $M$ according to the classical uniform measure $\mu_M$ at each time step. The space of sampling for the initial conditions is restricted to $\sphere$ since, as we recall, by Property \ref{property:homogeneity}, the system is homogeneous. 
+\begin{rem}
+Let us motivate the choice of considering a uniform sampling for the modes. Since we assume that we only have random observations of the state of the system, we do not know the process that generates this state: in particular, we ignore the process that picks the modes at each time step. We model this process with a random distribution. Here, we make the assumption that with nonzero probability, each mode is active. The problem would indeed not make a lot of sense otherwise, since in a such case, with probability $1$, the system would be unidentifiable and would prevent to ever observe some of its possible behaviors. By default, we take this distribution uniform since we cannot say that some modes are privileged a priori. But we can still take any other distribution satisfying our assumption; if we have a lower bound on the probability of each mode that is strictly positive, our guarantees naturally extend to them.
+\end{rem}
+From a sample $\omega_N$, we obtain the set of corresponding available observations 
+\begin{equation}
+\begin{aligned}
+W_{\omega_N} := & \{(x_0^1,x_1^1, \dots, x_l^1), (x_0^2,x_1^2, \dots, x_l^2), \ldots,\\ 
+& \qquad \qquad \qquad \qquad(x_0^N,x_1^N, \dots, x_l^N)\},
+\end{aligned}
+\end{equation}
+which satisfy $$x_l^i= A_{j_{i,1}} \dots A_{j_{i,l}} x_0^i, \ \forall\ (x_0^i,x_1^i,\dots, x_l^i) \in W_{\omega_N}.$$
+In this work, we aim at understanding what type of guarantees one can obtain on the stability of System \eqref{eq:switchedSystem} (that is, on the JSR of $\mathcal{M}$) from a finite, uniformly sampled, set of data. More precisely, we answer the following problem:
+\begin{prob}\label{problem} 
+Consider a finite set of matrices $\mathcal{M},$ describing a switched system \eqref{eq:switchedSystem}, and suppose that one has a set of $N$ observations $$\omega_N=\{(x_0^1, j_{1,1}, \dots, j_{1,l}), (x_0^2, j_{2,1}, \dots, j_{2,l}), \ldots, (x_0^N, j_{N,1},\dots, j_{N,l})\},$$ sampled according to the uniform measure $\mu_l$ on $Z_l$.
+\begin{itemize}
+\item For a given number $\beta \in (0,1)$, provide an upper bound $\overline{\rho(\omega_N)}$ on $\rho(\mathcal{M})$, together with a level of confidence $\beta$, that is, a number $\overline{\rho(\omega_N)}$ such that $$\mu_l \left( \{\omega_N: \ \rho(\mathcal{M}) \leq \overline{\rho(\omega_N)} \} \right) \geq \beta.$$
+\item For the same given level of confidence $\beta$, provide a lower bound $\underline{\rho(\mathcal{M})}$ on $\rho(\mathcal{M})$.
+\end{itemize}
+\end{prob}
+\begin{rem}
+We will see in Section~\ref{sec:lowerBound} that a such level of confidence $\beta$ is not even required in the case of the lower bound. Indeed, we derive in Theorem~\ref{thm:lowerbound} a deterministic lower bound for a given (sufficiently high) number of observations. 
+\end{rem}
+The idea from now will be to leverage the fact that conditions for the existence of a CQLF for \eqref{eq:switchedSystem} can be obtained by considering a finite number of traces in $\mathbb{R}^n$ of the form $(x_k,x_{k+1}, \dots, x_{l})$. It will lead us to the following algorithm, that is the main result of our paper and that answers Problem~\ref{problem}:
+%\begin{algorithm}
+%\label{algo}
+%\caption{Probabilistic upper bound}
+\begin{alg}
+
+\textbf{Input:} observations $W_{\omega_N}$ corresponding to a uniform random sample $\omega_N \subset Z$ of size $N \geq \frac{n(n+1)}{2}+1$;
+
+\textbf{Input:} $\beta$ desired level of certainty;
+
+\textbf{Compute:} $\gamma^{*}(\omega_N)$ optimal solution of Opt($\omega_N$), that we take as candidate for the upper bound;
+
+\textbf{Compute:} $\varepsilon(\beta,\omega_N)$ the size of the of points where we might make the wrong inference on the upper bound;
+
+\textbf{Compute:} $\delta(\varepsilon)$;
+
+\textbf{Output:} $\frac{\gamma^{*}(\omega_N)}{\sqrt[2l]{n}} \leq \rho \leq \frac{\gamma^{*}(\omega_N)}{\sqrt[l]{\delta(\varepsilon)}}$, (upper bound valid with probability at least $\beta$ and $\delta(\beta, \omega_N)   \xrightarrow[N \to \infty]{} 1$).
+%\end{algorithmic}
+\end{alg}
+%\end{algorithm}

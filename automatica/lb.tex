@@ -1,0 +1,42 @@
+% !TEX root =main.tex
+In Section~\ref{sec:stab}, we gave an optimization problem, \eqref{eqn:campiOpt2}, that provides a stability guarantee. Nevertheless, solving this problem as stated solely from observation of traces (that gives a finite number of constraints) is not possible since \eqref{eqn:campiOpt2} involves infinitely many constraints. We consider then the following optimization problem:
+\begin{equation}\label{eq:lowerbound}
+\begin{aligned}
+& \text{min}_P & & \gamma \\
+& \text{s.t.} 
+&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x, \,  \quad \forall\ (x, j_1,\dots, j_l) \in \omega_N\\
+& && P \succ 0,\ \gamma \geq 0. \\
+\end{aligned}
+\end{equation}
+
+Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}). Let us denote from now by $\gamma^*(\omega_N)$ the optimal solution of this problem, which we will use to compute a deterministic lower bound and a probabilistic upper bound on the JSR. In this section, we provide a theorem for a deterministic lower bound based on the observations $W_{\omega_N}$, whose accuracy depends on the ``horizon'' $l$.
+\begin{thm}\label{thm:lowerbound}
+For an arbitrary $\ l \in \mathbb{N}_{>0}$, and a given uniform sample 
+\begin{equation*}
+\begin{aligned}
+\omega_N := & \{(x_1, j_{1,1},\dots,j_{1,l}), (x_2, j_{2,1},\dots,j_{2,l}), \ldots,\\
+           & \qquad \qquad (x_N, j_{N,1},\dots,j_{N,l})\} \subset Z_l,
+\end{aligned}
+\end{equation*}
+by considering $\gamma^*(\omega_N)$ the optimal solution of the optimization problem \eqref{eq:lowerbound}:
+\begin{equation*}
+\begin{aligned}
+& \text{min}_P & & \gamma \\
+& \text{s.t.} 
+&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x, \,  \quad \forall\ (x, j_1,\dots, j_l) \in \omega_N\\
+& && P \succ 0,\ \gamma \geq 0,
+\end{aligned}
+\end{equation*}
+we have:
+$$\rho(\mathcal{M}) \geq \frac{\gamma^*(\omega_N)}{\sqrt[2l]{n}}.$$ 
+\end{thm}
+\begin{pf}
+Let $\nu >0$. By definition of $\gamma^*$,  there exists no matrix $P \in \mathcal{S}^n_{++}$ such that:
+\begin{equation*}
+(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\nu)^{2l} x^T P x,\quad \forall\ x \in \mathbb{R}^n, \forall\, A \in \mathcal{M}^{l}.
+\end{equation*}
+By Property \ref{rem:scaling}, this means that there exists no CQLF for the scaled set of matrices $\frac{\mathcal{M}^l}{(\gamma^*(\omega_N)-\nu)^l}$. Since the above inequality is true for every $\nu \geq 0,$ using Theorem~\ref{thm:john}, and the fact that $\rho(\mathcal{M}^l)=\rho(\mathcal{M})^l,$ we conclude:
+\begin{equation*}
+\frac{\rho(\mathcal{M})}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt[2l]{n}}.
+\end{equation*}
+\end{pf}
