@@ -13,8 +13,11 @@ where $\lim_{N \to \infty}\delta(\beta, \omega_N) = 1$ with probability $1$.
 \begin{pf}
 
 By definition of $\gamma^{*}(\omega_N)$ we have:
-\begin{equation*} 
-(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*}(1+\eta))^{2l} x^T P x, \quad \forall\ (x, j_1, \dots, j_l)  \in \omega_N 
+\begin{equation*}
+\begin{aligned} 
+&(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*}(1+\eta))^{2l} x^T P x, \\
+& \qquad \qquad \qquad \qquad \qquad \qquad \qquad \forall\ (x, j_1, \dots, j_l)  \in \omega_N 
+\end{aligned}
 \end{equation*}
 for some $P \succ 0$. 
 
@@ -24,11 +27,17 @@ Then, by rewriting Theorem \ref{mainTheorem0}, for
 \end{equation}
 where $I(\ell;a,b)$ is the regularized incomplete Beta function, with probability at least $\beta$ the following holds:
 \begin{equation*} 
-(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \quad \forall\ (x, j_1, \dots, j_l) \in Z_l \setminus V.
+\begin{aligned}
+& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \\
+& \qquad \qquad \qquad \qquad \qquad \qquad \qquad \forall\ (x, j_1, \dots, j_l) \in Z_l \setminus V.
+\end{aligned}
 \end{equation*}
 with $\mu_l(V) \leq \varepsilon$, and $\varepsilon(\beta, N)=1- I^{-1}(1-\beta; N-d, d+1)$. Thanks to Corollary~\ref{cor:gettingRidOfm}, we even have
 \begin{equation*} 
-(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \quad \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1, \dots, j_l) \in M^l
+\begin{aligned}
+& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq  \left((\gamma^{*}(1+\eta) \right)^{2l} x^T P x, \\
+& \qquad \qquad \qquad \qquad \qquad \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1, \dots, j_l) \in M^l
+\end{aligned}
 \end{equation*}
 with $\sphere' = \pi_{\sphere}(V)$ and $\sigma^{n-1}(\sphere') \leq \varepsilon m^l$.
 
@@ -36,7 +45,7 @@ By Theorem \ref{thm:mainTheorem01}, this implies that with probability at least 
 \begin{equation}
 \begin{aligned}
 & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq ( \gamma^{*}(1+\eta) )^{2l} x^T x, \\
-& \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1,\dots,j_l) \in M^l,
+& \qquad \qquad \qquad \qquad \qquad \qquad  \forall\ x \in \sphere \setminus \sphere', \forall\ (j_1,\dots,j_l) \in M^l,
 \end{aligned}
 \end{equation}
 for some $\sphere'$ where $\sigma^{n-1}(\sphere') \leq \varepsilon m^l \kappa(P)$. Then, applying Lemma~\ref{lemma:epsilon1}, we can compute
@@ -47,7 +56,10 @@ where
 \end{equation} 
 such that with probability at least $\beta$ we have:
 \begin{equation*}
-A_{j_l} A_{j_{l-1}} \dots A_{j_1} (\ball) \subset \frac{(\gamma^{*}(\omega_N)(1+\eta))^l}{\delta(\beta, \omega_N)}\ball,\, \forall\, (j_1,\dots,j_l) \in M^l,
+\begin{aligned}
+& A_{j_l} A_{j_{l-1}} \dots A_{j_1} (\ball) \subset \frac{(\gamma^{*}(\omega_N)(1+\eta))^l}{\delta(\beta, \omega_N)}\ball, \\
+& \qquad \qquad \qquad \qquad \qquad \forall\, (j_1,\dots,j_l) \in M^l,
+\end{aligned}
 \end{equation*}
 
 By Property \ref{rem:scaling}, this means that with probability at least $\beta$:

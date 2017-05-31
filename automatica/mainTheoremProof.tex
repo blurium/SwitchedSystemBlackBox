@@ -309,7 +309,7 @@ We now consider the general problem for any $P(\omega_N)$, and transform it into
 \begin{equation}\label{cholesky}
 P = L^TL,
 \end{equation} 
-where $L$ is an upper triangular matrix. Note that, $L^{-1}$ maps the elements of $\sphere$ to $E_P$.
+where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of $\sphere$ to $E_P$.
 
 \begin{figure}[H]
 \begin{center}
@@ -345,8 +345,8 @@ where $L$ is an upper triangular matrix. Note that, $L^{-1}$ maps the elements o
 \draw [line width = 0.5mm,black,domain=280:330] plot ({6 + 2 * cos(\x)}, {2 * sin(\x)});
 \draw[->] (0,2) .. controls (1,3) and (3,3) .. (4,2);
 \draw[->] (4,-2) .. controls (3,-3) and (1,-3) .. (0,-2); 
-\draw (2,3.3) node {$L$};
-\draw (2,-3.3) node {$L^{-1}$};
+\draw (2,3.3) node {$L^{-1}$};
+\draw (2,-3.3) node {$L$};
 \end{tikzpicture}
 \end{center}
 \caption{Change of coordinates to bring our problem back to the case of the unit sphere.}
@@ -401,11 +401,11 @@ The assumption \eqref{eq:assumptionThm01} is a contraction assumption on points 
 \end{figure}
 
 
-We have $y \in E_P \leftrightarrow x \in \sphere$ with $x = L(y)$, the euclidean norm $y^T y$ becoming $x^T P x$. Hence, \eqref{eq:assumptionThm01} can be rewritten as:
+We have $y \in E_P \leftrightarrow x \in \sphere$ with $y = L(x)$, the euclidean norm $y^T y$ becoming $x^T P x$. Hence, \eqref{eq:assumptionThm01} can be rewritten as:
 \begin{equation*}\label{eq:assumption2}
 \begin{aligned}
 & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T x,\\
-& \qquad \qquad \qquad \qquad \forall\, x \in E_P \setminus L^{-1}(\sphere'), \forall\ (j_1, \dotsc, j_l) \in M^l.
+& \qquad \qquad \qquad \qquad \forall\, x \in E_P \setminus L(\sphere'), \forall\ (j_1, \dotsc, j_l) \in M^l.
 \end{aligned}
 \end{equation*}
 
@@ -413,20 +413,19 @@ Since we have seen in the previous section a technique to solve the spherical ca
 \begin{equation*}\label{eq:assumption3}
 \begin{aligned}
 & (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T P (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T P x, \\
-& \forall\, x \in  L(E_P \setminus L^{-1}(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l.
+& \forall\, x \in  L^{-1}(E_P \setminus L(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l.
 \end{aligned}
 \end{equation*}
-with $$L(E_P \setminus L^{-1}(\sphere')) = \sphere \setminus \sphere'.$$
+with $$L^{-1}(E_P \setminus L(\sphere')) = \sphere \setminus \sphere'.$$
 
 In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$, and \eqref{eq:assumption3} can be rewritten as:
 \begin{equation*}\label{eq:assumption4}
 \begin{aligned}
 & (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T  (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T  x, \\
-&  \forall\, x \in  L^2(E_P \setminus L^{-1}(\sphere')),\\
-& \forall\, (j_1,\dots,j_l) \in M^l,
+&  \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \, \forall\, (j_1,\dots,j_l) \in M^l,
 \end{aligned}
 \end{equation*}
-with $$L^2(E_P \setminus L^{-1}(\sphere')) = L(\sphere \setminus \sphere') = E_{P'} \setminus L(\sphere').$$
+with $$L^{-1}(\sphere \setminus \sphere') = E_{P'} \setminus L^{-1}(\sphere').$$
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
@@ -449,14 +448,14 @@ with $$L^2(E_P \setminus L^{-1}(\sphere')) = L(\sphere \setminus \sphere') = E_{
 \end{tikzpicture}
 \end{center}
 \end{figure}
-Particularly, the set $L(\sphere')$ of points violating the constraint are represented by points of $E_{P'}$. To reason on the (spherical) measure of this set, we project $E_{P'}$ on the unit sphere; $L(\sphere')$ becomes $\proj_\sphere(L(\sphere'))$.
+To reason on the (spherical) measure of violating set in the new coordinates, we project $E_{P'}$ on the unit sphere; $L^{-1}(\sphere')$ becomes $\proj_\sphere(L^{-1}(\sphere'))$.
 
-We now show how to relate $\sigma^{n-1}(\proj_\sphere(L(\sphere')))$ to $\sigma^{n-1}(\sphere')$, measure of the violating set in the initial coordinates. Consider $\sphere^{\sphere'}$, the sector of $\ball$ defined by $\sphere'$. We denote $C:= L(\sphere')$ and $C':=\proj_\sphere(L(\sphere'))$. We have $\proj_{\sphere}(C) = C'$ and $\sphere^{C'} \subset \mathcal{H}_{1/ \lambda_{\min}(L)}(C),$
-where $\mathcal{H}_{1/ \lambda_{\min}(L)}$ is the homothety of ratio $1/ \lambda_{\min}(L)$. This leads to:
-$$\sigma^{n-1}(C') = \lambda \left( \sphere^{C'} \right) \leq \lambda \left( \mathcal{H}_{1/ \lambda_{\min}(L)}(E_{P'}^{C}) \right).$$ Then, the following holds: \begin{eqnarray}
-\nonumber\sigma^{n-1}(C') &\leq& \frac{1}{\lambda_{\min}(L)^n}\lambda(E_{P'}^{C}) \\
-\nonumber &\leq&\frac{1}{\lambda_{\min}(L)^n} \lambda \left( L(\sphere^{\sphere'}) \right)\\ 
-\label{eqn:lt} &=&\frac{|\det(L)|}{\lambda_{\min}(L)^n}\lambda \left( \sphere^{\sphere'} \right),\\
+We now show how to relate $\sigma^{n-1}(\proj_\sphere(L^{-1}(\sphere')))$ to $\sigma^{n-1}(\sphere')$, measure of the violating set in the initial coordinates. Consider $\sphere^{\sphere'}$, the sector of $\ball$ defined by $\sphere'$. We denote $C:= L^{-1}(\sphere')$ and $C':=\proj_\sphere(L^{-1}(\sphere'))$. We have $\proj_{\sphere}(C) = C'$ and $\sphere^{C'} \subset \mathcal{H}_{1/ \lambda_{\min}(L^{-1})}(C),$
+where $\mathcal{H}_{1/ \lambda_{\min}(L^{-1})}$ is the homothety of ratio $1/ \lambda_{\min}(L^{-1})$. This leads to:
+$$\sigma^{n-1}(C') = \lambda \left( \sphere^{C'} \right) \leq \lambda \left( \mathcal{H}_{1/ \lambda_{\min}(L^{-1})}(E_{P'}^{C}) \right).$$ Then, the following holds: \begin{eqnarray}
+\nonumber\sigma^{n-1}(C') &\leq& \frac{1}{\lambda_{\min}(L^{-1})^n}\lambda(E_{P'}^{C}) \\
+\nonumber &\leq&\frac{1}{\lambda_{\min}(L^{-1})^n} \lambda \left( L^{-1}(\sphere^{\sphere'}) \right)\\ 
+\label{eqn:lt} &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\lambda \left( \sphere^{\sphere'} \right),\\
 \label{eqn:map1} &=&\sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere')
 \end{eqnarray}
 where \eqref{eqn:lt} follows from the fact that
@@ -467,10 +466,10 @@ Finally, thanks to the Property~\ref{rem:scaling}, we even have:
 \begin{equation}\label{eqn:P1}
 \begin{aligned}
 & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T P x, \\ 
-& \forall\, x \in \sphere \setminus L^{-1}(\proj_\sphere(L(\sphere'))), \,\forall\, (j_1,\dots,j_l) \in M^l.
+& \forall\, x \in \sphere \proj_\sphere(L(\sphere')), \,\forall\, (j_1,\dots,j_l) \in M^l.
 \end{aligned}
 \end{equation}
-with $$\sigma^{n-1} \left( L^{-1} (\proj_\sphere(L(\sphere'))) \right) \leq \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere'), $$ which gives us our theorem.
+with $$\sigma^{n-1} \left(  \proj_\sphere(L(\sphere')) \right) \leq \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere'), $$ which gives us our theorem.
 %%Then, if we let $E':=L^{-1} V_\sphere$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_\sphere), and the result of the theorem follows.
 \end{pf}
 
