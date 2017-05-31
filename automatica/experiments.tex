@@ -1,35 +1,16 @@
 % !TEX root =main.tex
-\begin{subsection}{A deterministic lower bound}
+\begin{subsection}{Algorithm}
+\textcolor{red}{Raphael's other upper bound:} 
+There is no conservatism in multiplying $\varepsilon$ by $m^l$, as in the worst case this really happens: if $\varepsilon = 1/m$, it is well possible that one mode is totally forgotten, and that our $\delta$ must be equal to zero (because then all points are bad points). However, when multiplying by $\kappa(P)$, we are conservative, because this bound is exactly reached only at a single point on the ellipsoid.
+So, when we derive an upper bound on the size of the bad points on the sphere after changing the coordinates, we could also derive a ``lower bound on the size of the good points''. This gives a second upper bound on the size of the bad points by taking the complement.  This one can never be larger than one because it is $1-$(lower bound on the size of the good points). I think that to obtain that lower bound, we just have to replace lambdamax by lambdamin.
 
-In this section, we start by providing a theorem for a deterministic lower bound based on the observations $W_{\omega_N}$, whose accuracy depends on the ``horizon'' $l$.
-\begin{theorem}\label{thm:lowerbound}
-For an arbitrary $l \in \N,$ and a given uniform sample $$\omega_N := \{(x_1, j_{1,1},\dots,j_{1,l}), (x_2, j_{2,1},\dots,j_{2,l}), \ldots, (x_N, j_{N,1},\dots,j_{N,l})\} \subset Z_l,$$ 
-by considering $\gamma^*(\omega_N)$ the optimal solution of the optimization problem \eqref{eq:lowerbound}:
-\begin{equation*}
-\begin{aligned}
-& \text{min}_P & & \gamma \\
-& \text{s.t.} 
-&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \gamma^{2l} x^T P x, \,  \quad \forall\ (x, j_1,\dots, j_l) \in \omega_N\\
-& && P \succ 0,\ \gamma \geq 0,
-\end{aligned}
-\end{equation*}
-we have:
-$$\rho(\cM) \geq \frac{\gamma^*(\omega_N)}{\sqrt[2l]{n}}.$$ 
-\end{theorem}
-\begin{proof}
-Let $\nu >0$. By definition of $\gamma^*$,  there exists no matrix $P \in \calS^n_{++}$ such that:
-\begin{equation*}
-(Ax)^T P (Ax) \leq (\gamma^*(\omega_N) -\nu)^{2l} x^T P x,\quad \forall\ x \in \R^n, \forall\, A \in \calM^{l}.
-\end{equation*}
-By Property \ref{rem:scaling}, this means that there exists no CQLF for the scaled set of matrices $\frac{\cM^l}{(\gamma^*(\omega_N)-\nu)^l}$. Since the above inequality is true for every $\nu \geq 0,$ using Theorem~\ref{thm:john}, and the fact that $\rho(\cM^l)=\rho(\cM)^l,$ we conclude:
-\begin{equation*}
-\frac{\rho(\cM)}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt[2l]{n}}.
-\end{equation*}
-\end{proof}
+\textcolor{blue}{Algorithm: maybe explain we take for the bounds for the bisection on $\gamma$, $0$ and $U$, with $U$ the max of the norms $y^T y$, and that for some precision $\eta$, we run the algorithm at most $\lceil \log_2(U/\eta) \rceil$.}
+
 \end{subsection}
 
+
 \begin{subsection}{Experimental results}
-\textcolor{red}{Add the other upper bound}
+\textcolor{red}{To do: add Ayca's new plots}
 
 We illustrate our technique on a two-dimensional switched system with $4$ modes. We fix the confidence level, \mbox{$\beta = 0.92$}, and compute the lower and upper bounds on the JSR for $N:=15+15k,\, k \in\{0, \ldots, 23\}$, according to Theorem~\ref{thm:lowerbound} and Theorem~\ref{thm:mainTheorem}, respectively. We illustrate the average performance of our algorithm over $10$ different runs in Fig.~ \ref{fig:11} and Fig.~\ref{fig:21}. Fig.~\ref{fig:11} shows the evolution of $\delta(\beta, N)$ as $N$ increases. We illustrate that $\delta$ converges to $1$ as expected. In Fig.~\ref{fig:21}, we plot the upper bound and lower bound for the JSR of the system computed by Theorem~\ref{thm:mainTheorem} and Theorem~\ref{thm:lowerbound}, respectively. To demonstrate the performance of our technique, we also provide the JSR approximated by the JSR toolbox \cite{jsrtoolbox}, which turns out to be $0.7727$. Note that, the plot for the upper bound starts from $N=45$. This is due to the fact for $N=15$, and $N=30$, $\delta(\beta, \omega_N) = 0$, hence it is not possible to compute a nontrivial upper bound for these small values of $N$. As can be seen, the upper bound approaches to a close vicinity of the real JSR with approximately 200 samples. In addition, the gap between the upper and lower bound converges to a multiplicative factor of $\frac{\rho}{\sqrt{n}}$ as expected.
 
@@ -51,7 +32,7 @@ We illustrate our technique on a two-dimensional switched system with $4$ modes.
 \end{center}
 \end{figure}
 
-Note that, if we increase the dimension of the switched system, the convergence of $\delta$ to $1$ will become much slower. We confirmed this via experiments up to dimension $n=6$. For example, for dimension $n=4$, it took $N=5,000$ to $N=10,000$ points to reach $\delta = 0.9$. We nevertheless observe convergence of the upper bound to $\rho(\calM)$, and convergence of the lower bound to $\frac{\rho(\calM)}{\sqrt{n}}$. The gap between these two limits is $\frac{\rho}{\sqrt{n}}$ and could be improved by considering a more general class of common Lyapunov functions, such as those that can be described by sum-of-squares polynomials \cite{sosLyap}. We leave this for future work.
+Note that, if we increase the dimension of the switched system, the convergence of $\delta$ to $1$ will become much slower. We confirmed this via experiments up to dimension $n=6$. For example, for dimension $n=4$, it took $N=5,000$ to $N=10,000$ points to reach $\delta = 0.9$. We nevertheless observe convergence of the upper bound to $\rho(\mathcal{M})$, and convergence of the lower bound to $\frac{\rho(\mathcal{M})}{\sqrt{n}}$. The gap between these two limits is $\frac{\rho}{\sqrt{n}}$ and could be improved by considering a more general class of common Lyapunov functions, such as those that can be described by sum-of-squares polynomials \cite{sosLyap}. We leave this for future work.
 
 Finally, we randomly generate $10,000$ test cases with systems of dimension between $2$ and $7$, number of modes between $2$ and $5$, and size of samples $N$ between $30$ and $800$. We take $\beta = 0.92$ and we check if the upper bound computed by our technique is greater than the actual JSR of the system. We get $9873$ positive tests, out of $10,000$, which gives us a probability of $0.9873$ of the correctness of the upper bound computed. Note that, this probability is significantly above the provided $\beta$. This is expected, since our techniques are based on worst-case analysis and thus fairly conservative.
 \end{subsection}
@@ -74,10 +55,10 @@ We now want to decide whether the resulting closed-loop network control system i
 \label{comExample}
 \end{figure}
 
-Note that, the closed-loop dynamics of the underlying system when the controller is active is $A_c = A+BK$. Then, we can model the overall networked control system by the linear switched system $x_{k+1} = \bar{A}x_k$, where $\bar{A} \in \calM$ and
-\begin{equation}\label{eqn:calCom}\calM = \{A^2A_c^2A^4, A_cAA_c^2A^4,AA_c^3A^4, A_c^4A^4\}.
+Note that, the closed-loop dynamics of the underlying system when the controller is active is $A_c = A+BK$. Then, we can model the overall networked control system by the linear switched system $x_{k+1} = \bar{A}x_k$, where $\bar{A} \in \mathcal{M}$ and
+\begin{equation}\label{eqn:calCom}\mathcal{M} = \{A^2A_c^2A^4, A_cAA_c^2A^4,AA_c^3A^4, A_c^4A^4\}.
 \end{equation}
-Note that, in \eqref{eqn:calCom}, each mode corresponds to a different utilization of the CFP by the users. For example, the mode defined by $A_cAA_c^2A^4$ is active when the first slot in the CFP is assigned to the controller and the second slot is assigned to the other users. We assume that all of the users using the channel have an equal probability of being assigned to a time slot during the CFP. Therefore, the probability of each mode in $\calM$ being active is $\left\{\frac{1}{(\ell-1)^2}, \frac{1}{\ell(\ell-1)}, \frac{1}{(\ell-1)\ell}, \frac{1}{\ell^2}\right\}$, i.e., the modes given in \eqref{eqn:calCom} will not be active with the same probability. Hence, we make use of Remark \ref{rem:probGeneralize} and update our bounds accordingly. Fig.~\ref{fig:4} shows the computed bounds. As can be seen, approximately after 500 samples,  the upper bound on the JSR drops below $1$, which lets us decide that the given closed-loop networked control system is stable, with probability $0.95$.
+Note that, in \eqref{eqn:calCom}, each mode corresponds to a different utilization of the CFP by the users. For example, the mode defined by $A_cAA_c^2A^4$ is active when the first slot in the CFP is assigned to the controller and the second slot is assigned to the other users. We assume that all of the users using the channel have an equal probability of being assigned to a time slot during the CFP. Therefore, the probability of each mode in $\mathcal{M}$ being active is $\left\{\frac{1}{(\ell-1)^2}, \frac{1}{\ell(\ell-1)}, \frac{1}{(\ell-1)\ell}, \frac{1}{\ell^2}\right\}$, i.e., the modes given in \eqref{eqn:calCom} will not be active with the same probability. Hence, we make use of Remark \ref{rem:probGeneralize} and update our bounds accordingly. Fig.~\ref{fig:4} shows the computed bounds. As can be seen, approximately after 500 samples,  the upper bound on the JSR drops below $1$, which lets us decide that the given closed-loop networked control system is stable, with probability $0.95$.
 
 \begin{figure}
     \centering

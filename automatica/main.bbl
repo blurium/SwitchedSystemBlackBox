@@ -96,6 +96,13 @@ A.~Nemirovski and A.~Shapiro.
 \newblock Convex approximations of chance constrained programs.
 \newblock {\em SIAM Journal on Optimization}, 17(4):969--996, 2006.
 
+\bibitem{sosLyap}
+A.~Papachristodoulou and S.~Prajna.
+\newblock {On the construction of Lyapunov functions using the sum of squares
+  decomposition}.
+\newblock In {\em Proceedings of 41st IEEE Conference on Decision and Control},
+  pages 3482--3487, Las Vegas, Nevada USA, December 2002.
+
 \bibitem{parrilo-jadbabaie}
 P.~Parrilo and A.~Jadbabaie.
 \newblock Approximation of the joint spectral radius using sum of squares.
@@ -111,5 +118,12 @@ U.~Topcu, A.~Packard, and P.~Seiler.
 \newblock Local stability analysis using simulations and sum-of-squares
   programming.
 \newblock {\em Automatica}, 44(10):2669 -- 2675, 2008.
+
+\bibitem{jsrtoolbox}
+G.~Vankeerberghen, J.~Hendrickx, and R.~Jungers.
+\newblock Jsr: A toolbox to compute the joint spectral radius.
+\newblock In {\em Proceedings of the 17th International Conference on Hybrid
+  Systems: Computation and Control}, HSCC '14, pages 151--156, New York, NY,
+  USA, 2014. ACM.
 
 \end{thebibliography}
