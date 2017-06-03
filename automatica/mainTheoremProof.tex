@@ -450,9 +450,8 @@ with $$L^{-1}(\sphere \setminus \sphere') = E_{P'} \setminus L^{-1}(\sphere').$$
 \end{figure}
 To reason on the (spherical) measure of violating set in the new coordinates, we project $E_{P'}$ on the unit sphere; $L^{-1}(\sphere')$ becomes $\proj_\sphere(L^{-1}(\sphere'))$.
 
-We now show how to relate $\sigma^{n-1}(\proj_\sphere(L^{-1}(\sphere')))$ to $\sigma^{n-1}(\sphere')$, measure of the violating set in the initial coordinates. Consider $\sphere^{\sphere'}$, the sector of $\ball$ defined by $\sphere'$. We denote $C:= L^{-1}(\sphere')$ and $C':=\proj_\sphere(L^{-1}(\sphere'))$. We have $\proj_{\sphere}(C) = C'$ and $\sphere^{C'} \subset \mathcal{H}_{1/ \lambda_{\min}(L^{-1})}(C),$
-where $\mathcal{H}_{1/ \lambda_{\min}(L^{-1})}$ is the homothety of ratio $1/ \lambda_{\min}(L^{-1})$. This leads to:
-$$\sigma^{n-1}(C') = \lambda \left( \sphere^{C'} \right) \leq \lambda \left( \mathcal{H}_{1/ \lambda_{\min}(L^{-1})}(E_{P'}^{C}) \right).$$ Then, the following holds: \begin{eqnarray}
+We now show how to relate $\sigma^{n-1}(\proj_\sphere(L^{-1}(\sphere')))$ to $\sigma^{n-1}(\sphere')$, measure of the violating set in the initial coordinates. Consider $\sphere^{\sphere'}$, the sector of $\ball$ defined by $\sphere'$. We denote $C:= L^{-1}(\sphere')$ and $C':=\proj_\sphere(L^{-1}(\sphere'))$. We have $\proj_{\sphere}(C) = C'$ and $\sphere^{C'} \subset \frac{1}{ \lambda_{\min (L^{-1})}} C$. This leads to:
+$$\sigma^{n-1}(C') = \lambda \left( \sphere^{C'} \right) \leq \lambda \left( \frac{1}{ \lambda_{\min (L^{-1})}} E_{P'}^{C} \right).$$ Then, the following holds: \begin{eqnarray}
 \nonumber\sigma^{n-1}(C') &\leq& \frac{1}{\lambda_{\min}(L^{-1})^n}\lambda(E_{P'}^{C}) \\
 \nonumber &\leq&\frac{1}{\lambda_{\min}(L^{-1})^n} \lambda \left( L^{-1}(\sphere^{\sphere'}) \right)\\ 
 \label{eqn:lt} &=&\frac{|\det(L^{-1})|}{\lambda_{\min}(L^{-1})^n}\lambda \left( \sphere^{\sphere'} \right),\\
@@ -465,8 +464,8 @@ for any set $X \subset \mathbb{R}^n$ and $Q \in \mathcal{L}(\mathbb{R}^n)$ (see 
 Finally, thanks to the Property~\ref{rem:scaling}, we even have:
 \begin{equation}\label{eqn:P1}
 \begin{aligned}
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T P x, \\ 
-& \forall\, x \in \sphere \proj_\sphere(L(\sphere')), \,\forall\, (j_1,\dots,j_l) \in M^l.
+& (\mathbf{A}_l x)^T P (\mathbf{A}_l x) \leq (\gamma^*)^{2l} x^T P x,  \forall\, x \in \sphere \setminus \proj_\sphere(L(\sphere')), \\
+& \qquad \qquad \qquad \qquad \forall\ (j_1,\dots,j_l) \in M^l.
 \end{aligned}
 \end{equation}
 with $$\sigma^{n-1} \left(  \proj_\sphere(L(\sphere')) \right) \leq \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere'), $$ which gives us our theorem.

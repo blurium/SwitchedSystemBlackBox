@@ -54,17 +54,7 @@
 \renewcommand{\algorithmicreturn}{\textbf{Compute:}}
 \renewcommand{\thealgorithm}{} 
 
-%\newtheorem{remark}{Remark}[section]
 \newtheorem{property}{Property}[section]
-%\newtheorem{theorem}{Theorem}[section]
-%\newtheorem{definition}{Definition}[section]
-%\newtheorem{lemma}[theorem]{Lemma}
-%\newtheorem{proposition}[theorem]{Proposition}
-%\newtheorem{corollary}[theorem]{Corollary}
-%\newtheorem{problem}{Problem}[section]
-
-%\newenvironment{definition}[1][Definition]{\begin{trivlist}
-%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
 
 %\thanks{\textcolor{red}{*This work was supported by.}}
@@ -79,26 +69,22 @@
 %\runtitle{Insert a suggested running title} 
 \title{Data Driven Stability Analysis of Black-box Switched Linear Systems}
 
-\thanks[footnoteinfo]{This paper was not presented at any IFAC 
-meeting. Corresponding author M.~T.~Cicero. Tel. +XXXIX-VI-mmmxxi. 
-Fax +XXXIX-VI-mmmxxv.}
+\thanks[footnoteinfo]{A. Balkan, J. Kenanian, and P. Tabuada had their work supported by NSF Grants 1645824, 1521617, and NSF Expeditions in Computer Augmented Program Engineering. R. Jungers is a Fulbright Fellow and a F.N.R.S. Fellow currently visiting the Dept. of Electrical Engineering at UCLA. His work is supported by the French Community of Belgium and the IAP network Dysco.}
 
-\author[Paestum]{Marcus Tullius Cicero}\ead{cicero@senate.ir},    % Add the 
-\author[Rome]{Julius Caesar}\ead{julius@caesar.ir},               % e-mail address 
-\author[Baiae]{Publius Maro Vergilius}\ead{vergilius@culture.ir}  % (ead) as shown
+\author[UCLA]{Marcus Tullius Cicero}\ead{cicero@senate.ir},    % Add the 
+\author[UCLA]{Julius Caesar}\ead{julius@caesar.ir},               % e-mail address 
+\author[Louvain]{Publius Maro Vergilius}\ead{vergilius@culture.ir}  % (ead) as shown
 
-\address[Paestum]{Buckingham Palace, Paestum}  % Please supply                                              
-\address[Rome]{Senate House, Rome}             % full addresses
-\address[Baiae]{The White House, Baiae}        % here.
+\address[UCLA]{Department of Electrical Engineering at University of California, Los Angeles (UCLA)}  % Please supply                                              
+\address[Louvain]{UC Louvain/Raphael's affiliation}             % full addresses
+
 
 
 \begin{keyword}                           % Five to ten keywords,  
-keywords to pick.                         % chosen from the IFAC 
+\textcolor{red}{5 to 10 keywords to pick from the list: http://www.autsubmit.com/documents/keywords.html}   % chosen from the IFAC 
 \end{keyword}                             % keyword list or with the 
                                           % help of the Automatica 
                                           % keyword wizard
-
-
 
 \begin{abstract}
 We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched linear system. We show that, for a given (randomly generated) set of observations, one can give a stability guarantee, for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of both the number of observations and the required level of confidence. Our results rely on geometrical analysis and combining chance-constrained optimization theory with stability analysis techniques for switched systems.
