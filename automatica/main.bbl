@@ -19,7 +19,7 @@ V.~D. Blondel and J.~N. Tsitsiklis.
 \newblock {\em Automatica}, 35(3):479--489, 1999.
 
 \bibitem{lazar}
-M.~Bobiti, R.~andLazar.
+R.~Bobiti and M.~Lazar.
 \newblock A delta-sampling verification theorem for discrete-time, possibly
   discontinuous systems.
 \newblock In {\em Proceedings of the 18th International Conference on Hybrid
@@ -41,12 +41,6 @@ G.~Calafiore and M.~C. Campi.
 \newblock {\em IEEE Transactions on Automatic Control}, 51(5):742--753, 2006.
 
 \bibitem{campi-garatti}
-M.~C. Campi and S.~Garatti.
-\newblock The exact feasibility of randomized solutions of uncertain convex
-  programs.
-\newblock {\em SIAM Journal on Optimization}, 19(3):1211--1230, 2008.
-
-\bibitem{nondegen}
 M.~C. Campi and S.~Garatti.
 \newblock The exact feasibility of randomized solutions of uncertain convex
   programs.

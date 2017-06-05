@@ -3,7 +3,6 @@
 In this section, we show how to compute an upper bound on $\rho$, with a user-defined confidence $\beta \in (0, 1)$. We do this by constructing a $l$-step CQLF which is valid with probability at least $\beta$. Note that, the existence of a $l$-step CQLF implies $\rho \leq 1$ due to Theorem \ref{thm:cqlf}.
 
 Let us analyze the relationship between the solutions of the theoretical optimization problem \eqref{eqn:campiOpt2} and the practical version \eqref{eq:lowerbound}, with finitely many constraints. Even though in practice, one would solve the optimization problem  \eqref{eq:lowerbound} as suggested in the previous section, for the sake of rigor and clarity of our proofs, we introduce a slighly different optimization problem. In this new optimization problem, an objective function is considered, and a ``regularization parameter'', $\eta > 0$, is added. As the reader will see, we will derive results valid for arbitrarily small values of $\eta$, and so this will not hamper the practical accuracy of our technique, while allowing us to derive a theoretical asymptotic guarantee (i.e. for large number of observations).
-
 \begin{equation}\label{eqn:campiOpt03}
 \begin{aligned}
 & \text{min}_{P} & & \lambda_{\max}(P) \\
@@ -26,14 +25,14 @@ Then, for all $\varepsilon \in (0,1]$ the following holds:
 \begin{equation}\label{eqn:violation}
 \mu_l^N\hspace{-1mm}\left\{ \omega_N \in Z_l^N: \mu_l(V(\omega_N)) \leq \varepsilon \right\}\hspace{-1mm} \geq 1- \sum_{j=0}^{d} \binom{N}{j}\varepsilon^j (1-\varepsilon)^{N-j},
 \end{equation}
-where $\mu_l^N$ denotes the product probability measure on $Z_l^N$, and $V(\omega_N)$ is defined by \small{
+where $\mu_l^N$ denotes the product probability measure on $Z_l^N$, and $V(\omega_N)$ is defined by 
 \begin{equation*} 
 \begin{aligned}
-& V(\omega_N) := \{z=(x,j_{1},\dots,j_{l}) \in Z_l: \\
+ V(\omega_N) &:= \{z=(x,j_{1},\dots,j_{l}) \in Z_l: \\
 &x^T \Al^T P(\omega_N)\Al x> (\gamma_{\omega_N}^{*})^{2l} x^T P(\omega_N) x\},
 \end{aligned}
 \end{equation*}
-}
+
 i.e., it is the set of constraints that are violated by the optimal solution of $\Opt(\omega_N)$. From now we will denote the left hand-side of \eqref{eqn:violation} by $\beta$.
 \end{thm}
 
@@ -41,7 +40,7 @@ i.e., it is the set of constraints that are violated by the optimal solution of 
 \item When the problem $\Opt(\omega_N)$ admits an optimal solution, this solution is unique.
 \item Problem $\Opt(\omega_N)$ is nondegenerate with probability $1$.
 \end{enumerate}
-Here, the first assumption can be enforced if required by adding a tie-breaking rule to $\Opt(\omega_N)$ as explained in Appendix A in \cite{tiebreak}, while the second assumption can be lifted, as explained in PART 2b in \cite{nondegen}, thanks to the introduction of a ``constraint heating''.
+Here, the first assumption can be enforced if required by adding a tie-breaking rule to $\Opt(\omega_N)$ as explained in Appendix A in \cite{tiebreak}, while the second assumption can be lifted, as explained in PART 2b in \cite{campi-garatti}, thanks to the introduction of a ``constraint heating''.
 }
 
 
@@ -56,7 +55,7 @@ Consider a set of matrices $\mathcal{M}$, $\gamma^{*}$ optimal solution of \eqre
 for some $\sphere' \subset \sphere$ such that $\sigma^{n-1}(\sphere') \leq \varepsilon m^l $.
 \end{cor}
 
-The proof of Corollary~\ref{cor:gettingRidOfm} is based on straightforward arguments on measures, and is given in Appendix~\ref{proof:cor_m}. This result allows us to only consider set of violating points on the sphere from now. Note that, this result is conservative: the case where we have the equality $\sigma(\sphere') = \varepsilon m^l$ corresponds to the case where we have only observed one mode \ayca{for the entirety of the trace} and have then minimal knowledge on the system for a given $\varepsilon$.
+The proof of Corollary~\ref{cor:gettingRidOfm} is based on straightforward arguments on measures, and is given in Appendix~\ref{proof:cor_m}. This result allows us to only consider set of violating points on the sphere from now. Note that, this result is conservative: the case where we have the equality $\sigma(\sphere') = \varepsilon m^l$ corresponds to the case where we have only observed one mode for the entirety of the trace and have then minimal knowledge on the system for a given $\varepsilon$.
 
 
 The above results allow us to conclude, from a finite number of observations, that with probability $\beta$ (where $\beta$ goes to $1$ as $N$ goes to infinity), the required property is actually satisfied for the complete sphere $\sphere$, except on a small set of measure at most $\varepsilon m^l$. This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure bounded by $\varepsilon m^l$. This can be represented in the case $n=2$ by the following plot, where the points of the ellipse in red are points that might violate the contractivity constraint. Here, the set of red points has measure at most $\varepsilon m^l$.
@@ -171,16 +170,14 @@ Note that, the set of points that can violate the constraint still has measure b
 \draw[line width=0.3mm,black] (6,0) circle[radius=2.5cm];
 \draw[line width=0.3mm,black,->] (6,0) -- (7.25,{2.5*sin(60)});
 \draw[line width=0.3mm,black] (7.8,{2.5*sin(60)+0.2}) node {$(\gamma^{*})^l$};
-\draw[line width=0.3mm,red] (6,0) circle[radius=1.73cm];
-\draw[line width=0.3mm,red,->] (6,0) -- (7.73,0);
-\draw[line width=0.3mm,red] (7.15,0.2) node {$\delta$};
+\draw[line width=0.3mm,black] (6,0) circle[radius=1.73cm];
+\draw[line width=0.3mm,black,->] (6,0) -- (7.73,0);
+\draw[line width=0.3mm,black] (7.15,0.3) node {$\delta$};
 \end{tikzpicture}
 \caption{On the left, our problem in the case of a sphere. On the right, we represent in blue the boundary of the convex hull of the points satisfying the $(\gamma^{*})^l$-contractivity constraint on $l$-traces; in red we represent the largest sphere $\sphere_{\delta}$ included in that convex hull ; in black we represent the boundary of the set where elements of all $l$-traces initialized in that convex hull can lie.}
 \end{center}
 \end{figure}
-
 We investigate then the case for which the largest ball included $\convhull (S \setminus X_{\varepsilon m^l})$ has the smallest radius $\delta$. This will maximize our upper bound on the growth of rate of the sphere $\sphere_{\delta}$ considered, and thus will give us an upper bound on the JSR equal to $\frac{\gamma^{*}}{\sqrt[l]{\delta}}$. Minimizing $\delta$ will then give us the worst case set for a given measure $\varepsilon m^l$ of points authorized to violate our constraint. This worst case will happen when the set of violating points on $\sphere$ is a spherical cap (see Proposition~\ref{thm:mainSphericalCap} below). Let us define this notion.
-
 \begin{defn}
 We define the \emph{spherical cap} on $\sphere$ for a given hyperplane $c^Tx = k$ as:
 \begin{equation*}
@@ -293,7 +290,7 @@ $$\alpha \left( \frac{\varepsilon m^l}{2} \right) \left( \Al (\ball) \right) \su
 which implies that $\rho(\mathcal{M}^l) \leq \frac{\gamma^l}{\alpha(\frac{\varepsilon m^l}{2})}$ and hence $$\rho(\mathcal{M}) \leq \frac{\gamma}{\sqrt[l]{\alpha(\frac{\varepsilon m^l}{2})}}.$$
 \end{pf}
 
-We have then solved the problem when $P(\omega_N) = \ayca{I}$.
+We have then solved the problem when $P(\omega_N) = I$.
 
 \begin{rem}
 When $\varepsilon \geq \frac{1}{m^l}$, we have $\delta = 1$ \ayca{but we just talked about $\alpha$!} and the upper we can give for the JSR is only $+ \infty$.
@@ -309,7 +306,7 @@ We now consider the general problem for any $P(\omega_N)$, and transform it into
 \begin{equation}\label{cholesky}
 P = L^TL,
 \end{equation} 
-where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of \ayca{$E_P$ to $\sphere$.}
+where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of $E_P$ to $\sphere$.
 
 \begin{figure}[H]
 \begin{center}
@@ -409,15 +406,11 @@ where $\alpha(\frac{\varepsilon m^l \kappa(P)}{2})$ is given in \eqref{eqn:alpha
 %\end{aligned}
 %\end{equation*}
 
-Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L^{-1} \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining \mbox{$\bar{A}_{j_i}=  L A_{j_i} L^{-1}$,} and $\barAl = \bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} $ assumption \eqref{eq:assumptionThm01} becomes:
+Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining \mbox{$\bar{A}_{j_i}=  L A_{j_i} L^{-1}$,} and $\barAl = \bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} $ assumption \eqref{eq:assumptionThm01} becomes:
 \begin{equation}\label{eq:assumption3}
-\begin{aligned}
-& x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x, \\
-& \forall\, x \in  L^{-1}(E_P \setminus L(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l. \\
-& \ayca{\text{I think this should be\,} \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \forall\, (j_1,\dots,j_l) \in M^l.}
-\end{aligned}
+x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x, \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \forall\, (j_1,\dots,j_l) \in M^l.
 \end{equation}
-with $$L^{-1}(E_P \setminus L(\sphere')) = \sphere \setminus \sphere'.$$
+%with $$L^{-1}(E_P \setminus L(\sphere')) = \sphere \setminus \sphere'.$$
 
 %
 %In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$,.
@@ -480,10 +473,10 @@ where \eqref{eqn:lt} follows from the fact that
 $$ \lambda(Q(X)) = |\det(Q)| \lambda(X),$$
 for any set $X \subset \mathbb{R}^n$ and $Q \in \mathcal{L}(\mathbb{R}^n)$ (see e.g. \cite{rudin}).
 
-Finally, thanks to the \ayca{This doesn't immediately follow from this property, that property is immediately on the JSR, no? It follows from homegenity of the dynamics.} Property~\ref{rem:scaling}, we even have:
+Finally, thanks to the Property~\ref{property:homogeneity}, we even have:
 \begin{equation}\label{eqn:P1}
 \begin{aligned}
-& (\mathbf{A}_l x)^T P (\mathbf{A}_l x) \leq (\gamma^*)^{2l} x^T P x,  \forall\, x \in \sphere \setminus \proj_\sphere(\ayca{L^{-1}}\sphere'), \\
+& (\mathbf{A}_l x)^T P (\mathbf{A}_l x) \leq (\gamma^*)^{2l} x^T P x,  \forall\, x \in \sphere \setminus \proj_\sphere(L^{-1}\sphere'), \\
 & \qquad \qquad \qquad \qquad \forall\ (j_1,\dots,j_l) \in M^l.
 \end{aligned}
 \end{equation}
