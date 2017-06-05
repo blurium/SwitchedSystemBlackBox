@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.31)  31 MAY 2017 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.31)  4 JUN 2017 21:44
 entering extended mode
 **./main.tex
 (main.tex
@@ -650,25 +650,25 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    ... okay on input line 67.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -730,85 +730,72 @@ G,.JBIG2,.JB2,.eps]
 )
 \symgns@font=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 77.
-Package gensymb Info: Math companion symbols declared on input line 77.
-LaTeX Info: Redefining \degree on input line 77.
-LaTeX Info: Redefining \celsius on input line 77.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 67.
+Package gensymb Info: Math companion symbols declared on input line 67.
+LaTeX Info: Redefining \degree on input line 67.
+LaTeX Info: Redefining \celsius on input line 67.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 77.
-LaTeX Info: Redefining \ohm on input line 77.
-Package gensymb Info: Using \textohm for \ohm on input line 77.
-Package gensymb Info: Using \textmu for \micro on input line 77.
+erthousand on input line 67.
+LaTeX Info: Redefining \ohm on input line 67.
+Package gensymb Info: Using \textohm for \ohm on input line 67.
+Package gensymb Info: Using \textmu for \micro on input line 67.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 80.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
 \c@sv@footnote=\count155
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 106.
-
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 92.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) (introduction.tex
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2]) (Preliminaries.tex
+]) [2] (Preliminaries.tex
 Underfull \hbox (badness 1253) in paragraph at lines 2--3
 []\T1/cmr/m/n/10 We con-sider the usual fi-nite normed vec-tor space
  []
 
 ) (stability.tex
-Underfull \vbox (badness 4739) has occurred while \output is active []
-
-
 Underfull \hbox (badness 1728) in paragraph at lines 6--8
 \T1/cmr/m/n/10 with $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k; x[]
 \OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 A[]x[]$ \T1/cmr/m/n/10 and switch-ing se-q
 uence
  []
 
-[3]) (formulation.tex [4]
-Overfull \hbox (54.50038pt too wide) detected at line 25
-\OML/cmm/m/it/10 ![] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/
-cmm/m/it/10 x[]; j[]; [] ; j[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/
-10 (\OML/cmm/m/it/10 x[]; j[]; [] ; j[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ;
- \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; j[]; [] ; j[]\OT1/cmr/m/n/10 )\OMS/cmsy
-/m/n/10 g\OML/cmm/m/it/10 ;
- []
-
-) (lb.tex
-Overfull \hbox (129.30505pt too wide) detected at line 10
-[] []
- []
-
-[5]
-Overfull \hbox (129.72717pt too wide) detected at line 29
+[3]) (formulation.tex [4]) (lb.tex
+Overfull \hbox (17.92719pt too wide) detected at line 10
 [] []
  []
 
 
-Overfull \hbox (16.71756pt too wide) detected at line 37
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 P\OT1/c
-mr/m/n/10 (\OML/cmm/m/it/10 Ax\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )
- \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 \OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 x[]Px
-;  \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]\O
-ML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 M[]\O
-ML/cmm/m/it/10 :
+Overfull \hbox (14.4604pt too wide) detected at line 22
+[] []
  []
 
-) (mainTheoremProof.tex
+
+Overfull \hbox (29.50908pt too wide) detected at line 30
+\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]\OML/
+cmm/m/it/10 P\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 A[]\OML/cmm/m/it/10 x\OT1/cmr/m/
+n/10 ) \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 
+(\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 \OT
+1/cmr/m/n/10 )[]\OML/cmm/m/it/10 x[]Px;  \OMS/cmsy/m/n/10 8 \OML/cmm/m/it/10 x 
+\OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 8 \OT1/
+cmr/bx/n/10 A[] \OMS/cmsy/m/n/10 2 M[]\OML/cmm/m/it/10 :
+ []
+
+[5]) (mainTheoremProof.tex
 Overfull \hbox (95.71782pt too wide) detected at line 15
 [] []
  []
@@ -830,23 +817,22 @@ Overfull \hbox (40.31302pt too wide) detected at line 38
 [] []
  []
 
-[6]
+
 Overfull \hbox (4.48074pt too wide) detected at line 58
 [] []
  []
 
-
+[6]
 Overfull \hbox (1.90903pt too wide) in paragraph at lines 136--137
 []\T1/cmr/m/n/10 This leads us to look for the largest sphere in $[]\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 S \OMS/cmsy/m/n/10 n
  []
 
-[7]
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 213.
 
-
+[7]
 Overfull \hbox (18.95578pt too wide) in paragraph at lines 285--289
 \T1/cmr/bx/n/10 PROOF.\T1/cmr/m/n/10 Note that, [] im-plies that: $\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 A[]A[] [] A[]\OT1/cmr/m/n/10 )(\U/msb/m/n/10 S \OMS/cmsy/
@@ -873,21 +859,10 @@ Overfull \hbox (4.48074pt too wide) detected at line 366
  []
 
 
-Overfull \hbox (0.89777pt too wide) detected at line 410
-[] [][]
- []
+Underfull \vbox (badness 3000) has occurred while \output is active []
 
-
-Overfull \hbox (4.48074pt too wide) detected at line 418
-[] [][]
- []
-
-[9]
-Overfull \hbox (4.48074pt too wide) detected at line 471
-[] []
- []
-
-) (mainTheoremProof2.tex
+ [9])
+(mainTheoremProof2.tex
 Overfull \hbox (34.80478pt too wide) detected at line 21
 [] []
  []
@@ -915,7 +890,7 @@ Overfull \hbox (19.1867pt too wide) detected at line 50
 [] []
  []
 
-[10]
+
 Underfull \hbox (badness 1199) in paragraph at lines 78--80
 \T1/cmr/m/n/10 We start by show-ing that $\OML/cmm/m/it/10  []$ \T1/cmr/m/n/10
  is uni-formly
@@ -932,7 +907,7 @@ Underfull \hbox (badness 1838) in paragraph at lines 78--80
 n $\OML/cmm/m/it/10 P[]$\T1/cmr/m/n/10 . Note that,
  []
 
-
+[10]
 Overfull \hbox (10.25266pt too wide) in paragraph at lines 85--86
 []\T1/cmr/m/n/10 We next show that for a fixed $\OML/cmm/m/it/10  \OMS/cmsy/m/
 n/10 2 \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$\T1/cmr/m/n/10 ,
@@ -956,23 +931,23 @@ t/10 N[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 c\OT1/cmr/m/n/10
 ML/cmm/m/it/10 :
  []
 
-) (experiments.tex [11]
+) (experiments.tex
 Underfull \hbox (badness 1824) in paragraph at lines 15--16
 []\T1/cmr/m/n/10 We il-lus-trate our tech-nique on a two-dimensional
  []
 
-<delta1.jpg, id=69, 562.1pt x 421.575pt>
+<delta1.jpg, id=67, 562.1pt x 421.575pt>
 File: delta1.jpg Graphic file (type jpg)
  <use delta1.jpg>
 Package pdftex.def Info: delta1.jpg used on input line 19.
 (pdftex.def)             Requested size: 186.77934pt x 137.59485pt.
 
-<bounds1.jpg, id=70, 562.1pt x 421.575pt>
+<bounds1.jpg, id=68, 562.1pt x 421.575pt>
 File: bounds1.jpg Graphic file (type jpg)
  <use bounds1.jpg>
 Package pdftex.def Info: bounds1.jpg used on input line 28.
 (pdftex.def)             Requested size: 186.77934pt x 137.59485pt.
-
+ [11]
 
 LaTeX Warning: Citation `macLayer' on page 12 undefined on input line 47.
 
@@ -990,19 +965,25 @@ Package epstopdf Info: Source file: <comNetwork.eps>
 .pdf comNetwork.eps>
 (epstopdf)             \includegraphics on input line 52.
 Package epstopdf Info: Output file is already uptodate.
-<comNetwork-eps-converted-to.pdf, id=71, 145.54375pt x 76.285pt>
+<comNetwork-eps-converted-to.pdf, id=72, 145.54375pt x 76.285pt>
 File: comNetwork-eps-converted-to.pdf Graphic file (type pdf)
 
 <use comNetwork-eps-converted-to.pdf>
 Package pdftex.def Info: comNetwork-eps-converted-to.pdf used on input line 52.
 
 (pdftex.def)             Requested size: 218.31506pt x 114.4272pt.
- [12 <./delta1.jpg> <./bounds1.jpg>]
+
+Underfull \vbox (badness 4660) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1472) has occurred while \output is active []
+
+ [12 <./delta1.jpg> <./bounds1.jpg> <./comNetwork-eps-converted-to.pdf>]
 
 LaTeX Warning: Reference `rem:probGeneralize' on page 13 undefined on input lin
 e 61.
 
-<networkControl.pdf, id=75, 426.59375pt x 284.06125pt>
+<networkControl.pdf, id=87, 426.59375pt x 284.06125pt>
 File: networkControl.pdf Graphic file (type pdf)
 
 <use networkControl.pdf>
@@ -1013,9 +994,9 @@ Overfull \hbox (58.61357pt too wide) in paragraph at lines 65--66
  [][] 
  []
 
-) (conclusions.tex) (main.bbl [13 <./comNetwork-eps-converted-to.pdf> <./networ
-kControl.pdf>]) (appendix.tex [14]
-Overfull \hbox (45.33884pt too wide) in paragraph at lines 36--37
+) (conclusions.tex) (main.bbl [13 <./networkControl.pdf>]) (appendix.tex
+[14]
+Overfull \hbox (45.33884pt too wide) in paragraph at lines 35--36
 []\OML/cmm/m/it/10 :$ \T1/cmr/m/n/10 Then since $\OMS/cmsy/m/n/10 8 \OML/cmm/m/
 it/10 i$\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10
  M[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  [][] \OML/cmm/m/it/10 []\OT1/cmr/m/n/
@@ -1024,7 +1005,7 @@ m/n/10 ) =
  []
 
 
-Overfull \hbox (3.26405pt too wide) detected at line 102
+Overfull \hbox (3.26405pt too wide) detected at line 101
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 d\OT1/
 cmr/m/n/10 (\OML/cmm/m/it/10 x[]; \OT1/cmr/m/n/10 0) = \OML/cmm/m/it/10 d\OT1/c
 mr/m/n/10 (\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 : \OML/cmm/m/it
@@ -1032,52 +1013,55 @@ mr/m/n/10 (\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 : \OML/cmm/m/it
  ; \OT1/cmr/m/n/10 0) = [] [] \OML/cmm/m/it/10 :
  []
 
-[15]) [16] (main.aux)
+[15]) [16
+
+] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15798 strings out of 493334
- 296896 string characters out of 3139248
- 342408 words of memory out of 3000000
- 18949 multiletter control sequences out of 15000+200000
- 31999 words of font info for 93 fonts, out of 3000000 for 9000
+ 15806 strings out of 493334
+ 296971 string characters out of 3139248
+ 347602 words of memory out of 3000000
+ 18952 multiletter control sequences out of 15000+200000
+ 33546 words of font info for 98 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,54p,1673b,831s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,54p,1733b,831s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbi1000.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx0900.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/cm-super/sfrm0600.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/cm-super/sfrm0800.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-supe
-r/sfrm0900.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm100
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1440.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl0900.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti0800.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/cm-super/sfti0900.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/cm-super/sftt0900.pfb>
-Output written on main.pdf (16 pages, 698633 bytes).
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbi1000.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/cm-super/sfbx0900.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/cm-super/sfbx1728.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/cm-super/sfrm0600.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-sup
+er/sfrm0800.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm09
+00.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1440.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl0900.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/cm-super/sfti0800.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/cm-super/sfti0900.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/cm-super/sftt0900.pfb>
+Output written on main.pdf (16 pages, 703994 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
+ 230 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

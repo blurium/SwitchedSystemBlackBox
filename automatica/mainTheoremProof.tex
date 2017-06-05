@@ -401,31 +401,33 @@ The assumption \eqref{eq:assumptionThm01} is a contraction assumption on points 
 \end{figure}
 
 
-We have $y \in E_P \leftrightarrow x \in \sphere$ with $y = L(x)$, the euclidean norm $y^T y$ becoming $x^T P x$. Hence, \eqref{eq:assumptionThm01} can be rewritten as:
-\begin{equation*}\label{eq:assumption2}
-\begin{aligned}
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T x,\\
-& \qquad \qquad \qquad \qquad \forall\, x \in E_P \setminus L(\sphere'), \forall\ (j_1, \dotsc, j_l) \in M^l.
-\end{aligned}
-\end{equation*}
+%We have $y \in E_P \leftrightarrow x \in \sphere$ with $y = L(x)$, the euclidean norm $y^T y$ becoming $x^T P x$. Hence, \eqref{eq:assumptionThm01} can be rewritten as:
+%\begin{equation*}\label{eq:assumption2}
+%\begin{aligned}
+%& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T x,\\
+%& \qquad \qquad \qquad \qquad \forall\, x \in E_P \setminus L(\sphere'), \forall\ (j_1, \dotsc, j_l) \in M^l.
+%\end{aligned}
+%\end{equation*}
 
-Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining $\bar{A}_{j_i}=  L^{-1} A_{j_i} L$, assumption \eqref{eq:assumption2} becomes:
-\begin{equation*}\label{eq:assumption3}
+Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L^{-1} \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining $\bar{A}_{j_i}=  L A_{j_i} L^{-1}$, assumption \eqref{eq:assumptionThm01} becomes:
+\begin{equation}\label{eq:assumption3}
 \begin{aligned}
-& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T P (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T P x, \\
+& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x)^T (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T x, \\
 & \forall\, x \in  L^{-1}(E_P \setminus L(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l.
 \end{aligned}
-\end{equation*}
+\end{equation}
 with $$L^{-1}(E_P \setminus L(\sphere')) = \sphere \setminus \sphere'.$$
 
-In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$, and \eqref{eq:assumption3} can be rewritten as:
-\begin{equation*}\label{eq:assumption4}
-\begin{aligned}
-& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T  (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T  x, \\
-&  \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \, \forall\, (j_1,\dots,j_l) \in M^l,
-\end{aligned}
-\end{equation*}
-with $$L^{-1}(\sphere \setminus \sphere') = E_{P'} \setminus L^{-1}(\sphere').$$
+In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$,.
+
+%and \eqref{eq:assumption3} can be rewritten as:
+%\begin{equation*}\label{eq:assumption4}
+%\begin{aligned}
+%& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T  (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T  x, \\
+%&  \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \, \forall\, (j_1,\dots,j_l) \in M^l,
+%\end{aligned}
+%\end{equation*}
+%with $$L^{-1}(\sphere \setminus \sphere') = E_{P'} \setminus L^{-1}(\sphere').$$
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
