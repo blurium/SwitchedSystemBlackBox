@@ -8,8 +8,8 @@ Let us analyze the relationship between the solutions of the theoretical optimiz
 \begin{aligned}
 & \text{min}_{P} & & \lambda_{\max}(P) \\
 & \text{s.t.} 
-&  & (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq {((1 +\eta)\gamma^*(\omega_N))}^{2l} x^T P x,\\
-&&&\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad \qquad \forall (x, j_{1},\dots, j_{l}) \in \omega_N \subset Z_l \\
+&  & x^T\Al^T P \Al x \leq {((1 +\eta)\gamma^*(\omega_N))}^{2l} x^T P x,\\
+&&&\qquad \quad \forall (x, j_{1},\dots, j_{l}) \in \omega_N \subset Z_l \\
 & && P \succeq I, \\
 \end{aligned}
 \end{equation}
@@ -20,9 +20,6 @@ For the rest of the discussion, we refer to the optimization problem \eqref{eqn:
 The curious question whether the optimal solution of the sampled problem $\Opt(\omega_N)$ is a feasible solution to \eqref{eqn:campiOpt1} has been widely studied in the literature \cite{campi}. It turns out that under certain technical assumptions, one can bound the proportion of the constraints of the original problem \eqref{eqn:campiOpt1} that are violated by the optimal solution of \eqref{eqn:campiOpt03}, with some probability which is a function of the sample size $N$. 
 
 In the following theorem, we adapt a classical result from random convex optimization literature to our problem.
-
-
-
 \begin{thm}[adapted from Theorem 3.3\footnotemark, \cite{campi}]\label{mainTheorem0}
 Let $d$ be the dimension of $\Opt(\omega_N)$ and $N \geq d+1$. Consider the optimization problem $\Opt(\omega_N)$ given in \eqref{eqn:campiOpt03}, where $\omega_N$ is a uniform random sample drawn from the set $Z_l$.
 Then, for all $\varepsilon \in (0,1]$ the following holds:
@@ -33,7 +30,7 @@ where $\mu_l^N$ denotes the product probability measure on $Z_l^N$, and $V(\omeg
 \begin{equation*} 
 \begin{aligned}
 & V(\omega_N) := \{z=(x,j_{1},\dots,j_{l}) \in Z_l: \\
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P(\omega_N)(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) > (\gamma_{\omega_N}^{*})^{2l} x^T P(\omega_N) x\},
+&x^T \Al^T P(\omega_N)\Al x> (\gamma_{\omega_N}^{*})^{2l} x^T P(\omega_N) x\},
 \end{aligned}
 \end{equation*}
 }
@@ -52,17 +49,17 @@ Here, the first assumption can be enforced if required by adding a tie-breaking 
 Consider a set of matrices $\mathcal{M}$, $\gamma^{*}$ optimal solution of \eqref{eq:lowerbound} and matrix $P \succ 0$ optimal solution of $\Opt(\omega_N)$. Then $P$ will satisfy:
 \begin{equation}\label{eqn:P0}
 \begin{aligned}
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*})^{2l} x^T P x, \\
+&x^T \Al^T P\Al x\leq (\gamma^{*})^{2l} x^T P x, \\
 & \qquad \qquad \qquad \qquad \forall\, x \in \sphere \setminus \sphere', \forall\ (j_1, \dots, j_l) \in M^l,
 \end{aligned}
 \end{equation}
 for some $\sphere' \subset \sphere$ such that $\sigma^{n-1}(\sphere') \leq \varepsilon m^l $.
 \end{cor}
 
-The proof of Corollary~\ref{cor:gettingRidOfm} is based on straightforward arguments on measures, and is given in Appendix~\ref{proof:cor_m}. This result allows us to only consider set of violating points on the sphere from now. Note that, this result is conservative: the case where we have the equality $\sigma(\sphere') = \varepsilon m^l$ corresponds to the case where we have only observed one mode, and have then minimal knowledge on the system for a given $\varepsilon$.
+The proof of Corollary~\ref{cor:gettingRidOfm} is based on straightforward arguments on measures, and is given in Appendix~\ref{proof:cor_m}. This result allows us to only consider set of violating points on the sphere from now. Note that, this result is conservative: the case where we have the equality $\sigma(\sphere') = \varepsilon m^l$ corresponds to the case where we have only observed one mode \ayca{for the entirety of the trace} and have then minimal knowledge on the system for a given $\varepsilon$.
 
 
-The above results allow us to conclude, from a finite number of observations, that with probability $\beta$ (where $\beta$ goes to $1$ as $N$ goes to infinity), the required property is actually satisfied for the complete sphere $\sphere$, except on a small set of measure at most $\varepsilon m^l$. This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure bounded by $\varepsilon m^l$. This can be representend in the case $n=2$ by the following plot, where the points of the ellipse in red are points that might violate the contractivity constraint (the set of red points has measure at most $\varepsilon m^l$).
+The above results allow us to conclude, from a finite number of observations, that with probability $\beta$ (where $\beta$ goes to $1$ as $N$ goes to infinity), the required property is actually satisfied for the complete sphere $\sphere$, except on a small set of measure at most $\varepsilon m^l$. This means that, the ellipsoid computed by $\Opt(\omega_N)$ is ``almost invariant"  except on a set of measure bounded by $\varepsilon m^l$. This can be represented in the case $n=2$ by the following plot, where the points of the ellipse in red are points that might violate the contractivity constraint. Here, the set of red points has measure at most $\varepsilon m^l$.
 
 \begin{figure}[H]\label{fig:ellipsoid}
 \begin{center}
@@ -121,19 +118,21 @@ The above results allow us to conclude, from a finite number of observations, th
 \end{center}
 \caption{Representation of the ``partial invariance property'' obtained by application of the results in \ref{mainTheorem0}. A priori, we know nothing about the images of the red points. Our goal is to convert this partial invariance property into a global stability property.}
 \end{figure}
-Thus, we are left with the following question: ``What can we conclude on the JSR if we can assume that the Lyapunov property is satisfied by all points, except a set of measure $\varepsilon m^l$?''
+Thus, we are left with the following question: ``What can we conclude on the JSR if the Lyapunov property is satisfied by all points, except a set of measure $\varepsilon m^l$?''
 \end{subsection}
 
 
 \begin{subsection}{The Spherical Case}\label{sec:pbsphere}
-We consider first the special and simpler case when the ellipse defined by $P$ is in fact a sphere, and more specifically the unit sphere $\sphere$. The set of points that can violate the constraint still has measure bounded by $\varepsilon m^l$, and is now denoted by $X_{\varepsilon m^l}$. We will see that for this precise case our question becomes a geometric problem, which we describe and solve in this section. Our reasoning uses the following fundamental property of switched linear systems.
+We consider first the special and simpler case when the ellipsoid defined by $P$ is in fact a sphere. 
+In this section, for this precise case, we formulate our question of stability as a geometric problem and present its solution. Our reasoning uses the following fundamental property of switched linear systems.
 
 \begin{property}\label{property:convpres}
 The dynamics given in \eqref{eq:switchedSystem} is convexity-preserving, meaning that for any set of points $X \subset \mathbb{R}^n$ we have:
 $$ f(\conv({X}))\subset \conv(f(X)). $$
 \end{property}
 
-This leads us to look for the largest sphere in $\convhull (S \setminus X_{\varepsilon m^l})$. By homogeneity of the system, this sphere will be centered at the origin, and we denote by $\delta$ its radius. We consider this sphere $\sphere_{\delta}$ since, by Property~\ref{property:convpres}, we know that the $l$-traces by system~\eqref{eq:switchedSystem} initialized in $\sphere_{\delta}$ (hence initialized in $\convhull (S \setminus X_{\varepsilon m^l})$), will lie in $\convhull (f(S \setminus X_{\varepsilon m^l})) \subset \gamma^{l} \ball$. Then, the rate of growth of $\sphere_{\delta}$ after $l$ steps will be upper bounded by $\frac{(\gamma^{*})^{l}}{\delta}$.
+\ayca{The next two paragraphs are really hard to understand, so is the figure I think? Plus aren't we doing the same thing twice in Proposition 15. Should we instead move Prop. 15 here where the definition of alpha is given as in eqn (13) and then get rid of most of this text? This will cut some space too. Open to your thoughts? }
+Note that, the set of points that can violate the constraint still has measure bounded by $\varepsilon m^l$ and is now denoted by $X_{\varepsilon m^l}$. This leads us to look for the largest sphere in $\convhull (S \setminus X_{\varepsilon m^l})$. By homogeneity of the system, this sphere will be centered at the origin, and we denote by $\delta$ its radius. We consider this sphere $\sphere_{\delta}$ since, by Property~\ref{property:convpres}, we know that the $l$-traces by system~\eqref{eq:switchedSystem} initialized in $\sphere_{\delta}$ (hence initialized in $\convhull (S \setminus X_{\varepsilon m^l})$), will lie in $\convhull (f(S \setminus X_{\varepsilon m^l})) \subset \gamma^{l} \ball$. Then, the rate of growth of $\sphere_{\delta}$ after $l$ steps will be upper bounded by $\frac{(\gamma^{*})^{l}}{\delta}$.
 
 \begin{figure}[H]
 \begin{center}
@@ -270,7 +269,7 @@ By exploiting Property \ref{property:convpres} and Lemma~\ref{lemma:propositionS
 Let $\varepsilon \in (0, 1/m^l)$ and $\gamma^{*} \in \mathbb{R}_{> 0}$. Consider the set of matrices $\mathcal{M}$ and $A \in \mathcal{M}^l$ satisfying:
 \begin{equation}\label{eqn:contraction}
 \begin{aligned}
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^{*})^{2l} x^Tx, \\
+&x^T \Al^T \Al x \leq (\gamma^{*})^{2l} x^Tx, \\
 & \forall\, x \in \sphere \setminus \sphere', \forall\,(j_1, \dots, j_l) \in M^l,
 \end{aligned}
 \end{equation}
@@ -284,22 +283,23 @@ where $\alpha(\frac{\varepsilon m^l}{2})$ is given in \eqref{eqn:alphaEpsilon}.
 
 \begin{pf}
 Note that, \eqref{eqn:contraction} implies that:
-$(A_{j_l} A_{j_{l-1}} \dots A_{j_1}) (\sphere \setminus \sphere') \subset \gamma^l \ball.$
+$\Al (\sphere \setminus \sphere') \subset \gamma^l \ball.$
 Using Property \ref{property:convpres} this also implies:
-$$A_{j_l} A_{j_{l-1}} \dots A_{j_1} \left( \convhull(\sphere \setminus \sphere') \right) \subset \convhull \left( A_{j_l} A_{j_{l-1}} \dots A_{j_1}(\sphere \setminus \sphere') \right) \subset \gamma^l \ball .$$
+$$\Al \left( \convhull(\sphere \setminus \sphere') \right) \subset \convhull \left( \Al(\sphere \setminus \sphere') \right) \subset \gamma^l \ball .$$
 Then, by Lemma~\ref{lemma:propositionSphericalCaps}, we have:
-$$A_{j_l} A_{j_{l-1}} \dots A_{j_1} \left( \alpha(\varepsilon) \ball \right) \subset A_{j_l} A_{j_{l-1}} \dots A_{j_1} \left( \convhull (\sphere \setminus \sphere') \right) \subset \gamma^l\ball, \quad  \forall\, (j_1, \dots, j_l) \in M^l,$$
+$$\Al \left( \alpha(\varepsilon) \ball \right) \subset \Al \left( \convhull (\sphere \setminus \sphere') \right) \subset \gamma^l\ball, \quad  \forall\, (j_1, \dots, j_l) \in M^l,$$
 by definition of $\alpha(\frac{\varepsilon m^l}{2})$ given in \eqref{eqn:ballinc}. Therefore, we get:
-$$\alpha \left( \frac{\varepsilon m^l}{2} \right) \left( A_{j_l} A_{j_{l-1}} \dots A_{j_1} (\ball) \right) \subset \gamma^l\ball,$$
-which implies that $\rho(\mathcal{M}^l) \leq \frac{\gamma^l}{\alpha(\frac{\varepsilon m^l}{2})}$ and hence $\rho(\mathcal{M}) \leq \frac{\gamma}{\sqrt[l]{\alpha(\frac{\varepsilon m^l}{2})}}$.
+$$\alpha \left( \frac{\varepsilon m^l}{2} \right) \left( \Al (\ball) \right) \subset \gamma^l\ball,$$
+which implies that $\rho(\mathcal{M}^l) \leq \frac{\gamma^l}{\alpha(\frac{\varepsilon m^l}{2})}$ and hence $$\rho(\mathcal{M}) \leq \frac{\gamma}{\sqrt[l]{\alpha(\frac{\varepsilon m^l}{2})}}.$$
 \end{pf}
 
-We have then solved the problem when $P(\omega_N) = \sphere$.
+We have then solved the problem when $P(\omega_N) = \ayca{I}$.
 
 \begin{rem}
-When $\varepsilon \geq \frac{1}{m^l}$, we have $\delta = 1$ and the upper we can give for the JSR is only $+ \infty$.
+When $\varepsilon \geq \frac{1}{m^l}$, we have $\delta = 1$ \ayca{but we just talked about $\alpha$!} and the upper we can give for the JSR is only $+ \infty$.
 \end{rem}
 
+\ayca{This flow is a bit confusing. Nothing connects the $\alpha$ and $\delta$ yet. I still think Prop.15 should be earlier and the relationship between $\alpha$ and $\delta$ should be made there.}
 \end{subsection}
 
 
@@ -309,7 +309,7 @@ We now consider the general problem for any $P(\omega_N)$, and transform it into
 \begin{equation}\label{cholesky}
 P = L^TL,
 \end{equation} 
-where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of $\sphere$ to $E_P$.
+where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of \ayca{$E_P$ to $\sphere$.}
 
 \begin{figure}[H]
 \begin{center}
@@ -345,8 +345,8 @@ where $L$ is an upper triangular matrix. Note that, $L$ maps the elements of $\s
 \draw [line width = 0.5mm,black,domain=280:330] plot ({6 + 2 * cos(\x)}, {2 * sin(\x)});
 \draw[->] (0,2) .. controls (1,3) and (3,3) .. (4,2);
 \draw[->] (4,-2) .. controls (3,-3) and (1,-3) .. (0,-2); 
-\draw (2,3.3) node {$L^{-1}$};
-\draw (2,-3.3) node {$L$};
+\draw (2,3.3) node {$L$};
+\draw (2,-3.3) node {$L^{-1}$};
 \end{tikzpicture}
 \end{center}
 \caption{Change of coordinates to bring our problem back to the case of the unit sphere.}
@@ -360,97 +360,114 @@ We now know how to compute an upper bound on the JSR when the ``almost invariant
 Let $\gamma^* \in \mathbb{R}_{> 0}$. Consider a set of matrices $\mathcal{M}$, and a matrix $P \succ 0$ satisfying \eqref{eqn:P0}:
 \begin{equation}\label{eq:assumptionThm01}
 \begin{aligned}
-& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T P x,\\
+&x^T \Al^T P\Al x\leq (\gamma^*)^{2l} x^T P x,\\
 & \forall\, x \in \sphere \setminus \sphere', \forall\ (j_1, \dotsc, j_l) \in M^l,
 \end{aligned}
 \end{equation}
 for some $\sphere' \subset \sphere$ where $\sigma^{n-1}(\sphere') \leq \varepsilon m^l$. Then, we have 
 %%%%%%%Then this contractivity constraint is satisfied on the entire $\sphere$, for a modified contractivity constant $\frac{(\gamma^*)^{2l}}{\alpha(\varepsilon \kappa(P) m^l)}$:
 %%%%%%\begin{equation*}\label{eqn:thm01-2}
-%%%%%(A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T P (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq \frac{(\gamma^*)^{2l}}{\alpha(\varepsilon \kappa(P) m^l)} x^T P x,\,\, \forall\, x \in \sphere, \, \forall\, (j_1,\dots,j_l) \in M^l,
+%%%%%x^T\Al^T P \Al x \leq \frac{(\gamma^*)^{2l}}{\alpha(\varepsilon \kappa(P) m^l)} x^T P x,\,\, \forall\, x \in \sphere, \, \forall\, (j_1,\dots,j_l) \in M^l,
 %%%%%\end{equation*}
 $$\rho(\mathcal{M}) \leq \frac{\gamma^{*}}{\sqrt[l]{\alpha \left( \frac{\varepsilon m^l \kappa(P)}{2} \right)}}$$
 where $\alpha(\frac{\varepsilon m^l \kappa(P)}{2})$ is given in \eqref{eqn:alphaEpsilon}, and $$\kappa(P) = \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}.$$
 \end{thm}
 
 \begin{pf}
+\ayca{I think we should take out the figure here and its explanation? I think they are confusing and out of place in the beginning of the theorem. I took it out, but it is commented.}
+%The assumption \eqref{eq:assumptionThm01} is a contraction assumption on points of the ellipsoid $E_P$. So far, we have represented points of $E_P$ by their corresponding points on $\sphere$. 
 
-The assumption \eqref{eq:assumptionThm01} is a contraction assumption on points of the ellipsoid $E_P$. So far, we have represented points of $E_P$ by their corresponding points on $\sphere$. 
-
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[scale=0.7]
-\draw[line width=0.2mm,black] (0,0) ellipse [x radius = 3.5cm, y radius =2.5cm];
-\draw[line width=0.2mm,black] (0,0) circle [radius=1cm];
-\draw[line width=0.3mm,black,->] (-4,0) -- (4,0);
-\draw[line width=0.3mm,black,->] (0,-3) -- (0,3);
-\draw[black] (4,-0.3) node {\tiny{$x_1$}};
-\draw[black] (-0.4,2.8) node {\tiny{$x_2$}};
-\draw[black] ({3.5*cos(60)+0.3},{2.5*sin(60)+0.3}) node {$E_P$};
-\draw[black] ({cos(60)+0.3},{sin(60)+0.3}) node {$\sphere$};
-\foreach \i in {0,...,9}
-{
-\draw[line width=0.3mm,blue,->] ({cos(\i*36)},{sin(\i*36)}) -- ({3.5*cos(\i*36)},{2.5*sin(\i*36)});
-\draw[line width=0.1mm,black] ({cos(\i*36)-0.1},{sin(\i*36)-0.1}) -- ({cos(\i*36)+0.1},{sin(\i*36)+0.1});
-\draw[line width=0.1mm,black] ({cos(\i*36)+0.1},{sin(\i*36)-0.1}) -- ({cos(\i*36)-0.1},{sin(\i*36)+0.1});
-\draw[line width=0.1mm,black] ({3.5*cos(\i*36)-0.1},{2.5*sin(\i*36)-0.1}) -- ({3.5*cos(\i*36)+0.1},{2.5*sin(\i*36)+0.1});
-\draw[line width=0.1mm,black] ({3.5*cos(\i*36)+0.1},{2.5*sin(\i*36)-0.1}) -- ({3.5*cos(\i*36)-0.1},{2.5*sin(\i*36)+0.1});
-}
-\end{tikzpicture}
-\end{center}
-\end{figure}
+%\begin{figure}[H]
+%\begin{center}
+%\begin{tikzpicture}[scale=0.7]
+%\draw[line width=0.2mm,black] (0,0) ellipse [x radius = 3.5cm, y radius =2.5cm];
+%\draw[line width=0.2mm,black] (0,0) circle [radius=1cm];
+%\draw[line width=0.3mm,black,->] (-4,0) -- (4,0);
+%\draw[line width=0.3mm,black,->] (0,-3) -- (0,3);
+%\draw[black] (4,-0.3) node {\tiny{$x_1$}};
+%\draw[black] (-0.4,2.8) node {\tiny{$x_2$}};
+%\draw[black] ({3.5*cos(60)+0.3},{2.5*sin(60)+0.3}) node {$E_P$};
+%\draw[black] ({cos(60)+0.3},{sin(60)+0.3}) node {$\sphere$};
+%\foreach \i in {0,...,9}
+%{
+%\draw[line width=0.3mm,blue,->] ({cos(\i*36)},{sin(\i*36)}) -- ({3.5*cos(\i*36)},{2.5*sin(\i*36)});
+%\draw[line width=0.1mm,black] ({cos(\i*36)-0.1},{sin(\i*36)-0.1}) -- ({cos(\i*36)+0.1},{sin(\i*36)+0.1});
+%\draw[line width=0.1mm,black] ({cos(\i*36)+0.1},{sin(\i*36)-0.1}) -- ({cos(\i*36)-0.1},{sin(\i*36)+0.1});
+%\draw[line width=0.1mm,black] ({3.5*cos(\i*36)-0.1},{2.5*sin(\i*36)-0.1}) -- ({3.5*cos(\i*36)+0.1},{2.5*sin(\i*36)+0.1});
+%\draw[line width=0.1mm,black] ({3.5*cos(\i*36)+0.1},{2.5*sin(\i*36)-0.1}) -- ({3.5*cos(\i*36)-0.1},{2.5*sin(\i*36)+0.1});
+%}
+%\end{tikzpicture}
+%\end{center}
+%\end{figure}
 
 
 %We have $y \in E_P \leftrightarrow x \in \sphere$ with $y = L(x)$, the euclidean norm $y^T y$ becoming $x^T P x$. Hence, \eqref{eq:assumptionThm01} can be rewritten as:
 %\begin{equation*}\label{eq:assumption2}
 %\begin{aligned}
-%& (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x)^T (A_{j_l} A_{j_{l-1}} \dots A_{j_1} x) \leq (\gamma^*)^{2l} x^T x,\\
+%&x^T \Al^T \Al x \leq (\gamma^*)^{2l} x^T x,\\
 %& \qquad \qquad \qquad \qquad \forall\, x \in E_P \setminus L(\sphere'), \forall\ (j_1, \dotsc, j_l) \in M^l.
 %\end{aligned}
 %\end{equation*}
 
-Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L^{-1} \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining $\bar{A}_{j_i}=  L A_{j_i} L^{-1}$, assumption \eqref{eq:assumptionThm01} becomes:
+Since we have seen in the previous section a technique to solve the spherical case, we perform now the change of coordinates defined as in \eqref{cholesky} by $L^{-1} \in \mathcal{L}(\mathbb{R}^n)$ which maps the ellipsoid $E_P$ to the sphere $\sphere$. By defining \mbox{$\bar{A}_{j_i}=  L A_{j_i} L^{-1}$,} and $\barAl = \bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} $ assumption \eqref{eq:assumptionThm01} becomes:
 \begin{equation}\label{eq:assumption3}
 \begin{aligned}
-& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x)^T (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T x, \\
-& \forall\, x \in  L^{-1}(E_P \setminus L(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l.
+& x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x, \\
+& \forall\, x \in  L^{-1}(E_P \setminus L(\sphere')), \forall\, (j_1,\dots,j_l) \in M^l. \\
+& \ayca{\text{I think this should be\,} \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \forall\, (j_1,\dots,j_l) \in M^l.}
 \end{aligned}
 \end{equation}
 with $$L^{-1}(E_P \setminus L(\sphere')) = \sphere \setminus \sphere'.$$
 
-In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$,.
+%
+%In \eqref{eq:assumption3}, we have brought our original contractivity constraints from points of $E_P$ to points of $\sphere$. Now, we recall that the points of the ellipsoid $E_P$ in the initial statement were represented through points of $\sphere$. This sphere becomes after change of coordinates $L$ an ellipsoid $E_{P'}$. Hence, the points of the newly considered level set, $\sphere$, are now represented through points of $E_{P'}$,.
 
 %and \eqref{eq:assumption3} can be rewritten as:
 %\begin{equation*}\label{eq:assumption4}
 %\begin{aligned}
-%& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T  (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A}_{j_1} x) \leq ({\gamma^*})^{2l} x^T  x, \\
+%& (\bar{A}_{j_l} \bar{A}_{j_{l-1}} \dots \bar{A_{j_1}} x)^T  \barAl x \leq ({\gamma^*})^{2l} x^T  x, \\
 %&  \forall\, x \in  L^{-1}(\sphere \setminus \sphere'), \, \forall\, (j_1,\dots,j_l) \in M^l,
 %\end{aligned}
 %\end{equation*}
 %with $$L^{-1}(\sphere \setminus \sphere') = E_{P'} \setminus L^{-1}(\sphere').$$
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[scale=1.5]
-\draw[line width=0.2mm,black] (0,0) ellipse [x radius = 0.35cm, y radius =0.25cm];
-\draw[line width=0.2mm,black] (0,0) circle [radius=1cm];
-\draw[line width=0.3mm,black,->] (-1.3,0) -- (1.3,0);
-\draw[line width=0.3mm,black,->] (0,-1.3) -- (0,1.3);
-\draw[black] (1.3,-0.2) node {\tiny{$x_1$}};
-\draw[black] (-0.2,1.2) node {\tiny{$x_2$}};
-\draw[black] ({0.35*cos(60)+0.2},{0.25*sin(60)+0.2}) node {$E_{P'}$};
-\draw[black] ({cos(60)+0.2},{sin(60)+0.2}) node {$\sphere$};
-\foreach \i in {0,...,9}
-{
-\draw[line width=0.3mm,blue,->] ({0.35*cos(\i*36)},{0.25*sin(\i*36)}) -- ({cos(\i*36)},{sin(\i*36)});
-\draw[line width=0.1mm,black] ({cos(\i*36)-0.05},{sin(\i*36)-0.05}) -- ({cos(\i*36)+0.05},{sin(\i*36)+0.05});
-\draw[line width=0.1mm,black] ({cos(\i*36)+0.05},{sin(\i*36)-0.05}) -- ({cos(\i*36)-0.05},{sin(\i*36)+0.05});
-\draw[line width=0.1mm,black] ({0.35*cos(\i*36)-0.05},{0.25*sin(\i*36)-0.05}) -- ({0.35*cos(\i*36)+0.05},{0.25*sin(\i*36)+0.05});
-\draw[line width=0.1mm,black] ({0.35*cos(\i*36)+0.05},{0.25*sin(\i*36)-0.05}) -- ({0.35*cos(\i*36)-0.05},{0.25*sin(\i*36)+0.05});
+%\begin{figure}[H]
+%\begin{center}
+%\begin{tikzpicture}[scale=1.5]
+%\draw[line width=0.2mm,black] (0,0) ellipse [x radius = 0.35cm, y radius =0.25cm];
+%\draw[line width=0.2mm,black] (0,0) circle [radius=1cm];
+%\draw[line width=0.3mm,black,->] (-1.3,0) -- (1.3,0);
+%\draw[line width=0.3mm,black,->] (0,-1.3) -- (0,1.3);
+%\draw[black] (1.3,-0.2) node {\tiny{$x_1$}};
+%\draw[black] (-0.2,1.2) node {\tiny{$x_2$}};
+%\draw[black] ({0.35*cos(60)+0.2},{0.25*sin(60)+0.2}) node {$E_{P'}$};
+%\draw[black] ({cos(60)+0.2},{sin(60)+0.2}) node {$\sphere$};
+%\foreach \i in {0,...,9}
+%{
+%\draw[line width=0.3mm,blue,->] ({0.35*cos(\i*36)},{0.25*sin(\i*36)}) -- ({cos(\i*36)},{sin(\i*36)});
+%\draw[line width=0.1mm,black] ({cos(\i*36)-0.05},{sin(\i*36)-0.05}) -- ({cos(\i*36)+0.05},{sin(\i*36)+0.05});
+%\draw[line width=0.1mm,black] ({cos(\i*36)+0.05},{sin(\i*36)-0.05}) -- ({cos(\i*36)-0.05},{sin(\i*36)+0.05});
+%\draw[line width=0.1mm,black] ({0.35*cos(\i*36)-0.05},{0.25*sin(\i*36)-0.05}) -- ({0.35*cos(\i*36)+0.05},{0.25*sin(\i*36)+0.05});
+%\draw[line width=0.1mm,black] ({0.35*cos(\i*36)+0.05},{0.25*sin(\i*36)-0.05}) -- ({0.35*cos(\i*36)-0.05},{0.25*sin(\i*36)+0.05});
+%}
+%\end{tikzpicture}
+%\end{center}
+%\end{figure}
+\ayca{I again found the figure and its text confusing. Here is a suggestion instead:
+By using the homogeneity of the dynamics given in Property ??, we have:
+\begin{equation*}
+\begin{aligned}
+&x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x,\, \forall\, x \in L^{-1}(\sphere \setminus \sphere') \\ &\quad \implies x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x,\, \forall\, x \in \Pi_\sphere(L^{-1}(\sphere \setminus \sphere')),
+\end{aligned}
+\end{equation*}
+and therefore we can rewrite \eqref{eq:assumption3} as:
+\begin{equation}\label{eq:assumption4}
+\begin{aligned}
+& x^T \barAl^T \barAl x \leq ({\gamma^*})^{2l} x^T x, \\
+& \forall\, x \in \sphere \setminus  \Pi_\sphere(L^{-1}\sphere'), \forall\, (j_1,\dots,j_l) \in M^l.
+\end{aligned}
+\end{equation}
 }
-\end{tikzpicture}
-\end{center}
-\end{figure}
-To reason on the (spherical) measure of violating set in the new coordinates, we project $E_{P'}$ on the unit sphere; $L^{-1}(\sphere')$ becomes $\proj_\sphere(L^{-1}(\sphere'))$.
+%\ayca{Take out this text I suggest:--}To reason on the (spherical) measure of violating set in the new coordinates, we project $E_{P'}$ on the unit sphere; $L^{-1}(\sphere')$ becomes $\proj_\sphere(L^{-1}(\sphere'))$.
 
 We now show how to relate $\sigma^{n-1}(\proj_\sphere(L^{-1}(\sphere')))$ to $\sigma^{n-1}(\sphere')$, measure of the violating set in the initial coordinates. Consider $\sphere^{\sphere'}$, the sector of $\ball$ defined by $\sphere'$. We denote $C:= L^{-1}(\sphere')$ and $C':=\proj_\sphere(L^{-1}(\sphere'))$. We have $\proj_{\sphere}(C) = C'$ and $\sphere^{C'} \subset \frac{1}{ \lambda_{\min (L^{-1})}} C$. This leads to:
 $$\sigma^{n-1}(C') = \lambda \left( \sphere^{C'} \right) \leq \lambda \left( \frac{1}{ \lambda_{\min (L^{-1})}} E_{P'}^{C} \right).$$ Then, the following holds: \begin{eqnarray}
@@ -463,14 +480,17 @@ where \eqref{eqn:lt} follows from the fact that
 $$ \lambda(Q(X)) = |\det(Q)| \lambda(X),$$
 for any set $X \subset \mathbb{R}^n$ and $Q \in \mathcal{L}(\mathbb{R}^n)$ (see e.g. \cite{rudin}).
 
-Finally, thanks to the Property~\ref{rem:scaling}, we even have:
+Finally, thanks to the \ayca{This doesn't immediately follow from this property, that property is immediately on the JSR, no? It follows from homegenity of the dynamics.} Property~\ref{rem:scaling}, we even have:
 \begin{equation}\label{eqn:P1}
 \begin{aligned}
-& (\mathbf{A}_l x)^T P (\mathbf{A}_l x) \leq (\gamma^*)^{2l} x^T P x,  \forall\, x \in \sphere \setminus \proj_\sphere(L(\sphere')), \\
+& (\mathbf{A}_l x)^T P (\mathbf{A}_l x) \leq (\gamma^*)^{2l} x^T P x,  \forall\, x \in \sphere \setminus \proj_\sphere(\ayca{L^{-1}}\sphere'), \\
 & \qquad \qquad \qquad \qquad \forall\ (j_1,\dots,j_l) \in M^l.
 \end{aligned}
 \end{equation}
-with $$\sigma^{n-1} \left(  \proj_\sphere(L(\sphere')) \right) \leq \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere'), $$ which gives us our theorem.
+with $$\sigma^{n-1} \left(  \proj_\sphere(L^{-1}(\sphere')) \right) \leq \sqrt{\frac{\lambda_{\max}(P)^n}{\det(P)}}\sigma^{n-1}(\sphere'), $$ which gives us our theorem.
+
+\ayca{This proof is not complete! We have to invoke the previous result!}
+
 %%Then, if we let $E':=L^{-1} V_\sphere$, where $L$ is the linear transformation mapping $E_P$ to $\sphere$, we get: $$\sigma_P(E') = \sigma^{n-1}(V_\sphere), and the result of the theorem follows.
 \end{pf}
 
