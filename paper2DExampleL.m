@@ -16,11 +16,11 @@ l = 2;
 noOfSystems = 1;
 lMax = 6;
 %number of modes
-m = 4; 
+m = 2; 
 %Campi's certainty
 beta = 0.95;
-N = 750;
-increment = 50;
+N = 950;
+increment = 100;
 maxJSR = 1.2;
 [A, jsrRaphael] = createRandomSystem(n,m,maxJSR);
 jsr_prod_pruningAlgorithm(A)

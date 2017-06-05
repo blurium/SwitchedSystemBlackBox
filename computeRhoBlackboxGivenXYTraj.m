@@ -26,9 +26,9 @@ end
 lambdaMax = max(eig(P));
 lambdaMin = min(eig(P));
 dP=det(P);
-epsilon1 = min(1/2,m*(epsilon/2)*sqrt(lambdaMax^n/dP));
+epsilon1 = min(1/2,m^l*(epsilon/2)*sqrt(lambdaMax^n/dP));
 epsilon1
-epsilon11 = min(1/2,(1-(1-epsilon*m)*sqrt(lambdaMin^n/dP))/2);
+epsilon11 = min(1/2,(1-(1-epsilon*m^l)*sqrt(lambdaMin^n/dP))/2);
 epsilon11
 epsilonMin = min(epsilon1, epsilon11);
 
