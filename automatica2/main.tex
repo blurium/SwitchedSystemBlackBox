@@ -1,0 +1,131 @@
+\documentclass[twocolumn]{autart} 
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color, comment}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{gensymb,bbm}
+\usepackage{stmaryrd}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usetikzlibrary{calc}
+\usepackage{float}
+
+
+%\include{references.bib}
+%   
+%\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+%            {-2.5ex\@plus -1ex \@minus -.25ex}%
+%            {1.25ex \@plus .25ex}%
+%            {\normalfont\normalsize\bfseries}}
+%\makeatother
+%\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+%\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+%
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%
+\newcommand{\convhull}{\mbox{convhull } }
+\newcommand{\Al}{\mathbf{A}_l }
+\newcommand{\barAl}{\mathbf{\bar{A}}_l }
+\newcommand{\conv}{\convhull }
+\newcommand{\proj}{\Pi }
+\newcommand{\koverc}{\frac{|k_i|}{\|c_i\|} }
+\newcommand{\ball}{\mathbb{B}}
+\newcommand{\dist}{d}
+\providecommand{\rmj[1]}{{\color{red}#1}}
+\providecommand{\ayca[1]}{{\color{blue}#1}}
+%\providecommand{\com[2]}{\begin{tt}[#1: #2]\end{tt}}
+%\providecommand{\comrj[1]}{\com{RJ}{\rmj{#1}}}
+%\providecommand{\comff[1]}{{\small \color{blue} [FF: {#1}]}}
+%
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\Opt}{\text{Opt} }
+%
+%\renewcommand\labelitemi{{\boldmath$\cdot$}}
+%
+\floatname{algorithm}{Procedure:}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\newcommand{\algorithmicblabla}{\textbf{Input 2:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicreturn}{\textbf{Compute:}}
+\renewcommand{\thealgorithm}{} 
+
+\newtheorem{property}{Property}[section]
+
+
+%\thanks{\textcolor{red}{*This work was supported by.}}
+%\author{Ayca Balkan$^{1}$ and Raphael Jungers$^{2}$ and Joris Kenanian$^{1}$ and Paulo Tabuada$^{1}$ 
+%\thanks{$^{1}$A. Balkan, J.Kenanian, and P. Tabuada are with Dept. of Electrical Engineering at University of California, Los Angeles (UCLA). Their work is supported by NSF Grants 1645824, 1521617, and NSF Expeditions in Computer Augmented Program Engineering.}
+%\thanks{$^{2}$R. Jungers is a Fulbright Fellow and a F.N.R.S. fellow currently visiting the Dept. of
+%Electrical Engineering at UCLA. His work is supported by the French Community of Belgium and the IAP network Dysco.}}
+
+
+\begin{document}
+\begin{frontmatter}
+%\runtitle{Insert a suggested running title} 
+\title{\textcolor{red}{Data Driven Stability Analysis of Black-box Switched Linear Systems}}
+
+\thanks[footnoteinfo]{\textcolor{red}{A. Balkan, J. Kenanian, and P. Tabuada had their work supported by NSF Grants 1645824, 1521617, and NSF Expeditions in Computer Augmented Program Engineering. R. Jungers is a Fulbright Fellow and a F.N.R.S. Fellow currently visiting the Dept. of Electrical Engineering at UCLA. His work is supported by the French Community of Belgium and the IAP network Dysco.}}
+
+\author[UCLA]{Marcus Tullius Cicero}\ead{cicero@senate.ir},    % Add the 
+\author[UCLA]{Julius Caesar}\ead{julius@caesar.ir},               % e-mail address 
+\author[Louvain]{Publius Maro Vergilius}\ead{vergilius@culture.ir}  % (ead) as shown
+
+\address[UCLA]{Department of Electrical Engineering at University of California, Los Angeles (UCLA)}  % Please supply                                              
+\address[Louvain]{\textcolor{red}{UC Louvain/Raphael's affiliation}}             % full addresses
+
+
+
+\begin{keyword}                           % Five to ten keywords,  
+\textcolor{red}{5 to 10 keywords to pick from the list: http://www.autsubmit.com/documents/keywords.html}   % chosen from the IFAC 
+\end{keyword}                             % keyword list or with the 
+                                          % help of the Automatica 
+                                          % keyword wizard
+
+\begin{abstract}
+\textcolor{red}{How do we change the abstract?} We address the problem of deciding stability of a ``black-box'' dynamical system (i.e., a system whose model is not known) from a set of observations. The only assumption we make on the black-box system is that it can be described by a switched linear system. We show that, for a given (randomly generated) set of observations, one can give a stability guarantee, for some level of confidence, with a trade-off between the quality of the guarantee and the level of confidence. We provide an explicit way of computing the best stability guarantee, as a function of both the number of observations and the required level of confidence. Our results rely on geometrical analysis and combining chance-constrained optimization theory with stability analysis techniques for switched systems.
+\end{abstract}
+\end{frontmatter}
+
+\section{Introduction}
+\input{introduction}
+
+\section{Preliminaries}\label{sec:preliminaries}
+\subsection{Notations}
+\input{Preliminaries} 
+\subsection{Stability of Switched Linear Systems}\label{sec:stab}
+\input{stability}
+\subsection{Problem Formulation}
+\input{formulation}
+
+\section{A Deterministic Lower Bound}\label{sec:lowerBound}
+\input{lb}
+
+\section{A Probabilistic Stability Guarantee}\label{sec:upperbound}
+\input{mainTheoremProof}
+\input{mainTheoremProof2}
+
+\section{Experimental Results}\label{sec:experiments}
+%\input{experiments}
+
+\section{Conclusions}\label{sec:conclusions}
+\input{conclusions}
+
+
+\begin{ack}                               % Place acknowledgements
+Acknowledgements, NSF etc.  % here.
+\end{ack}
+
+\bibliographystyle{plain} 
+\bibliography{bibliography}
+
+
+\end{document}

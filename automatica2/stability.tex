@@ -1,0 +1,63 @@
+ % !TEX root = main.tex
+A \emph{switched linear system} with a set of modes \\ 
+\mbox{$\mathcal{M}= \{A_i, i \in M \}$} is of the form:
+\begin{equation}\label{eq:switchedSystem}
+x_{k+1} = f(k,x_k),
+\end{equation}
+with $f(k,x_k) = A_{\tau(k)}x_k$ and switching sequence \mbox{$\tau \in M^{\mathbb{N}}$}. Note that such systems are homogeneous, i.e., for any $\gamma > 0$, $f(k,\gamma x_k) = \gamma f(k,x_k)$.
+
+In this paper, we are interested in the worst-case global stability of this system, that is, we want to guarantee the following property: $$\forall \tau \in M^{\mathbb{N}}, \, \forall x_0 \in \mathbb{R}^n, \, \lVert x_k \rVert \xrightarrow[k \to \infty]{} 0.$$ 
+It is well-known that the joint spectral radius of a set of matrices $\mathcal{M}$ closely relates to the stability of the underlying switched linear systems \eqref{eq:switchedSystem} defined by $\mathcal{M}$. This quantity is an extension to switched linear systems of the classic spectral radius for linear systems. It is the maximum asymptotic growth rate of the norm of the state under the dynamics \eqref{eq:switchedSystem}, over all possible initial conditions and sequences of matrices of $\mathcal{M}$.
+
+\begin{defn}[from \cite{jungers_lncis}] 
+Given a finite set of matrices \mbox{$\mathcal{M} \subset \mathbb{R}^{n\times n}$}, its \emph{joint spectral radius} (JSR) is given by $$\rho(\mathcal{M}) =\lim_{k \rightarrow \infty} \max_{i_1,\dots, i_k} \left\{ ||A_{i_1} \dots A_{i_k}||^{1/k}: A_{i_j} \in \mathcal{M}\ \right\}. $$
+\end{defn}
+
+\begin{property}[Cor. 1.1, \cite{jungers_lncis}]
+Given a finite set of matrices $\mathcal{M}$, the corresponding switched dynamical system is stable if and only if $\rho(\mathcal{M})<1$.
+\end{property}
+
+\begin{thm}[Prop. 1.3, \cite{jungers_lncis}]\label{prop:scaling}
+\textcolor{red}{Should we keep the reference with ''Proposition'', while we are stating it is a theorem?}Given a finite set of matrices $\mathcal{M}$, and any invertible matrix $T$, $\rho(\mathcal{M})=\rho(T \mathcal{M} T^{-1})$, i.e., the JSR is invariant under similarity transformations (and is a fortiori a homogeneous function: $\forall  \gamma > 0$, $\rho \left( \mathcal{M}/\gamma \right) = \mathcal{M}/\gamma$).
+\end{thm}
+
+\begin{defn}
+Consider a finite set of matrices $\mathcal{M} \subset \mathbb{R}^{n \times n}$. A \emph{common quadratic Lyapunov function (CQLF)} for a system \eqref{eq:switchedSystem} with set of matrices $\mathcal{M}$, is a positive definite matrix $P \in \mathcal{S}_{++}^n$ such that for some $\gamma \geq 0$, 
+\begin{equation}\label{eq:lyap}
+\forall A \in \mathcal{M}, A^T P A \preceq \gamma^2P.
+\end{equation}
+\end{defn}
+\vspace{-0.5cm}
+CQLFs are useful because they can be computed, if they exist, with semidefinite programming (see \cite{boyd}), and they constitute a stability guarantee for switched systems as we formalize next.
+
+\begin{thm}[Prop. 2.8 and Thm. 2.11, \cite{jungers_lncis}]\label{thm:cqlf} 
+ \ \newline 
+Consider a finite set of matrices $\mathcal{M}$.
+\vspace{-0.2cm}
+\begin{itemize} 
+\item If there exist $\gamma \geq 0$ and $P \succ 0$ such that the Lyapunov equation \eqref{eq:lyap} holds, then $\rho(\mathcal{M}) \leq \gamma$.
+\vspace{0.2cm}
+\item If $\rho(\mathcal{M}) < \frac{\gamma}{\sqrt{n}},$ there exists a CQLF, $P$, such that $\forall A \in \mathcal{M},\, A^T P A \preceq \gamma^2 P.$
+\end{itemize}
+\end{thm}
+%\vspace{-0.5cm}
+This theorem provides us with a \emph{converse Lyapunov result}: if there exists a CQLF, then our system is stable. If, on the contrary, there is no such stability guarantee, one may conclude a lower bound on the JSR. We obtain then an approximation algorithm for the JSR. It turns out that one can still refine this technique, in order to improve the error factor $1/\sqrt{n}$, and asymptotically get rid of it. This is a well-known technique for the ``white-box'' computation of the JSR, which we summarize in the following corollary.
+\begin{cor}\label{cor:approx-products}
+For any finite set of matrices such that $\rho(\mathcal{M}) < \frac{\gamma^l}{\sqrt[2l]{n}}$ with $\gamma \geq 0$, there exists a CQLF for \\
+$\mathcal{M}^l:=\{\Pi_{j=1}^l A_{i_j}: A_{i_j} \in \mathcal{M}\}$, that is, a $P\succ 0$ such that:$$\forall\ \mathbf{A} \in \mathcal{M}^l,\, \mathbf{A}^T P \mathbf{A} \preceq \gamma^{2l} P.$$
+\end{cor}
+\vspace{-0.8cm}
+\begin{pf*}{Proof.}
+It is easy to see from the definition of the JSR that $\rho(\mathcal{M}^l)=\rho(\mathcal{M})^l$. Thus, applying Theorem \ref{thm:cqlf} to the finite set $\mathcal{M}^l,$ one directly obtains the corollary.
+\end{pf*}
+\vspace{-0.5cm}
+Note that, the smaller $\gamma$ is in Theorem~\ref{thm:cqlf} and Corollary~\ref{cor:approx-products}, the tighter is the upper bound we get on $\rho(\mathcal{M})$. Therefore, we could consider in particular, for any $l \in \mathbb{N}_{>0}$, the optimal solution $\gamma^*$ of the following optimization problem:
+\begin{equation}\label{eqn:campiOpt2}
+\begin{aligned}
+&\text{min}_{\gamma, P} \qquad \gamma \\
+&\text{s.t.} \qquad \qquad (\mathbf{A} x)^T P \mathbf{A} x \leq \gamma^{2l} x^T P x,\\
+&\qquad \qquad \qquad \qquad \qquad \quad \forall \mathbf{A} \in \mathcal{M}^l, \,\forall x \in \sphere\\
+&\qquad  \qquad \quad P \succ 0.
+\end{aligned}
+\end{equation}
+Notice that we restrict the set of constraints $x$ to $\sphere$ due to the homogeneity of the system, which implies that it is sufficient to show the decrease of a CQLF on an arbitrary set enclosing the origin.

@@ -1,0 +1,25 @@
+% !TEX root =main.tex
+In Section~\ref{sec:stab}, we gave an optimization problem, \eqref{eqn:campiOpt2}, that provides a stability guarantee. Nevertheless, solving this problem as stated solely from observation of traces (that gives a finite number of constraints) is not possible since \eqref{eqn:campiOpt2} involves infinitely many constraints. We consider then the following optimization problem:
+\begin{equation}\label{eq:lowerbound}
+\begin{aligned}
+& \text{min}_P & & \gamma \\
+& \text{s.t.} 
+&  & (\mathbf{A}_l x)^T P \mathbf{A}_l x \leq \gamma^{2l} x^T P x, \,  \forall (x, \mathbf{j}) \in \omega_N\\
+& && P \succ 0,\ \gamma \geq 0. \\
+\end{aligned}
+\end{equation}
+where $\mathbf{A}_l :=  A_{j_l} A_{j_{l-1}} \dots A_{j_1}$ and $\mathbf{j}:=\{j_1,\dots, j_l\}$. Note that, \eqref{eq:lowerbound} can be efficiently solved by semidefinite programming and bisection on the variable $\gamma$ (see \cite{boyd}). Let us denote from now by $\gamma^*(\omega_N)$ the optimal solution of this problem, which we will use to compute a deterministic lower bound and a probabilistic upper bound on the JSR. In this section, we provide a theorem for a deterministic lower bound based on the observations given by $\omega_N$, whose accuracy depends on the ``horizon'' $l$.
+\begin{thm}\label{thm:lowerbound}
+For an arbitrary $l \in \mathbb{N}_{>0}$ and a given uniform sample $\omega_N \subset Z_l$, by considering $\gamma^*(\omega_N)$ the optimal solution of the optimization problem \eqref{eq:lowerbound}, we have $$\rho(\mathcal{M}) \geq \frac{\gamma^*(\omega_N)}{\sqrt[2l]{n}}.$$ 
+\end{thm}
+\vspace{-0.8cm}
+\begin{pf*}{Proof.}
+Let $\nu >0$. By definition of $\gamma^*(\omega_N)$, there exists no matrix $P \in \mathcal{S}^n_{++}$ such that, $\forall x \in \sphere, \, \forall \mathbf{A}_l \in \mathcal{M}^{l}$,
+\begin{equation*}
+(\mathbf{A}_l x)^T P \mathbf{A}_l x \leq (\gamma^*(\omega_N) -\nu)^{2l} x^T P x.
+\end{equation*}
+By Theorem~\ref{prop:scaling}, this means that there exists no CQLF for the scaled set of matrices $\frac{\mathcal{M}^l}{(\gamma^*(\omega_N)-\nu)^l}$. Since this is valid for every $\nu > 0$, using Theorem~\ref{thm:cqlf}, and the fact that $\rho(\mathcal{M}^l)=\rho(\mathcal{M})^l,$ we conclude:
+\begin{equation*}
+\frac{\rho(\mathcal{M})}{\gamma^*(\omega_N)} \geq \frac{1}{\sqrt[2l]{n}}.
+\end{equation*}
+\end{pf*}

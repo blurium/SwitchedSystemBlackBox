@@ -1,0 +1,41 @@
+ % !TEX root = main.tex
+We now formally present the problem we will be considering from now. We recall that our observations are traces of the form $(x_k,x_{k+1},\dots,x_{k+l})$ for some arbitrary $l \in \mathbb{N}_{>0}$, and that we do not have access to the mode applied to the system at each time step. To generate these traces, we assume that we can randomly draw a finite number of initial conditions $x_0^i \in \sphere$, and that a random sequence of $l$ modes is applied to each of these points. Hence, the probability event corresponding to a given observed trace $(x_k,x_{k+1},\dots,x_{k+l})$ is another $(l+1)$-tuple $(x_k,j_1,\dots,j_l)$. More precisely, we assume that we can uniformly sample $N$ such $(l+1)$-tuples in $Z_l = \sphere \times M^l$, giving us a sample denoted by 
+\begin{equation*}
+\omega_N := \{(x_0^i, j_{i,1}, \dots, j_{i,l}), 1 \leq i \leq N \}  \subset Z_l
+\end{equation*}
+and a corresponding set of $N$ available observations $\{(x_0^i,x_1^i, \dots, x_l^i), 1\leq i\leq N \}$ which satisfy for all $1 \leq i \leq N$ and $1 \leq k \leq l$, $x_k^i= A_{j_{k,i}} \dots A_{j_{1,i}} x_0^i$.
+\begin{rem}\label{rem:probGeneralize}
+Let us motivate the choice of considering a uniform sampling for the modes. We assumed that we only have access to random observations of the state of the system, and ignore the process that generates them. In particular, we ignore the process that picks the modes at each time step, and model it as a random process. We suppose that with nonzero probability, each mode is active: the problem would indeed not make a lot of sense otherwise, since in a such case, the system would be unidentifiable with probability $1$ and would prevent to ever observe some of its behaviors. We take this distribution uniform here since we cannot say that some modes are privileged a priori. We can still take any other distribution satisfying our assumption: if we have a nonzero lower bound on the probability of each mode, our guarantees naturally extend to them.
+\end{rem}
+In this work, we aim at understanding what type of guarantees one can obtain on the stability of System \eqref{eq:switchedSystem} (that is, on the JSR of $\mathcal{M}$) from such data. More precisely, we answer the following problem:
+\begin{prob}\label{problem} 
+Consider a finite set of matrices, $\mathcal{M},$ describing a switched system \eqref{eq:switchedSystem}, and suppose that one has a set of $N$ observations relative to $\omega_N$, finite sample of $Z_l$ drawn according to the uniform measure $\mu_l$.
+\begin{itemize}
+\item For a given number $\beta \in [0,1)$, provide an upper bound on $\rho(\mathcal{M})$, together with a level of confidence $\beta$, that is, a number $\overline{\rho(\omega_N)}$ such that $$\mu_l \left( \{\omega_N: \ \rho(\mathcal{M}) \leq \overline{\rho(\omega_N)} \} \right) \geq \beta.$$
+\item For the same given level of confidence $\beta$, provide a lower bound $\underline{\rho(\omega_N)}$ on $\rho(\mathcal{M})$.
+\end{itemize}
+\end{prob}
+\begin{rem}
+We will see in Section~\ref{sec:lowerBound} that we can even derive a deterministic lower bound for a given (sufficiently high) number of observations. 
+\end{rem}
+The idea from now will be to leverage the fact that conditions for the existence of a CQLF for \eqref{eq:switchedSystem} can be obtained by considering a finite number of traces in $\mathbb{R}^n$ of the form $(x_k,x_{k+1}, \dots, x_{k+l})$. It will lead us to the following algorithm, that is the main result of our work and that answers Problem~\ref{problem}:
+\begin{alg}[Probabilistic upper bound]
+ \ 
+\newline
+\textbf{Input:} observations produced by a uniform random sample $\omega_N \subset Z$ of size $N \geq \frac{n(n+1)}{2}+1$;
+
+\vspace{-0.2cm}
+\textbf{Input:} $\beta$ desired level of certainty;
+
+\vspace{-0.2cm}
+\textbf{Compute:} a candidate for the upper bound, $\gamma^{*}(\omega_N)$, solution of a convex optimization problem;
+
+\vspace{-0.2cm}
+\textbf{Compute:} $\varepsilon(\beta,\omega_N)$ the proportion of points where our inference on the upper bound may be invalid;
+
+\vspace{-0.2cm}
+\textbf{Compute:} $\delta(\varepsilon)$ a correcting factor;
+
+\vspace{-0.2cm}
+\textbf{Output:} $\frac{\gamma^{*}(\omega_N)}{\sqrt[2l]{n}} \leq \rho \leq \frac{\gamma^{*}(\omega_N)}{\sqrt[l]{\delta(\varepsilon)}}$, (right-hand inequality valid with probability at least $\beta$ and $\delta(\beta, \omega_N)   \xrightarrow[N \to \infty]{} 1$).
+\end{alg}
