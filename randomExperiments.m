@@ -65,7 +65,7 @@ for i = 1:Nsystems
 end
 toc;
 %%
-%save randomExperiments
+save randomExperiments2
 
 %now compute averages
 for i = 1:length(lowerBound2{1})   
